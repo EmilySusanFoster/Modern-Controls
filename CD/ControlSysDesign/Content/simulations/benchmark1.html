@@ -1,0 +1,143 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<!--  Table for the page heading                        -->
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | Sugar Mill Problem</p>
+        <h2 align="center">Benchmarking Problem - Sugar Mill</h2>
+
+        <!------------------------------------------------>
+        <!--p><hr size=1 noshade="noshade"-->
+
+        <p>While the focus of the previous examples has been experimenting with
+        a simple problem in a JAVA applet, the focus of this section is somewhat
+        broader, throwing an open-ended, non-trivial problem out to whoever is
+        willing to take it on.
+
+        <p>The system in question is a sugar mill, chosen because it includes
+        significant multivariable interaction, a non self regulating nature and
+        non-minimum phase behaviour. (<a href="../images/sugarmill.jpg">photo</a>)
+
+        <p>The sugar mill unit under consideration constitutes one of multiple
+        stages in the overall process and can be represented, in a very
+        simplified way, as shown below.
+
+        <p align="center"><img src="sugar1.gif" border="0" width="409" height="333">
+
+        <p>In this mill, bagasse (in intermediate form), which is milled sugar
+        cane, is delivered via the inter-carrier from the previous mill stage.
+        This is then fed into the buffer chute. The material is fed into the
+        pressure feed chute via a flap mechanism and pressure feed rolls. The
+        flap mechanism can be manipulated via a hydraulic actuator to modify the
+        exit geometry and volume of the buffer chute. The pressure feed rolls
+        grip the bagasse and force it into the pressure feed chute.
+
+        <p>Cane is then fed to the pressure feed chute through the mill rolls.
+        The pressure feed chute increases the compression ratio of the bagasse,
+        because the pressure feed roll surface is slightly higher than the mill
+        roll speed. The mill rolls are grooved, so that no expressed juice can
+        escape. The grooves are given a rough surface so that the mill rolls can
+        grip the cane.
+
+        <p>The mill rolls and pressure feed rolls are driven by a steam turbine
+        through a gear system. The steam turbine speed is controlled with a
+        governor feedback system with an adjustable set point.
+
+        <p>For the purpose of maximal juice extraction, the process requires the
+        control of two quantities: the buffer chute height, <i>h</i>(<i>t</i>),
+        and the mill torque <img src="eq3.gif" border="0" align="middle" width="30" height="22">. For
+        the control of these variables, the flap position, <i>f</i>(<i>t</i>),
+        and the turbine speed set point, <img src="eq3.gif" border="0" align="middle" width="30" height="22">,
+        may be used. For control purposes, this plant can then be modeled as a
+        MIMO system with 2 inputs and 2 outputs. In this system, the main
+        disturbance, <i>d</i>(<i>t</i>), originates in the variable feed to the
+        buffer chute.
+
+        <p>In this example, regulation of the height in the buffer chute is less
+        important for the process than regulation of the torque. Indeed, the
+        purpose of this chute is typically to filter out sudden changes in the
+        feed.
+
+        <p>After applying phenomenological considerations and performing
+        different experiments with incremental step inputs, a linearized plant
+        model was obtained. The outcome of the modeling stage is shown below.
+
+        <p align="center"><img src="sugar2.gif" border="0" width="475" height="275">
+
+        <p>From the above figure we can compute the nominal plant model in RMFD
+        form, linking the inputs <i>f</i>(<i>t</i>) and <img src="eq4.gif" border="0" align="middle" width="29" height="24">
+        to the outputs <img src="eq3.gif" border="0" align="middle" width="30" height="22"> and <i>h</i>(<i>t</i>)
+        as
+
+        <p align="center"><img src="eq1.gif" border="0" width="186" height="30">
+
+        <p>where
+
+        <p align="center"><img src="eq2.gif" border="0" width="499" height="40">
+
+        <p>The control of this system is difficult because it has a non-minimum
+        phase zero (which is not evident from the transfer function - where does
+        this come from?), it is highly interactive and is marginally stable
+        (which is evident in the transfer function).
+
+        <p>You can download a model of this system (in Matlab format) by
+        clicking <a href="../sugarmill.zip">here</a>. Once you have done this,
+        the challenge is open to you - design a controller for this system,
+        remembering that regulation of the torque is most important. The list
+        below shows some controllers you might like to try to design.
+        <ul>
+          <li>2 decentralised PID controllers
+          <li>multivariable controller
+          <li>triangular decoupling
+          <li>diagonal decoupling
+        </ul>
+        Once you have completed this task, you can comment on your solution, any
+        difficulties you have or anything else related to this exercise at the <a href="http://csd.newcastle.edu.au/cgi-bin/csdforum.cgi?index">forum</a>.
+
+        <p>This problem is left as a challenge for you, the reader, in the hope
+        that you might learn much from attempting this design. If you are
+        interested in a possible solution, you might like to read section 18.10
+        of the book. The purpose of this exercise is not the end result (a
+        beautiful, robust controller), but the process of learning while
+        designing a controller for a real industrial system.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous</td>
+              <td align="center" width="33%"><a href="../simulation"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Simulations</a></td>
+              <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

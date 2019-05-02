@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 19</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 19</p>
+        <h2 align="center">19. Introduction to Nonlinear Control</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>With the exception of our treatment of actuator limits, all previous
+        material in the book has been aimed at linear systems. This is justified
+        by the fact that most real world systems exhibit (near) linear behaviour
+        and by the significantly enhanced insights available in the linear case.
+        However, one occasionally meets a problem where the nonlinearities are
+        so important that they cannot be ignored. This chapter is intended to
+        give a <em>brief</em> introduction to nonlinear control. Our objective
+        is not to be comprehensive but to simply give some simple extensions of
+        linear strategies that might allow a designer to <em>make a start</em>
+        on a nonlinear problem. As far as possible, we will build on the linear
+        methods so as to maximally benefit from linear insights. We also give a
+        &quot;taste&quot; of more rigorous nonlinear theory so as to give the
+        reader an appreciation for this fascinating and evolving subject.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>So far, the entire book has dealt with linear system and
+            controllers.<br>
+            &nbsp;</li>
+          <li>This chapter generalizes the scope to include various types of
+            nonlinearities:<br>
+            &nbsp;</li>
+          <li>A number of properties that are very helpful in linear control are
+            not - or not directly-applicable to the nonlinear case.
+            <ul>
+              <li><i>Frequency analysis</i>: The response to a sinusoidal signal
+                is not necessarily a sinusoid; therefore frequency analysis,
+                Bode plots, etc, cannot be directly carried over from the linear
+                case.</li>
+              <li><i>Transfer functions</i>: The notion of transfer functions,
+                poles, zeros and their respective cancellation is not directly
+                applicable.</li>
+              <li><i>Stability</i> becomes more involved.</li>
+              <li><i>Inversion</i>: It was highlighted in Chapter 15, on affine
+                structures, that whether or not the controller contains the
+                inverse of the model as a factor and whether or not one inverts
+                the model explicitly - control is fundamentally linked to the
+                ability to invert. Numerous nonlinear functions encountered,
+                however, are not invertible (such as saturations, for example).</li>
+              <li><i>Superposition</i> does not apply; that is: the effects of
+                two signals (such as setpoint and disturbance) acting on the
+                system individually cannot simply be summed (superimposed) to
+                determine the effect of the signals acting simultaneously on the
+                system.</li>
+              <li><i>Commutativity</i> does not apply.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>As a consequence, the mathematics for nonlinear control become
+            more involved, solutions and results are not as complete and
+            intuition can fail more easily than in the linear case.<br>
+            &nbsp;</li>
+          <li>Nevertheless, nonlinearities are frequently encountered and are a
+            very important consideration.<br>
+            &nbsp;</li>
+          <li>Smooth static nonlinearities at input and output
+            <ul compact>
+              <li>are frequently a consequence of nonlinear actuator and sensor
+                characteristics</li>
+              <li>are the easiest form of nonlinearities to compensate</li>
+              <li>can be compensated by applying the inverse function to the
+                relevant signal, thus obtaining a linear system in the
+                pre-compensated signals (caution, however with singular points
+                such as division by zero, etc, for particular signal values).<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Non-smooth nonlinearities cannot in general be exactly compensated
+            or linearized.<br>
+            &nbsp;</li>
+          <li>The chapter applies a nonlinear generalization of the affine
+            parameterization of Chapter 15 to construct a controller that
+            generates a feedback linearizing controller if the model is smoothly
+            nonlinear with stable inverse<br>
+            &nbsp;</li>
+          <li>Nonlinear stability can be investigated using a variety of
+            techniques. Two common strategies are
+            <ul>
+              <li>Lyapunov methods</li>
+              <li>Function Space methods<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Extensions of linear robustness analysis to the nonlinear case are
+            possible<br>
+            &nbsp;</li>
+          <li>There also exist nonlinear sensitivity limitations which mirror
+            those for the linear case</li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="chapter18.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Chapter 18</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><a href="../part6.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Part VI</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>

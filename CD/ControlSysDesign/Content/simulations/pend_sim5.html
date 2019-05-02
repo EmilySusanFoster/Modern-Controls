@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<!--  Table for the page heading                        -->
+
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center">
+  <tr>
+    <td align="left" width="600">
+
+      <p align="left">You are here : <a href="../index.html" target="_top">Control
+      System Design - Index</a> | <a href="../simulation.html">Simulations</a> |
+      <a href="pend_sim.html">Inverted Pendulum</a> | Part 5</p>
+      <h2 align="center">Inverted Pendulum Tutorial - Part 5</h2>
+
+      <p>Before continuing, make sure you have read <a href="../chapters/chapter17.html">Chapter
+      17</a>, <a href="../chapters/chapter5.html">Chapter 6</a> and <a href="../chapters/chapter7.html">Chapter
+      7</a>.
+      <h3>State Feedback Control</h3>
+
+      <p>Now we will attempt to design a state feedback controller for the
+      inverted pendulum system. We will design this controller under the
+      assumption that both the pendulum angle and cart position can be measured.
+      (Note, if we assumed that only the cart position could be measured, we
+      would be facing a difficult problem as before - i.e. using a state
+      feedback controller with an observer would provide us with no advantages
+      over the previous design.)
+
+      <p>The state space form of the system is:
+
+      <p align="center"><img src="img25.gif" border="0" align="center" width="384" height="95">
+
+      <p>Since we assume that angle and position can be measured perfectly, the <i>C</i>
+      matrix for the system is
+
+      <p align="center"><img src="img26.gif" border="0" align="center" width="150" height="54">
+
+      <p>First, we note that the system is controllable, since the
+      controllability matrix
+
+      <p align="center"><img src="img27.gif" border="0" align="center" width="208" height="92">
+
+      <p>is invertible. The system is also observable, so there is point in
+      continuing in the design of the state feedback controller.
+
+      <p>We first design the controller, ignoring the observer. In state
+      feedback control, we set <i>f</i> = - <i>K x</i>, where <i>K</i> is the
+      control matrix. The following diagram illustrates this:
+
+      <p align="center"><img src="state1.gif" border="0" align="center" width="341" height="123">
+
+      <p>The poles of the closed-loop system are the roots of the polynomial
+
+      <p align="center">det(<i>s I</i> - (<i>A</i> - <i>B K</i>))
+
+      <p>The next step is to choose the desired location of these closed loop
+      poles. Arbitrarily, let the closed loop system have two poles at -1 and
+      poles at -1 ± j. The <i>K</i> matrix is then found from equating the
+      coefficients of powers of <i>s</i> in the desired closed-loop polynomial
+      and the actual closed loop polynomial:
+
+      <p align="center"><i>s</i><sup>4</sup> + (2<i>k</i><sub>2</sub> - 2<i>k</i><sub>4</sub>)<i>s</i><sup>3</sup>
+      + (2<i>k</i><sub>1</sub> - 2<i>k</i><sub>3</sub> -20)<i>s</i><sup>2</sup>
+      - 20<i>k</i><sub>2</sub><i>s</i> - 20<i>k</i><sub>1</sub> = <i>s</i><sup>4</sup>
+      + 4<i>s</i><sup>3</sup> + 7<i>s</i><sup>2</sup> - 6<i>s</i> - 2
+
+      <p>Solving this equation yields
+
+      <p align="center"><i>K</i> = [ <i>k</i><sub>1</sub> <i>k</i><sub>2</sub> <i>k</i><sub>3</sub>
+      <i>k</i><sub>4</sub> ] = [ -0.1 -0.3 -13.6 -2.3 ]
+
+      <p>which is the required controller. However, not all of the state
+      variables are measurable, so we must use an observer to reconstruct the
+      state variables of the system from the outputs which can be measured. Due
+      to the choice of state variables, this is an especially easy task in this
+      case, since the variables which cannot be measured are simply the
+      derivatives of the cart position and pendulum angle. Remembering that we
+      cannot implement a pure derivative, the observer is
+
+      <p align="center"><img src="img28.gif" border="0" align="center" width="128" height="116">
+
+      <p>The diagram below shows the closed loop system including the observer.
+
+      <p align="center"><img src="state2.gif" border="0" align="center" width="360" height="136">
+
+      <p>The JAVA applet below shows the simulation of the closed loop state
+      feedback controller/observer system. The interface is very similar to
+      previous ones: use the &quot;Change Parameters&quot; button to alter the
+      system parameters. This time, instead of altering the transfer function of
+      the controller, you change the K vector of the controller. The left-most
+      text entry field represents <i>k</i><sub>1</sub> and the rightmost one <i>k</i><sub>4</sub>.
+      The observer is fixed, and cannot be changed by the user.
+
+      <p>The system state variables can also be altered instantaneously. This
+      can be used to simulate step responses, since the controller will try to
+      drive the system's state to zero. The state fields, in order from left to
+      right, are <img src="img29.gif" border="0" valign="middle" width="56" height="21">
+
+      <p>&nbsp;</p>
+      <applet code="InvertedPendulum.class" codebase="../applet/" width="600" height="300" align="CENTER">
+        <param name="version" value="3">You don't seem to have a Java enabled browser.
+      </applet>
+
+      <p>&nbsp;</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td align="center"><b>Things to try</b></td>
+          <td align="center"><b>Things to notice</b></td>
+        </tr>
+        <tr>
+          <td>Run the simulation</td>
+          <td>The overshoot in this worse than the cascaded system (not by
+            much), but still much better than original controller.</td>
+        </tr>
+        <tr>
+          <td>Change the controller to <i>K</i> = [ -4.5 -5.7 -42 -11.7 ], which
+            gives two closed loop poles at -3 and poles at -3 ± j.</td>
+          <td>The cascaded system is better at attenuating measurement noise
+            (even though both the angle and position measurements are noisy)</td>
+        </tr>
+        <tr>
+          <td>Try to design a controller which gives the closed loop system two
+            poles at -5 and poles at -5 ± 3j.</td>
+          <td>N/A</td>
+        </tr>
+      </table>
+
+      <p>Notice that the controller is as good as the previous cascade
+      controller, since the same two variables are being measured. This
+      controller also has similar noise rejection capabilities to the cascade
+      controller.</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="pend_sim4.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Part 4</a></td>
+            <td align="center" width="33%"><a href="pend_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Inverted Pendulum</a></td>
+            <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

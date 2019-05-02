@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" width="600" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="600"><a name="Top"></a>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | <a href="ph_sim.html">pH Simulation</a> | Part 2</p>
+        <h2 align="center">pH Control - Part 2</h2>
+        <h3>Flow Variations</h3>
+
+        <p>If the system's influent flow is from some sort of industrial runoff,
+        then it is highly likely that the flow rate will vary, since the runoff
+        will not be at a constant rate. The variation in influent flow rate
+        presents itself as an input disturbance in the plant model.</p>
+
+        <p align="center"><img border="0" src="ph_eq1.gif" width="362" height="57"></p>
+
+        <p>where <i>q</i>(<i>t</i>) is the flow rate signal. In this example, we
+        model the fluctuations as a constant flow plus some randomly varying
+        noise. In particular, we set the average flow to the level used in the
+        last example (10 <i>L</i>/<i>min</i>), and the random variations range
+        uniformly between -1 <i>L</i>/<i>min</i> and 1<i>L</i>/<i>min</i>.</p>
+
+        <p>We will use the same controller as in the last example, which is
+        based on the nominal flow rate of 10&nbsp;<i>L</i>/<i>min</i>.&nbsp;
+        However, we should note that allowing the <i>q</i>(<i>t</i>) input to
+        vary with time makes the system more non-linear than before.</p>
+        <h3>Java Applet Simulation</h3>
+
+        <p>Below is a Java applet which simulates the pH control system with
+        influent flow rate variations. The blue plot shows the influent
+        concentration and the green plot shows the effluent concentration. This
+        process is extremely slow, so the time scale is accelerated somewhat:
+        1250 simulated seconds pass for each real second of the simulation,
+        giving a horizontal scale of 2500 seconds per division
+
+        <p>Pressing the &quot;Change Parameters&quot; button brings up the
+        parameters window allowing you to change the controller values, the
+        influent pH and the animation speed. The controller has been implemented
+        in the anti-windup form to avoid the effects of the saturation of the
+        valve. The animation speed can be 25, 12.5 or 6.25 frames per second.
+        This speed is only the rate at which the screen is refreshed - the
+        simulation is unaffected. The speed function is available for those with
+        slower computers so that the simulations still appear in real-time (if
+        somewhat jerkier). Note that the applet does some auto-detection of the
+        speed of your computer, so if you select a speed that your computer
+        cannot handle, the applet will reduce the speed accordingly.</p>
+
+        <p>&nbsp;</p>
+        <applet code="pHControl.class" codebase="../applet/" width="600" height="300" align="center">
+          <param name="version" value="2">You don't seem to have a Java enabled browser.
+        </applet>
+
+        <p>&nbsp;</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+          <tr>
+            <td align="center"><b>Things to try</b></td>
+            <td align="center"><b>Things to notice</b></td>
+          </tr>
+          <tr>
+            <td>Look at the response of the system.</td>
+            <td>Observe the noisy output signal, particularly as the output gets
+              closer to a pH of 7.</td>
+          </tr>
+          <tr>
+            <td>Change the influent pH to any value you like (the simulation
+              will allow only values between 11 and 7).</td>
+            <td>Watch the non-linear nature of the system's response.</td>
+          </tr>
+          <tr>
+            <td>Design a faster controller.</td>
+            <td>Note the effect of the valve saturation on the response.</td>
+          </tr>
+        </table>
+
+        <p>The output variations occur because of the relative size of the tank
+        and the influent valve. If this valve is larger, the influent flow rate
+        increases, and liquid flows through the entire system at a faster rate.
+        This means that the filtering effect of the tank is reduced somewhat. As
+        you might expect, increasing the tank volume would reduce the pH
+        variations in the effluent.&nbsp; However, building a bigger tank is
+        expensive, and as we will see in the next example, errors in the control
+        valve reduce the effect of a bigger tank anyway.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="ph_sim1.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Part 1</a></td>
+              <td align="center" width="33%"><a href="ph_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - pH Index</a></td>
+              <td align="center" width="33%"><a href="ph_sim3.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Part 3</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+</body>
+
+</html>

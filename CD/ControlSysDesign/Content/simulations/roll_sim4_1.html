@@ -1,0 +1,90 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<!--  Table for the page heading                        -->
+
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | <a href="roll_sim.html">Rolling
+        Mill</a> | Part 4</p>
+        <h2 align="center">Rolling Mill Tutorial - Part 4</h2>
+
+        <p>The sinusoidal variations in exit thickness are due to the fact that
+        the rolls are not perfectly round, but contain various &quot;bumps&quot;
+        or imperfections. These imperfections are known as the <b>eccentricity</b>
+        of the roll. Eccentricity is a periodic signal, since it will repeat
+        each time the roll completes a revolution. This periodic signal can be
+        expressed as a Fourier series (i.e. in terms of sinewaves). For
+        simplicity, the eccentricity was modelled as a single sinewave in the
+        simulations (which corresponds to an elliptic roll).
+
+        <p>The model of the system can then be modified to include the effect of
+        eccentricity. The eccentricity signal <i>e</i> is defined such that a
+        positive value indicates that the roll is wider than normal. Thus, when
+        the roll is wider, the force on the roll will increase, since
+
+        <p align="center"><i>F</i> = <i>M</i> ( <i>h</i> - <i>s</i> + <i>e</i> )
+
+        <p>We then find that the exit thickness is given by
+
+        <p align="center"><img src="img35.gif" border="0" width="225" height="35">
+
+        <p>Note that the eccentricity signal is attenuated by a factor of <img src="img32.gif" border="0" align="middle" width="76" height="35">
+        in the uncontrolled, open-loop system (i.e. the effect of eccentricity
+        on the output is one third of the input value). The actual system is
+        shown in the diagram below.
+
+        <p align="center"><img src="rolling5a.gif" border="0" width="597" height="321">
+
+        <p>This has severe implications for the BISRA gauge, since the estimated
+        exit thickness is actually
+
+        <p align="center"><img src="img36.gif" border="0" width="140" height="51">
+
+        <p>So the controller thinks that the eccentricity variations are
+        disturbances in the output and compensates for them. This explains why
+        the eccentricity appears unattenuated on the output of the system.
+
+        <p>Next, we look at the use of a Kalman filter (another &quot;virtual
+        sensor&quot;, &quot;soft sensor&quot; or &quot;observer&quot;) to
+        estimate the eccentricity and remove it from the thickness measurement.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="roll_sim3.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Part 3</a></td>
+              <td align="center" width="33%"><a href="roll_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Rolling Mill</a></td>
+              <td align="center" width="33%"><a href="roll_sim5.html"><img src="../images/nextbutton.gif" border="0" alt="-&gt;" width="32" height="32"><br>
+                Next - Part 5</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

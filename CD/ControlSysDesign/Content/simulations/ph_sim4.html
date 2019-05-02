@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<table align="center" border="0" width="600" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="600"><a name="Top"></a>
+
+      <p align="left">You are here : <a href="../index.html" target="_top">Control
+      System Design - Index</a> | <a href="../simulation.html">Simulations</a> |
+      <a href="ph_sim.html">pH Simulation</a> | Part 4</p>
+      <h2 align="center">pH Control - Part 4</h2>
+      <h3>Multiple Tanks</h3>
+
+      <p>To overcome the flow variations and the valve hysteresis problems, we
+      use a 3 tank system where the tanks increase in volume. This setup is
+      shown in the diagram below.</p>
+
+      <p align="center"><img border="0" src="ph6.gif" width="599" height="310"></p>
+
+      <p>The influent flows into the first tank, which has a large valve to
+      neutralise most of the influent base. The set-point for this control
+      system is set to a pH of 9.6, since the purpose of the 3 tank system is to
+      attack the problem in steps.</p>
+
+      <p>The effluent from the first tank flows directly into the second tank,
+      which is 20 times larger. The second tank uses a valve that is 20 times
+      smaller than that used by the first tank. The set-point for this control
+      system is set to pH 8.3.</p>
+
+      <p>The effluent from the second&nbsp; tank flows directly into the
+      third&nbsp; tank, which is 20 times larger again. The third tank uses a
+      valve that is 20 times smaller than that used by the second tank (and thus
+      400 times smaller than the first tank). The set-point for this final tank
+      is a pH of 7.</p>
+
+      <p>This scheme takes into account the comparable magnitude of the error
+      sources. The first tank is relatively small, since it requires a large
+      valve to reduce the pH to 9.6. As the liquid flows through the tanks, the
+      variations reduce and the pH gets closer to 7. The final tank performs
+      only minor adjustments, since the second tank has reduced the pH to 8.3.
+      At this final stage, we are able to reduce the valve size and increase the
+      tank volume with no adverse effects.</p>
+
+      <p>Having 3 tanks is more expensive than a one tank scheme, but we will
+      see that the 3 tank system is extremely effective. Also, the consideration
+      of the magnitude of the errors ensures that each tank is no larger than it
+      needs to be.</p>
+
+      <p>For this simulation, we assume that the first tank has a volume of
+      83.67 <i>L</i>, and uses a valve which allows a maximum reagent flow rate
+      of 1.5 <i>L</i> / <i>min</i>. Also, the influent flow rate variations are
+      as before with the average flow to the level used in the last example (10 <i>L</i>/<i>min</i>),
+      and the random variations range uniformly between -1 <i>L</i>/<i>min</i>
+      and 1<i>L</i>/<i>min</i>.</p>
+      <h3>Java Applet Simulation</h3>
+
+      <p>Below is a Java applet which simulates the 3 tank pH control system.
+      The plots shown in the simulation are listed below:</p>
+      <div align="center">
+        <center>
+        <table border="1" cellpadding="5" cellspacing="0">
+          <tr>
+            <td>blue</td>
+            <td>influent pH</td>
+          </tr>
+          <tr>
+            <td>green</td>
+            <td>effluent concentration for the first (smallest) tank</td>
+          </tr>
+          <tr>
+            <td>red</td>
+            <td>effluent concentration for the second tank</td>
+          </tr>
+          <tr>
+            <td>purple</td>
+            <td>effluent concentration for the third (largest) tank</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+
+      <p>This process is extremely slow, so the time scale is accelerated
+      somewhat. There are two speeds at which to view the simulation. The <b><font color="#B00000">slow</font></b>
+      speed is the same as that used in the previous simulations, with a
+      horizontal scale of 2500 seconds per division. The <b><font color="#B00000">fast</font></b>
+      speed has 10000 simulated seconds passing for each real second of the
+      simulation, giving a horizontal scale of 20000 seconds per division. The
+      plot for the smallest tank loses a lot of information in the fast speed.</p>
+
+      <p>Pressing the &quot;Change Parameters&quot; button brings up the
+      parameters window allowing you to change the controller values, the
+      influent pH and the animation speed. The controller has been implemented
+      in the anti-windup form to avoid the effects of the saturation of the
+      valve. The animation speed can be adjusted as before.</p>
+
+      <p>Pressing the &quot;Reset&quot; at any time button resets the simulation
+      to its initial state. Also, the &quot;Start/Stop&quot; button allows you
+      to start and stop the simulation at will.</p>
+
+      <p>Finally, the pH meter can be attached to any of the tanks in the system
+      by clicking on the appropriate tank in the lower right hand corner of the
+      applet.</p>
+
+      <p>&nbsp;</p>
+      <applet code="pHControl.class" codebase="../applet/" width="600" height="300" align="center">
+        <param name="version" value="4">You don't seem to have a Java enabled browser.
+      </applet>
+
+      <p>&nbsp;</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td align="center"><b>Things to try</b></td>
+          <td align="center"><b>Things to notice</b></td>
+        </tr>
+        <tr>
+          <td>With the speed set to slow, observe the response of the three
+            tanks</td>
+          <td>Notice that the effluent pH for the smallest two tanks stays very
+            close to the set point (in steady state)</td>
+        </tr>
+        <tr>
+          <td>Set the speed to fast</td>
+          <td>Notice that the effluent pH from the third and largest tank stays
+            very close to 7 (after an initial transient)</td>
+        </tr>
+        <tr>
+          <td>Change the set-point for the second tank to something larger than
+            8.3 (such as 9)</td>
+          <td>Notice that the controller for the third tank can no longer
+            neutralise the base in the influent</td>
+        </tr>
+        <tr>
+          <td>Change the set-point for all tanks to a pH of 7</td>
+          <td>Note that the controller for the second tank cannot neutralise the
+            effect of the widely varying pH in the first tank's effluent</td>
+        </tr>
+      </table>
+
+      <p>The three tank system works well when the set-points are uniformly
+      spaced between a pH of 11 and 7. Note that a step of 1.3 in the
+      logarithmic pH scale corresponds approximately to a multiplicative factor
+      of 20 - hence the scaling of the tanks and their valves.</p>
+
+      <p>The third tank uses a very small control valve, which is designed to
+      make only the smallest corrections to the pH. If the pH of the liquid
+      coming into the third tank is too high, then the controller will be
+      neutralise the influent effectively, and the pH of the effluent will rise.
+      This comes directly from the saturation limits of the control valve.</p>
+
+      <p>Even though this simulation concludes the example, this is not the
+      final solution of the problem. There are many complex issues in industrial
+      pH control, which will not be discussed here.</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="ph_sim3.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Part 3</a></td>
+            <td align="center" width="33%"><a href="ph_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - pH Index</a></td>
+            <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixd-node1.html">Appendix
+        D</a> | Section D.1</p>
+        <h2 align="center">D. Properties of Continuous Time Riccati Equation</h2>
+        <h3>D.1 Solutions of the CTDRE</h3>
+        The following lemma gives a useful alternative expression for <b>P</b>(<i>t</i>).
+
+        <p><b>Lemma D.1</b>&nbsp;&nbsp; <i>The solution, </i><b>P</b>(<i>t</i>)<i>,
+        to the CTDRE (D.0.1), can be expressed as</i></p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><b>P</b>(<i>t</i>) = <b>N</b>(<i>t</i>) [<b>M</b>(<i>t</i>)]<sup>-1</sup></td>
+            <td width="10" align="right">(D.1.1)</td>
+          </tr>
+        </table>
+
+        <p><i>where <img border="0" src="appendixd-img4.gif" align="middle" width="94" height="18">
+        and <img border="0" src="appendixd-img5.gif" align="middle" width="90" height="16">
+        satisfy the following equation</i></p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img6.gif" width="285" height="41"></td>
+            <td width="10" align="right">(D.1.2)</td>
+          </tr>
+        </table>
+
+        <p><i>subject to</i></p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img7.gif" width="157" height="24"></td>
+            <td width="10" align="right">(D.1.3)</td>
+          </tr>
+        </table>
+
+        <p><b>Proof</b></p>
+
+        <p>We show that <b>P</b>(<i>t</i>), as defined above, satisfies the
+        CTDRE. We first have that</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img8.gif" width="301" height="42"></td>
+            <td width="10" align="right">(D.1.4)</td>
+          </tr>
+        </table>
+
+        <p>The derivative of [<b>M</b>(<i>t</i>)]<sup>-1</sup> can be computed
+        on noting that <b>M</b>(<i>t</i>)[<b>M</b>(<i>t</i>)]<sup>-1</sup>&nbsp;=&nbsp;<b>I</b>,
+        then</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="600">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img9.gif" width="311" height="38"></td>
+            <td width="10" align="right">(D.1.5)</td>
+          </tr>
+        </table>
+
+        <p>from where we obtain</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="600">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img10.gif" width="279" height="39"></td>
+            <td width="10" align="right">(D.1.6)</td>
+          </tr>
+        </table>
+
+        <p>Thus equation (D.1.4) can be used with (D.1.2) to yield</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img11.gif" width="360" height="61"></td>
+            <td width="10" align="right">(D.1.7)</td>
+          </tr>
+        </table>
+
+        <p>which shows that <b>P</b>(<i>t</i>) also satisfies (D.0.1), on using
+        (D.1.1).</p>
+
+        <p align="right"><img border="0" src="appendixc-img7.gif" width="39" height="14"></p>
+
+        <p>The matrix on the right hand side of (D.1.2), namely</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img12.gif" width="354" height="42"></td>
+            <td width="10" align="right">(D.1.8)</td>
+          </tr>
+        </table>
+
+        <p>is called the <em>Hamiltonian</em> matrix associated with this
+        problem. Next, note that (D.0.1) can be expressed in compact form as</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img13.gif" width="213" height="43"></td>
+            <td width="10" align="right">(D.1.9)</td>
+          </tr>
+        </table>
+
+        <p>Then, not surprisingly, solutions to the CTDRE, (D.0.1), are
+        intimately connected to the properties of the Hamiltonian matrix.</p>
+
+        <p>We first note that <b>H</b> has the following reflexive property</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img14.gif" width="325" height="40"></td>
+            <td width="10" align="right">(D.1.10)</td>
+          </tr>
+        </table>
+
+        <p>where <b>I<sub>n</sub></b> is the identity matrix in <img border="0" src="appendixd-img15.gif" align="middle" width="38" height="13">.</p>
+
+        <p>Recall that a similarity transformation preserves the eigenvalues,
+        thus the eigenvalues of <b>H</b> are the same as those of -<b>H</b><i><sup>T</sup></i>.
+        On the other hand, the eigenvalues of <b>H</b> and <b>H</b><i><sup>T</sup></i>
+        must be the same. Hence, the spectral set of <b>H</b> is the union of
+        two sets, <img border="0" src="appendixd-img16.gif" align="middle" width="18" height="16">
+        and <img border="0" src="appendixd-img17.gif" align="middle" width="18" height="16">,
+        such that if <img border="0" src="appendixd-img18.gif" align="middle" width="49" height="18">,
+        then <img border="0" src="appendixd-img19.gif" align="middle" width="61" height="18">.
+        We assume that <b>H</b> does not contain any eigenvalue on the imaginary
+        axis (note that it suffices, for this to occur, that (<b>A</b>, <b>B</b>)
+        be stabilizable and the pair <img border="0" src="appendixd-img20.gif" align="middle" width="57" height="27">
+        to have no undetectable poles on the stability boundary). In this case, <img border="0" src="appendixd-img16.gif" align="middle" width="18" height="16">
+        can be so formed that it contains only the eigenvalues of <b>H</b> which
+        lie in the open LHP. Then, there always exists a nonsingular
+        transformation <img border="0" src="appendixd-img21.gif" align="middle" width="84" height="23">
+        such that</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img22.gif" width="164" height="41"></td>
+            <td width="10" align="right">(D.1.11)</td>
+          </tr>
+        </table>
+
+        <p>where H<sub>s</sub> and H<sub>u</sub> are diagonal matrices with
+        eigenvalue sets <img border="0" src="appendixd-img16.gif" align="middle" width="18" height="16">
+        and <img border="0" src="appendixd-img17.gif" align="middle" width="21" height="16">,
+        respectively.</p>
+
+        <p>We can use <b>V</b> to transform the matrices <b>N</b>(<i>t</i>) and <b>M</b>(<i>t</i>),
+        to obtain</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center nowrap"><img border="0" src="appendixd-img23.gif" width="164" height="43"></td>
+            <td width="10" align="right">(D.1.12)</td>
+          </tr>
+        </table>
+
+        <p>Thus, (D.1.2) can be expressed in the equivalent form:</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img24.gif" width="223" height="43"></td>
+            <td width="10" align="right">(D.1.13)</td>
+          </tr>
+        </table>
+
+        <p>If we partition <b>V</b> in a form consistent with the matrix
+        equation (D.1.13), we have that</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img25.gif" width="125" height="40"></td>
+            <td width="10" align="right">(D.1.14)</td>
+          </tr>
+        </table>
+
+        <p>The solution to the CTDRE is then given by the following lemma.</p>
+
+        <p><b>Lemma D.2</b>&nbsp;&nbsp; <i>A solution for equation (D.0.1) is
+        given by</i></p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img26.gif" width="155" height="21"></td>
+            <td width="10" align="right">(D.1.15)</td>
+          </tr>
+        </table>
+
+        <p><i>where</i></p>
+
+        <p align="right"><img border="0" src="appendixd-img27.gif" width="549" height="94"></p>
+
+        <p><b>Proof</b></p>
+
+        <p>From (D.1.12) we have</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img28.gif" width="225" height="53"></td>
+            <td width="10" align="right">(D.1.19)</td>
+          </tr>
+        </table>
+
+        <p>Hence from (D.1.3)</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img29.gif" width="411" height="34"></td>
+            <td width="10" align="right">(D.1.20)</td>
+          </tr>
+        </table>
+
+        <p>or</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img30.gif" width="463" height="35"></td>
+            <td width="10" align="right">(D.1.21)</td>
+          </tr>
+        </table>
+
+        <p>or</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img31.gif" width="401" height="22"></td>
+            <td width="10" align="right">(D.1.22)</td>
+          </tr>
+        </table>
+
+        <p>Now from (D.1.10)</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img32.gif" width="439" height="102"></td>
+            <td width="10" align="right">(D.1.23)</td>
+          </tr>
+        </table>
+
+        <p>and the solution to (D.1.13) is</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img33.gif" width="164" height="49"></td>
+            <td width="10" align="right">(D.1.24)</td>
+          </tr>
+        </table>
+
+        <p>Hence</p>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" nowrap><img border="0" src="appendixd-img34.gif" width="362" height="24"></td>
+            <td width="10" align="right">(D.1.25)</td>
+          </tr>
+        </table>
+
+        <p>Substituing (D.1.25) into (D.1.23) gives the result.</p>
+
+        <p align="right"><img border="0" src="appendixc-img7.gif" width="39" height="14"></p>
+        <div align="center">
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="appendixd-node1.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Introduction</a></td>
+              <td align="center" width="33%"><a href="appendixd-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Appendix D</a></td>
+              <td align="center" width="33%"><a href="appendixd-node5.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section D.2</a></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

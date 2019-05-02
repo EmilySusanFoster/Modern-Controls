@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<!--  Table for the page heading                        -->
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | <a href="fourtank.html">Four Coupled Tanks</a> | Dynamics</p>
+        <h2 align="center">Four Coupled Tanks Case Study</h2>
+
+        <!------------------------------------------------>
+        <!--p><hr size=1 noshade="noshade"-->
+
+        <h3>Dynamics</h3>
+
+        <p>This apparatus consists of four interconnected water tanks, two pumps
+        and associated valves. The apparatus inputs are the supplies to the
+        pumps, v1 and v2, (voltages) and the outputs are the water levels in the
+        bottom two tanks, y1 and y2 (voltages). The flow to each tank is
+        adjusted using the associated valves.</p>
+
+        <p align="center"><img border="0" src="foutank1.gif" width="448" height="411"></p>
+
+        <p>The first step was to derive a mathematical model of the Four tank
+        laboratory apparatus.<br>
+        The derivation comes from physical data, which can be found in nearly
+        all chemical engineering<br>
+        textbooks and has been applied to the apparatus shown in Figure 1.</p>
+
+        <p>Mass balance for one of the tanks gives:</p>
+
+        <p align="center"><img border="0" src="fourtank-eq1.gif" width="100" height="37"></p>
+
+        <p>Where A denotes the cross section of the tank, h&gt;=0 the water
+        level and qin&gt;=0 and qout&gt;=0 the inflow and outflow of the tank,
+        respectively.&nbsp; In order to establish a relationship between output
+        and height Bernoulli’s Law is used and states that</p>
+
+        <p align="center"><img border="0" src="fourtank-eq2.gif" width="87" height="26"></p>
+
+        <p>where a is the cross section of the outlet hole and g is the
+        acceleration due to gravity.&nbsp; This relationship is roughly the
+        expected output due to height relationship although it does not take
+        into account any flow dynamics of the orifice.&nbsp; A common
+        multiplying factor for an orifice of the type being used in this
+        apparatus is
+
+        <p align="center">Coefficient of discharge k = 0.90 (in this case)
+
+        <p>We can therefor re-write Bernoulli’s Equation</p>
+
+        <p align="center"><img border="0" src="fourtank-eq3.gif" width="90" height="26"></p>
+
+        <p>The flow through each pump is split so that a proportion of the total
+        flow travels to each corresponding tank. This can be adjusted via one of
+        the two valves shown in Figure 1.&nbsp; Assuming that the flow generated
+        is proportional to the voltage applied to each pump, (change)v, and that
+        qT and qB are the flows going to the top and bottom tanks, respectfully
+        and by letting the parameter ? be determined by how the valves are set.
+        We are able to come up with the following relationship.</p>
+
+        <p align="center"><img border="0" src="fourtank-eq4.gif" width="487" height="29"></p>
+
+        <p>Combining all the equations for the interconnected Four Tank
+        Laboratory Apparatus we are able to<br>
+        come up with the following equations, which represent the physical
+        system.</p>
+
+        <p align="center"><img border="0" src="fourtank-eq5.gif" width="248" height="148"></p>
+
+        <p>All numbers associated with the coefficients relate to the pump or
+        tank that the particular coefficient is associated with.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="fourtank1.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Background</a></td>
+              <td align="center" width="33%"><a href="fourtank.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Four Tank Apparatus</a></td>
+              <td align="center" width="33%"><a href="fourtank3.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Dynamics</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 2</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="chapter2.html">Chapter
+        2</a> | Section 2.8</p>
+        <h2 align="center">Introduction to the Principles of Feedback Control</h2>
+        <!------------------------------------------------>
+
+        <h3 align="left">2.8 Trade-offs involved in choosing the feedback gain</h3>
+
+        <p>The preliminary insights of the previous two sections could seem to
+        imply that all that is needed to generate a controller is to put high
+        gain feedback around the plant. This is true in so far that it goes.
+        However, nothing in life is cost free and this also applies to the use
+        of high gain feedback.</p>
+
+        <p>For example, if a plant disturbance leads to a non-zero error <i>e</i>(<i>t</i>),
+        in <a href="sec2_7.html#fig:inv3">Figure 2.11</a>, then high gain
+        feedback will result in a very large control action <i>u</i>(<i>t</i>).
+        This may lie outside the available input range and thus invalidate the
+        solution.</p>
+
+        <p>Another potential problem with high gain feedback is that it is often
+        accompanied by the very substantial risk of instability.<a name="311">&nbsp;</a>
+        Instability is characterized by self sustaining (or growing)
+        oscillations. As an illustration, the reader will probably have
+        witnessed the high pitch whistling sound that is heard when a
+        loudspeaker is placed too close to a microphone. This is a manifestation
+        of instability resulting from excessive feedback gain. Tragic
+        manifestations of instability include aircraft crashes and the Chernobyl
+        disaster in which a runaway condition occurred.</p>
+
+        <p>Yet another potential disadvantage of high loop gain was hinted at in
+        <a href="sec2_3_4.html">subsection 2.3.4</a>. There we saw that
+        increasing the controller gain leads to increased sensitivity to
+        measurement noise.</p>
+
+        <p>In summary, high loop gain is desirable from many perspectives but it
+        is also undesirable when viewed from other perspectives. Thus, when
+        choosing the feedback gain one needs to make a conscious trade-off
+        between competing issues.</p>
+
+        <p>The previous discussion can be summarized in the following statement</p>
+        <div align="center">
+          <center>
+          <table border="1" width="90%" cellpadding="5" cellspacing="0">
+            <tr>
+              <td>High loop gain gives approximate inversion which is the
+                essence of control. However, in practice, the choice of feedback
+                gain is part of a complex web of design trade-offs.
+                Understanding and balancing these trade-offs is the essence of
+                control system design.</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="sec2_7.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section 2.7</a></td>
+              <td align="center" width="33%"><a href="chapter2.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Chapter 2</a></td>
+              <td align="center" width="33%"><a href="sec2_9.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section 2.9</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

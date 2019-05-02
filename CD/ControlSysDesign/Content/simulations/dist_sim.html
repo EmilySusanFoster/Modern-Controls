@@ -1,0 +1,117 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" width="600" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="600"><a name="Top"></a>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | Distillation Column Control</p>
+        <h2 align="center">Distillation Column Control</h2>
+        <h3>System Description</h3>
+
+        <p>The process of distillation should be familiar to most readers. The
+        basic concept is that we can separate a mixture of two pure liquids with
+        different boiling points by heating the mixture to a temperature between
+        their respective boiling points. For example, water boils at 100°C and
+        ethanol boils at around 83°C at atmospheric pressure. If we heat the
+        mixture to say 92°C, the ethanol will boil and be transformed into
+        vapour (which is collected and condensed) while the water will remain as
+        a liquid. This phenomenon is usually quantified by the relative
+        volatility of the two components.<br>
+        <br>
+        A distillation column is used to make this process more efficient. A
+        schematic diagram of a distillation column is shown below.</p>
+
+        <p align="center"><img src="distillation1.gif" border="0" width="428" height="449"></p>
+
+        <p>The distillation column itself is made up of a series of stacked
+        plates. A liquid feed containing the mixture of both liquids enters the
+        column at one or more points. The liquid flows over the plates, and
+        vapour bubbles up through the liquid via holes in the plates. As liquid
+        travels down the column, vapour comes in contact with it many times (due
+        to the multiple plates). This is the critical process in distillation
+        columns. The liquid and vapour phases are brought into contact because
+        as one molecule of higher boiling material converts from vapour to
+        liquid phase by energy release, another molecule of the low boiling
+        material utilises the free energy to convert from liquid to vapour
+        phase.</p>
+
+        <p>The base of the distillation column contains a large volume of
+        liquid, which is mostly the liquid with higher boiling point (in our
+        example, this would be water). Out of the base flows some of this
+        liquid, some of which is heated in the reboiler and returned to the
+        column. This is called the boilup, and is labeled <i>V</i>. The
+        remaining liquid is the bottom product, labeled <i>B</i>.</p>
+
+        <p>Some vapour escapes from the top of the column and is returned to a
+        liquid state in the condenser. Some of this liquid is returned to the
+        column as reflux <i>L</i>, and the remainder is the top product or
+        distillate <i>D</i>.</p>
+
+        <p>Vapour and liquid phases on a given plate approach thermal, pressure
+        and composition equilibrium to an extent depending upon the efficiency
+        of the plate.</p>
+        <h3 align="left">Overview of the Example</h3>
+
+        <p align="left">It is recommended that you follow the example in order,
+        but you may skip ahead if you wish:</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+              <td><a href="dist_sim1.html">Part 1</a></td>
+              <td>Decentralised PID Control</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+        <h3 align="left">Photos of the System</h3>
+
+        <p>You can view photos of real distillation columns <a href="distillation.html">here</a>.</p>
+        <h3>Acknowledgements</h3>
+
+        <p>Much of the work in preparing this example was done by other people. Julio
+        Rodreguez at the Department of Chemical Engineering, University of
+        Sydney provided the background information for the example. Greg
+        Adams at the Department of Electrical &amp; Computer Engineering,
+        University of Newcastle also provided a great deal of expertise in this
+        field.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous</td>
+              <td align="center" width="33%"><a href="../simulation.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Simulations</a></td>
+              <td align="center" width="33%"><a href="dist_sim1.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - PID Control</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

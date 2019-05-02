@@ -1,0 +1,517 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixb-node1.html">Appendix
+        B</a> | Section B.5</p>
+        <h2 align="center">B. Smith-McMillan Forms</h2>
+        <h3>B.6 Matrix fraction descriptions (MFD)</h3>
+
+        <p>A model structure that is related to the Smith-McMillan form is that
+        of a <b>matrix fraction description </b>(MFD). There are two types,
+        namely a right matrix fraction description (RMFD) and a left matrix
+        fraction description (LMFD). We recall that a matrix 
+        <!-- MATH: $\ensuremath{\mathbf{G}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img66.gif" alt="\ensuremath{\mathbf{G}(s)}" width="38" height="31">
+        and its Smith-McMillan form 
+        <!-- MATH: $\ensuremath{\mathbf{G^{SM}}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img67.gif" alt="\ensuremath{\mathbf{G^{SM}}(s)}" width="60" height="34">
+        are equivalent matrices. Thus, there exist two unimodular matrices, 
+        <!-- MATH: $\ensuremath{\mathbf{L}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img68.gif" alt="\ensuremath{\mathbf{L}(s)}" width="34" height="31">
+        and 
+        <!-- MATH: $\ensuremath{\mathbf{R}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img69.gif" alt="\ensuremath{\mathbf{R}(s)}" width="37" height="31">,
+        such that</p>
+
+
+          <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{G^{SM}}(s)} =\ensuremath{\mathbf{L}(s)}\ensuremath{\mathbf{G}(s)}\ensuremath{\mathbf{R}(s)}
+\end{equation} -->
+
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixb-img70.gif" alt="\begin{displaymath}
+\ensuremath{\mathbf{G^{SM}}(s)} =\ensuremath{\mathbf{L}(s)}\ensuremath{\mathbf{G}(s)}\ensuremath{\mathbf{R}(s)}
+\end{displaymath}" width="170" height="49"></td>
+            <td width="10" align="RIGHT">(B.6.1)</td>
+          </tr>
+        </table>
+
+        <p>This implies that if 
+        <!-- MATH: $\ensuremath{\mathbf{G}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img66.gif" alt="\ensuremath{\mathbf{G}(s)}" width="38" height="31">
+        is an <img align="MIDDLE" border="0" src="appendixb-img40.gif" alt="$m\times m$" width="51" height="28">
+        proper transfer function matrix, then there exist a <img align="MIDDLE" border="0" src="appendixb-img40.gif" alt="$m\times m$" width="51" height="28">
+        matrix 
+        <!-- MATH: $\ensuremath{\mathbf{\tilde{L}}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img71.gif" alt="\ensuremath{\mathbf{\tilde{L}}(s)}" width="34" height="37">
+        and an <img align="MIDDLE" border="0" src="appendixb-img40.gif" alt="$m\times m$" width="51" height="28">
+        matrix 
+        <!-- MATH: $\ensuremath{\mathbf{\tilde{R}}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img72.gif" alt="\ensuremath{\mathbf{\tilde{R}}(s)}" width="37" height="37">
+        such as</p>
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixb-img73.gif" alt="\begin{displaymath}
+\ensuremath{\mathbf{G}(s)} =\ensuremath{\mathbf{\tilde{L}...
+...remath{\mathbf{G^{SM}}(s)}\ensuremath{\mathbf{\tilde{R}}(s)}
+\end{displaymath}" width="171" height="49"></td>
+            <td width="10" align="RIGHT">(B.6.2)</td>
+          </tr>
+        </table>
+
+        <p>where 
+        <!-- MATH: $\ensuremath{\mathbf{\tilde{L}}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img71.gif" alt="\ensuremath{\mathbf{\tilde{L}}(s)}" width="34" height="37">
+        and 
+        <!-- MATH: $\ensuremath{\mathbf{\tilde{R}}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img72.gif" alt="\ensuremath{\mathbf{\tilde{R}}(s)}" width="37" height="37">
+        are, for example, given by</p>
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixb-img74.gif" alt="\begin{displaymath}\ensuremath{\mathbf{\tilde{L}}(s)} =[\ensuremath{\mathbf{L}(s...
+...th{\mathbf{\tilde{R}}(s)} =[\ensuremath{\mathbf{R}(s)} ]^{-1}
+\end{displaymath}" width="319" height="28"></td>
+            <td width="10" align="RIGHT">(B.6.3)</td>
+          </tr>
+        </table>
+
+        <p>We next define the following two matrices:</p>
+
+        <p align="right"><img border="0" src="appendixb-img75.gif" alt="\begin{align}\ensuremath{\mathbf{N}(s)} &amp;\stackrel{\rm\triangle}{=}\diag(\epsilo...
+...rel{\rm\triangle}{=}\diag(\delta_1(s),\ldots,\delta_r(s),1,\dots,1)
+\end{align}" width="407" height="53"></p>
+
+        <p align="left">where 
+        <!-- MATH: $\ensuremath{\mathbf{N}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img76.gif" alt="$ \ensuremath{\mathbf{N}(s)} $" width="37" height="31">
+        and 
+        <!-- MATH: $\ensuremath{\mathbf{D}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img77.gif" alt="$\ensuremath{\mathbf{D}(s)} $" width="37" height="31">
+        are <img align="MIDDLE" border="0" src="appendixb-img40.gif" alt="$m\times m$" width="51" height="28">
+        matrices. Hence, 
+        <!-- MATH: $\ensuremath{\mathbf{G^{SM}}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img67.gif" alt="\ensuremath{\mathbf{G^{SM}}(s)}" width="60" height="34">
+        can be written as</p>
+        <div align="CENTER">
+
+          <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{G^{SM}}(s)} = \ensuremath{\mathbf{N}(s)} [\ensuremath{\mathbf{D}(s)} ]^{-1}
+\end{equation} -->
+
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr valign="MIDDLE">
+              <td align="CENTER" nowrap><img src="appendixb-img78.gif" alt="\begin{displaymath}
+\ensuremath{\mathbf{G^{SM}}(s)} = \ensuremath{\mathbf{N}(s)} [\ensuremath{\mathbf{D}(s)} ]^{-1}
+\end{displaymath}" width="181" height="49"></td>
+              <td width="10" align="RIGHT">(B.6.6)</td>
+            </tr>
+          </table>
+        </div>
+      </center>
+
+      <p align="left">Combining (B.6.2) and (B.6.6), we can write</p>
+
+
+          <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{G}(s)} =\ensuremath{\mathbf{\tilde{L}}(s)}\ensuremath{\mathbf{N}(s)} [\ensuremath{\mathbf{D}(s)} ]^{-1}\ensuremath{\mathbf{\tilde{R}}(s)}
+=[\ensuremath{\mathbf{\tilde{L}}(s)}\ensuremath{\mathbf{N}(s)} ][[\ensuremath{\mathbf{\tilde{R}}(s)} ]^{-1}\ensuremath{\mathbf{D}(s)} ]^{-1}=\ensuremath{\mathbf{G_N}(s)} [\ensuremath{\mathbf{G_D}(s)} ]^{-1}
+
+\end{equation} -->
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="MIDDLE">
+          <td align="CENTER" nowrap><img src="appendixb-img79.gif" alt="\begin{displaymath}
+\ensuremath{\mathbf{G}(s)} =\ensuremath{\mathbf{\tilde{L}...
+...uremath{\mathbf{G_N}(s)} [\ensuremath{\mathbf{G_D}(s)} ]^{-1}
+\end{displaymath}" width="566" height="49"></td>
+        </tr>
+        <tr valign="MIDDLE">
+          <td align="right" nowrap>(B.6.7)</td>
+        </tr>
+      </table>
+
+      <p align="left">where</p>
+
+          <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{G_N}(s)}\stackrel{\rm\triangle}{=}\ensuremath{\mathbf{\tilde{L}}(s)}\ensuremath{\mathbf{N}(s)} ;\hspace{10mm}
+  \ensuremath{\mathbf{G_D}(s)}\stackrel{\rm\triangle}{=}[\ensuremath{\mathbf{\tilde{R}}(s)} ]^{-1}\ensuremath{\mathbf{D}(s)} 
+
+\end{equation} -->
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="MIDDLE">
+          <td align="CENTER" nowrap><img src="appendixb-img80.gif" alt="\begin{displaymath}
+\ensuremath{\mathbf{G_N}(s)}\stackrel{\rm\triangle}{=}\en...
+...math{\mathbf{\tilde{R}}(s)} ]^{-1}\ensuremath{\mathbf{D}(s)}
+\end{displaymath}" width="339" height="50"></td>
+          <td width="10" align="RIGHT">(B.6.8)</td>
+        </tr>
+      </table>
+
+      <p align="left">Equations (B.6.7) and (B.6.8) define what is known as a <em>right
+      matrix fraction description</em> (RMFD). It can be shown that<!-- MATH: $\ensuremath{\mathbf{G_D}(s)}$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img81.gif" alt="$\ensuremath{\mathbf{G_D}(s)} $" width="49" height="31">
+      is always column equivalent to a column proper matrix&nbsp; <img align="MIDDLE" border="0" src="appendixb-img82.gif" alt="$\ensuremath{\mathbf{P}(s)} $" width="36" height="31">
+      (see definition def:colprop). This implies that the degree of the pole
+      polynomial <i>p</i><sub><i>p</i></sub>(<i>s</i>) is equal to the sum of
+      the degrees of the columns of 
+        <!-- MATH: $\ensuremath{\mathbf{P}(s)}$ --><img align="MIDDLE" border="0" src="appendixb-img82.gif" alt="$\ensuremath{\mathbf{P}(s)} $" width="36" height="31">.
+      We also observe that the RMFD is not unique, since for any nonsingular <img align="MIDDLE" border="0" src="appendixb-img40.gif" alt="$m\times m$" width="51" height="28">
+      matrix <img align="MIDDLE" border="0" src="appendixb-img83.gif" alt="$\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Omega}}}(s)} $" width="36" height="31">,
+      we can write 
+        <!-- MATH: $\ensuremath{\mathbf{G}(s)}$ --><img align="MIDDLE" border="0" src="appendixb-img84.gif" alt="$ \ensuremath{\mathbf{G}(s)} $" width="38" height="31">
+      as</p>
+          <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{G}(s)} = \ensuremath{\mathbf{G_N}(s)}\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Omega}}}(s)} [\ensuremath{\mathbf{G_D}(s)}\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Omega}}}(s)} ]^{-1}
+\end{equation} -->
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="MIDDLE">
+          <td align="CENTER" nowrap><img src="appendixb-img85.gif" alt="\begin{displaymath}\ensuremath{\mathbf{G}(s)} = \ensuremath{\mathbf{G_N}(s)}\ens...
+...uremath{\mathbf{\ensuremath{\boldsymbol{\Omega}}}(s)} ]^{-1}
+\end{displaymath}" width="236" height="28"></td>
+          <td width="10" align="RIGHT">(B.6.9)</td>
+        </tr>
+      </table>
+
+      <p align="left">where 
+        <!-- MATH: $\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Omega}}}(s)}$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img83.gif" alt="$\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Omega}}}(s)} $" width="36" height="31">
+      is said to be a right common factor. When the only right common factors of 
+        <!-- MATH: $\ensuremath{\mathbf{G_N}(s)}$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img86.gif" alt="$\ensuremath{\mathbf{G_N}(s)} $" width="49" height="31">
+      and
+
+        <!-- MATH: $\ensuremath{\mathbf{G_D}(s)}$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img81.gif" alt="$\ensuremath{\mathbf{G_D}(s)} $" width="49" height="31">
+      are unimodular matrices then, from definition B.7 we have that 
+        <!-- MATH: $\ensuremath{\mathbf{G_N}(s)}$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img86.gif" alt="$\ensuremath{\mathbf{G_N}(s)} $" width="49" height="31">
+      and 
+        <!-- MATH: $\ensuremath{\mathbf{G_D}(s)}$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img81.gif" alt="$\ensuremath{\mathbf{G_D}(s)} $" width="49" height="31">
+      are right coprime. In this case, we say that the RMFD 
+        <!-- MATH: $(\ensuremath{\mathbf{G_N}(s)} ,\ensuremath{\mathbf{G_D}(s)} )$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img87.gif" alt="$(\ensuremath{\mathbf{G_N}(s)} ,\ensuremath{\mathbf{G_D}(s)} )$" width="115" height="31">
+      is <b>irreducible</b>. It is easy to see that when a RMFD is irreducible,
+      then
+      <ul>
+        <li>
+
+          <p align="left"><i>s </i>= <i>z</i> is a zero of 
+            <!-- MATH: $\ensuremath{\mathbf{G}(s)}$ -->
+          <img align="MIDDLE" border="0" src="appendixb-img84.gif" alt="$ \ensuremath{\mathbf{G}(s)} $" width="38" height="31">
+          if and only if 
+            <!-- MATH: $\ensuremath{\mathbf{G_N}(s)}$ -->
+          <img align="MIDDLE" border="0" src="appendixb-img86.gif" alt="$\ensuremath{\mathbf{G_N}(s)} $" width="49" height="31">
+          loses rank at <i>s </i>= <i>z</i>.
+        <li>
+
+          <p align="left"><i>s </i>= <i>p</i> is a pole of 
+            <!-- MATH: $\ensuremath{\mathbf{G}(s)}$ -->
+          <img align="MIDDLE" border="0" src="appendixb-img84.gif" alt="$ \ensuremath{\mathbf{G}(s)} $" width="38" height="31">
+          if and only if 
+            <!-- MATH: $\ensuremath{\mathbf{G_D}(s)}$ -->
+          <img align="MIDDLE" border="0" src="appendixb-img81.gif" alt="$\ensuremath{\mathbf{G_D}(s)} $" width="49" height="31">
+          is singular at <i>s </i>= <i>p</i>. This means that the pole
+          polynomial of
+  
+            <!-- MATH: $\ensuremath{\mathbf{G}(s)}$ -->
+          <img align="MIDDLE" border="0" src="appendixb-img84.gif" alt="$ \ensuremath{\mathbf{G}(s)} $" width="38" height="31">
+          is 
+            <!-- MATH: $p_p(s)=\det (\ensuremath{\mathbf{G_D}(s)} )$ -->
+          <img align="MIDDLE" border="0" src="appendixb-img88.gif" alt="$p_p(s)=\det (\ensuremath{\mathbf{G_D}(s)} )$" width="140" height="31">.
+      </ul>
+
+      <p align="left"><b>Remark 1.1</b>&nbsp;&nbsp; <i>A </i>left matrix
+      fraction description (LMFD) <i>can be built similarly with a different
+      grouping of the matrices in (B.6.7). Namely</i></p>
+            <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{G}(s)} =\ensuremath{\mathbf{\tilde{L}}(s)} [\ensuremath{\mathbf{D}(s)} ]^{-1}\ensuremath{\mathbf{N}(s)}\ensuremath{\mathbf{\tilde{R}}(s)}
+=[\ensuremath{\mathbf{D}(s)} [\ensuremath{\mathbf{\tilde{L}}(s)} ]^{-1}]^{-1}[\ensuremath{\mathbf{N}(s)}\ensuremath{\mathbf{\tilde{R}}(s)} ]=
+  [\ensuremath{\mathbf{\overline{G}_D}(s)} ]^{-1}\ensuremath{\mathbf{\overline{G}_N}(s)} 
+
+\end{equation} -->
+
+      <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr valign="MIDDLE">
+          <td align="CENTER" nowrap><img src="appendixb-img89.gif" alt="\begin{displaymath}\ensuremath{\mathbf{G}(s)} =\ensuremath{\mathbf{\tilde{L}}(s)...
+...line{G}_D}(s)} ]^{-1}\ensuremath{\mathbf{\overline{G}_N}(s)}
+\end{displaymath}" width="565" height="28"></td>
+        </tr>
+        <tr valign="MIDDLE">
+          <td align="CENTER" nowrap>
+
+            <p align="right">(B.6.10)</p>
+          </td>
+        </tr>
+      </table>
+
+      <p align="left">where</p>
+
+            <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{\overline{G}_N}(s)}\stackrel{\rm\triangle}{=}\ensuremath{\mathbf{N}(s)}\ensuremath{\mathbf{\tilde{R}}(s)} ;\hspace{10mm}
+  \ensuremath{\mathbf{\overline{G}_D}(s)}\stackrel{\rm\triangle}{=}\ensuremath{\mathbf{D}(s)} [\ensuremath{\mathbf{\tilde{L}}(s)} ]^{-1}
+
+\end{equation} -->
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="MIDDLE">
+          <td align="CENTER" nowrap><img src="appendixb-img90.gif" alt="\begin{displaymath}
+\ensuremath{\mathbf{\overline{G}_N}(s)}\stackrel{\rm\tria...
+...ath{\mathbf{D}(s)} [\ensuremath{\mathbf{\tilde{L}}(s)} ]^{-1}
+\end{displaymath}" width="339" height="50"></td>
+          <td width="10" align="RIGHT">(B.6.11)</td>
+        </tr>
+      </table>
+
+      <p align="left">The left and right matrix descriptions have been initially
+      derived starting from the Smith-McMillan form. Hence, the factors are
+      polynomial matrices. However, it is immediate to see that they provide a
+      more general description. In particular, 
+        <!-- MATH: $\ensuremath{\mathbf{G_N}(s)}$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img86.gif" alt="$\ensuremath{\mathbf{G_N}(s)} $" width="49" height="31">,
+
+        <!-- MATH: $\ensuremath{\mathbf{G_D}(s)}$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img81.gif" alt="$\ensuremath{\mathbf{G_D}(s)} $" width="49" height="31">,
+
+        <!-- MATH: $\ensuremath{\mathbf{\overline{G}_N}(s)}$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img91.gif" alt="$\ensuremath{\mathbf{\overline{G}_N}(s)} $" width="49" height="36">
+      and 
+        <!-- MATH: $\ensuremath{\mathbf{\overline{G}_N}(s)}$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img91.gif" alt="$\ensuremath{\mathbf{\overline{G}_N}(s)} $" width="49" height="36">
+      are generally matrices with rational entries. One possible way to obtain
+      this type of representation is to divide the two polynomial matrices
+      forming the original MFD, by the same (stable) polynomial. An example
+      summarizing the above concepts is considered next.</p>
+
+      <p align="left"><b>Example 1.2&nbsp;&nbsp; </b><i>Consider a</i><b> </b><img align="MIDDLE" border="0" src="appendixb-img92.gif" alt="$2\times 2$" width="39" height="28"><b>
+      </b><i>MIMO system having transfer function</i></p>
+            <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{G}(s)} =\begin{bmatrix}\displaystyle{\frac{4}{(s+1)(s+2)}} &
+ \displaystyle{\frac{-0.5}{s+1}}
+ \\[5mm]
+\displaystyle{\frac{1}{s+2}} & \displaystyle{\frac{2}{(s+1)(s+2)}}\end{bmatrix}
+  
+\end{equation} -->
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="MIDDLE">
+          <td align="CENTER" nowrap><img src="appendixb-img93.gif" alt="\begin{displaymath}
+\ensuremath{\mathbf{G}(s)} =\begin{bmatrix}\displaystyle{...
+...{1}{s+2}} &amp; \displaystyle{\frac{2}{(s+1)(s+2)}}\end{bmatrix}
+\end{displaymath}" width="280" height="130"></td>
+          <td width="10" align="RIGHT">(B.6.12)</td>
+        </tr>
+      </table>
+      <div align="left">
+        <table border="0" cellpadding="5" cellspacing="0" width="600">
+          <tr>
+            <td valign="top"><b>B.2.1</b></td>
+            <td valign="top"><i>Find the Smith-McMillan form by performing
+              elementary row and column operations.</i></td>
+          </tr>
+          <tr>
+            <td valign="top"><b>B.2.2</b></td>
+            <td valign="top"><i>Find the poles and zeros.</i></td>
+          </tr>
+          <tr>
+            <td valign="top"><b>B.2.3</b></td>
+            <td valign="top"><i>Build a RMFD for the model.</i></td>
+          </tr>
+        </table>
+      </div>
+
+      <p><b>Solution</b></p>
+      <table border="0" cellpadding="5" cellspacing="0" width="600">
+        <tr>
+          <td valign="top"><b>B.2.1</b></td>
+          <td valign="top"><i>We first compute its Smith-McMillan form by
+            performing elementary row and column operations. Referring to
+            equation (B.6.1), we have that</i>
+            <div align="CENTER">
+
+                <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{G^{SM}}(s)} =\ensuremath{\mathbf{L}(s)}\ensuremath{\mathbf{G}(s)}\ensuremath{\mathbf{R}(s)} =
+\begin{bmatrix}\displaystyle{\frac{1}{(s+1)(s+2)}} & \displaystyle{0} \\\displaystyle{0} & \displaystyle{\frac{s^2+3s+18}{(s+1)(s+2)}} \end{bmatrix}
+
+\end{equation} -->
+
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr valign="MIDDLE">
+                  <td align="CENTER" nowrap><img src="appendixb-img94.gif" alt="\begin{displaymath}
+\ensuremath{\mathbf{G^{SM}}(s)} =\ensuremath{\mathbf{L}(s...
+...} &amp; \displaystyle{\frac{s^2+3s+18}{(s+1)(s+2)}} \end{bmatrix}
+\end{displaymath}" width="424" height="104"></td>
+                  <td width="10" align="RIGHT">(B.6.13)</td>
+                </tr>
+              </table>
+            </div>
+
+            <p><i>with</i></p>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr valign="MIDDLE">
+                <td align="CENTER" nowrap><img src="appendixb-img95.gif" alt="\begin{displaymath}\ensuremath{\mathbf{L}(s)} = \begin{bmatrix}\displaystyle{\fr...
+...}} \\ [2mm] \displaystyle{0} &amp; \displaystyle{1} \end{bmatrix}
+\end{displaymath}" width="399" height="64"></td>
+                <td width="10" align="RIGHT">(B.6.14)</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top"><b>&nbsp;<br>
+            B.2.2</b></td>
+          <td valign="top">&nbsp;<br>
+            <i>We see that the observable and controllable part of the system
+            has zero and pole polynomials given by </i>
+
+                <!-- MATH: \begin{equation}
+p_z(s)=s^2+3s+18; \hspace{20mm}p_p(s)=(s+1)^2(s+2)^2
+\end{equation} -->
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr valign="MIDDLE">
+                <td align="CENTER" nowrap><img src="appendixb-img96.gif" alt="\begin{displaymath}p_z(s)=s^2+3s+18; \hspace{20mm}p_p(s)=(s+1)^2(s+2)^2
+\end{displaymath}" width="404" height="29"></td>
+                <td width="10" align="RIGHT">(B.6.15)</td>
+              </tr>
+            </table>
+
+            <p><i>which in turn implies that there are two transmission zeros,
+            located at 
+              <!-- MATH: $-1.5 \pm j3.97$ -->
+            <img align="MIDDLE" border="0" src="appendixb-img97.gif" alt="$-1.5 \pm j3.97$" width="91" height="28">,
+            and four poles, located at -1,-1,-2 and -2.</i></td>
+        </tr>
+        <tr>
+          <td valign="top"><b>&nbsp;<br>
+            B.2.3</b></td>
+          <td valign="top">&nbsp;<br>
+            <i>We can now build a RMFD using (B.6.2). We first notice that </i>
+
+                <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{\tilde{L}}(s)} =[\ensuremath{\mathbf{L}(s)} ]^{-1}=
+\begin{bmatrix}\displaystyle{4} & \displaystyle{0} \\[2mm] \displaystyle{s+1} & \displaystyle{\frac{1}{8}}
+ \end{bmatrix} ;\hspace{10mm}
+    \ensuremath{\mathbf{\tilde{R}}(s)} =[\ensuremath{\mathbf{R}(s)} ]^{-1}=
+\begin{bmatrix}\displaystyle{1} & -\displaystyle{\frac{s+2}{8}} \\[2mm] \displaystyle{0} & \displaystyle{0} \end{bmatrix}
+
+\end{equation} -->
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr valign="MIDDLE">
+                <td align="CENTER" nowrap><img src="appendixb-img98.gif" alt="\begin{displaymath}
+\ensuremath{\mathbf{\tilde{L}}(s)} =[\ensuremath{\mathbf{...
+...}} \\ [2mm] \displaystyle{0} &amp; \displaystyle{0} \end{bmatrix}
+\end{displaymath}" width="497" height="87"></td>
+              </tr>
+              <tr valign="MIDDLE">
+                <td align="CENTER" nowrap>
+
+                  <p align="right">(B.6.16)</p>
+                </td>
+              </tr>
+            </table>
+
+            <p align="left"><i>Then, using (B.6.6), with</i></p>
+                <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{N}(s)} =\begin{bmatrix}\displaystyle{1} & \displaystyle{0} \\[2mm]\displaystyle{0} & \displaystyle{s^2+3s+18}
+ \end{bmatrix}
+;\hspace{10mm}
+\ensuremath{\mathbf{D}(s)} =\begin{bmatrix}\displaystyle{(s+1)(s+2)} & \displaystyle{0} \\[2mm] \displaystyle{0} &
+  \displaystyle{(s+1)(s+2)}
+ \end{bmatrix}
+
+\end{equation} -->
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr valign="MIDDLE">
+                <td align="CENTER" nowrap><img src="appendixb-img99.gif" alt="\begin{displaymath}
+\ensuremath{\mathbf{N}(s)} =\begin{bmatrix}\displaystyle{...
+...displaystyle{0} &amp;
+\displaystyle{(s+1)(s+2)}
+\end{bmatrix}
+\end{displaymath}" width="510" height="75"></td>
+              </tr>
+              <tr valign="MIDDLE">
+                <td align="right" nowrap>(B.6.17)</td>
+              </tr>
+            </table>
+
+            <p><i>the RMFD is obtained from (B.6.7), (B.6.16) and (B.6.17),
+            leading to</i></p>
+
+                <!-- MATH: \begin{equation}
+\ensuremath{\mathbf{G_N}(s)} =\begin{bmatrix}\displaystyle{4} & \displaystyle{0} \\[2mm] \displaystyle{s+1} &
+\displaystyle{\frac{1}{8}} \end{bmatrix}
+\begin{bmatrix}\displaystyle{1} & \displaystyle{0} \\\displaystyle{0} & \displaystyle{s^2+3s+18}  \end{bmatrix}=
+\begin{bmatrix}\displaystyle{4} & \displaystyle{0} \\[2mm]\displaystyle{s+1} & \displaystyle{\frac{s^2+3s+18}{8}} \end{bmatrix}
+ 
+\end{equation} -->
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr valign="MIDDLE">
+                <td align="CENTER" nowrap><img src="appendixb-img100.gif" alt="\begin{displaymath}\ensuremath{\mathbf{G_N}(s)} =\begin{bmatrix}\displaystyle{4}...
+...tyle{s+1} &amp; \displaystyle{\frac{s^2+3s+18}{8}} \end{bmatrix}
+\end{displaymath}" width="456" height="69"></td>
+                <td width="10" align="RIGHT">(B.6.18)</td>
+              </tr>
+            </table>
+
+            <p><i>and</i></p>
+
+            <p><img align="right" border="0" src="appendixb-img101.gif" alt="\begin{align}\ensuremath{\mathbf{G_D}(s)} &amp;=\begin{bmatrix}\displaystyle{1} &amp; \d...
+...\\ &amp; \\ \displaystyle{0} &amp; \displaystyle{(s+1)(s+2)} \end{bmatrix}
+\end{align}" width="465" height="144"></td>
+        </tr>
+      </table>
+
+      <p><i>These can then be turned into proper transfer function matrices by
+      introducing common stable denominators.</i></p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="appendixb-node8.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Section B.5</a></td>
+            <td align="center" width="33%"><a href="appendixb-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Appendix B</a></td>
+            <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

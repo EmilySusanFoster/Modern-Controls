@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 6</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 6</p>
+        <h2 align="center">6. Classical PID Control</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p align="left">In this chapter we review a particular control structure
+        that has become almost universally used in industrial control. It is
+        based on a particular fixed structure controller family, the so-called,
+        PID controller family. They have proven to be robust in the control of
+        many important applications.</p>
+
+        <p align="left">The simplicity of these controllers is also their
+        weakness, since it limits the range of plants that they can control
+        satisfactorily. Indeed, there exists a set of unstable plants which
+        cannot even be stabilized with any member of the PID family.
+        Nevertheless, the surprising versatility of PID control (really, PID
+        control simply means: control with an up to second-order controller)
+        ensures continued relevance and popularity for this controller. It is
+        also important to view this second-order setting as a special case of
+        modern design methods, as presented, for example, in Chapters 7 and 15.
+        This chapter covers the classical approaches to PID design. This is done
+        due to the historical and practical significance of the methods and
+        their continued use in industry.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>PI and PID controllers are widely used in industrial control.<br>
+            &nbsp;</li>
+          <li>It has been empirically found that the PID structure often has
+            sufficient flexibility to yield excellent results in many
+            applications.<br>
+            &nbsp;</li>
+          <li>The basic term is the proportional term, <img align="BOTTOM" border="0" src="part2-img18.gif" alt="${\bf P}$" width="16" height="14">,
+            which cause a corrective control actuation proportional to the
+            error.<br>
+            &nbsp;</li>
+          <li>The integral term, <img align="BOTTOM" border="0" src="part2-img19.gif" alt="${\bf I}$" width="10" height="14">,
+            gives a correction proportional to the integral of the error. This
+            has the positive feature of ultimately ensuring that sufficient
+            control effort is applied to reduce the tracking error to zero.
+            However, integral action tends to have a destabilizing effect due to
+            the increased phase shift.<br>
+            &nbsp;</li>
+          <li>The derivative term, <img align="BOTTOM" border="0" src="part2-img20.gif" alt="${\bf D}$" width="17" height="14">,
+            gives a predictive capability yielding a control action proportional
+            to the rate of change of the error. This tends to have a stabilizing
+            effect but often leads to large control movements due to the
+            amplification of noise by the derivative action.<br>
+            &nbsp;</li>
+          <li>Various empirical tuning methods can be used to determine the PID
+            parameters for a given application. They should be considered as a
+            first guess in a search procedure. Attention should also be paid to
+            the PID structure. Systematic model-based procedures are covered in
+            later chapters.</li>
+        </ul>
+      </center>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="chapter5.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Chapter 5</a></td>
+            <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Book Contents</a></td>
+            <td align="center" width="33%"><a href="chapter7.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next - Chapter 7</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

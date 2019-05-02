@@ -1,0 +1,204 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<!--  Table for the page heading                        -->
+
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center">
+  <tr>
+    <td align="left" width="600">
+
+      <p align="left">You are here : <a href="../index.html" target="_top">Control
+      System Design - Index</a> | <a href="../simulation.html">Simulations</a> |
+      <a href="pend_sim.html">Inverted Pendulum</a> | Part 2</p>
+      <h2 align="center">Inverted Pendulum Tutorial - Part 2</h2>
+
+      <p>Before continuing, make sure you have read <a href="../chapters/chapter5.html">Chapter
+      5</a>.
+      <h3>Control Design</h3>
+
+      <p>The control of the inverted pendulum system is very hard. As a starting
+      point, consider proportional control and look at the resulting root locus.
+      For positive gains <i>K</i>, the root locus is:
+
+      <p align="center"><img src="rl1.gif" border="0" align="center" width="406" height="228">
+
+      <p>and for negative gains:
+
+      <p align="center"><img src="rl2.gif" border="0" align="center" width="396" height="230">
+
+      <p>Notice that in both these plots, there is a branch of the root-locus
+      that is always in the right half plane. Hence, no matter what the gain,
+      the system will always be unstable, so we instantly conclude that
+      proportional control is no good. We must do something to attract this
+      branch of the root locus back to the left half of the complex plane. PID
+      control will certainly not do this for us, since an integral term adds
+      another pole at the origin.
+
+      <p>The pole assignment control design method uses the Diophantine
+      equation. This equation is:
+
+      <p align="center"><i>L A</i> + <i>P B</i> = <i>A<sub>cl</sub></i>
+
+      <p>where <i>A</i> has degree <i>n</i> and <i>B</i> has degree at most <i>n</i>.
+      This equation can always be solved to give the controller <i>P</i> / <i>L</i>
+      for the plant <i>B</i> / <i>A</i> provided that <i>P</i> and <i>L</i> have
+      degree <i>n</i> - 1 and <i>A<sub>cl</sub></i> has degree 2<i>n</i> - 1.
+
+      <p>For the inverted pendulum, we have
+
+      <p align="center">&nbsp;
+      <table align="center" border="0">
+        <tr>
+          <td><i>A</i> = <i>s</i><sup>4</sup> - 20<i>s</i><sup>2</sup></td>
+        </tr>
+        <tr>
+          <td><i>B</i> = 2<i>s</i><sup>2</sup> - 20</td>
+        </tr>
+      </table>
+
+      <p>so we must choose <i>P</i> and <i>L</i> to have degree 3 and <i>A<sub>cl</sub></i>
+      to have degree 7. Now, set the desired closed-loop poles in <i>A<sub>cl</sub></i>
+      at
+
+      <p align="center">&nbsp;
+      <table align="center" border="0" cellpadding="10">
+        <tr>
+          <td>-10+3<i>j</i></td>
+          <td>-10-3<i>j</i></td>
+          <td>-10+3<i>j</i></td>
+          <td>-10-3<i>j</i></td>
+          <td>-0.5</td>
+          <td>-0.5</td>
+          <td>-0.5</td>
+        </tr>
+      </table>
+
+      <p>Solving for P and L using the Sylvester matrix, we get the following
+      coefficients for <i>P</i> and <i>L</i>:
+
+      <p align="center">&nbsp;
+      <table align="center" border="0" cellpadding="10">
+        <tr>
+          <td></td>
+          <td align="center"><i>s</i><sup>3</sup></td>
+          <td align="center"><i>s</i><sup>2</sup></td>
+          <td align="center"><i>s</i><sup>1</sup></td>
+          <td align="center"><i>s</i><sup>0</sup></td>
+        </tr>
+        <tr>
+          <td align="center"><i>P</i></td>
+          <td align="center">1690.5</td>
+          <td align="center">7213.0</td>
+          <td align="center">-472.79</td>
+          <td align="center">-74.256</td>
+        </tr>
+        <tr>
+          <td align="center"><i>L</i></td>
+          <td align="center">1</td>
+          <td align="center">41.5</td>
+          <td align="center">-2682.3</td>
+          <td align="center">-8278.9</td>
+        </tr>
+      </table>
+
+      <p>The root locus for the entire system is shown below.
+
+      <p align="center"><img src="rl3.gif" border="0" align="center" width="477" height="381">
+
+      <p>Magnifying:
+
+      <p align="center"><img src="rl4.gif" border="0" align="center" width="474" height="379">
+
+      <p>Note that the controller has introduced zeros at -4.3290, 0.1366 and
+      -0.0743 and poles at -75.5518, 37.0124 and -2.9606 : i.e. both the
+      controller and the plant have an unstable pole and a non-minimum phase
+      zero. We would thus conclude that the controller is not
+      &quot;sensible&quot;, since it is not very robust. To illustrate this, try
+      altering the controller in the following JAVA applet. This controller is
+      very sensitive to noise due to its high gain (just look at the response in
+      the presence of noise). If the system goes unstable and the angle
+      approaches infinity, the pendulum will not be drawn (due to an interesting
+      &quot;feature&quot; in JAVA's Math.sin), but the cart will still move
+      around. To change the simulation parameters, press the &quot;Change
+      Parameters&quot; button and you will be presented with a new window which
+      asks you for various parameters, such as set point, noise level and the
+      transfer function of the controller. The top row of numbers in this
+      transfer function are the coefficients in <i>P</i> (starting with the
+      coefficient of <i>s</i><sup>3</sup>) and the bottom row of numbers are the
+      coefficients in <i>L</i>. You can change the position set point by simply
+      typing in a different number (although I recommend steps of only 0.1m).
+
+      <p>You should try altering the noise level to see the effect of
+      measurement noise. (As a technical note, the noise level is 10 times the
+      peak amplitude of the noise). The scale of the graph is such that each
+      vertical division represents 0.4m. If the simulation should become
+      unstable, press the &quot;Reset&quot; button. Pressing the
+      &quot;Start&quot; button will start the simulation, and pressing
+      &quot;Stop&quot; with stop it. You can try to come up with a better
+      controller using to pole assignment method. The blue plot is the cart
+      position and the green plot is the pendulum angle.
+
+      <p>&nbsp;</p>
+      <applet code="InvertedPendulum.class" codebase="../applet/" width="600" height="300" align="CENTER">
+        <param name="version" value="1">You don't seem to have a Java enabled browser.
+      </applet>
+
+      <p>&nbsp;</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td align="center"><b>Things to try</b></td>
+          <td align="center"><b>Things to notice</b></td>
+        </tr>
+        <tr>
+          <td>Change the noise level to 1, 0.1 and 0</td>
+          <td>The pendulum jerks around much more with the higher noise level.</td>
+        </tr>
+        <tr>
+          <td>Change the controller to achieve a better response with less
+            overshoot</td>
+          <td>N/A</td>
+        </tr>
+      </table>
+
+      <p>As you may have noticed, the controller is not very good at controlling
+      the cart position. Note particularly the 600% overshoot and undershoot in
+      the response. Again, you might wonder whether this is due to poor control
+      design or whether it is a fundamental constraint (you may wish to look at
+      the inverted pendulum example in <a href="../chapters/chapter13.html">Chapter
+      13</a>). You should be able to realise now that this is fundamental, and
+      due to the nature of the system (i.e. a non-minimum phase zero and an
+      unstable pole).
+
+      <p>Next, we will examine what can be done if we measure angle as well as
+      cart position.</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="pend_sim1.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Part 1</a></td>
+            <td align="center" width="33%"><a href="pend_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Inverted Pendulum</a></td>
+            <td align="center" width="33%"><a href="pend_sim3.html"><img src="../images/nextbutton.gif" border="0" alt="&gt;" width="32" height="32"><br>
+              Next - Part 3</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

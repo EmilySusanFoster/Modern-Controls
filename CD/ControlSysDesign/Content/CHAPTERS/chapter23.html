@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 23</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 23</p>
+        <h2 align="center">23. Model Predictive Control</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>As mentioned in Chapter 11, all real world control problems are
+        subject to constraints of various types. The most common constraints are
+        actuator constraints (amplitude and slew rate limits). In addition, many
+        problems also have constraints on state variables (e.g. maximal
+        pressures that cannot be exceeded, minimum tank levels etc).</p>
+
+        <p>In many design problems, these constraints can be ignored, at least
+        in the initial design phase. However, in other problems, these
+        constraints are an inescapable part of the problem formulation since the
+        system operates near a constraint boundary. Indeed, in many process
+        control problems the optimal steady state operating point is frequently
+        at a constraint boundary. In these cases, it is desirable to be able to
+        carry out the design so as to include the constraints from the
+        beginning.</p>
+
+        <p>Chapter 11 described methods for dealing with constraints based on
+        anti-windup strategies. These are probably adequate for simple problems
+        - especially SISO problems. Also, these methods can be extended to
+        certain MIMO problems as we shall see later in Chapter 25. However, in
+        more complex MIMO problems - especially those having both input and
+        state constraints, it is desirable to have a more formal mechanism for
+        dealing with constraints in MIMO control system design.</p>
+
+        <p>We describe one such mechanism here based on Model Predictive
+        Control. This has actually been a major success story in the application
+        of modern control. More than 2,000 applications of this method have been
+        reported in the literature - predominantly in the petrochemical area.
+        Also, the method is being increasingly used in electromechanical control
+        problems as control systems push constraint boundaries. Its main
+        advantages are:</p>
+        <ul>
+          <li>it provides a &quot;one-stop-shop&quot; for MIMO control in the
+            presence of constraints,</li>
+          <li>it is one of the few methods that allow one to treat state
+            constraints, and</li>
+          <li>several commercial packages are available which give industrially
+            robust versions of the algorithms aimed at chemical process control.</li>
+        </ul>
+
+        <p>Here we will give a brief introduction to the method reflecting the
+        authors' experience. One of us (Graebe) has considerable practical
+        experience with mpc in his industry where it is credited with enabling
+        very substantial annual financial savings through improved control
+        performance.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>MPC provides a systematic procedure for dealing with constraints
+            (both input and state) in MIMO control problems<br>
+            &nbsp;</li>
+          <li>It has been widely used in industry.<br>
+            &nbsp;</li>
+          <li>Remarkable properties of the method can be established, e.g.
+            global asymptotic stability.</li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="chapter22.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Chapter 22</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><a href="chapter24.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Chapter 24</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>

@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixc-node1.html">Appendix
+        C</a> | Section C.6</p>
+        <h2 align="center">C. Results From Analytic Function Theory</h2>
+        <h3>C.6 Analytic functions</h3>
+
+        <p><b>Definition 1.2</b>&nbsp;&nbsp; <i>A function</i> <i>f</i>(<i>z</i>)
+        <i>is said to be analytic in a domain D, if f has a continuous
+        derivative in D.</i></p>
+
+        <p align="right">
+
+
+        <!-- MATH: $\Box \Box \Box$ --><img width="39" height="14" align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $"></p>
+
+        <p><b>Theorem 1.6</b>&nbsp;&nbsp; <i>If
+  
+          <!-- MATH: $w=f(z)=u+jv$ -->
+        w&nbsp;</i>=&nbsp;<i>f</i>(<i>z</i>)&nbsp;=&nbsp;<i>u&nbsp;</i>+&nbsp;<i>jv
+        is analytic in D, then u and v have continuous partial derivatives
+        satisfying the Cauchy-Riemman conditions.</i></p>
+
+            <!-- MATH: \begin{equation}
+\frac{\partial u}{\partial x}=\frac{\partial v }{\partial y},
+\hspace{20mm}\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img width="238" height="42" src="appendixc-img45.gif" alt="\begin{displaymath}\frac{\partial u}{\partial x}=\frac{\partial v }{\partial y},...
+...}\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}
+\end{displaymath}"></td>
+            <td width="10" align="RIGHT">(C.6.1)</td>
+          </tr>
+        </table>
+
+        <p><i>Furthermore</i></p>
+
+            <!-- MATH: \begin{equation}
+\frac{\partial w}{\partial z}=\frac{\partial u}{\partial
+x}+j\frac{\partial v}{\partial x}= \frac{\partial v}{\partial
+y}+j\frac{\partial v}{\partial x}= \frac{\partial u}{\partial
+x}-j\frac{\partial u}{\partial y}= \frac{\partial v}{\partial
+y}-j\frac{\partial u}{\partial y}
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img width="390" height="42" src="appendixc-img46.gif" alt="\begin{displaymath}\frac{\partial w}{\partial z}=\frac{\partial u}{\partial
+x}+...
+...\frac{\partial v}{\partial
+y}-j\frac{\partial u}{\partial y}
+\end{displaymath}"></td>
+            <td width="10" align="RIGHT">(C.6.2)</td>
+          </tr>
+        </table>
+
+        <p><b>Proof</b></p>
+
+        <p>Let <i>z</i><sub>0</sub> be a fixed point in <i>D</i> and let 
+        <!-- MATH: $\Delta\omega=f(z_0+\Delta
+z)-f(z_0)$ -->
+        <img width="181" height="31" align="MIDDLE" border="0" src="appendixc-img47.gif" alt="$\Delta\omega=f(z_0+\Delta
+z)-f(z_0)$">. Since <i>f</i> is analytic, we have</p>
+          <!-- MATH: \begin{equation}
+\Delta\omega=\gamma \Delta z+\epsilon \Delta z; \hspace{20mm}\gamma\stackrel{\rm\triangle}{=}f'(z_0)
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img width="290" height="30" src="appendixc-img48.gif" alt="\begin{displaymath}\Delta\omega=\gamma \Delta z+\epsilon \Delta z; \hspace{20mm}\gamma\stackrel{\rm\triangle}{=}f'(z_0)
+\end{displaymath}"></td>
+            <td width="10" align="RIGHT">(C.6.3)</td>
+          </tr>
+        </table>
+
+        <p>where 
+        <!-- MATH: $\gamma=a+jb$ -->
+        <img width="76" height="29" align="MIDDLE" border="0" src="appendixc-img49.gif" alt="$\gamma=a+jb$">
+        and <img width="10" height="14" align="BOTTOM" border="0" src="appendixc-img50.gif" alt="$\epsilon$">
+        goes to zero as |<i>z</i><sub>0</sub>| goes to zero. Then</p>
+
+          <!-- MATH: \begin{equation}
+\Delta u +j\Delta v=(a+jb)(\Delta x +j\Delta y)+
+(\epsilon_1+j\epsilon_2)(\Delta x +j\Delta y)
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img width="398" height="28" src="appendixc-img51.gif" alt="\begin{displaymath}\Delta u +j\Delta v=(a+jb)(\Delta x +j\Delta y)+
+(\epsilon_1+j\epsilon_2)(\Delta x +j\Delta y)
+\end{displaymath}"></td>
+            <td width="10" align="RIGHT">(C.6.4)</td>
+          </tr>
+        </table>
+
+        <p>So</p>
+          <!-- MATH: \begin{eqnarray}
+\Delta u&=&a\Delta x-b\Delta y+\epsilon_1\Delta x-\epsilon_2\Delta y\\
+\Delta v&=&b\Delta x+a\Delta y+\epsilon_2\Delta x+\epsilon_1\Delta y
+
+\end{eqnarray} -->
+
+        <table cellpadding="0" width="100%" border="0" cellspacing="0">
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT"><img width="26" height="15" align="BOTTOM" border="0" src="appendixc-img52.gif" alt="$\displaystyle \Delta u$"></td>
+            <td align="CENTER" nowrap>=</td>
+            <td align="LEFT" nowrap><img width="192" height="29" align="MIDDLE" border="0" src="appendixc-img53.gif" alt="$\displaystyle a\Delta x-b\Delta y+\epsilon_1\Delta x-\epsilon_2\Delta y$"></td>
+            <td width="10" align="RIGHT">(C.6.5)</td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT"><img width="25" height="15" align="BOTTOM" border="0" src="appendixc-img54.gif" alt="$\displaystyle \Delta v$"></td>
+            <td align="CENTER" nowrap>=</td>
+            <td align="LEFT" nowrap><img width="192" height="29" align="MIDDLE" border="0" src="appendixc-img55.gif" alt="$\displaystyle b\Delta x+a\Delta y+\epsilon_2\Delta x+\epsilon_1\Delta y$"></td>
+            <td width="10" align="RIGHT">(C.6.6)</td>
+          </tr>
+        </table>
+
+        <p>Thus in the limit, we can write</p>
+          <!-- MATH: \begin{equation}
+du=adx-bdy; \hspace{10mm}dv=bdx-ady
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="00" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img width="265" height="27" src="appendixc-img56.gif" alt="\begin{displaymath}du=adx-bdy; \hspace{10mm}dv=bdx-ady
+\end{displaymath}"></td>
+            <td width="10" align="RIGHT">(C.6.7)</td>
+          </tr>
+        </table>
+
+        <p>or</p>
+
+          <!-- MATH: \begin{equation}
+\frac{\partial u }{\partial x}=a=-\frac{\partial v }{\partial y }, \hspace{10mm}
+\frac{\partial  u}{\partial  y}=-b=-\frac{\partial v }{\partial x }
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img width="274" height="42" src="appendixc-img57.gif" alt="\begin{displaymath}\frac{\partial u }{\partial x}=a=-\frac{\partial v }{\partial...
+...c{\partial u}{\partial y}=-b=-\frac{\partial v }{\partial x }
+\end{displaymath}"></td>
+            <td width="10" align="RIGHT">(C.6.8)</td>
+          </tr>
+        </table>
+
+        <p align="right">
+
+
+        <!-- MATH: $\Box \Box \Box$ --><img width="39" height="14" align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $"></p>
+
+        <p>Actually most functions that we will encounter will be analytic,
+        provided the derivative exists. We illustrate this with some examples.</p>
+
+        <p><b>Example C.1&nbsp;&nbsp; </b><i>Consider the function f</i>(<i>z</i>)&nbsp;=&nbsp;<i>z</i><sup>2</sup><i>.
+        Then</i></p>
+
+            <!-- MATH: \begin{equation}
+f(z)=(x+jy)^2=x^2-y^2+j(2xy)=u+j v
+\end{equation} -->
+
+        <table width="100%" align="CENTER">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><i>f</i>(<i>z</i>)&nbsp;=&nbsp;(<i>x&nbsp;</i>+&nbsp;<i>jy</i>)<sup>2</sup>&nbsp;=&nbsp;<i>x</i><sup>2</sup>&nbsp;-&nbsp;<i>y</i><sup>2</sup>&nbsp;+&nbsp;<i>j</i>(2<i>xy</i>)&nbsp;=&nbsp;<i>u&nbsp;</i>+&nbsp;<i>j
+              v</i></td>
+            <td width="10" align="RIGHT">(C.6.9)</td>
+          </tr>
+        </table>
+
+        <p><i>The partial derivatives are</i></p>
+
+            <!-- MATH: \begin{equation}
+\frac{\partial u}{\partial x}=2x,\hspace{10mm}
+\frac{\partial v}{\partial x}=2y, \hspace{10mm}
+\frac{\partial u}{\partial y}=-2y,\hspace{10mm}
+\frac{\partial v}{\partial y}=2x
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img width="407" height="42" src="appendixc-img58.gif" alt="\begin{displaymath}\frac{\partial u}{\partial x}=2x,\hspace{10mm}
+\frac{\partia...
+...artial y}=-2y,\hspace{10mm}
+\frac{\partial v}{\partial y}=2x
+\end{displaymath}"></td>
+            <td width="10" align="RIGHT">(C.6.10)</td>
+          </tr>
+        </table>
+
+        <p><i>Hence the function is clearly analytic.</i></p>
+
+        <p><b>Example C.2&nbsp;&nbsp; </b><i>Consider f</i>(<i>z</i>)&nbsp;=&nbsp;|<i>z</i>|<b>.</b><i>
+        This function is not analytic because d</i>|<i>z</i>|<i> is a real
+        quantity and hence
+          <!-- MATH: $\frac{d|z|}{dz}$ -->
+        <img width="28" height="40" align="MIDDLE" border="0" src="appendixc-img59.gif" alt="$\frac{d\vert z\vert}{dz} $">
+        will depend on direction of z</i>.</p>
+
+        <p><b>Example C.3&nbsp;&nbsp; </b><i>Consider a rational function of the
+        form:</i></p>
+
+            <!-- MATH: \begin{equation}
+W(z)=K\frac{(z-\beta_1)(z-\beta_2)\cdots (z-\beta_m)}
+{(z-\alpha_1)(z-\alpha_2)\cdots (z-\alpha_n)}=\frac{N(z)}{D(z)}
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img border="0" src="appendixc-img60.gif" width="338" height="45"></td>
+            <td width="10" align="RIGHT">(C.6.11)</td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap>&nbsp;</td>
+            <td width="10" align="RIGHT">&nbsp;</td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><b><img width="295" height="45" src="appendixc-img61.gif" alt="\begin{displaymath}\frac{\partial W}{\partial z}=\frac{1}{D^2(z)}
+\left[ D(z)\f...
+...)}{\partial z}-N(z)
+\frac{\partial D(z)}{\partial z} \right]
+\end{displaymath}"></b></td>
+            <td width="10" align="RIGHT">(C.6.12)</td>
+          </tr>
+        </table>
+
+        <p>These derivatives clearly exist, save when <i>D&nbsp;</i>=&nbsp;0,
+        i.e. at the poles of <i>W</i>(<i>z</i>).</p>
+
+        <p><b>Example C.4&nbsp;&nbsp; </b><i>Consider the same function </i><i>W</i>(<i>z</i>)<i>
+        defined in (C.6.11). Then</i></p>
+
+            <!-- MATH: \begin{equation}
+\frac{\partial \ln (W)}{\partial z}=\frac{1}{N(z)D(z)}
+\left[ D(z)\frac{\partial N(z)}{\partial z}-N(z)
+\frac{\partial D(z)}{\partial z} \right]=
+\frac{1}{N(z)}\frac{\partial N(z)}{\partial z}-
+\frac{1}{D(z)}\frac{\partial D(z)}{\partial z}
+
+\end{equation} -->
+
+        <table width="100%" align="CENTER">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img width="566" height="45" src="appendixc-img62.gif" alt="\begin{displaymath}\frac{\partial \ln (W)}{\partial z}=\frac{1}{N(z)D(z)}
+\left...
+...{\partial z}-
+\frac{1}{D(z)}\frac{\partial D(z)}{\partial z}
+\end{displaymath}"></td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td align="right" nowrap>(C.6.13)</td>
+          </tr>
+        </table>
+
+        <p>Hence, 
+        <!-- MATH: $\ln (W(z))$ -->
+        <img width="67" height="31" align="MIDDLE" border="0" src="appendixc-img63.gif" alt="$\ln (W(z))$">
+        is analytic, save at the poles and zeros of <i>W</i>(<i>z</i>).</p>
+        <div align="center">
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="appendixc-node11.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section C.5</a></td>
+              <td align="center" width="33%"><a href="appendixc-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Appendix C</a></td>
+              <td align="center" width="33%"><a href="appendixc-node14.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section C.7</a></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </div>
+
+  <p>&nbsp;</p>
+</center>
+
+</body>
+
+</html>

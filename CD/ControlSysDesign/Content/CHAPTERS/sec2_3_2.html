@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 2</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="chapter2.html">Chapter
+        2</a> | Section 2.3.2</p>
+        <h2 align="center">Introduction to the Principles of Feedback Control</h2>
+        <!------------------------------------------------>
+
+        <h3 align="left">2.3.2 Modeling</h3>
+
+        <p>To make progress on the control system design problem as set out
+        above, it is first necessary to gain an understanding of how the process
+        operates. This understanding is typically expressed in the form of a
+        mathematical model which describes the steady state and dynamic behavior
+        of the process. To construct such a model we first define relevant
+        process variables. Thus, we introduce:</p>
+        <table>
+          <tr>
+            <td align="right" width="20"></td>
+            <td align="RIGHT">
+              <!-- MATH: $h^{*}\quad$ -->
+              <img align="BOTTOM" border="0" src="img4.gif" alt="$h^{*}\quad $" width="42" height="18"></td>
+            <td align="CENTER">:</td>
+            <td align="LEFT">commanded level of steel in mould</td>
+          </tr>
+          <tr>
+            <td align="right" width="20">&nbsp;</td>
+            <td align="RIGHT"><img align="MIDDLE" border="0" src="img5.gif" alt="$h(t)\quad $" width="56" height="37"></td>
+            <td align="CENTER">:</td>
+            <td align="LEFT">actual level of steel in mould</td>
+          </tr>
+          <tr>
+            <td align="right" width="20"></td>
+            <td align="RIGHT"><img align="MIDDLE" border="0" src="img6.gif" alt="$v(t)\quad $" width="54" height="37"></td>
+            <td align="CENTER">:</td>
+            <td align="LEFT">valve position</td>
+          </tr>
+          <tr>
+            <td align="right" width="20"></td>
+            <td align="RIGHT">
+              <!-- MATH: $\sigma(t)\quad$ -->
+              <img align="MIDDLE" border="0" src="img7.gif" alt="$\sigma(t)\quad $" width="56" height="37"></td>
+            <td align="CENTER">:</td>
+            <td align="LEFT">casting speed</td>
+          </tr>
+          <tr>
+            <td align="right" width="20"></td>
+            <td align="RIGHT">
+              <!-- MATH: $q_{in}(t)\quad$ -->
+              <img align="MIDDLE" border="0" src="img8.gif" alt="$q_{in}(t)\quad $" width="67" height="37"></td>
+            <td align="CENTER">:</td>
+            <td align="LEFT">inflow of matter into the mould</td>
+          </tr>
+          <tr>
+            <td align="right" width="20"></td>
+            <td align="RIGHT">
+              <!-- MATH: $q_{out}(t)\quad$ -->
+              <img align="MIDDLE" border="0" src="img9.gif" alt="$q_{out}(t)\quad $" width="73" height="37"></td>
+            <td align="CENTER">:</td>
+            <td align="LEFT">outflow of matter from the mould.</td>
+          </tr>
+        </table>
+
+        <p>Physics suggests that the mould level will be proportional to the
+        integral of the difference between in- and outflow, i.e.</p>
+        <div align="CENTER">
+
+          <!-- MATH: \begin{equation}
+h(t)=\int_{-\infty}^t \left( q_{in}(\tau)-q_{out}(\tau)\right) d\tau
+\end{equation} -->
+
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr valign="MIDDLE">
+              <td align="CENTER" nowrap><img src="img10.gif" alt="\begin{displaymath}h(t)=\int_{-\infty}^t \left( q_{in}(\tau)-q_{out}(\tau)\right) d\tau
+\end{displaymath}" width="253" height="47"></td>
+              <td width="10" align="RIGHT">(2.3.1)</td>
+            </tr>
+          </table>
+        </div>
+
+        <p>where we have assumed a unit cross-section of the mould for
+        simplicity. We also assume, again for simplicity, that the measurements
+        of valve position, <i>v</i>(<i>t</i>), and casting speed, <img align="middle" border="0" src="img11.gif" alt="$\sigma(t)$" width="37" height="37">,
+        are calibrated such that they actually indicate the corresponding in and
+        outflows:</p>
+        <div align="CENTER">
+          <img src="img12.gif" alt="\begin{eqnarray*}v(t) &amp;=&amp;q_{in}(t)\\
+\sigma(t) &amp;=&amp;q_{out}(t)
+\end{eqnarray*}" width="127" height="61">
+        </div>
+
+        <p>Hence, the process model becomes</p>
+        <div align="CENTER">
+
+          <!-- MATH: \begin{equation}
+h(t)=\int_{-\infty}^t\left(v(\tau)-\sigma(\tau)\right)d\tau
+\end{equation} -->
+
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr valign="MIDDLE">
+              <td align="CENTER" nowrap><img src="img13.gif" alt="\begin{displaymath}h(t)=\int_{-\infty}^t\left(v(\tau)-\sigma(\tau)\right)d\tau
+\end{displaymath}" width="225" height="47"></td>
+              <td width="10" align="RIGHT">(2.3.2)</td>
+            </tr>
+          </table>
+        </div>
+
+        <p>The casting speed can be measured fairly accurately, but mould level
+        sensors are typically prone to high frequency measurement noise which we
+        take into account by introducing an additive spurious signal <i>n</i>(<i>t</i>),
+        i.e.</p>
+        <div align="CENTER">
+
+          <!-- MATH: \begin{equation}
+h_m(t)=h(t)+n(t)
+\end{equation} -->
+
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr valign="MIDDLE">
+              <td align="CENTER" nowrap><i>h<sub>m</sub></i>(<i>t</i>) = <i>h</i>(<i>t</i>)
+                + <i>n</i>(<i>t</i>)</td>
+              <td width="10" align="RIGHT">(2.3.3)</td>
+            </tr>
+          </table>
+        </div>
+
+        <p>where <i>h<sub>m</sub></i>(<i>t</i>) is the measurement of <i>h</i>(<i>t</i>)
+        corrupted by noise. A block diagram of the overall process model and the
+        measurements is shown in <a href="fig:fig2_4">Figure 2.4</a>.
+
+        <p align="center"><a name="fig:fig2_4"><img src="fig2_4.gif" width="421" height="177"></a><br>
+        <strong>Figure 2.4:</strong> Block diagram of the simplified mould level
+        dynamics, sensors and actuator</p>
+
+        <p>This is a very simple model but captures the essence of the problem.</p>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="sec2_3_1.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section 2.3.1</a></td>
+              <td align="center" width="33%"><a href="chapter2.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Chapter 2</a></td>
+              <td align="center" width="33%"><a href="sec2_3_3.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section 2.3.3</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

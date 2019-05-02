@@ -1,0 +1,197 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="STYLESHEET" href="Equations.css">
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | <a href="ball_sim.html">Ball &amp; Plate</a> | Part 1</p>
+        <h2 align="center">Ball and Plate Tutorial - Part 1</h2>
+
+        <p>Before continuing, make sure you have read <a href="../chapters/chapter14.html">Chapter
+        14</a>.
+        <h3>System Model</h3>
+
+        <p>The modelling of the ball and plate system comes straight from simple
+        Newtonian physics. The equation for acceleration of the ball down the
+        plate is given by</p>
+
+        <p align="CENTER"><img src="eq5.gif" alt="equation" width="126" height="35">
+
+        <p>This simplistic model ignores the forces on the ball due to the
+        motion of the plate, but we will see later that there are stronger
+        influences on the system than this modelling error. The measurement of
+        the ball position is made by a camera directly above the plate. The
+        camera will thus project the ball's position onto a two-dimensional
+        plane, meaning that the observed position of the ball is given by
+
+        <p align="CENTER"><img src="eq6.gif" alt="equation" width="170" height="35">
+
+        <p>Since <img src="img6.gif" border="0" width="12" height="15"> is small (we will only be
+        tilting the plate by a small amount), and assuming that <i>g</i> = 9.8,
+        the transfer function can be linearised to
+
+        <p align="CENTER"><img src="eq7.gif" alt="equation" width="51" height="40">
+
+        <p>remembering that <img src="img2.gif" border="0" width="68" height="15"> and <img src="img3.gif" border="0" width="68" height="14">
+        for small <img src="img4.gif" width="15" height="14">. We immediately recognise the double
+        integrator as a possible source of difficulty for control. A simple lead
+        compensator was selected for the ball position control.
+
+        <p>The angle of the plate is controlled by a motor connected to an arm
+        which is connected to the plate (as shown in the diagram above). This
+        arrangement is such that the plate angle moves at half the rate of the
+        angular movement of the motor. The motor is controlled via pulse width
+        modulation, allowing integer speed commands in the range -127 to 127 to
+        be given to the motor. The motor's maximum speed is 30 rpm.
+
+        <p>The major obstacle to control is the several sources of non-linearity
+        in the motor. Firstly, there is the obvious speed limit in the motor
+        (which is an actuator saturation). Secondly, the motors appear to have a
+        dead zone, which means that the motor speed must be larger than 20
+        before the motor will move. Finally, there is a reasonable amount of
+        backlash in the gears of the motor. (Read <a href="backlash.html">this
+        page</a> for an explanation of backlash and the effect it has.) There is
+        also a physical limit on the angle that the plate can tilt, but this is
+        not really a problem, since the control system will be designed so as to
+        not approach this limit. Assuming that the motor has no dynamics (i.e.
+        the output angle is the integral of the input speed), the resulting
+        model of the angle control mechanism (including a proportional
+        controller with gain 2000) is
+
+        <p align="CENTER"><img src="ball2.gif" border="0" width="584" height="93">
+
+        <p>Overcoming the dead-zone is simple (and is described in chapter 15):
+        simply add 20 to the motor speed if it is positive, or subtract 20 if
+        the desired speed is negative.
+
+        <p>Overcoming the backlash is somewhat more difficult. We closely
+        monitor the desired motor speed, and if it changes direction, we drive
+        the motor at maximum speed for a small period of time to overcome the
+        backlash. The applet below will show that this compensation is not very
+        effective. If the motor was able to rotate faster, then the backlash
+        could be overcome more quickly. As it stands, the motors cannot move
+        fast enough to allow any significant compensation.
+
+        <p>The fact that the backlash is after the integrator is what makes the
+        backlash so difficult to overcome. If the backlash were before the
+        integrator, we could easily compensate for it by estimating the position
+        of the output in the deadzone, and driving the input to overcome the
+        dead zone, as described in the previous discussion of backlash. The
+        backlash occurs after the integrator because the backlash affects the
+        position of the motor output, not its speed. The block diagram below
+        shows the system if the backlash were before the integrator.
+
+        <p align="CENTER"><img src="ball6.gif" border="0" width="584" height="93">
+        <h3>Java Applet Simulation</h3>
+
+        <p>The JAVA applet below is a simulation of the ball and plate system in
+        one dimension. The graph has a vertical scale of 10cm per division and a
+        horizontal scale of 2 seconds per division. It shows the position
+        set-point (the blue trace), the plate angle (the green trace) and the
+        ball position (the red trace).</p>
+
+        <p>Pressing the &quot;Change Parameters&quot; button allows you to
+        change the set point type, the position controller C1, the angle
+        controller C2 and the amount of measurement noise in the angle position
+        measurement. (It is assumed that the vision system provides a noise free
+        measurement of the ball position.) Also, backlash can be included in the
+        model by selecting the check box, and compensation can be similarly
+        enabled. Although the model has the backlash appearing after the
+        integrator, the applet will allow you to change the position of the
+        backlash in the simulation (this also changes the method of
+        compensation). Try experimenting with these parameters.
+
+        <p>Note that if the ball falls off the plate, the simulation will stop
+        automatically. If you then press start, the simulation will reset
+        itself.
+
+        <p>&nbsp;</p>
+        <applet code="BallPlate.class" codebase="../applet/" width="600" height="300" align="CENTER">
+          <param name="version" value="1">You don't seem to have a Java enabled browser.
+        </applet>
+
+        <p>&nbsp;</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+          <tr>
+            <td align="center"><b>Things to try</b></td>
+            <td align="center"><b>Things to notice</b></td>
+          </tr>
+          <tr>
+            <td>Disable backlash and noise</td>
+            <td>Watch the response of the idealised system</td>
+          </tr>
+          <tr>
+            <td>Enable backlash in the model (after the integrator, with zero
+              noise)</td>
+            <td>Watch the ball position and see the osicllation introduced. Also
+              notice the effect on the plate angle</td>
+          </tr>
+          <tr>
+            <td>Enable the backlash compensation (after the integrator)</td>
+            <td>Notice that the magnitude of the oscillations has reduced
+              slightly</td>
+          </tr>
+          <tr>
+            <td>Swap the backlash position to before the integrator (leaving
+              compensation enabled)</td>
+            <td>Notice that the controller can completely compensate for the
+              backlash</td>
+          </tr>
+          <tr>
+            <td>Design a faster position controller (with zero noise and no
+              backlash)</td>
+            <td>The range of angles used by the controller is greater, and the
+              plate angle may even go into saturation.</td>
+          </tr>
+          <tr>
+            <td>Compare the simulated results to the results from the real ball
+              and plate apparatus, found <a href="ballresults.html">here</a>.</td>
+            <td>The real results have an oscillation in the motor speed, which
+              has yet to be explained.</td>
+          </tr>
+        </table>
+
+        <p>The system's response is not too good, but the ball manages to stay
+        on the plate (which is 0.4m wide in the simulation). This was the main
+        objective of the project, but the presence of backlash severely inhibits
+        the system's performance, meaning that the control is not as good as was
+        desired.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="ball_sim.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Ball &amp; Plate</a></td>
+              <td align="center" width="33%"><a href="ball_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Ball &amp; Plate</a></td>
+              <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

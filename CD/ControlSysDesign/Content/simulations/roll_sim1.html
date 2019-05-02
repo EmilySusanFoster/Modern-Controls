@@ -1,0 +1,141 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<!--  Table for the page heading                        -->
+
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center">
+  <tr>
+    <td align="left" width="600">
+
+      <p align="left">You are here : <a href="../index.html" target="_top">Control
+      System Design - Index</a> | <a href="../simulation.html">Simulations</a> |
+      <a href="roll_sim.html">Rolling Mill</a> | Part 1</p>
+      <h2 align="center">Rolling Mill Tutorial - Part 1</h2>
+
+      <p>Before continuing, make sure you have read <a href="../chapters/chapter5.html">Chapter
+      5</a>.
+      <h3>System Model</h3>
+
+      <p>The exit thickness <i>h</i> is obviously related to the gap between the
+      rolls, which is, in turn, related to the unloaded position of the backup
+      rolls <i>s</i> (also called the unloaded screw position) and the input
+      thickness <i>H</i>. More specifically, the force on the rolls is given by</p>
+
+      <p align="center"><i>F</i> = <i>M</i> ( <i>h</i> - <i>s</i> )
+
+      <p>Another equation for force is
+
+      <p align="center"><i>F</i> = <i>W</i> ( <i>H</i> - <i>h</i> )
+
+      <p>Combining these two gives
+
+      <p align="center"><i>h</i> ( <i>M</i> + <i>W</i> ) = <i>M s</i> + <i>W H</i>
+
+      <p align="center"><img src="img30.gif" border="0" width="157" height="35">
+
+      <p>Usually, we find that
+
+      <p align="center"><img src="img32.gif" border="0" align="middle" width="76" height="35"> and <img src="img33.gif" border="0" align="middle" width="76" height="35">
+
+      <p>The problem is that the exit thickness <i>h</i> cannot be measured
+      immediately after it leaves the roll gap, but is measured further down the
+      line, introducing a measurement delay into the system. This delay
+      obviously depends on the speed of the steel exiting the mill, but we will
+      assume that it is constant at one second. (We know intuitively that a
+      measurement delay is undesirable, since the control system is working with
+      information which is not current.)
+
+      <p>This leads us to the following model for the closed loop system:
+
+      <p align="center"><img src="rolling2a.gif" border="0" alt width="430" height="215">
+
+      <p>The controller is
+
+      <p align="center"><img src="img31.gif" border="0" width="118" height="51">
+      <h3>Java Applet Simulation</h3>
+
+      <p>The JAVA applet below is a simulation of the above system. The control
+      parameters have been chosen as <i>k<sub>p</sub></i> = 0.25 and <i>k<sub>i</sub></i>
+      = 2.5 to provide a reasonable response. The graph has a vertical scale of
+      0.1mm per division and a horizontal scale of 2 seconds per division. It
+      shows the set-point (the blue trace), the actual exit thickness <i>h</i>
+      (the green trace) and the measured (delayed) exit thickness <i>h<sub>m</sub></i>
+      (the red trace).</p>
+
+      <p>There is also a 10 ms time constant associated with changing the screw
+      position <i>s</i> which is not shown in the above diagram, but is included
+      in the simulation.
+
+      <p>Pressing the &quot;Change Parameters&quot; button allows you to change
+      the set point, the input thickness <i>H</i>, the controller parameters <i>k<sub>p</sub></i>
+      and <i>k<sub>i</sub></i> and the amount of measurement noise in the
+      system. It is not possible to have a set point larger than the input
+      thickness, neither of which may be negative. When you change the input
+      thickness, the animation shows the &quot;disturbance&quot; approaching,
+      and it only takes effect when it reaches the rolls. Try experimenting with
+      these parameters.
+
+      <p>&nbsp;</p>
+      <applet code="RollingMill.class" codebase="../applet/" width="600" height="300" align="CENTER">
+        <param name="version" value="1">You don't seem to have a Java enabled browser.
+      </applet>
+
+      <p>&nbsp;</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td align="center"><b>Things to try</b></td>
+          <td align="center"><b>Things to notice</b></td>
+        </tr>
+        <tr>
+          <td>Change the input thickness to 0.5</td>
+          <td>Watch the disturbance response and the effect of the time delay</td>
+        </tr>
+        <tr>
+          <td>Change the set point to 0.3</td>
+          <td>Watch the set-point response and the effect of the time delay</td>
+        </tr>
+        <tr>
+          <td>Increase the controller gain to try and increase the system's
+            response speed</td>
+          <td>The system goes unstable even for relatively low loop gains.</td>
+        </tr>
+      </table>
+
+      <p>You will notice that it is not possible to produce a good stable
+      response due to the presence of the time delay. If you are wondering about
+      the sinusoidal component in the output, then have patience - we'll come to
+      that shortly.
+
+      <p>Next, we try some more advanced control ideas on this system to try and
+      work around this time delay.</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="roll_sim.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Rolling Mill</a></td>
+            <td align="center" width="33%"><a href="roll_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Rolling Mill</a></td>
+            <td align="center" width="33%"><a href="roll_sim2.html"><img src="../images/nextbutton.gif" border="0" alt="-&gt;" width="32" height="32"><br>
+              Next - Part 2</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

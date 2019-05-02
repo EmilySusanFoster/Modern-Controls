@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" width="600" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="600"><a name="Top"></a>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | <a href="dist_sim.html">Distillation Column Control</a> | Part 1</p>
+        <h2 align="center">Distillation Column Control - Part 1</h2>
+
+        <p>Before continuing, make sure you have read <a href="../chapters/chapter19.html">Chapter
+        19</a> and <a href="../chapters/chapter24.html">Chapter 24</a></p>
+        <h3>Design of Columns</h3>
+
+        <p>The design of multistage columns for binary mixtures can be
+        accomplished graphically, via equilibrium curves. This is called the
+        McCabe-Thiele Method. Equilibrium curves plot the volatility of
+        components in a mixture; that is, the proportion of species 1 in the
+        vapour phase (y<sub>1</sub>) compared with the proportion of species 1
+        in the liquid phase (x<sub>1</sub>). The figure below shows two common
+        curves: curve A is a species with normal volatility, and curve B is a
+        system with a homogeneous azeotrope. The curves allow us to determine y<sub>1</sub>
+        from x<sub>1</sub> given constant temperature and pressure.</p>
+
+        <p align="center"><img border="0" src="DCeq.gif" width="511" height="401"></p>
+
+        <p>The azeotrope indicates that a component that is more volatile at low
+        x<sub>1</sub> becomes less volatile at high x<sub>1</sub> (above the
+        azeotrope). This limits the separation that can be achieved between
+        components.<br>
+        As an example, for an ethanol-water mixture, there is an azeotrope at x<sub>1</sub>
+        = 0.8943 (for pressure of 101.3 kPa and temperature of 78.15 °C) thus
+        the maximum distillate composition that can be achieved is x<sub>d</sub>
+        = 0.8943. The distillate cannot have higher purity than this value from
+        binary<br>
+        separation.</p>
+
+        <p>The McCabe-Thiele Method allows the designer to determine the number
+        of trays needed to distil a mixture to the required purity. As well as
+        the equilibrium curve, other factors such as the feed quality (i.e. the
+        thermal condition of the feed, which could be subcooled, saturated,
+        superheated etc), the ratio of liquid to vapour flow and the proportion
+        of species 1 in the feed are used in distillation column design.</p>
+
+        <p>Based on these calculations, and the required spacing between plates,
+        the theoretical height of the column can be determined. For example, for
+        a certain configuration the required number of trays for an
+        ethanol-water mixture may be 60. At a spacing of 25 cm, this will give a
+        height of 15 m. This may be excessive, and so the usual practice is to
+        set the number of trays and then set the reflux ratio <i>L</i>/<i>D</i>.
+        e.g. for our example the number of trays are set to 12, and the reflux
+        ratio is then set to 5 (5×12&nbsp;=&nbsp;60). Thus only 1/5th of the
+        product is being drawn out at any time, which means that product is
+        recirculating through the column about five times.</p>
+
+        <p>Thus it is important to have a fixed reflux ratio in steady state.
+        The optimum feed tray can also be determined using this method.</p>
+        <h3>Control Configuration</h3>
+
+        <p>As the diagram shows, there are four valves which are used to control
+        the flow rate of <i>B</i> (the bottom product), the temperature of <i>V</i>
+        (the boilup), the flow rate of <i>L</i> (the reflux) and the flow rate
+        of <i>D</i> (the distillate).</p>
+
+        <p>The system as shown above has four inputs and four outputs:</p>
+        <div align="center">
+          <center>
+          <table border="1" cellspacing="0" cellpadding="5">
+            <tr>
+              <td width="50%" align="center"><b>Input Variables</b></td>
+              <td width="50%" align="center"><b>Output Variables</b></td>
+            </tr>
+            <tr>
+              <td width="50%" align="center">Distillate flow rate <i>D</i></td>
+              <td width="50%" align="center">Condenser level</td>
+            </tr>
+            <tr>
+              <td width="50%" align="center">Bottom product flow rate <i>B</i></td>
+              <td width="50%" align="center">Reboiler level</td>
+            </tr>
+            <tr>
+              <td width="50%" align="center">Reflux flow rate <i>L</i></td>
+              <td width="50%" align="center">Distillate composition</td>
+            </tr>
+            <tr>
+              <td width="50%" align="center">Steam flow<br>
+                (which affects the temperature of <i>V</i>)</td>
+              <td width="50%" align="center">Bottom product composition</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+
+        <p>The overhead vapour <i>V</i><sub>T</sub> is also generally considered
+        an input variable and is mainly used to control the column pressure.
+        Since this is usually a self-regulating loop, we will ignore it in this
+        discussion.</p>
+
+        <p>Obviously, it is desirable to maximise the purity of the top and
+        bottom products. Normally in industry, the control variables are set
+        manually by human operators. Some plants use automatic control for only
+        one product, and manual control for the other. Manual control can result
+        in overpurification or loss of valuable product. These difficulties can
+        be overcome by using <i>dual composition control</i>, i.e. automatic
+        control for both products.</p>
+
+        <p>There are some difficulties involved in designing a dual composition
+        controller. In particular, the system is both strongly nonlinear and
+        strongly interactive. Also, the system has a very sluggish response, and
+        there are many problems with measuring the output variables (including
+        dead times for composition measurements).</p>
+
+        <p>Choosing the control structure is the most important step in
+        designing a controller for the system. The column pressure and reboiler
+        and condenser levels must be controlled very carefully to maintain
+        stable operation. The control systems for these variables are called <i>inventory
+        controllers</i>. This leaves two degrees of freedom to control the top
+        and bottom concentrations. Deciding the control structure then amounts
+        to choosing which two inputs will control the compositions.</p>
+
+        <p>The most common is called the <i>LV</i> configuration, where the
+        reflux flow rate <i>L</i> is used to control the composition of the top
+        product, and the boilup temperature <i>V</i> is used to control the
+        composition of the bottom product. In this case, the distillate flow
+        rate <i>D</i> and&nbsp; bottom product flow rate <i>B</i> are used to
+        control the levels of the condenser and reboiler respectively. The
+        variables <i>L</i> and <i>V</i> are the ones most likely to be used by a
+        manual operator to control the product compositions.</p>
+
+        <p>Another common choice is the <i>DV</i> configuration, where the
+        distillate flow rate <i>D</i> is used to control the composition of the
+        top product, and the boilup temperature <i>V</i> is used to control the
+        composition of the bottom product. For this configuration, the reflux
+        flow rate <i>L</i> and&nbsp; bottom product flow rate <i>B</i> are used
+        to control the levels of the condenser and reboiler respectively.</p>
+        <h3>System Model and Control Design</h3>
+
+        <p>As a real example we will describe a case study based on a pilot
+        scale distillation column in Chemical Engineering at Sydney University
+        (click <a href="distillation.html">here</a> for photos). This column has
+        been used for joint cooperative work between Electrical and Computer
+        Engineering in Newcastle and Chemical Engineering at Sydney for the past
+        3 years. Assistance from Professor Romagnoli of Chem Eng Sydney is
+        particularly acknowledged in supporting this collaboration. The joint
+        work focused on several issues including - multimodel control,
+        autotuning of controllers and soft sensors for composition. Much of the
+        detailed work was done by Julio Rodreguez who also provided assistance
+        in constructing this page. For purposes of illustration , we take a
+        simple linear control problem motivated by work on this pilot column.</p>
+
+        <p>The pilot column in question has twelve plates and separates ethanol
+        and water. The goal in controlling the column is to control the
+        concentration of the top and bottom product However, while we can
+        measure the top product concentration, it is difficult to measure bottom
+        product concentration. Instead, we measure the temperature of the bottom
+        plate and use a conversion to give us the bottom concentration. An
+        approximate model of the system for the LV control configuration is</p>
+
+        <p align="center"><img src="dist_eq3.gif" border="0" width="354" height="124"></p>
+
+        <p>Where <i>y</i><sub>1</sub>(<i>s</i>) is the mole fraction of ethanol
+        in the overhead vapour, <i>y</i><sub>2</sub>(<i>s</i>) is the
+        temperature (in degrees celcius) of the bottom plate, <i>u</i><sub>1</sub>(<i>s</i>)
+        is the reflux flowrate (in L/min), and <i>u</i><sub>2</sub>(<i>s</i>) is
+        the reboiler steam pressure (in kg/min).</p>
+
+        <p>Note that these time constants are presented in <i>minutes</i> rather
+        than seconds, since this process is very slow (like most chemical
+        processes). Note also that the composition of the feed is fixed at some
+        point. (Normally the feed composition is a disturbance in the system.)
+        To convert between bottom temperature and bottom concentration, we use
+        the following graph.</p>
+
+        <p align="center"><img src="dist_graph1.gif" border="0" width="526" height="403"></p>
+
+        <p>Note also that this model is a linearisation, and is only valid in a
+        specific operating range. Obviously the temperature can never exceed
+        100°C (since then there would be no liquid, only vapour). This model is
+        specifically for the <i>LV</i> configuration, and the model assumes that
+        the inventory controllers work well.</p>
+
+        <p>The next step is to design an appropriate controller for the system.
+        Firstly, we will consider controlling the column with two decentralised
+        PID controllers. The obvious choice is that we control the top
+        concentration with reflux <i>L</i> and the bottom concentration with
+        boilup <i>V</i>. The controller for the plant then is</p>
+
+        <p align="center"><img border="0" src="dist_eq2.gif" width="287" height="99"></p>
+
+        <p align="left">Since this controller is decentralised, if we change the
+        set-point for one concentration (or a disturbance appears), then the
+        value of the other concentration will be affected.</p>
+        <h3>Java Applet Simulation</h3>
+
+        <p>Below is a Java applet which simulates the above distillation column.
+        The controllers in this example are two decentralised PI controllers,
+        with <i>k<sub>p</sub></i> = 1 and <i>k<sub>i</sub></i> = 0.25 for the
+        top concentration control and <i>k<sub>p</sub></i> = 1 and <i>k<sub>i</sub></i>
+        = 0.15 for the bottom temperature control.</p>
+
+        <p>The red plot shows the bottom temperature on a scale from 0°C to
+        100°C and the blue plot shows the top concentration % on a scale from 0
+        to 100. The colour of the plates indicates their temperature, with blue
+        being coolest and red being hottest (Note that the coolest temperature
+        is 85°C which is still quite hot! Currently, all plates are shown as
+        being the same temperature as the bottom plate. The time scale is
+        accelerated, with 5 minutes of simulated time occurring every second.
+
+        <p>&nbsp;</p>
+        <applet code="DistillationColumn.class" codebase="../applet/" width="600" height="300" align="CENTER">
+          You don't seem to have a Java enabled browser.
+        </applet>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+              <td align="center"><b>Things to Try</b></td>
+              <td align="center"><b>Things to Notice</b></td>
+            </tr>
+            <tr>
+              <td align="left">Change the top concentration set-point to 0.75</td>
+              <td align="left">Observe the response of both outputs, noting that
+                they both change (even though the bottom temperature setpoint
+                remained constant)</td>
+            </tr>
+            <tr>
+              <td align="left">Change the bottom temperature set-point to 85</td>
+              <td align="left">Observe the response of both outputs, noting
+                again that they both change</td>
+            </tr>
+          </table>
+        </div>
+
+        <p>As you can see, a decentralised PID controller is not effective at
+        decoupling the outputs. To achieve decoupling, we must turn to more
+        advanced ideas in MIMO control, as covered in chapter ??? of the book.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%" valign="top"><a href="dist_sim.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Distillation Index</a></td>
+              <td align="center" width="33%" valign="top"><a href="dist_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Distillation Index</a></td>
+              <td align="center" width="33%" valign="top"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

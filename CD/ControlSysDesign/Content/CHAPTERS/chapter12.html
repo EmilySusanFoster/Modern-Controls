@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 12</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 12</p>
+        <h2 align="center">12. Models for Sampled Data Systems</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>Modern control systems are almost always implemented in a digital
+        computer. It is thus important to have an appreciation of the impact of
+        implementing a particular control law in digital form. In this chapter
+        we provide the fundamental modeling tools necessary to describe the
+        sampled response of continuous-time plants. The main topics included
+        are:</p>
+        <ul>
+          <li>Discrete-time signals</li>
+          <li>Z-transforms and Delta transforms</li>
+          <li>Sampling and reconstruction</li>
+          <li>Aliasing and anti-aliasing filters</li>
+          <li>Sampled-data control systems</li>
+        </ul>
+
+        <p>It is common in many courses on control to either treat sampling at a
+        much later point or even to move it to a separate course specifically
+        devoted to digital control. However, our view is that there is so much
+        in common between continuous and digital control, that one can introduce
+        sampling ideas early and then, essentially, present both ideas
+        simultaneously.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>Very few plants encountered by the control engineer are digital,
+            most are continuous. That is, the control signal applied to the
+            process, as well as the measurements received from the process, are
+            usually continuous time.<br>
+            &nbsp;</li>
+          <li>Modern control systems, however, are almost exclusively
+            implemented on digital computers.<br>
+            &nbsp;</li>
+          <li>Compared to the historical analog controller implementation, the
+            digital computer provides</li>
+          <ul>
+            <li>much greater ease of implementing complex algorithms,</li>
+            <li>convenient (graphical) man-machine interfaces,</li>
+            <li>logging, trending and diagnostics of internal controller and</li>
+            <li>flexibility to implement filtering and other forms of signal
+              processing operations.<br>
+              &nbsp;</li>
+          </ul>
+          <li>Digital computers operate with sequences in time, rather than
+            continuous functions in time.<br>
+            &nbsp;</li>
+          <li>Therefore,
+            <ul>
+              <li>input signals to the digital controller-notably process
+                measurements - must be sampled;</li>
+              <li>outputs from the digital controller-notably control signals -
+                must be interpolated from a digital sequence of values to a
+                continuous function in time.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Sampling (see Figure 12.7) is carried out by A/D (analog to
+            digital) converters.</li>
+        </ul>
+
+        <p align="center"><img border="0" src="part4-fig1.gif" width="471" height="145"></p>
+        <ul>
+          <li>The converse, reconstructing a continuous time signal from digital
+            samples, is carried out by D/A (digital to analog) converters. There
+            are different ways of interpolating between the discrete samples,
+            but the so called zero-order hold (see Figure 12.8) is by far the
+            most common.</li>
+        </ul>
+
+        <p align="center"><img border="0" src="part4-fig2.gif" width="470" height="155"></p>
+        <ul>
+          <li>When sampling a continuous time signal,
+            <ul>
+              <li>an appropriate sampling rate must be chosen</li>
+              <li>an anti-aliasing filter (low-pass) should be included to avoid
+                frequency folding.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Analysis of digital systems relies on discrete time versions of
+            the continuous operators.<br>
+            &nbsp;</li>
+          <li>The chapter has introduced two discrete operators:
+            <ul>
+              <li>the shift operator, <i>q</i>, defined by 
+                <!-- MATH: $qx[k]\stackrel{\rm\triangle}{=}x[k+1]$ -->
+                <img align="MIDDLE" border="0" src="part4-img6.gif" alt="$qx[k]\stackrel{\rm\triangle}{=}x[k+1]$" width="113" height="46"></li>
+              <li>the <img align="BOTTOM" border="0" src="part4-img7.gif" alt="$\delta $" width="11" height="15">-operator,
+                <img align="BOTTOM" border="0" src="part4-img7.gif" alt="$\delta $" width="11" height="15">,
+                defined by
+      
+                <!-- MATH: $\delta x[k]\stackrel{\rm\triangle}{=}\dfrac{ x[k+1]-x[k]}{\Delta}$ -->
+                <img align="MIDDLE" border="0" src="part4-img8.gif" alt="$\delta x[k]\stackrel{\rm\triangle}{=}\dfrac{ x[k+1]-x[k]}{\Delta} $" width="163" height="53"><br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Thus, 
+            <!-- MATH: $\delta =\dfrac{q-1}\Delta$ -->
+            <img align="MIDDLE" border="0" src="part4-img9.gif" alt="$\delta =\dfrac{q-1}\Delta $" width="71" height="49">,
+            or 
+            <!-- MATH: $q=\delta \Delta +1.$ -->
+            <img align="MIDDLE" border="0" src="part4-img10.gif" alt="$q=\delta \Delta +1.$" width="85" height="29"><br>
+            &nbsp;</li>
+          <li>Due to this conversion possibility, the choice is largely based on
+            preference and experience. Comparisons are outlined below.<br>
+            &nbsp;</li>
+          <li>The shift operator, <i>q</i>,
+            <ul>
+              <li>is the traditional operator;</li>
+              <li>is the operator many engineers feel more familiar with;</li>
+              <li>is used in the majority of the literature.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>The <img align="BOTTOM" border="0" src="part4-img7.gif" alt="$\delta $" width="11" height="15">-operator,
+            <img align="BOTTOM" border="0" src="part4-img7.gif" alt="$\delta $" width="11" height="15">,
+            has the advantages of:
+            <ul>
+              <li>emphasizing the link between continuous and discrete systems
+                (resembles a differential);</li>
+              <li><img align="BOTTOM" border="0" src="part4-img7.gif" alt="$\delta $" width="11" height="15">-expressions
+                converge to familiar continuous expressions as 
+                <!-- MATH: $\Delta \rightarrow 0$ -->
+                <img align="BOTTOM" border="0" src="part4-img11.gif" alt="$\Delta \rightarrow 0$" width="49" height="15">,
+                which is intuitive;</li>
+              <li>is numerically vastly superior at fast sampling rates when
+                properly implemented.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Analysis of digital systems relies on discrete time versions of
+            the continuous operators:
+            <ul>
+              <li>the discrete version of the differential operator is a
+                difference operator;</li>
+              <li>the discrete version of the Laplace transform is either the
+                Z-transform (associated with the shift operator) or the <img align="MIDDLE" border="0" src="part4-img12.gif" alt="$\gamma
+$" width="12" height="28">-transform (associated with the <img align="BOTTOM" border="0" src="part4-img7.gif" alt="$\delta $" width="11" height="15">-operator).<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>With the help of these operators,
+            <ul>
+              <li>continuous time differential equation models can be converted
+                to discrete time difference equation models;</li>
+              <li>continuous time transfer or state space models can be
+                converted to discrete time transfer or state space models in
+                either the shift or <img align="BOTTOM" border="0" src="part4-img7.gif" alt="$\delta $" width="11" height="15">
+                operators.</li>
+            </ul>
+          </li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="../part4.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Part IV</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><a href="chapter13.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Chapter 13</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>

@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 2</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="chapter1.html">Chapter
+        1</a> | Section 1.5.7</p>
+        <h2 align="center">The Excitement of Control Engineering</h2>
+        <!------------------------------------------------>
+
+        <h3>1.5.7 Architectures and interfacing</h3>
+
+        <p>The issue of what to connect to what is a non-trivial one in control
+        system design. One may feel that the best solution would always be to
+        bring all signals to a central point so that each control action would
+        be based on complete information (leading to so called, centralized
+        control). However, this is rarely (if ever) the best solution in
+        practice. Indeed, there are very good reasons why one may not wish to
+        bring all signals to a common point. Obvious objections to this include
+        complexity, cost, time constraints in computation, maintainability,
+        reliability, etc.</p>
+
+        <p>Thus one usually partitions the control problem into manageable
+        sub-systems. How one does this is part of the control engineer's domain.
+        Indeed, we will see in the case studies presented in the text that these
+        architectural issues can be crucial to the final success, or otherwise,
+        of a control system.</p>
+
+        <p>Indeed, one of the principal tools that a control system designer can
+        use to improve performance is to exercise lateral thinking relative to
+        the architecture of the control problem. As an illustration, we will
+        present a real example later in the text (see <a href="chapter9.html">Chapter
+        9</a>) where thickness control performance in a reversing rolling mill
+        was irrevocably constrained by a particular architecture. It is shown
+        that no improvement in actuators, sensors or algorithms (within this
+        architecture) can remedy the problem. However, by simply changing the
+        architecture so as to include extra actuators (namely the currents into
+        coiler and uncoiler motors) then the difficulty is resolved (see <a href="chapter12.html">Chapter
+        12</a>). As a simpler illustration, the reader is invited to compare the
+        difference between trying to balance a broom on one's finger with one's
+        eyes open or shut. Again there is an architectural difference here -
+        this time it is a function of available sensors. A full analysis of the
+        reasons behind the observed differences in the difficulty of these types
+        of control problems will be explained in <a href="chapter13.html">Chapter
+        13</a> of the book.</p>
+
+        <p>We thus see that architectural issues are of paramount importance in
+        control design problems. A further architectural issue revolves around
+        the need to &quot;divide and conquer&quot; complex problems. This leads
+        to a hierarchical view of control as illustrated in <a href="#tab:typi_cont">Table
+        1.1</a></p>
+
+        <p align="center"><a name="tab:typi_cont"><b>Table 1.1</b> Typical
+        Control Hierarchy</a></p>
+        <div align="center">
+          <center>
+          <table border="1" cellpadding="4" cellspacing="0">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" width="12%">
+                  <div align="center">
+                    <em>L</em>evel
+                  </div>
+                </td>
+                <td align="left" valign="top" width="20%">
+                  <div align="center">
+                    <em>Description</em>
+                  </div>
+                </td>
+                <td align="left" valign="top" width="15%">
+                  <div align="center">
+                    <em>Goal</em>
+                  </div>
+                </td>
+                <td align="left" valign="top" width="15%">
+                  <div align="center">
+                    <em>Time Frame</em>
+                  </div>
+                </td>
+                <td align="left" valign="top" width="15%">
+                  <div align="center">
+                    <em>Typical Design Tool</em>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="12%">4</td>
+                <td align="left" valign="top" width="20%">Plant Wide
+                  Optimization</td>
+                <td align="left" valign="top" width="15%">Meeting Customer
+                  Orders and Scheduling Supply of Materials</td>
+                <td align="left" valign="top" width="15%">Everyday (say)</td>
+                <td align="left" valign="top" width="15%">Static Optimization</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="12%">3</td>
+                <td align="left" valign="top" width="20%">Steady State
+                  Optimization at Unit Operational Level</td>
+                <td align="left" valign="top" width="15%">Efficient Operation of
+                  a single unit (e.g. Distillation Column)</td>
+                <td align="left" valign="top" width="15%">Every hour (say)</td>
+                <td align="left" valign="top" width="15%">Static Optimization</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="12%">2</td>
+                <td align="left" valign="top" width="20%">Dynamic Control at
+                  Unit Operation Level</td>
+                <td align="left" valign="top" width="15%">Achieving set-points
+                  specified at level 3 and achieving rapid recovery from
+                  disturbances</td>
+                <td align="left" valign="top" width="15%">Every Minute (say)</td>
+                <td align="left" valign="top" width="15%">Multivariable Control,
+                  e.g. Model Predictive Control</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="12%">1</td>
+                <td align="left" valign="top" width="20%">Dynamic Control at
+                  single actuator level</td>
+                <td align="left" valign="top" width="15%">Achieving liquid flow
+                  rates etc as specified at level 2 by manipulation of available
+                  actuators (e.g. valves)</td>
+                <td align="left" valign="top" width="15%">Every second (say)</td>
+                <td align="left" valign="top" width="15%">Single variable
+                  control, e.g. PID</td>
+              </tr>
+            </tbody>
+          </table>
+          </center>
+        </div>
+
+        <p>Having decided what connections need to be made, there is the issue
+        of interfacing the various sub-components. This is frequently a
+        non-trivial job as it is often true that special interfaces are needed
+        between different equipment. Fortunately vendors of control equipment
+        are aware of this difficulty and increasing attention is being paid to
+        standardization of interfaces.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="sec1_5_6.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section 1.5.6</a></td>
+              <td align="center" width="33%"><a href="chapter1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Chapter 1</a></td>
+              <td align="center" width="33%"><a href="sec1_5_8.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section 1.5.8</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

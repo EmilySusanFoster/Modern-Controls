@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 5</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 5</p>
+        <h2 align="center">5. Analysis of SISO Control Loops</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>Control system design makes use of the two key enabling techniques:
+        analysis and synthesis. Analysis concerns itself with the impact that a
+        given controller has on a given system when they interact in feedback
+        while synthesis asks how to construct controllers with certain
+        properties. This chapter covers analysis. For a given controller and
+        plant connected in feedback it asks (and provides answers for) the
+        following:</p>
+        <ul>
+          <li>Is the loop stable?</li>
+          <li>What are the sensitivities to various disturbances?</li>
+          <li>What is the impact of linear modeling errors?</li>
+          <li>How do small nonlinearities impact on the loop?</li>
+        </ul>
+
+        <p>We also introduce several analysis tools; specifically</p>
+        <ul>
+          <li>Root locus</li>
+          <li>Nyquist stability analysis</li>
+        </ul>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>This chapter introduced the fundamentals of SISO feedback control
+            loop analysis.<br>
+            &nbsp;</li>
+          <li>Feedback introduces a cyclical dependence between controller and
+            system:
+            <ul>
+              <li>the controller action affects the systems outputs,</li>
+              <li>and the system outputs affect the controller action.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>For better or worse, this has a remarkably complex effect on the
+            emergent closed loop.<br>
+            &nbsp;</li>
+          <li>Well designed, feedback can
+            <ul>
+              <li>make an unstable system stable;</li>
+              <li>increase the response speed;</li>
+              <li>decrease the effects of disturbances</li>
+              <li>decrease the effects of system parameter uncertainties, and
+                more.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Poorly designed, feedback can
+            <ul>
+              <li>introduce instabilities into a previously stable system;</li>
+              <li>add oscillations into a previously smooth response;</li>
+              <li>result in high sensitivity to measurement noise;</li>
+              <li>result in sensitivity to structural modeling errors, and more.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Individual aspects of the overall behavior of a dynamic system
+            include
+            <ul>
+              <li><i>time domain</i>: stability, rise time, overshoot, settling
+                time, steady state errors, etc.</li>
+              <li><i>frequency domain</i>: bandwidth, cut off frequencies, gain
+                and phase margins, etc.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Some of these properties have rigorous definitions, others tend to
+            be qualitative.<br>
+            &nbsp;</li>
+          <li>Any property or analysis can further be prefixed with the term <i>nominal</i>
+            or <i>robust</i>;
+            <ul>
+              <li><em>nominal</em> indicates a temporarily idealized assumption
+                that the model is perfect;</li>
+              <li><em>robust</em> indicates an explicit investigation of the
+                effect of modeling errors.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>The effect of the controller 
+            <!-- MATH: $C(s)=\frac{P(s)}{L(s)}$ -->
+            <img align="MIDDLE" border="0" src="part2-img4.gif" alt="$C(s)=\frac{P(s)}{L(s)}$" width="86" height="40">
+            on the nominal model 
+            <!-- MATH: $G_o(s)=%
+\frac{B_o(s)}{A_o(s)}$ -->
+            <img align="MIDDLE" border="0" src="part2-img5.gif" alt="$G_o(s)=%
+\frac{B_o(s)}{A_o(s)}$" width="100" height="40"> in the feedback loop shown in Figure fig:fb1x is</li>
+        </ul>
+        <img align="BOTTOM" border="0" src="part2-img6.gif" alt="\begin{align}Y&amp;=\frac{G_oC}{1+G_oC}(R-D_m)+\frac
+1{1+G_oC}D_o+\frac{G_o}{1+G_oC...
+...ac{A_oP}{A_oL+B_oP}(R-D_o-D_m)-\frac{B_oP}{A_oL+B_oP}D_i
+\nonumber
+\end{align}" width="600" height="120">
+        <ul>
+          <li>Interpretation, definitions and remarks:
+            <ul>
+              <li>The nominal response is determined by four transfer functions.</li>
+              <li>Due to their fundamental importance, they have individual
+                names and symbols:
+                <table cellpadding="3">
+                  <tr>
+                    <td align="LEFT">
+                      <!-- MATH: $S_o:=\dfrac 1{1+G_oC}=\dfrac{A_oL}{A_oL+B_oP},$ -->
+                      <img align="MIDDLE" border="0" src="part2-img7.gif" alt="$S_o:=\dfrac 1{1+G_oC}=\dfrac{A_oL}{A_oL+B_oP},$" width="219" height="51"></td>
+                    <td align="LEFT">the nominal sensitivity function;</td>
+                  </tr>
+                  <tr>
+                    <td align="LEFT">
+                      <!-- MATH: $T_o:=\dfrac{G_oC}{1+G_oC}=\dfrac{B_oP}{A_oL+B_oP},$ -->
+                      <img align="MIDDLE" border="0" src="part2-img8.gif" alt="$T_o:=\dfrac{G_oC}{1+G_oC}=\dfrac{B_oP}{A_oL+B_oP},$" width="219" height="51"></td>
+                    <td align="LEFT">the nominal complementary sensitivity;</td>
+                  </tr>
+                  <tr>
+                    <td align="LEFT">
+                      <!-- MATH: $S_{io}:=\dfrac{G_o}{1+G_oC}=\dfrac{B_oL}{A_oL+B_oP},$ -->
+                      <img align="MIDDLE" border="0" src="part2-img9.gif" alt="$S_{io}:=\dfrac{G_o}{1+G_oC}=\dfrac{B_oL}{A_oL+B_oP},$" width="224" height="51"></td>
+                    <td align="LEFT">the nominal input sensitivity;</td>
+                  </tr>
+                  <tr>
+                    <td align="LEFT">
+                      <!-- MATH: $S_{uo}:=\dfrac
+C{1+G_oC}=\dfrac{A_oP}{A_oL+B_oP},$ -->
+                      <img align="MIDDLE" border="0" src="part2-img10.gif" alt="$S_{uo}:=\dfrac
+C{1+G_oC}=\dfrac{A_oP}{A_oL+B_oP},$" width="227" height="51"></td>
+                    <td align="LEFT">the nominal control sensitivity</td>
+                  </tr>
+                </table>
+                and are collectively called the nominal <i>sensitivities</i>.</li>
+              <li>All four sensitivity functions have the same poles, the roots
+                of <i>A</i><sub><i>o</i></sub><i>L</i>+<i>B</i><sub><i>o</i></sub><i>P</i>.</li>
+              <li>The polynomial <i>A</i><sub><i>o</i></sub><i>L</i>+<i>B</i><sub><i>o</i></sub><i>P</i>
+                is also called the nominal <i>characteristic polynomial</i>.</li>
+              <li>Recall that stability of a transfer function is determined by
+                the roots only.</li>
+              <li>Hence, the nominal loop is stable if and only if the real
+                parts of the roots of <i>A</i><sub><i>o</i></sub><i>L</i>+<i>B</i><sub><i>o</i></sub><i>P</i>
+                are all strictly negative. These roots have an intricate
+                relation to the controller and system poles and zeros.</li>
+              <li>The properties of the four sensitivities, and therefore the
+                properties of the nominal closed loop, depend on the interlacing
+                of the poles of the characteristic polynomial (the common
+                denominator) and the zeros of 
+                <!-- MATH: $A_oL,B_oP,B_oL,$ -->
+                <i>A</i><sub><i>o</i></sub><i>L</i>,<i>B</i><sub><i>o</i></sub><i>P</i>,<i>B</i><sub><i>o</i></sub><i>L</i>,
+                and <i>A</i><sub><i>o</i></sub><i>P</i>, respectively.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Linear modeling errors:
+            <ul>
+              <li>If the same controller is applied to a linear system, 
+                <!-- MATH: $G\left( s\right)$ -->
+                <img align="MIDDLE" border="0" src="part2-img11.gif" alt="$G\left( s\right) $" width="38" height="31">,
+                that differs from the model by
+      
+                <!-- MATH: $G(s)=G_o(s)G_\Delta (s),$ -->
+                <img align="MIDDLE" border="0" src="part2-img12.gif" alt="$G(s)=G_o(s)G_\Delta (s),$" width="144" height="31">
+                then the resulting loop remains stable provided that 
+                <!-- MATH: $\left| T_o(j\omega )\right| \left|
+G_\Delta (j\omega )\right| <1$ -->
+                <img align="MIDDLE" border="0" src="part2-img13.gif" alt="$\left\vert T_o(j\omega )\right\vert \left\vert
+G_\Delta (j\omega )\right\vert &lt;1$" width="154" height="31">,
+
+                <!-- MATH: $\forall \omega$ -->
+                <img align="BOTTOM" border="0" src="part2-img14.gif" alt="$\forall \omega$" width="23" height="15">.</li>
+              <li>This condition is also known as the <em>small-gain theorem</em>.</li>
+              <li>Obviously it cannot be easily tested, as the multiplicative
+                modeling error, <img align="MIDDLE" border="0" src="part2-img15.gif" alt="$G_\Delta $" width="27" height="29">,
+                is typically unknown. Usually bounds on 
+                <!-- MATH: $G_\Delta (j\omega)$ -->
+                <img align="MIDDLE" border="0" src="part2-img16.gif" alt="$G_\Delta (j\omega)$" width="57" height="31">
+                are used instead.</li>
+              <li>Nevertheless, it gives valuable insight. For example, we see
+                that the closed loop bandwidth must be tuned to be less than the
+                frequencies where one expects significant modeling errors.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Non-linear modeling errors: If the same controller is applied to a
+            system,
+  
+            <!-- MATH: $G_{nl}\langle\circ\rangle$ -->
+            <img align="MIDDLE" border="0" src="part2-img17.gif" alt="$G_{nl}\langle\circ\rangle$" width="49" height="31">,
+            that not only differs from the model linearly but that is nonlinear
+            (as real systems will always be to some extent), then rigorous
+            analysis becomes very hard in general but qualitative insights can
+            be obtained into the operation of the system by considering the
+            impact of model errors.
+        </ul>
+      </center>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="../part2.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Part II</a></td>
+            <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Book Contents</a></td>
+            <td align="center" width="33%"><a href="chapter6.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next - Chapter 6</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

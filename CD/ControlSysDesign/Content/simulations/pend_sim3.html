@@ -1,0 +1,142 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<!--  Table for the page heading                        -->
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | <a href="pend_sim.html">Inverted Pendulum</a> | Part 3</p>
+        <h2 align="center">Inverted Pendulum Tutorial - Part 3</h2>
+
+        <p>Before continuing, make sure you have read <a href="../chapters/chapter10.html">Chapter
+        10</a> and <a href="../chapters/chapter5.html">Chapter 5</a>. You might
+        also want to refer to the frequency response applet <a href="freq_sim.html">here</a>.
+        <h3>Cascaded Control</h3>
+
+        <p>If we measure the angle of the pendulum as well as the cart position,
+        controlling the inverted pendulum system is much easier. To see this
+        intuitively, try balancing a broom on the palm of your hand with your
+        eyes shut (i.e. you know cart position only) and with your eyes open
+        (i.e. you know both position and angle). Generally, the angle is
+        measured using a potentiometer (a type of variable resistor). A block
+        diagram of the system is:
+
+        <p align="center"><img src="cascade.gif" border="0" align="center" width="409" height="100">
+
+        <p>So we can form two control loops for the system, with the inner loop
+        controlling the pendulum angle, and the outer loop controlling the cart
+        position.
+
+        <p align="center"><img src="cascade2.gif" border="0" align="center" width="427" height="117">
+
+        <p>First, we design the controller for the inner loop. Let us use the
+        root-locus design method. Since the inner plant has poles at +4.4621 and
+        -4.4721, the root locus will look like:
+
+        <p align="center"><img src="cascade3.gif" border="0" align="center" width="483" height="374">
+
+        <p>If we use PD control, we have the controller <i>C</i><sub>2</sub> = <i>k<sub>d</sub>
+        s</i> + <i>k<sub>p</sub></i>, which allows us to place a zero on the
+        real axis. If we place this zero on top of the stable pole, the root
+        locus will have a single branch extending left from the unstable pole,
+        so with a high enough gain, we can make the system stable. However, we
+        never use a pure derivative in control (since it amplifies noise too
+        much - look at its frequency response), instead we use a differentiator
+        in series with a low pass filter. This low pass filter is chosen to have
+        a bandwidth much larger than the system bandwidth. Thus, the
+        implementation of the PD controller will be (with appropriate zero and
+        gain choice):
+
+        <p align="center"><img src="img23.gif" border="0" align="center" width="125" height="40">
+
+        <p>and the resulting root locus (with controller poles and zeros in
+        purple) is:
+
+        <p align="center"><img src="cascade4.gif" border="0" align="center" width="486" height="380">
+
+        <p>Note the effect of not cancelling the stable pole exactly. The effect
+        of the added pole at -25 due to the low pass filter is to cause the
+        root-locus branched to break away from the negative real axis. This
+        could cause poorly damped oscillations if the gain of the controller is
+        too high.
+
+        <p>For the design of the outer loop controller, we will use frequency
+        response methods. A PD controller will be used, but such a controller is
+        generally called a <b>lead compensator</b> when using this method.
+        First, we look at the frequency response of the &quot;plant&quot; (which
+        in this case is the closed inner loop system in series with the cart
+        mechanics):
+
+        <p align="center"><img src="cascade5.gif" border="0" align="center" width="522" height="407">
+
+        <p>Note that this frequency response has a negative phase margin (which
+        is given by 180° + <i>p</i>, where <i>p</i> is the phase shift at the
+        frequency at which the gain is 1). For stability, a phase margin of more
+        than 0° is needed, but for robust stability, a phase margin of 50° or
+        more is suggested. The compensator is thus chosen as
+
+        <p align="center"><img src="img24.gif" border="0" align="center" width="145" height="40">
+
+        <p>The frequency response of this compensator is shown below.
+
+        <p align="center"><img src="cascade6.gif" border="0" align="center" width="508" height="398">
+
+        <p>The lead compensator has three parameters which can be adjusted: the
+        pole position, the zero position and the loop gain. Generally the pole
+        and zero position differ by a factor of 10, which provides the desirable
+        positive &quot;bump&quot; in the phase response. The positions of the
+        pole and zero are chosen such that the compensator lead (or
+        &quot;bump&quot;) in the frequency response is at the optimal position
+        relative to the plant's response (i.e. we are trying to boost the
+        plant's phase response above 180°). The gain of the compensator is
+        chosen to make the magnitude of the open loop system 0 dB at the peak of
+        the phase response (to guarantee the phase margin).
+
+        <p>The frequency response of the entire open loop system is:
+
+        <p align="center"><img src="cascade7.gif" border="0" align="center" width="513" height="400">
+
+        <p>Note that the gain margin is now about 55°, which is acceptable. The
+        gain margin (in case you're interested) is 8 dB (which is also
+        acceptable for robust stability).
+
+        <p>The next page shows a simulation of this cascaded system.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="pend_sim2.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Part 2</a></td>
+              <td align="center" width="33%"><a href="pend_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Inverted Pendulum</a></td>
+              <td align="center" width="33%"><a href="pend_sim4.html"><img src="../images/nextbutton.gif" border="0" alt="&gt;" width="32" height="32"><br>
+                Next - Part 4</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

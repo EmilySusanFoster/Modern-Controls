@@ -1,0 +1,135 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<!--  Table for the page heading                        -->
+
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center">
+  <tr>
+    <td align="left" width="600">
+
+      <p align="left">You are here : <a href="../index.html" target="_top">Control
+      System Design - Index</a> | <a href="../simulation.html">Simulations</a> |
+      <a href="roll_sim.html">Rolling Mill</a> | Part 3</p>
+      <h2 align="center">Rolling Mill Tutorial - Part 3</h2>
+
+      <p>Before continuing, make sure you have read <a href="../chapters/chapter7.html">Chapter
+      7</a>.
+      <h3>Soft Sensors</h3>
+
+      <p>The most common method of avoiding the time delay in the measurement of
+      exit thickness <i>h</i> is to infer the exit thickness from the force on
+      the rolls (which can be easily measured). Such a devices are known as
+      BISRA gauges, and were first invented in 1954. Since
+
+      <p align="center"><i>F</i> = <i>M</i> ( <i>h</i> - <i>s</i> )
+
+      <p>we can measure force and then estimate exit thickness as
+
+      <p align="center"><img src="img34.gif" border="0" width="83" height="51">
+
+      <p>The following diagram shows the resulting system.
+
+      <p align="center"><img src="rolling4a.gif" border="0" alt width="594" height="304">
+      <h3>Java Applet Simulation</h3>
+
+      <p>The JAVA applet below is a simulation of the above system. As before,
+      the control parameters have been chosen as <i>k<sub>p</sub></i> = 10 and <i>k<sub>i</sub></i>
+      = 100. The graph again has a vertical scale of 0.1mm per division. It
+      shows the set-point (the blue trace) and the actual exit thickness <i>h</i>
+      (the green trace).</p>
+
+      <p>By eliminating the delay in the system, we allow much faster responses
+      (with time constants as low as 10ms). Since such fast responses would not
+      be easily visible in real-time, the simulation below allows the user to
+      slow down the passage of time in the simulation. In the &quot;Simulation
+      Parameters&quot; window, the time per horizontal division of the graph can
+      be varied, like an oscilloscope. This time/division also affects the
+      animation presented beside the graph. (This simulation is of course a
+      discrete time approximation of the continuous time system. The time step
+      for the simulation is 0.001 seconds due to the speed of the system, so if
+      you change the time scale to 2 sec/div, the simulation has to try and do
+      1000 time steps each second, which may result in the simulation slowing
+      down on slower computers. If the time scale is 0.2 sec/div, then only 100
+      time steps must be done per second, allowing the simulation to run much
+      faster.)</p>
+
+      <p>Otherwise, the &quot;Change Parameters&quot; button allows you to
+      change the same parameters as in the last simulation.
+
+      <p>&nbsp;</p>
+      <applet code="RollingMill.class" codebase="../applet/" width="600" height="300" align="CENTER">
+        <param name="version" value="3">You don't seem to have a Java enabled browser.
+      </applet>
+
+      <p>&nbsp;</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td align="center"><b>Things to try</b></td>
+          <td align="center"><b>Things to notice</b></td>
+        </tr>
+        <tr>
+          <td>Run the simulation</td>
+          <td>The system's response is much faster now, but the sinusoidal
+            variations are much larger</td>
+        </tr>
+        <tr>
+          <td>Change the set point to 0.3</td>
+          <td>The delay has no effect on the set-point response</td>
+        </tr>
+        <tr>
+          <td>Change the input thickness to 0.5</td>
+          <td>The delay now has now effect on the disturbance response</td>
+        </tr>
+        <tr>
+          <td>Increase the controller gain to try and increase the system's
+            response speed</td>
+          <td>The gain must be much higher for the system to go unstable,
+            meaning that this system can have a larger closed-loop bandwidth</td>
+        </tr>
+        <tr>
+          <td>Change the time scale on the graph to 2 sec/div and compare the
+            magnitude of the sinusoidal variations to the previous example</td>
+          <td>The sinusoidal variations are approximately three times larger
+            using the BISRA gauge</td>
+        </tr>
+      </table>
+
+      <p>You have most likely observed that now the system's response speed is
+      now very fast. However, the sinusoidal variations in the output have
+      increased in size to the point where they can no longer be ignored.
+      (Previously, the time delay was our main concern.)
+
+      <p>Next, we look at the source of these variations and a possible
+      solution.</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="roll_sim2.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Part 2</a></td>
+            <td align="center" width="33%"><a href="roll_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Rolling Mill</a></td>
+            <td align="center" width="33%"><a href="roll_sim4.html"><img src="../images/nextbutton.gif" border="0" alt="-&gt;" width="32" height="32"><br>
+              Next - Part 4</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+</body>
+
+</html>

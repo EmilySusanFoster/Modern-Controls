@@ -1,0 +1,114 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | <a href="tank_sim.html">Tank Level</a> | Part 2</p>
+        <h2 align="center">Tank Level Tutorial - Part 2</h2>
+
+        <p>The JAVA applet below is a simulation of the above tank system. The
+        controller used in the previous simulation (and this next one) was a
+        simple SISO PI controller forming a loop around the height <i>h</i><sub>2</sub>.
+        The controller parameters are <i>k<sub>p</sub></i> = -0.3 and <i>k<sub>i</sub></i>
+        = -0.007. Pump 1 is given a constant voltage so that the flow into tank
+        1 is always <i>f</i><sub>1</sub> = 0.9347. There are two important
+        physical limitations on the system: the tank heights cannot be more than
+        100% or less than 0% and the flow out of tank 2 cannot be negative (no
+        water can be pumped into the tank) or more than 10% per second. Because
+        of this saturation of the actuator, an anti-windup controller has been
+        implemented (see <a href="../chapters/chapter14.html">Chapter 14</a>).
+        (Another limitation of the model is that <i>h</i><sub>1</sub> must
+        always be larger than <i>h</i><sub>2</sub>, but this can be overcome by
+        replacing
+
+        <p align="center"><img src="img56.gif" border="0" alt width="67" height="28">
+
+        <p>with
+
+        <p align="center"><img src="img57.gif" border="0" alt width="79" height="28">
+
+        <p>when <i>h</i><sub>2</sub> is larger, since in this case <i>f</i><sub>12</sub>
+        will be negative.)
+
+        <p>The block diagram of the controller system is shown below:
+
+        <p align="center"><img src="tank1.gif" border="0" width="592" height="198">
+
+        <p>As before, the graph has a vertical scale of 25% per division and a
+        horizontal scale of 10 sec per division. It shows the set-point (the
+        orange trace), the actual <i>h</i><sub>1</sub> (the blue trace), the
+        estimated <i>h</i><sub>1</sub> (the red trace) and the measured <i>h</i><sub>2</sub>
+        (the green trace).
+
+        <p>Pressing the &quot;Change Parameters&quot; button allows you to
+        change the same parameters as in the previous example plus the
+        controller parameters. Designing a controller for both the tank heights
+        will not be covered by this discussion, but you might like to try this
+        interesting problem yourself.
+
+        <p>&nbsp;</p>
+        <applet code="TankLevel.class" codebase="../applet/" width="600" height="300" align="CENTER">
+          <param name="version" value="2">You don't seem to have a Java enabled browser.
+        </applet>
+
+        <p>&nbsp;</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+          <tr>
+            <td align="center"><b>Things to try</b></td>
+            <td align="center"><b>Things to notice</b></td>
+          </tr>
+          <tr>
+            <td>N/A</td>
+            <td>The effect of the saturation on the output flow - the fill rate
+              of tank 2 is limited since the smallest outflow <i>f</i><sub>2</sub>
+              is 0.</td>
+          </tr>
+          <tr>
+            <td>Turn on the anti-windup controller</td>
+            <td>See the difference in response speed this makes</td>
+          </tr>
+          <tr>
+            <td>Try changing the controller parameters <i>k<sub>p</sub></i> and <i>k<sub>i</sub></i></td>
+            <td>See the difference in response speed this makes (but notice that
+              it only changes the speed in one direction - why is that?)</td>
+          </tr>
+        </table>
+
+        <p>&nbsp;
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="tank_sim1.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Part 1</a></td>
+              <td align="center" width="33%"><a href="tank_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Tank Level</a></td>
+              <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+</body>
+
+</html>

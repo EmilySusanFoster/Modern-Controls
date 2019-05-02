@@ -1,0 +1,175 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | <a href="tank_sim.html">Tank Level</a> | Part 1</p>
+        <h2 align="center">Tank Level Tutorial - Part 1</h2>
+
+        <p>Before continuing, make sure you have read <a href="../chapters/chapter7.html">Chapter
+        7</a> and <a href="../chapters/chapter19.html">Chapter 19</a>.
+        <h3>System Model</h3>
+
+        <p>Before we continue with the observer design, we must make a model of
+        the system. The height of tank 1 can be described by the equation
+
+        <p align="center"><img src="img42.gif" border="0" alt width="128" height="39">
+
+        <p>Similarly, <i>h</i><sub>2</sub> is given by
+
+        <p align="center"><img src="img43.gif" border="0" alt width="130" height="39">
+
+        <p>The flow between the two tanks can be approximated by the free fall
+        velocity for the difference in height between the two tanks.
+
+        <p align="center"><img src="img44.gif" border="0" alt width="139" height="28">
+
+        <p>Now, if we measure the heights of the tanks in % (where 0% is empty
+        and 100% is full), we can convert the flow rates into equivalent values
+        in % per second (where <i>f</i><sub>1</sub> is the equivalent flow into
+        tank 1 and <i>f</i><sub>2</sub> is the equivalent flow out of tank 2).
+        The model for the system is
+
+        <p align="center"><img src="img45.gif" border="0" alt width="385" height="56">
+
+        <p>where
+
+        <p align="center"><img src="img46.gif" border="0" alt width="119" height="41">
+
+        <p>We can then choose to linearise this model for a nominal steady state
+        height difference (or operating point). Let
+
+        <p align="center"><img src="img47.gif" border="0" alt width="167" height="27">
+
+        <p>then
+
+        <p align="center"><img src="img48.gif" border="0" alt width="246" height="152">
+
+        <p>since
+
+        <p align="center"><img src="img49.gif" border="0" alt width="104" height="35">
+
+        <p>then
+
+        <p align="center"><img src="img50.gif" border="0" alt width="406" height="177">
+
+        <p>This yields the following linear model
+
+        <p align="center"><img src="img51.gif" border="0" alt width="461" height="63">
+
+        <p>where
+
+        <p align="center"><img src="img52.gif" border="0" alt width="68" height="43">
+
+        <p>Since we are assuming that <i>h</i><sub>2</sub> can be measured and <i>h</i><sub>1</sub>
+        cannot, we set <i>C</i> = [ 0 1 ] and D = [ 0 0 ]. The resulting system
+        is both controllable and observable (which you can easily verify). Now
+        we wish to design an observer
+
+        <p align="center"><img src="img40.gif" border="0" alt width="85" height="54">
+
+        <p>to estimate the value of <i>h</i><sub>2</sub>. The characteristic
+        polynomial of the observer is
+
+        <p align="center"><img src="img53.gif" border="0" alt width="197" height="28">
+
+        <p>so we can choose the observer poles which gives us values for <i>J</i><sub>1</sub>
+        and <i>J</i><sub>2</sub>. If we assume that the operating point is H =
+        10%, then <i>k</i> = 0.0411. If we wanted poles at <i>s</i> = -0.9822
+        and <i>s</i> = -0.0531, then we would calculate that <i>J</i><sub>1</sub>
+        = 0.3 and <i>J</i><sub>2</sub> = 0.9. If we wanted two poles at <i>s</i>
+        = -2, then <i>J</i><sub>1</sub> = 3.9178 and <i>J</i><sub>2</sub> =
+        93.41.
+
+        <p>The equation for the observed system is then
+
+        <p align="center"><img src="img55.gif" border="0" alt width="554" height="66">
+
+        <p>Alternatively, we could use the non-linear model in our observer to
+        attempt to get better performance:
+
+        <p align="center"><img src="img54.gif" border="0" alt width="495" height="65">
+        <h3>Java Applet Simulation</h3>
+
+        <p>The JAVA applet below is a simulation of the above tank system. The
+        purpose of this simulation is to observe the difference between the
+        linear and non-linear observers. Thus, we will not concern ourselves
+        with the controller at this stage.</p>
+
+        <p>The graph has a vertical scale of 25% per division and a horizontal
+        scale of 10 sec per division. It shows the set-point (the orange trace),
+        the actual <i>h</i><sub>1</sub> (the blue trace), the estimated <i>h</i><sub>1</sub>
+        (the red trace) and the measured <i>h</i><sub>2</sub> (the green trace).
+
+        <p>Pressing the &quot;Change Parameters&quot; button allows you to
+        change the set point type, the measurement noise level, the type of
+        observer (linear or non-linear) and the observer gain matrix <i>J</i>.</p>
+
+        <p>&nbsp;</p>
+        <applet code="TankLevel.class" codebase="../applet/" width="600" height="300" align="CENTER">
+          <param name="version" value="1">You don't seem to have a Java enabled browser.
+        </applet>
+
+        <p>&nbsp;</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+          <tr>
+            <td align="center"><b>Things to try</b></td>
+            <td align="center"><b>Things to notice</b></td>
+          </tr>
+          <tr>
+            <td>Change the observer type from linear to non-linear</td>
+            <td>the non-linear observer has no error in its output, whereas the
+              linear observer does (the linear observer uses a nominal height
+              difference of 10%, and performs poorly when the system is far from
+              this operating point).</td>
+          </tr>
+          <tr>
+            <td>Move the observer poles out towards negative infinity</td>
+            <td>See the difference this makes in observer response speed and
+              accuracy</td>
+          </tr>
+        </table>
+
+        <p>By pushing the observer poles out towards negative infinity, we get a
+        faster response from the observer, but we also increase sensitivity to
+        modelling errors (particularly relevant in the linear observer) and
+        measurement noise. By now, this should be a familiar trade-off.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="tank_sim.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Tank Level</a></td>
+              <td align="center" width="33%"><a href="tank_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Tank Level</a></td>
+              <td align="center" width="33%"><a href="tank_sim2.html"><img src="../images/nextbutton.gif" border="0" alt="-&gt;" width="32" height="32"><br>
+                Next - Part 2</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

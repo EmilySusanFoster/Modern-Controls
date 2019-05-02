@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<!--  Table for the page heading                        -->
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | <a href="ball_sim.html">Ball &amp; Plate</a> | Backlash</p>
+        <h2 align="center">Ball and Plate Tutorial - Backlash</h2>
+
+        <p>Backlash appears in this system in the gears of the motors. The
+        diagram below is a representation of this backlash.</p>
+
+        <p align="center"><img src="backlash1.gif" border="0" align="center" width="200" height="150">
+
+        <p>The bottom line is that when the input changes direction, it must
+        move all the way across the dead-zone before the output starts to move.
+        The diagram below shows the effect that backlash has on a sinewave. The
+        purple signal is the input, and the blue signal the output.
+
+        <p align="center"><img src="backlash2.gif" border="0" align="center" width="599" height="429">
+
+        <p>The above graph was generated with the SIMULINK system below, using a
+        dead-zone size of 0.3.
+
+        <p align="center"><img src="backlash3.gif" border="0" align="center" width="323" height="158">
+
+        <p>If the input to the backlash is <i>u</i>, the output is <i>v</i> and
+        the backlash deadzone has width 2<i>b</i>, then the following function
+        describes the backlash.</p>
+        <table border="0" align="center" cellpadding="5">
+          <tr>
+            <td><i>v</i>(<i>t</i>)</td>
+            <td>=</td>
+            <td><i>u</i>(<i>t</i>) - <i>b</i></td>
+            <td>if <i>u</i>(<i>t</i>) - <i>v</i>(<i>t</i>) &gt; <i>b</i></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>=</td>
+            <td><i>u</i>(<i>t</i>) + <i>b</i></td>
+            <td>if <i>u</i>(<i>t</i>) - <i>v</i>(<i>t</i>) &lt; -<i>b</i></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>=</td>
+            <td><i>v</i>(<i>t</i> - <i>t</i><sub>0</sub>)</td>
+            <td>otherwise</td>
+          </tr>
+        </table>
+
+        <p>that is, if the input is in the dead zone region, the output remains
+        the same as last time. To compensate for backlash, we just have to
+        invert this function, using an estimate of the output, <i>v</i>'(<i>t</i>).
+        If <i>u</i>'(<i>t</i>) is the desired input, then <i>u</i>(<i>t</i>) is
+        the compensated input.</p>
+        <table border="0" align="center" cellpadding="5">
+          <tr>
+            <td><i>u</i>(<i>t</i>)</td>
+            <td>=</td>
+            <td><i>u</i>'(<i>t</i>) - <i>b</i></td>
+            <td>if <i>u</i>'(<i>t</i>) &gt; <i>v</i>(<i>t</i>)</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>=</td>
+            <td><i>u</i>'(<i>t</i>) + <i>b</i></td>
+            <td>if <i>u</i>'(<i>t</i>) &lt; <i>v</i>(<i>t</i>)</td>
+          </tr>
+        </table>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="ball_sim1.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Part 1</a></td>
+              <td align="center" width="33%"><a href="ball_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Ball &amp; Plate</a></td>
+              <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

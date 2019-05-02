@@ -1,0 +1,280 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<table align="center" border="0" width="600" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="600">
+
+      <p align="left">You are here : <a href="../index.html" target="_top">Control
+      System Design - Index</a> | <a href="../simulation.html">Simulations</a> |
+      <a href="ph_sim.html">pH Simulation</a> | Part 1</p>
+      <h2 align="center">pH Control - Part 1</h2>
+
+      <p>Before continuing, make sure you have read <a href="../chapters/chapter19.html">Chapter
+      19</a></p>
+      <h3>System Model</h3>
+
+      <p>From elementary mass balance considerations, it can be shown that an
+      appropriate state space model for the strong acid-strong base system is</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td>
+
+              <p align="center"><img border="0" src="ph_eq1.gif" width="362" height="57"></td>
+          </center>
+          <td>
+
+            <p align="right">(1)</td>
+        </tr>
+        </table>
+      </div>
+
+      <p>where</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="2" cellspacing="0">
+          <tr>
+            <td align="right"><i>c<sub>o</sub></i>(<i>t</i>) :&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>excess hydrogen ion concentration in the effluent stream (mol/<i>L</i>)</td>
+          </tr>
+          <tr>
+            <td align="right"><i>c<sub>u</sub></i>(<i>t</i>) :&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>excess hydrogen ion concentration of the reagent (mol/<i>L</i>)</td>
+          </tr>
+          <tr>
+            <td align="right"><i>c<sub>i</sub></i>(<i>t</i>) :&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>excess hydrogen ion concentration in the influent stream (mol/<i>L</i>)</td>
+          </tr>
+          <tr>
+            <td align="right"><i>u</i>(<i>t</i>) :&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>flow rate of the reagent (<i>L</i>/<i>s</i>)</td>
+          </tr>
+          <tr>
+            <td align="right"><i>q</i>(<i>t</i>) :&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>flow rate of the influent stream (<i>L</i>/<i>s</i>)</td>
+          </tr>
+          <tr>
+            <td align="right"><i>V</i> :&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>volume of the tank (<i>L</i>)</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+
+      <p>Normally, the reagent concentration is constant, and we control the
+      effluent pH by varying the reagent flow. Note that the concentrations are <i>excess
+      </i>concentrations, meaning that they measure the concentration of
+      hydrogen ions in excess to that found in water. We can convert an excess
+      concentration <i>C</i> to pH using the following formula.</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" cellspacing="0" width="600">
+          <tr>
+            <td>
+
+              <p align="center"><img border="0" src="ph_eq2.gif" width="289" height="44"></td>
+          </center>
+          <td>
+
+            <p align="right">(2)</td>
+        </tr>
+        </table>
+      </div>
+
+      <p align="left">From this formula, we can see that an excess concentration
+      of 0 gives a pH of 7 (which is the pH of water, as expected). Also,
+      negative excess concentrations correspond to acidic pH, and positive
+      excess concentrations correspond to basic pH.</p>
+
+      <p align="left"><b>NOTE</b>: The reader should already be aware that if a
+      weak acid or weak base is used, the titration curve will be substantially
+      different. The differential equation (1) represents the dynamic equation
+      for a strong acid-strong base titration curve. For any other acid-base
+      combination (e.g. weak acid-strong base), the system model will be
+      substantially different, as will equation (2) for finding concentration
+      from pH. The graph below shows the titration curve for a strong
+      acid-strong base system.</p>
+
+      <p align="center"><img border="0" src="ph4.gif" width="469" height="277"></p>
+      <h3 align="left">Control Design</h3>
+
+      <p align="left">We assume that the tank system has a level controller
+      which maintains a constant liquid volume in the tank. The reagent flow is
+      controlled using a simple PI controller as shown in the figure below. Note
+      that the control valve on the reagent pipe has a saturation, since it can
+      be fully open (giving a maximum flow rate) or fully closed (giving a
+      minimum flow rate of zero).</p>
+
+      <p align="center"><img border="0" src="ph2.gif" width="429" height="160"></p>
+
+      <p align="left">For the purposes of designing the controller, the plant is
+      linearised by assuming that the reagent flow is much smaller than the
+      influent flow (since the reagent is more concentrated). This results in
+      the linear model shown below.</p>
+
+      <p align="center"><img border="0" src="ph3.gif" width="291" height="173"></p>
+
+      <p align="left">The controller is designed so that the closed-loop
+      bandwidth is twice that of the open-loop bandwidth. This way, the initial
+      peak in reagent flow falls within the limits imposed by the valve. It may
+      seem logical to construct a larger valve so that a faster controller can
+      be implemented, but we will see later that this carries with it serious
+      design tradeoffs which mitigate against going too far in this direction.</p>
+
+      <p align="left">For this example, we choose the parameter values as</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="2" cellspacing="0">
+          <tr>
+            <td align="right"><i>c<sub>u</sub></i> :&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>-10<sup>-</sup><sup>2 </sup>mol/<i>L</i></td>
+          </tr>
+          <tr>
+            <td align="right"><i>c<sub>i</sub></i> :&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>10<sup>-3</sup> mol/<i>L</i></td>
+          </tr>
+          <tr>
+            <td align="right"><i>q</i> :&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>10 <i>L</i>/<i>min</i></td>
+          </tr>
+          <tr>
+            <td align="right"><i>V</i> :&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>83.67 <i>L</i></td>
+          </tr>
+          <tr>
+            <td align="right">maximum reagent flow :&nbsp;</td>
+            <td></td>
+            <td>0.025 <i>L</i>/<i>s</i></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+
+      <p>and design a PI controller with <i>k<sub>p</sub></i> = 3<i>q </i>/ <i>c<sub>u</sub></i>
+      and <i>k<sub>i</sub></i> = 4<i>q</i><sup>2</sup> / <i>Vc<sub>u</sub></i>.
+      Note that the primary concern of the controller is to reject disturbances
+      rather than to follow a set-point, since the set-point will always be a pH
+      of 7. Also, we assume that the control valve allows a maximum reagent flow
+      rate of 1.5 <i>L</i> / <i>min</i>.</p>
+
+      <p>There is an inherent problem with the pH control system: the measured
+      output is pH, but what we want to control is hydrogen ion concentration
+      (using pH as the control variable with a set point of 7 would make the
+      system even more non-linear than it already is). If we did not know
+      equation (2) for converting between ion concentration and pH, we would
+      have to attempt to estimate the titration curve, possibly linearising it
+      to find ion concentration. The pH curve looks almost vertical in the
+      middle, but upon magnification we find that it is not linear at all. Thus,
+      linearising the titration curve has serious sensitivity ramifications for
+      the control system.</p>
+
+      <p>Fortunately, in this case we know the function for pH in terms of
+      concentration, so we can simply invert this equation to find the ion
+      concentration for the measured pH. This is rarely possible in practise.</p>
+
+      <p>Note that when measuring the effluent pH, there is a delay of the order
+      of 5 seconds. It is safe to ignore this delay considering the time scales
+      we are looking at (i.e. with a plant time constant of 500 seconds).</p>
+      <h3>Java Applet Simulation</h3>
+
+      <p>Below is a Java applet which simulates the above pH neutralisation
+      system. The blue plot shows the influent concentration and the green plot
+      shows the effluent concentration. This process is extremely slow, so the
+      time scale is accelerated somewhat: 1250 simulated seconds pass for each
+      real second of the simulation, giving a horizontal scale of 2500 seconds
+      per division
+
+      <p>Pressing the &quot;Change Parameters&quot; button brings up the
+      parameters window allowing you to change the controller values, the
+      influent pH and the animation speed. The controller has been implemented
+      in the anti-windup form to avoid the effects of the saturation of the
+      valve. The animation speed can be 25, 12.5 or 6.25 frames per second. This
+      speed is only the rate at which the screen is refreshed - the simulation
+      is unaffected. The speed function is available for those with slower
+      computers so that the simulations still appear in real-time (if somewhat
+      jerkier). Note that the applet does some auto-detection of the speed of
+      your computer, so if you select a speed that your computer cannot handle,
+      the applet will reduce the speed accordingly.</p>
+
+      <p>&nbsp;</p>
+      <applet code="pHControl.class" codebase="../applet/" width="600" height="300" align="center">
+        <param name="version" value="1">You don't seem to have a Java enabled browser.
+      </applet>
+
+      <p>&nbsp;</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td align="center"><b>Things to try</b></td>
+          <td align="center"><b>Things to notice</b></td>
+        </tr>
+        <tr>
+          <td>Look at the initial step response.</td>
+          <td>Observe that the response is different from a normal exponential
+            response.</td>
+        </tr>
+        <tr>
+          <td>Change the influent pH to any value you like (the simulation will
+            allow only values between 11 and 7).</td>
+          <td>Watch the non-linear nature of the system's response.</td>
+        </tr>
+        <tr>
+          <td>Design a faster controller.</td>
+          <td>Note the effect of the valve saturation on the response.</td>
+        </tr>
+      </table>
+
+      <p>The observed non-linear output response is due in part to the
+      non-linear system. However, most of the non-linearity arises from the fact
+      that we are measuring pH which is a logarithmic function of the excess ion
+      concentration. It is hydrogen ion concentration that we are concerned with
+      controlling, but we measure pH since environmental laws specify the
+      acceptable effluent pH ranges (the tolerance could be as small as 0.5 of a
+      pH).</p>
+
+      <p>In this simulation, it was assumed that both the influent flow and
+      concentration were constant, but this is rarely the case. The next page
+      looks at the effect of varying the influent flow rate.</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="ph_sim.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Index</a></td>
+            <td align="center" width="33%"><a href="ph_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - pH Index</a></td>
+            <td align="center" width="33%"><a href="ph_sim2.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next - Part 2</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

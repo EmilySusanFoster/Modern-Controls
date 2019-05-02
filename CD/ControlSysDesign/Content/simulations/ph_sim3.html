@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<table align="center" border="0" width="600" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="600"><a name="Top"></a>
+
+      <p align="left">You are here : <a href="../index.html" target="_top">Control
+      System Design - Index</a> | <a href="../simulation.html">Simulations</a> |
+      <a href="ph_sim.html">pH Simulation</a> | Part 3</p>
+      <h2 align="center">pH Control - Part 3</h2>
+      <h3>Control Valve Errors</h3>
+
+      <p>Up until now, we have considered that the control valve was ideal -
+      i.e. the valve provides whatever reagent flow rate we desire (with
+      saturation limits). In reality, things aren't that simple, with most
+      valves displaying backlash characteristics. You should recall the
+      discussion of <a href="backlash.html">backlash</a> in the <a href="ball_sim.html">ball
+      and plate</a> control example.</p>
+
+      <p>For now, we will assume that the backlash error is 2% of the maximum
+      flow rate allowed by the valve. Often, the valve errors can be as large as
+      5% or 10%. The block diagram of this new system is shown below:</p>
+
+      <p align="center"><img border="0" src="ph5.gif" width="508" height="142"></p>
+
+      <p>With the influent flow variations discussed in the last example, there
+      are now two sources of error in the system. In order to understand them
+      better, we will examine them separately. Since the last example showed the
+      effect of flow variations alone, we will now look at the effect of the
+      valve errors alone.</p>
+
+      <p>The nature of the valve hysteresis is such that a simple exponential
+      step response will be largely unaffected. Thus, to highlight the effect of
+      the hysteresis, we will allow extremely small influent flow variations.
+      The influent flow <i>q</i>(<i>t</i>) is then the nominal 10 <i>L</i>/<i>min</i>
+      plus a small sinusoidal variation of amplitude 0.0003 <i>L</i>/<i>min</i>
+      and period 10000 <i>s</i>.</p>
+      <h3>Java Applet Simulation</h3>
+
+      <p>Below is a Java applet which simulates the pH control system with
+      control valve hysteresis. The blue plot shows the influent concentration
+      and the green plot shows the effluent concentration. This process is
+      extremely slow, so the time scale is accelerated somewhat: 1250 simulated
+      seconds pass for each real second of the simulation, giving a horizontal
+      scale of 2500 seconds per division
+
+      <p>Pressing the &quot;Change Parameters&quot; button brings up the
+      parameters window allowing you to change the controller values, the
+      influent pH and the animation speed. The controller has been implemented
+      in the anti-windup form to avoid the effects of the saturation of the
+      valve. The animation speed can be 25, 12.5 or 6.25 frames per second. This
+      speed is only the rate at which the screen is refreshed - the simulation
+      is unaffected. The speed function is available for those with slower
+      computers so that the simulations still appear in real-time (if somewhat
+      jerkier). Note that the applet does some auto-detection of the speed of
+      your computer, so if you select a speed that your computer cannot handle,
+      the applet will reduce the speed accordingly.</p>
+
+      <p>The parameters window also allows you to select whether you want flow
+      variations or valve errors. The possibilities are listed in the table
+      below:</p>
+      <div align="center">
+        <center>
+        <table border="1" cellpadding="5" cellspacing="0" width="600">
+          <tr>
+            <td align="center" width="109"><b>flow variations</b></td>
+            <td align="center" width="84"><b>valve error</b></td>
+            <td width="380"><b>description</b></td>
+          </tr>
+          <tr>
+            <td align="center" width="109">off</td>
+            <td align="center" width="84">on</td>
+            <td width="380">The default state for the simulation, showing the
+              valve error characteristics as discussed above.</td>
+          </tr>
+          <tr>
+            <td align="center" width="109">off</td>
+            <td align="center" width="84">off</td>
+            <td width="380">No valve errors are present, allowing you to see the
+              effect of the small sinusoidal flow variations alone.</td>
+          </tr>
+          <tr>
+            <td align="center" width="109">on</td>
+            <td align="center" width="84">off</td>
+            <td width="380">Shows the effect of random flow variations, and is
+              exactly the same as in the previous example.</td>
+          </tr>
+          <tr>
+            <td align="center" width="109">on</td>
+            <td align="center" width="84">on</td>
+            <td width="380">Shows the effect of the valve errors in the presence
+              of the random flow variations.</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+
+      <p>&nbsp;</p>
+      <applet code="pHControl.class" codebase="../applet/" width="600" height="300" align="center">
+        <param name="version" value="3">You don't seem to have a Java enabled browser.
+      </applet>
+
+      <p>&nbsp;</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td align="center"><b>Things to try</b></td>
+          <td align="center"><b>Things to notice</b></td>
+        </tr>
+        <tr>
+          <td>Look at the response of the system with valve errors and small
+            sinusoidal flow variations.</td>
+          <td>Notice that the effluent pH varies between about 8.5 and 5.5</td>
+        </tr>
+        <tr>
+          <td>Turn off valve errors (and flow variations)</td>
+          <td>Observe the response of the small sinusoidal flow variations
+            alone, and compare the output to the system with valve errors.</td>
+        </tr>
+        <tr>
+          <td>Turn off the valve errors, and turn on the flow variations</td>
+          <td>Recall the response from the previous example and note that this
+            response is the same, with the output again varying between 8.5 and
+            5.5</td>
+        </tr>
+        <tr>
+          <td>Turn on both the valve errors and the flow variations</td>
+          <td>Note the effect of the both the valve hysteresis and the random
+            flow variations.</td>
+        </tr>
+        <tr>
+          <td>Try the faster controller that you designed in the previous
+            example</td>
+          <td>Notice the limited effect of this controller.</td>
+        </tr>
+      </table>
+
+      <p>The essential point in this example is that both sources of error
+      produce output variations of approximately the same size. If we were to
+      construct a larger tank to reduce the error cause by the influent flow,
+      then the valve error would start to dominate. Since the valve errors are
+      of the same magnitude as the errors caused by the influent flow
+      variations, increasing the tank volume would have virtually <b><font color="#B00000">no
+      effect</font></b> on the output variations.</p>
+
+      <p>The next idea might be to try to reduce the valve errors. The valve
+      error is a percentage of the valve's size, so to reduce the error, we need
+      a smaller control valve.&nbsp; However, a smaller control valve will not
+      be able to provide the necessary reagent flow to neutralise the influent.</p>
+
+      <p>This highlights the need to consider both sources of error together,
+      rather than trying to eliminating them individually. The next example
+      presents a solution which considers these factors.</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="ph_sim2.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Part 2</a></td>
+            <td align="center" width="33%"><a href="ph_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - pH Index</a></td>
+            <td align="center" width="33%"><a href="ph_sim4.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next - Part 4</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

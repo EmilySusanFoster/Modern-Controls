@@ -1,0 +1,377 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixc-node1.html">Appendix
+        C</a> | Section C.8.4</p>
+        <h2 align="center">C. Results From Analytic Function Theory</h2>
+        <h3>C.8.4 Poisson-Jensen Formula for the unit disk</h3>
+
+        <p><b>Lemma C.2</b>&nbsp;&nbsp; <i>Consider a function g</i>(<i>z</i>)<i>
+        with the following properties</i></p>
+        <div align="left">
+          <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="20"></td>
+              <td>(i)</td>
+              <td width="20"></td>
+              <td><i>g</i>(<i>z</i>)<i> is analytic on the closed unit disk.</i></td>
+            </tr>
+            <tr>
+              <td width="20"></td>
+              <td>(ii)</td>
+              <td width="20"></td>
+              <td><i>g</i>(<i>z</i>)<i> does not vanish on the unit circle.</i></td>
+            </tr>
+            <tr>
+              <td width="20"></td>
+              <td>(iii)</td>
+              <td width="20"></td>
+              <td><i>g</i>(<i>z</i>)<i> has zeros in the open unit disk, located
+                at  
+                <!-- MATH: $\bar{\alpha}_1, \bar{\alpha}_2,
+\ldots, \bar{\alpha}_{\bar{n}}$ -->
+                <img align="MIDDLE" border="0" src="appendixc-img155.gif" alt="$\bar{\alpha}_1, \bar{\alpha}_2,
+\ldots, \bar{\alpha}_{\bar{n}}$" width="102" height="28">.</i></td>
+            </tr>
+          </table>
+        </div>
+
+        <p><i>Consider also a point 
+          <!-- MATH: $z_0=re^{j\theta}$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img138.gif" alt="$z_0=re^{j\theta}$" width="67" height="34">
+        such that r&nbsp;</i>&lt;&nbsp;1<i>, then
+
+            <!-- MATH: \begin{equation}
+\ln |g(z_0)|=\sum_{i=1}^{\bar{n}}\ln \left | \frac{z_0-\bar{\alpha}_i}{1-\bar{\alpha}_i^*z_0}
+  \right |+\frac{1}{2\pi}\int_0^{2\pi}P_{1,r}(\theta-\omega)\ln |g(e^{j\omega})|d\omega
+
+\end{equation} -->
+
+        </i></p>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img156.gif" alt="\begin{displaymath}
+\ln \vert g(z_0)\vert=\sum_{i=1}^{\bar{n}}\ln \left \vert...
+...i}P_{1,r}(\theta-\omega)\ln \vert g(e^{j\omega})\vert d\omega
+\end{displaymath}" width="430" height="55"></td>
+            <td width="10" align="RIGHT">(C.8.27)</td>
+          </tr>
+        </table>
+
+        <p><b>Proof</b></p>
+
+        <p>Let</p>
+
+          <!-- MATH: \begin{equation}
+\tilde{g}(z)\stackrel{\rm\triangle}{=}g(z)\prod_{i=1}^n \frac{1-\bar{\alpha}_i^*z}{z-\bar{\alpha}_i}
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img157.gif" alt="\begin{displaymath}\tilde{g}(z)\stackrel{\rm\triangle}{=}g(z)\prod_{i=1}^n \frac{1-\bar{\alpha}_i^*z}{z-\bar{\alpha}_i}
+\end{displaymath}" width="159" height="53"></td>
+            <td width="10" align="RIGHT">(C.8.28)</td>
+          </tr>
+        </table>
+
+        <p>Then,  
+        <!-- MATH: $\ln \tilde{g}(z)$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img134.gif" alt="$\ln \tilde{g}(z)$" width="48" height="31">
+        is analytic on the closed unit disk. If we now apply Theorem C.10 to 
+        <!-- MATH: $\ln \tilde{g}(z)$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img134.gif" alt="$\ln \tilde{g}(z)$" width="48" height="31">,
+        we obtain</p>
+
+          <!-- MATH: \begin{equation}
+\ln \tilde{g}(z_0)= \ln {g(z_0)}+
+\sum_{i=1}^n\ln \left ( \frac{1-\bar{\alpha}_i^*z_0}{z_0-\bar{\alpha}_i}\right )=
+\frac{1}{2\pi}\int_0^{2\pi}P_{1,r}(\theta-\omega)\ln \tilde{g}(e^{j\omega})d\omega
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img158.gif" alt="\begin{displaymath}\ln \tilde{g}(z_0)= \ln {g(z_0)}+
+\sum_{i=1}^n\ln \left ( \f...
+...{2\pi}P_{1,r}(\theta-\omega)\ln \tilde{g}(e^{j\omega})d\omega
+\end{displaymath}" width="507" height="53"></td>
+            <td width="10" align="RIGHT">(C.8.29)</td>
+          </tr>
+        </table>
+
+        <p>We also recall that if <i>x</i> is any complex number, then 
+        <!-- MATH: $\ln
+x=ln|x|+j\angle x$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img159.gif" alt="$\ln
+x=ln\vert x\vert+j\angle x$" width="130" height="31">. Thus the result follows on equating real parts in
+        the equation above and on noting that</p>
+
+          <!-- MATH: \begin{equation}
+\ln \left |\tilde{g}(e^{j\omega}) \right|=\ln \left |g(e^{j\omega}) \right|
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img160.gif" alt="\begin{displaymath}\ln \left \vert\tilde{g}(e^{j\omega}) \right\vert=\ln \left \vert g(e^{j\omega}) \right\vert
+\end{displaymath}" width="159" height="30"></td>
+            <td width="10" align="RIGHT">(C.8.30)</td>
+          </tr>
+        </table>
+
+        <p align="right">
+
+
+        <!-- MATH: $\Box \Box \Box$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+        <p><b>Theorem C.11</b> <b>(Jensen's formula for the unit disk)</b>&nbsp;&nbsp;
+        <i>Let f</i>(<i>z</i>)<i> and g</i>(<i>z</i>) <i>be analytic functions
+        on the unit disk. Assume that the zeros of f</i>(<i>z</i>)<i> and g</i>(<i>z</i>)<i>
+        on the unit disk are 
+          <!-- MATH: $\bar{\alpha}_1,
+\bar{\alpha}_2,\ldots, \bar{\alpha}_{\bar{n}}$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img155.gif" alt="$\bar{\alpha}_1, \bar{\alpha}_2,
+\ldots, \bar{\alpha}_{\bar{n}}$" width="102" height="28"> and 
+          <!-- MATH: $\bar{\beta}_1, \bar{\beta}_2, \ldots, \bar{\beta}_{\bar{m}}$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img161.gif" alt="$\bar{\beta}_1, \bar{\beta}_2, \ldots, \bar{\beta}_{\bar{m}}$" width="102" height="34">
+        respectively, where none of these zeros lie on the unit circle. If</i></p>
+
+            <!-- MATH: \begin{equation}
+h(z)\stackrel{\rm\triangle}{=}z^\lambda \frac{f(z)}{g(z)} \hspace{10mm}\lambda\in \Re
+\end{equation} -->
+
+        <table width="100%" align="CENTER">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img162.gif" alt="\begin{displaymath}
+h(z)\stackrel{\rm\triangle}{=}z^\lambda \frac{f(z)}{g(z)} \hspace{10mm}\lambda\in \Re
+\end{displaymath}" width="175" height="55"></td>
+            <td width="10" align="RIGHT">(C.8.31)</td>
+          </tr>
+        </table>
+
+        <p><i>then</i></p>
+
+            <!-- MATH: \begin{equation}
+\frac{1}{2\pi}\int_0^{2\pi}\ln |h(e^{j\omega})|d\omega =
+\ln\left |\frac{f(0)}{g(0)}  \right |+\ln \frac{|\bar{\beta}_1\bar{\beta}_2\ldots \bar{\beta}_{\bar{m}}|}{|\bar{\alpha}_1\bar{\alpha}_2\ldots \bar{\alpha}_{\bar{n}} |}
+
+\end{equation} -->
+
+        <table width="100%" align="CENTER">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img border="0" src="appendixc-img163.gif" width="362" height="46"></td>
+            <td width="10" align="RIGHT">(C.8.32)</td>
+          </tr>
+        </table>
+
+        <p><b>Proof</b></p>
+
+        <p>We first note that 
+        <!-- MATH: $\ln |h(z)|=\lambda \ln |z|+\ln |f(z)|-\ln
+|g(z)|$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img164.gif" alt="$\ln \vert h(z)\vert=\lambda \ln \vert z\vert+\ln \vert f(z)\vert-\ln
+\vert g(z)\vert$" width="271" height="31">. We then apply the Poisson-Jensen formula to <i>f</i>(<i>z</i>)
+        and <i>g</i>(<i>z</i>) at <i>z</i><sub>0&nbsp;</sub>=&nbsp;0 to obtain</p>
+
+          <!-- MATH: \begin{equation}
+P_{1,r}(x)=P_{1,0}(x)=1, \hspace{10mm}
+\ln \left | \frac{z_0-\bar{\alpha}_i }{1-\bar{\alpha}_i^*z_0 } \right |=\ln|\bar{\alpha}_i|,
+\hspace{10mm}
+ \ln \left | \frac{z_0-\bar{\beta}_i }{1-\bar{\beta}_i^*z_0 } \right
+ |=\ln|\bar{\beta}_i|
+
+\end{equation} -->
+
+        <table width="100%" align="CENTER">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img165.gif" alt="\begin{displaymath}P_{1,r}(x)=P_{1,0}(x)=1, \hspace{10mm}
+\ln \left \vert \fra...
+...bar{\beta}_i^*z_0 } \right
+\vert=\ln\vert\bar{\beta}_i\vert
+\end{displaymath}" width="552" height="46"></td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap>
+
+              <p align="right">(C.8.33)</p>
+            </td>
+          </tr>
+        </table>
+
+        <p>We thus have that</p>
+
+          <!-- MATH: \begin{eqnarray}
+\ln|f(0)|=\sum_{i=1}^n\ln|\bar{\alpha}_i|- \frac{1}{2\pi}\int_0^{2\pi}\ln
+|f(e^{j\omega})|d\omega\\
+\ln|g(0)|=\sum_{i=1}^n\ln|\bar{\alpha}_i|- \frac{1}{2\pi}\int_0^{2\pi}\ln
+|g(e^{j\omega})|d\omega
+
+\end{eqnarray} -->
+
+        <table align="CENTER" cellpadding="0" width="100%">
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT"><img align="MIDDLE" border="0" src="appendixc-img166.gif" alt="$\displaystyle \ln\vert f(0)\vert=\sum_{i=1}^n\ln\vert\bar{\alpha}_i\vert- \frac{1}{2\pi}\int_0^{2\pi}\ln
+\vert f(e^{j\omega})\vert d\omega$" width="310" height="60"></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td width="10" align="RIGHT">(C.8.34)</td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT"><img align="MIDDLE" border="0" src="appendixc-img167.gif" alt="$\displaystyle \ln\vert g(0)\vert=\sum_{i=1}^n\ln\vert\bar{\alpha}_i\vert- \frac{1}{2\pi}\int_0^{2\pi}\ln
+\vert g(e^{j\omega})\vert d\omega$" width="307" height="60"></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td width="10" align="RIGHT">(C.8.35)</td>
+          </tr>
+        </table>
+
+        <p>The result follows on subtracting equation (C.8.35) from (C.8.34),
+        and on noting that</p>
+
+          <!-- MATH: \begin{equation}
+\frac{\lambda}{2\pi}\int_0^{2\pi}\ln\left|e^{j\omega}\right|d\omega=0
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img168.gif" alt="\begin{displaymath}\frac{\lambda}{2\pi}\int_0^{2\pi}\ln\left\vert e^{j\omega}\right\vert d\omega=0
+\end{displaymath}" width="155" height="46"></td>
+            <td width="10" align="RIGHT">(C.8.36)</td>
+          </tr>
+        </table>
+
+        <p align="right">
+
+
+        <!-- MATH: $\Box \Box \Box$ --><img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+        <p><b>Remark C.3</b>&nbsp;&nbsp; <i>Further insights can be obtained
+        from equation (C.8.32) if we assume that, in (C.8.32),</i> <i>f</i>(<i>z</i>)<i>
+        and g</i>(<i>z</i>)<i> are polynomials, i.e.</i></p>
+
+            <!-- MATH: \begin{eqnarray}
+f(z)&=&K_f\prod_{i=1}^n (z-\alpha_i)\\
+g(z)&=&\prod_{i=1}^n (z-\beta_i)
+
+\end{eqnarray} -->
+
+        <table cellpadding="0" width="100%" border="0" cellspacing="0">
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT"><i>f</i>(<i>z</i>)</td>
+            <td align="CENTER" nowrap>=</td>
+            <td align="LEFT" nowrap><img align="MIDDLE" border="0" src="appendixc-img169.gif" alt="$\displaystyle K_f\prod_{i=1}^n (z-\alpha_i)$" width="104" height="60"></td>
+            <td width="10" align="RIGHT">(C.8.37)</td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT"><i>g</i>(<i>z</i>)</td>
+            <td align="CENTER" nowrap>=</td>
+            <td align="LEFT" nowrap><img align="MIDDLE" border="0" src="appendixc-img170.gif" alt="$\displaystyle \prod_{i=1}^n (z-\beta_i)$" width="78" height="60"></td>
+            <td width="10" align="RIGHT">(C.8.38)</td>
+          </tr>
+        </table>
+
+        <p>Then</p>
+
+            <!-- MATH: \begin{equation}
+\left |\frac{f(0)}{g(0)}  \right |=|K_f| \left |\frac{\prod_{i=1}^n \alpha_i }
+{\prod_{i=1}^m \beta_i}\right|
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img171.gif" alt="\begin{displaymath}\left \vert\frac{f(0)}{g(0)} \right \vert=\vert K_f\vert \lef...
+...{\prod_{i=1}^n \alpha_i }
+{\prod_{i=1}^m \beta_i}\right\vert
+\end{displaymath}" width="164" height="46"></td>
+            <td width="10" align="RIGHT">(C.8.39)</td>
+          </tr>
+        </table>
+
+        <p>Thus, 
+          <!-- MATH: $\alpha_1, \alpha_2, \ldots \alpha_n$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img172.gif" alt="$\alpha_1, \alpha_2, \ldots \alpha_n$" width="92" height="28">
+        and
+
+          <!-- MATH: $\beta_1, \beta_2, \ldots \beta_m$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img173.gif" alt="$\beta_1, \beta_2, \ldots \beta_m$" width="92" height="29">
+        are <b>all</b> the zeros and <b>all</b> the poles of <i>h</i>(<i>z</i>),
+        respectively, which have nonzero magnitude. This allows equation
+        (C.8.32) to be rewritten as</p>
+
+            <!-- MATH: \begin{equation}
+\frac{1}{2\pi}\int_0^{2\pi}\ln |h(e^{j\omega})|d\omega =
+\ln |K_f |+\ln \frac{|\alpha_1'\alpha_2'\ldots \alpha_{nu}' |}
+ {|\beta_1'\beta_2'\ldots \beta_{mu}'|}
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img174.gif" alt="\begin{displaymath}
+\frac{1}{2\pi}\int_0^{2\pi}\ln \vert h(e^{j\omega})\vert ...
+...{nu}' \vert}
+{\vert\beta_1'\beta_2'\ldots \beta_{mu}'\vert}
+\end{displaymath}" width="345" height="42"></td>
+            <td width="10" align="RIGHT">(C.8.40)</td>
+          </tr>
+        </table>
+
+        <p>where 
+          <!-- MATH: $\alpha_1', \alpha_2', \ldots \alpha_{nu}'$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img175.gif" alt="$\alpha_1', \alpha_2', \ldots \alpha_{nu}'$" width="100" height="31">
+        and
+
+          <!-- MATH: $\beta_1', \beta_2', \ldots \beta_{mu}'$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img176.gif" alt="$\beta_1', \beta_2', \ldots \beta_{mu}'$" width="99" height="31">
+        are the zeros and the poles of <i>h</i>(<i>z</i>), respectively, which
+        lie outside the unit circle .</p>
+
+        <p align="right">
+
+          <!-- MATH: $\Box \Box \Box$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+        <div align="center">
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="appendixc-node21.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section C.8.3</a></td>
+              <td align="center" width="33%"><a href="appendixc-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Appendix C</a></td>
+              <td align="center" width="33%"><a href="appendixc-node26.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section C.9</a></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

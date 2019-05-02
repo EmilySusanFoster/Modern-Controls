@@ -1,0 +1,361 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixc-node1.html">Appendix
+        C</a> | Section C.2</p>
+        <h2 align="center">C. Results From Analytic Function Theory</h2>
+        <h3>C.2 Independence of path</h3>
+
+        <p>Consider functions of two independent variables, <i>x</i> and <i>y</i>.
+        (The reader can think of <i>x</i> as the real axis and <i>y</i> as the
+        imaginary axis.)</p>
+
+        <p>Let <i>P</i>(<i>x</i>,&nbsp;<i>y</i>) and <i>Q</i>(<i>x</i>,&nbsp;<i>y</i>)
+        be two functions of <i>x</i> and <i>y</i>, continuous in some domain <i>D</i>.
+        Say we have a curve <i>C</i> in <i>D</i>, described by the parametric
+        equations</p>
+
+          <!-- MATH: \begin{equation}
+x=f_1(t),\hspace{20mm}y=f_2(t)
+\end{equation} -->
+
+        <table width="100%" align="CENTER">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img1.gif" alt="\begin{displaymath}x=f_1(t),\hspace{20mm}y=f_2(t)
+\end{displaymath}" width="222" height="28"></td>
+            <td width="10" align="RIGHT">(C.2.1)</td>
+          </tr>
+        </table>
+
+        <p>We can then define the following line integrals along the path <i>C</i>
+        from point <i>A</i> to point <i>B</i> inside <i>D</i>.</p>
+          <!-- MATH: \begin{eqnarray}
+\int_A^BP(x,y)dx&=&\int_{t_1}^{t_2}P(f_1(t),f_2(t))\frac{df_1(t)}{dt}dt\\
+\int_A^BQ(x,y)dy&=&\int_{t_1}^{t_2}Q(f_1(t),f_2(t))\frac{df_2(t)}{dt}dt
+
+\end{eqnarray} -->
+
+        <table align="CENTER" cellpadding="0" width="100%">
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT"><img align="MIDDLE" border="0" src="appendixc-img2.gif" alt="$\displaystyle \int_A^BP(x,y)dx$" width="99" height="58"></td>
+            <td align="CENTER" nowrap>=</td>
+            <td align="LEFT" nowrap><img align="MIDDLE" border="0" src="appendixc-img3.gif" alt="$\displaystyle \int_{t_1}^{t_2}P(f_1(t),f_2(t))\frac{df_1(t)}{dt}dt$" width="188" height="56"></td>
+            <td width="10" align="RIGHT">(C.2.2)</td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT"><img align="MIDDLE" border="0" src="appendixc-img4.gif" alt="$\displaystyle \int_A^BQ(x,y)dy$" width="99" height="58"></td>
+            <td align="CENTER" nowrap>=</td>
+            <td align="LEFT" nowrap><img align="MIDDLE" border="0" src="appendixc-img5.gif" alt="$\displaystyle \int_{t_1}^{t_2}Q(f_1(t),f_2(t))\frac{df_2(t)}{dt}dt$" width="188" height="56"></td>
+            <td width="10" align="RIGHT">(C.2.3)</td>
+          </tr>
+        </table>
+
+        <p><b>Definition C.1</b>&nbsp;&nbsp; <i>The line integral 
+          <!-- MATH: $\int P dx +Q dy$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img6.gif" alt="$\int P dx +Q dy$" width="95" height="33">
+        is said to be </i><b>independent of the path</b><i> in D if, for every
+        pair of points A and B in D, the value of the integral is independent of
+        the path followed from A to B.</i></p>
+
+        <p>We then have the following result</p>
+
+        <p><b>Theorem C.1</b>&nbsp;&nbsp; If 
+          <!-- MATH: $\int P dx +Q dy$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img6.gif" alt="$\int P dx +Q dy$" width="95" height="33">
+        is independent of the path in <i>D</i>, then there exists a function <i>F</i>(<i>x</i>,&nbsp;<i>y</i>)
+        in <i>D</i> such that</p>
+
+
+            <!-- MATH: \begin{equation}
+{ \frac{\partial F}{\partial x} } = P(x,y) ; \hspace{20mm}{\frac{\partial F}{\partial y}}=Q(x,y)
+\end{equation} -->
+
+        <table width="100%" align="CENTER">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img8.gif" alt="\begin{displaymath}{ \frac{\partial F}{\partial x} } = P(x,y) ; \hspace{20mm}{\frac{\partial F}{\partial y}}=Q(x,y)
+\end{displaymath}" width="286" height="42"></td>
+            <td width="10" align="RIGHT">(C.2.4)</td>
+          </tr>
+        </table>
+
+        <p><i>holds throughout D. Conversely, if a function F(x, y) can be found
+        such that (C.2.4) holds, then 
+          <!-- MATH: $\int P dx +Q dy$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img6.gif" alt="$\int P dx +Q dy$" width="95" height="33">
+        is independent of the path.</i></p>
+
+        <p><b>Proof</b></p>
+
+        <p>Suppose the integral is independent of the path in <i>D</i>. Then,
+        choose a point (<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>) in <i>D</i>
+        and let <i>F</i>(<i>x</i>,&nbsp;<i>y</i>) be defined as follows</p>
+
+
+          <!-- MATH: \begin{equation}
+F(x,y)=\int_{x_0,y_0}^{x,y}P dx +Q dy
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img9.gif" alt="\begin{displaymath}F(x,y)=\int_{x_0,y_0}^{x,y}P dx +Q dy
+\end{displaymath}" width="191" height="46"></td>
+            <td width="10" align="RIGHT">(C.2.5)</td>
+          </tr>
+        </table>
+
+        <p>where the integral is taken on an arbitrary path in <i>D</i> joining
+        (<i>x</i><sub>0</sub>, <i>y</i><sub>0</sub>) and (<i>x</i>, <i>y</i>).
+        Since the integral is independent of the path, the integral does indeed
+        depend only on (<i>x</i>, <i>y</i>) and defines the function <i>F</i>(<i>x</i>,
+        <i>y</i>). It remains to establish (C.2.4).</p>
+
+        <p align="center"><img border="0" src="appendixc-fig1.gif" width="242" height="176"><br>
+        <strong>Figure C.1:</strong> Integration path</p>
+
+        <p>For a particular (<i>x</i>,&nbsp;<i>y</i>) in <i>D</i>, choose (<i>x</i><sub>1</sub>,&nbsp;<i>y</i>)
+        so that <img align="MIDDLE" border="0" src="appendixc-img11.gif" alt="$x_1\neq
+x$" width="50" height="29"> and the line segment from (<i>x</i><sub>1</sub>,&nbsp;<i>y</i>) to (<i>x</i>,&nbsp;<i>y</i>)
+        in <i>D</i>, is as shown in Figure C.1. Because of independence of the
+        path</p>
+
+          <!-- MATH: \begin{equation}
+F(x,y)=\int_{x_0,y_0}^{x_1,y}(P dx +Q dy)+
+\int_{x_1,y}^{x,y}(P dx +Q dy)
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img12.gif" alt="\begin{displaymath}
+F(x,y)=\int_{x_0,y_0}^{x_1,y}(P dx +Q dy)+
+\int_{x_1,y}^{x,y}(P dx +Q dy)
+\end{displaymath}" width="327" height="53"></td>
+            <td width="10" align="RIGHT">(C.2.6)</td>
+          </tr>
+        </table>
+
+        <p>We think of <i>x</i><sub>1</sub> and <i>y</i> as being fixed while (<i>x</i>,&nbsp;<i>y</i>)
+        may vary along the horizontal line segment. Thus <i>F</i>(<i>x</i>,&nbsp;<i>y</i>)
+        is being considered as function of <i>x</i>. The first integral on the
+        right hand side of (C.2.6) is then independent of <i>x</i>.</p>
+
+        <p>Hence for fixed <i>y</i>, we can write</p>
+
+
+          <!-- MATH: \begin{equation}
+F(x,y)=\mbox{constant} +\int_{x_1}^{x}P(x,y) dx
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img13.gif" alt="\begin{displaymath}F(x,y)=\mbox{constant} +\int_{x_1}^{x}P(x,y) dx
+\end{displaymath}" width="243" height="45"></td>
+            <td width="10" align="RIGHT">(C.2.7)</td>
+          </tr>
+        </table>
+
+        <p>The fundamental theorem of Calculus now gives</p>
+
+          <!-- MATH: \begin{equation}
+\frac{\partial F }{\partial x }=P(x,y)
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img14.gif" alt="\begin{displaymath}\frac{\partial F }{\partial x }=P(x,y)
+\end{displaymath}" width="92" height="39"></td>
+            <td width="10" align="RIGHT">(C.2.8)</td>
+          </tr>
+        </table>
+
+        <p>A similar argument shows that</p>
+
+          <!-- MATH: \begin{equation}
+\frac{\partial F }{\partial y}=Q(x,y)
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img15.gif" alt="\begin{displaymath}\frac{\partial F }{\partial y}=Q(x,y)
+\end{displaymath}" width="94" height="42"></td>
+            <td width="10" align="RIGHT">(C.2.9)</td>
+          </tr>
+        </table>
+
+        <p>Conversely, let (C.2.4) hold for some <i>F</i>. Then, using a
+        parameter <i>t</i>,</p>
+
+          <!-- MATH: \begin{eqnarray}
+F(x,y)=\int_{x_1,y_1}^{x_2,y_2}P dx +Q dy&=& \int_{t_1}^{t_2}
+\left ( \frac{\partial F }{\partial x }\frac{dx}{dt}+\frac{\partial F
+}{\partial y }\frac{dy}{dt}   \right) dt\\
+&=& \int_{t_1}^{t_2}\frac{\partial F }{\partial t }dt\\
+&=&F(x_2,y_2)-F(x_1,y_1)
+
+\end{eqnarray} -->
+
+        <table cellpadding="0" width="100%" border="0" cellspacing="0">
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT"><img align="MIDDLE" border="0" src="appendixc-img16.gif" alt="$\displaystyle F(x,y)=\int_{x_1,y_1}^{x_2,y_2}P dx +Q dy$" width="202" height="52"></td>
+            <td align="CENTER" nowrap>=</td>
+            <td align="LEFT" nowrap><img align="MIDDLE" border="0" src="appendixc-img17.gif" alt="$\displaystyle \int_{t_1}^{t_2}
+\left ( \frac{\partial F }{\partial x }\frac{dx}{dt}+\frac{\partial F
+}{\partial y }\frac{dy}{dt} \right) dt$" width="186" height="56"></td>
+            <td width="10" align="RIGHT">(C.2.10)</td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT">&nbsp;</td>
+            <td align="CENTER" nowrap>=</td>
+            <td align="LEFT" nowrap><img align="MIDDLE" border="0" src="appendixc-img18.gif" alt="$\displaystyle \int_{t_1}^{t_2}\frac{\partial F }{\partial t }dt$" width="73" height="56"></td>
+            <td width="10" align="RIGHT">(C.2.11)</td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT">&nbsp;</td>
+            <td align="CENTER" nowrap>=</td>
+            <td align="LEFT" nowrap><i>F</i>(<i>x</i><sub>2</sub>,&nbsp;<i>y</i><sub>2</sub>)&nbsp;-
+              <i>F</i>(<i>x</i><sub>1</sub>,&nbsp;<i>y</i><sub>1</sub>)</td>
+            <td width="10" align="RIGHT">(C.2.12)</td>
+          </tr>
+        </table>
+      </center>
+
+      <p align="right">
+
+
+        <!-- MATH: $\Box \Box \Box$ -->
+      <img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+      <p><b>Theorem C.2</b>&nbsp;&nbsp; <i>If the integral 
+          <!-- MATH: $\int P dx +Q dy$ -->
+      <img align="MIDDLE" border="0" src="appendixc-img6.gif" alt="$\int P dx +Q dy$" width="95" height="33">
+      is independent of the path in D, then</i></p>
+
+
+            <!-- MATH: \begin{equation}
+\oint P dx +Q dy =0
+\end{equation} -->
+
+      <table width="100%" align="CENTER">
+        <tr valign="MIDDLE">
+          <td align="CENTER" nowrap><img src="appendixc-img19.gif" alt="\begin{displaymath}
+\oint P dx +Q dy =0
+\end{displaymath}" width="121" height="50"></td>
+          <td width="10" align="RIGHT">(C.2.13)</td>
+        </tr>
+      </table>
+
+      <p><i>on every closed path in D. Conversely if (C.2.13) holds for every
+      simple closed path in D, then 
+          <!-- MATH: $\int P dx +Q dy$ -->
+      <img align="MIDDLE" border="0" src="appendixc-img6.gif" alt="$\int P dx +Q dy$" width="95" height="33">
+      is independent of the path in D.</i></p>
+
+      <p><b>Proof</b></p>
+
+      <p>Suppose the integral is independent of the path. Let <i>C</i> be a
+      simple closed path in <i>D</i> and divide <i>C</i> into arcs <img align="BOTTOM" border="0" src="appendixc-img20.gif" alt="$\vec{AB}$" width="28" height="19">
+      and <img align="BOTTOM" border="0" src="appendixc-img21.gif" alt="$\vec{BA}$" width="28" height="19">
+      as in Figure C.2.</p>
+
+      <p align="center"><img border="0" src="appendixc-fig2.gif" width="281" height="171"><br>
+      <b>Figure C.2:</b> Integration path</p>
+
+
+        <!-- MATH: \begin{eqnarray}
+\oint_C (Pdx+ Q dy)&=&\int_{AB}Pdx+Qdy+\int_{BA}Pdx+Qdy\\
+&=&\int_{AB}Pdx+Qdy-\int_{AB}Pdx+Qdy
+
+\end{eqnarray} -->
+
+      <table align="CENTER" cellpadding="0" width="100%">
+        <tr valign="MIDDLE">
+          <td nowrap align="RIGHT"><img align="MIDDLE" border="0" src="appendixc-img22.gif" alt="$\displaystyle \oint_C (Pdx+ Q dy)$" width="114" height="51"></td>
+          <td align="CENTER" nowrap>=</td>
+          <td align="LEFT" nowrap><img align="MIDDLE" border="0" src="appendixc-img23.gif" alt="$\displaystyle \int_{AB}Pdx+Qdy+\int_{BA}Pdx+Qdy$" width="244" height="51"></td>
+          <td width="10" align="RIGHT">(C.2.14)</td>
+        </tr>
+        <tr valign="MIDDLE">
+          <td nowrap align="RIGHT">&nbsp;</td>
+          <td align="CENTER" nowrap>=</td>
+          <td align="LEFT" nowrap><img align="MIDDLE" border="0" src="appendixc-img24.gif" alt="$\displaystyle \int_{AB}Pdx+Qdy-\int_{AB}Pdx+Qdy$" width="244" height="51"></td>
+          <td width="10" align="RIGHT">(C.2.15)</td>
+        </tr>
+      </table>
+
+      <p>The converse result is established by reversing the above argument.</p>
+
+
+      <!-- MATH: $\Box \Box \Box$ -->
+
+      <p align="right"><img border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+      <p><b>Theorem C.3</b>&nbsp;&nbsp; <i>If P(x,&nbsp;y) and Q(x,&nbsp;y) have
+      continuous partial derivatives in D and 
+      <!-- MATH: $\int P dx +Q dy$ -->
+      <img align="MIDDLE" border="0" src="appendixc-img6.gif" alt="$\int P dx +Q dy$" width="95" height="33">
+      is independent of the path in D, then</i></p>
+        <!-- MATH: \begin{equation}
+{ \frac{\partial P}{\partial y} } = {\frac{\partial Q}{\partial x}} \mbox{ in $D$ }
+\end{equation} -->
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="MIDDLE">
+          <td align="CENTER" nowrap><img src="appendixc-img25.gif" alt="\begin{displaymath}{ \frac{\partial P}{\partial y} } = {\frac{\partial Q}{\partial x}} \mbox{ in $D$ }
+\end{displaymath}" width="107" height="42"></td>
+          <td width="10" align="RIGHT">(C.2.16)</td>
+        </tr>
+      </table>
+
+      <p><b>Proof</b></p>
+
+      <p>By Theorem C.1, there exists a function <i>F</i> such that (C.2.4)
+      holds. Equation (C.2.16) follows by partial differentiation.</p>
+
+      <p align="right"><img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+      <p>Actually we will be particularly interested in the converse to Theorem
+      C.3. However, this holds under slightly more restrictive assumptions,
+      namely a simply connected domain.</p>
+      <div align="center">
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="appendixc-node1.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Section C.1</a></td>
+            <td align="center" width="33%"><a href="appendixc-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Appendix C</a></td>
+            <td align="center" width="33%"><a href="appendixc-node7.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next - Section C.3</a></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

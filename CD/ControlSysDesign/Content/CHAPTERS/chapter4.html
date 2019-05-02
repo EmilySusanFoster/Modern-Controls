@@ -1,0 +1,394 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 4</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 4</p>
+        <h2 align="center">4. Continuous Time Signals</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>The advantage of being able to cast a modeling problem into the form
+        of a linear approximation is that subsequent analysis, as well as
+        controller design, can draw on the wealth of information that is
+        available about the operation of linear systems. In this chapter we will
+        cover the fundamentals of this theory for linear models of
+        continuous-time processes. Specific topics to be covered include:</p>
+        <ul>
+          <li>linear high order differential equation models</li>
+          <li>Laplace transforms, which convert linear differential equations to
+            algebraic equations, thus greatly simplifying their study</li>
+          <li>methods for assessing the stability of linear dynamic systems</li>
+          <li>frequency response.</li>
+        </ul>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>Ultimately, all physical systems exhibit some form of nonlinearity.<br>
+            &nbsp;</li>
+          <li>Nevertheless, there is a strong incentive to find a model that is
+            <ul>
+              <li>linear</li>
+              <li>yet sufficiently accurate for the purpose</li>
+            </ul>
+            Incentives include the following properties of linear models:
+            <ul>
+              <li>theory and techniques are significantly simpler and more
+                tractable</li>
+              <li>there are more closed form solutions as well as easier-to use
+                software tools</li>
+              <li>superposition holds; for example, the response to
+                simultaneously acting setpoint changes and disturbances is equal
+                to the sum of these signals acting individually</li>
+              <li>a powerful body of frequency domain properties and results
+                holds: poles, zeros, transfer functions, Bode and Nyquist plots
+                with their associated properties and results</li>
+              <li>relative degree, inversion, stability and inverse stability
+                are easier to define and check<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Means to approximate physical systems by linear models include
+            <ul>
+              <li><em>transformations</em>, such as change of variable</li>
+              <li><em>approximations</em>, such as Taylor series in a
+                neighborhood, black-box identification, etc.<br>
+                &nbsp;</li>
+            </ul>
+          <li>These points motivate the basic presumption of linearity used in
+            the next few chapters; later chapters introduce techniques for
+            systems which are inherently nonlinear.<br>
+            &nbsp;</li>
+          <li>There are two key approaches to linear dynamic models:
+            <ul>
+              <li>the, so-called, time domain, and</li>
+              <li>the, so-called, frequency domain.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Although these two approaches are largely equivalent, they each
+            have their own particular advantages and it is therefore important
+            to have a good grasp of each.<br>
+            &nbsp;</li>
+          <li>In the time domain,
+            <ul>
+              <li>systems are modeled by differential equations</li>
+              <li>systems are characterized by the evolution of their variables
+                (output etc) in time</li>
+              <li>the evolution of variables in time is computed by solving
+                differential equations<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Stable time responses are typically characterized in terms of:</li>
+        </ul>
+        <div align="center">
+          <center>
+          <table cellpadding="4" border="1" cellspacing="0">
+            <tr>
+              <td align="LEFT" valign="TOP" width="20%">
+                <div align="CENTER">
+                  <em>Characteristic</em>
+                </div>
+              </td>
+              <td align="LEFT" valign="TOP" width="60%">
+                <div align="CENTER">
+                  <em>Measure of</em>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td align="LEFT" valign="TOP" width="20%">Steady state gain</td>
+              <td align="LEFT" valign="TOP" width="60%">How the system, after
+                transients, amplifies or attenuates a constant signal</td>
+            </tr>
+            <tr>
+              <td align="LEFT" valign="TOP" width="20%">Rise time</td>
+              <td align="LEFT" valign="TOP" width="60%">How fast the system
+                reacts to a change in its input</td>
+            </tr>
+            <tr>
+              <td align="LEFT" valign="TOP" width="20%">Settling time</td>
+              <td align="LEFT" valign="TOP" width="60%">How fast the system's
+                transient decays</td>
+            </tr>
+            <tr>
+              <td align="LEFT" valign="TOP" width="20%">Overshoot</td>
+              <td align="LEFT" valign="TOP" width="60%">How far the response
+                grows beyond its final value during transients</td>
+            </tr>
+            <tr>
+              <td align="LEFT" valign="TOP" width="20%">Undershoot</td>
+              <td align="LEFT" valign="TOP" width="60%">How far initial
+                transients grow into the opposite direction relative to the
+                final value</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+        <ul>
+          <li>In the frequency domain,
+            <ul>
+              <li>modeling exploits the key linear system property that the
+                steady state response to a sinusoid is again a sinusoid of the
+                same frequency; the system only changes amplitude and phase of
+                the input in a fashion uniquely determined by the system at that
+                frequency<br>
+                &nbsp;</li>
+              <li>systems are modeled by transfer functions, which capture this
+                impact as a function of frequency<br>
+                &nbsp;</li>
+            </ul>
+          <li>In the frequency domain, systems are typically characterized by</li>
+        </ul>
+        <div align="CENTER">
+          <table cellpadding="4" border="1" cellspacing="0">
+            <tr>
+              <td align="left" valign="top" 0.20 width="20%">
+                <div align="CENTER">
+                  <em>Characteristic</em>
+                </div>
+              </td>
+            </center>
+            <td align="center" valign="top" width="70%"><em>Significance</em></td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Frequency response plots</td>
+            <td align="LEFT" valign="TOP" width="70%">Graphical representation
+              of a systems impact on amplitude and phase of a sinusoidal input
+              as a function of frequency.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Poles</td>
+            <td align="LEFT" valign="TOP" width="70%">The roots of the transfer
+              function denominator polynomial; they determine stability and,
+              together with the zeros, the transient characteristics.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Zeros</td>
+            <td align="LEFT" valign="TOP" width="70%">The roots of the transfer
+              function numerator polynomial; they do not impact on stability but
+              determine inverse stability, undershoot and, together with the
+              poles, have a profound impact on the system's transient
+              characteristics</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Relative degree</td>
+            <td align="LEFT" valign="TOP" width="70%">Number of poles minus
+              number of zeros; determines whether a system is strictly proper,
+              biproper or improper</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Strictly proper</td>
+            <td align="LEFT" valign="TOP" width="70%">The system has more poles
+              than zeros; it is causal and therefore implementable, it has an
+              improper inverse and zero high-frequency gain</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Biproper</td>
+            <td align="LEFT" valign="TOP" width="70%">The system has equal
+              number of poles and zeros; it is implementable, has a biproper
+              inverse and has a feed-through term, i.e., a non-zero and finite
+              high-frequency gain</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Improper</td>
+            <td align="LEFT" valign="TOP" width="70%">The system has more zeros
+              than poles; it is not causal, cannot be implemented, has a
+              strictly proper inverse and has infinite high-frequency gain.</td>
+          </tr>
+        </table>
+      </div>
+      <ul>
+        <li>Terms used to characterize systems in the frequency domain include</li>
+      </ul>
+      <div align="CENTER">
+        <table cellpadding="4" border="1" cellspacing="0">
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">
+              <div align="CENTER">
+                <em>Characteristic</em>
+              </div>
+            </td>
+            <td align="LEFT" valign="TOP" width="70%">
+              <div align="CENTER">
+                <em>Measure of</em>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Pass band</td>
+            <td align="LEFT" valign="TOP" width="70%">Frequency range where the
+              system has minimal impact on the amplitude of a sinusoidal input</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Stop band</td>
+            <td align="LEFT" valign="TOP" width="70%">Frequency range where the
+              system essentially annihilates sinusoidal inputs</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Transition band</td>
+            <td align="LEFT" valign="TOP" width="70%">Frequency range between a
+              system's pass- and stop bands</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Bandwidth</td>
+            <td align="LEFT" valign="TOP" width="70%">The frequency range of a
+              system's pass band</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="TOP" width="20%">Cut-off frequency</td>
+            <td align="LEFT" valign="TOP" width="70%">A frequency signifying a
+              (somewhat arbitrary) border between a system's pass- and
+              transition band</td>
+          </tr>
+        </table>
+      </div>
+      <ul>
+        <li>Particularly important linear models include
+          <ul>
+            <li>gain</li>
+            <li>first order model</li>
+            <li>second order model</li>
+            <li>integrator</li>
+            <li>a pure time delay (irrational) and its rational approximation<br>
+              &nbsp;</li>
+          </ul>
+        </li>
+        <li>The importance of these models is due to
+          <ul>
+            <li>them being frequently observed in practice</li>
+            <li>more complex systems being decomposable into them by partial
+              fraction expansion<br>
+              &nbsp;</li>
+          </ul>
+        </li>
+        <li>Evaluating a transfer function at any one frequency yields a
+          characteristic complex number:
+          <ul>
+            <li>its magnitude indicates the system's gain at that frequency</li>
+            <li>its phase indicates the system's phase shift at that frequency<br>
+              &nbsp;</li>
+          </ul>
+        </li>
+        <li>With respect to the important characteristic of stability, a
+          continuous time system is
+          <ul>
+            <li>stable if and only if the real parts of all poles are strictly
+              negative</li>
+            <li>marginally stable if at least one pole is strictly imaginary and
+              no pole has strictly positive real part</li>
+            <li>unstable if the real part of at least one pole is strictly
+              positive</li>
+            <li>non-minimum phase if the real part of at least one zero is
+              strictly positive<br>
+              &nbsp;</li>
+          </ul>
+        </li>
+        <li>The response of linear systems to an arbitrary driving input can be
+          decomposed into the sum of two components:
+          <ul>
+            <li>the natural response, which is a function of initial conditions,
+              but independent of the driving input; if the system is stable, the
+              natural response decays to zero</li>
+            <li>the forced response, which is a function of the driving input,
+              but independent of initial conditions<br>
+              &nbsp;</li>
+          </ul>
+        </li>
+        <li>Equivalent ways of viewing transfer function models include
+          <ul>
+            <li>the Laplace transform of a system's differential equation model</li>
+            <li>the Laplace transform of the system’s forced response to an
+              impulse</li>
+            <li>a model derived directly from experimental observation<br>
+              &nbsp;</li>
+          </ul>
+        </li>
+        <li>In principle, the time response of a transfer function can be
+          obtained by taking the inverse Laplace transform of the output;
+          however, in practice one almost always prefers to transform the
+          transfer function to the time domain and to solve the differential
+          equations numerically.<br>
+          &nbsp;</li>
+        <li>Key strengths of time domain models include:
+          <ul>
+            <li>they are particularly suitable for solution and simulation on a
+              digital computer</li>
+            <li>they are extendible to more general classes of models, such as
+              nonlinear systems</li>
+            <li>they play a fundamental role in state space theory, covered in
+              later chapters<br>
+              &nbsp;</li>
+          </ul>
+        </li>
+        <li>Key strengths of frequency domain models (transfer functions)
+          include:
+          <ul>
+            <li>they can be manipulated by simple algebraic rules; thus,
+              transfer functions of parallel, series or feedback architectures
+              can be simply computed</li>
+            <li>properties such as inversion, stability, inverse stability and
+              even a qualitative understanding of transients are easily inferred
+              from knowledge of the poles and zeros<br>
+              &nbsp;</li>
+          </ul>
+        </li>
+        <li>Time-domain and frequency domain models can be converted from one to
+          the other.<br>
+          &nbsp;</li>
+        <li>All models contain modeling errors.<br>
+          &nbsp;</li>
+        <li>Modeling errors can be described as an additive (AME) or
+          multiplicative (MME) quantity.<br>
+          &nbsp;</li>
+        <li>Modeling errors are necessarily unknown and frequently described by
+          upper bounds.<br>
+          &nbsp;</li>
+        <li>Certain types of commonly occurring modeling errors, such as
+          numerical inaccuracy, missing poles, inaccurate resonant peaks or time
+          delays, have certain <em>finger prints</em>.<br>
+          &nbsp;</li>
+        <li>One can generally assume that modeling errors increase with
+          frequency, the MME typically possessing a high-pass character.</li>
+      </ul>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="chapter3.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Chapter 3</a></td>
+            <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Book Contents</a></td>
+            <td align="center" width="33%"><a href="../part2.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next - Part II</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

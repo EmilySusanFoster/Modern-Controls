@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 18</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 18</p>
+        <h2 align="center">18. Synthesis via State Space Methods</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>We are now in a position to give a state space interpretation to many
+        of the results described earlier in Chapter 7 and 15. In a sense this
+        will duplicate the earlier work. Our reason for doing so, however, is
+        that the alternative state space formulation carries over more naturally
+        to the multivariable case. Results to be presented here include</p>
+        <ul>
+          <li>pole assignment by state variable feedback</li>
+          <li>design of observers to reconstruct missing states from available
+            output measurements</li>
+          <li>combining state feedback with an observer</li>
+          <li>transfer function interpretation</li>
+          <li>dealing with disturbances in state variable feedback</li>
+          <li>re-interpretation of the affine parameterization of all
+            stabilizing controllers</li>
+        </ul>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>We have shown that controller synthesis via pole placement can
+            also be presented in state space form: Given a model in state space
+            form, and given desired locations of the closed loop poles, it is
+            possible to compute a set of constant gains, one gain for each
+            state, such that feeding back the states through the gains results
+            in a closed loop with poles in the pre-specified locations.<br>
+            &nbsp;</li>
+          <li>Viewed as a theoretical result, this insight complements the
+            equivalence of transfer function and state space models by an
+            equivalence of achieving pole placement by either synthesizing a
+            controller as transfer function via the Diophantine equation or as
+            constant gain state variable feedback.<br>
+            &nbsp;</li>
+          <li>Viewed from a practical point of view, implementing this
+            controller would require sensing the value of each state. Due to
+            physical, chemical and economical constraints, however, one hardly
+            ever has actual measurements of all system states available.<br>
+            &nbsp;</li>
+          <li>This raises the question of alternatives to actual measurements
+            and introduces the notion of so called <i>observers</i>, sometimes
+            also called <i>soft sensors</i>, <em>virtual sensors</em>, <i>filters</i>
+            or <i>calculated data</i>.<br>
+            &nbsp;</li>
+          <li>The purpose of an observer is to infer the value of an unmeasured
+            state from other states that are correlated with it and that are
+            being measured.<br>
+            &nbsp;</li>
+          <li>Observers have a number of commonalities with control systems:
+            <ul>
+              <li>they are dynamical systems</li>
+              <li>they can be treated in either the frequency or time domain</li>
+              <li>they can be analyzed, synthesized and designed</li>
+              <li>they have performance properties, such as stability,
+                transients, sensitivities, etc.</li>
+              <li>these properties are influenced by the pole/zero patterns of
+                their sensitivities.<br>
+                &nbsp;</li>
+            </ul>
+          <li>State estimates produced by an observer are used for several
+            purposes:
+            <ul>
+              <li>constraint monitoring</li>
+              <li>data logging and trending</li>
+              <li>condition and performance monitoring</li>
+              <li>fault detection</li>
+              <li>feedback control<br>
+                &nbsp;</li>
+            </ul>
+          <li>To implement a synthesized state feedback controller as discussed
+            above, one can use state variable estimates from an observer in lieu
+            of unavailable measurements; the emergent closed loop behavior is
+            due to the interaction between the dynamical properties of system,
+            controller <i>and observer</i>.<br>
+            &nbsp;</li>
+          <li>The interaction is quantified by the third fundamental result
+            presented in the chapter: the nominal poles of the overall closed
+            loop are the union of the observer poles and the closed loop poles
+            induced by the feedback gains if all states could be measured. This
+            result is also known as the <i>separation theorem</i>.<br>
+            &nbsp;</li>
+          <li>Recall, that controller synthesis is concerned with how to compute
+            a controller that will give the emergent closed loop a particular
+            property, the <i>constructed property</i>.<br>
+            &nbsp;</li>
+          <li>The main focus of the chapter is on synthesizing controllers that
+            place the closed loop poles in chosen locations; this is a
+            particular constructed property that allows certain design insights
+            to be discussed in the next chapter.<br>
+            &nbsp;</li>
+          <li>There are, however, other useful constructed properties as well.<br>
+            &nbsp;
+          <li>Examples of constructed properties for which there exist synthesis
+            solutions include:
+            <ul>
+              <li>arrive at a specified system state in minimal time with an
+                energy constraint</li>
+              <li>minimize the weighted square of the control error and energy
+                consumption</li>
+              <li>minimum variance control<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>One approach to synthesis is to cast the constructed property into
+            a so-called <i>cost-functional</i>, <i>objective function</i> or <i>criterion</i>
+            which is then minimized numerically<br>
+            &nbsp;
+            <dl compact>
+            </dl>
+          <li>This approach is sometimes called optimal control, since one
+            optimizes a criterion.<br>
+            &nbsp;</li>
+          <li>One must remember, however, that the result can only be as good as
+            the criterion.<br>
+            &nbsp;</li>
+          <li><i>Optimization</i> shifts the primary engineering task from
+            explicit controller design to criterion design, which then generates
+            the controller automatically.<br>
+            &nbsp;</li>
+          <li>Both approaches have benefits, including personal preference and
+            experience.</li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="chapter17.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Chapter 17</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><a href="chapter19.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Chapter 19</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>

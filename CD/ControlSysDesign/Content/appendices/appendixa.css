@@ -1,0 +1,38 @@
+A:link,
+A:active,
+A:visited { text-decoration: underline; font-weight: normal; font-family: Times New Roman, Times; font-size: 12pt; }
+
+A:hover   { text-decoration: underline; font-weight: normal; font-family: Times New Roman, Times; font-size: 12pt; color: #FF6600; }
+
+A: IMG {border: 0px}
+
+TR, TD,
+BLOCKQUOTE,
+P,
+BODY,
+LI       { font-family: Times New Roman, Times; font-size: 12pt; }
+
+H2       { text-decoration: none; font-weight: bold; font-family: Times New Roman, Times; font-size: 24pt; color: #009966; }
+
+H3       { text-decoration: none; font-weight: bold; font-family: Arial, Helvetica, Sans-Serif; font-size: 16pt; color: #613EB2; }
+
+H4       { text-decoration: none; font-weight: bold; font-family: Arial, Helvetica, Sans-Serif; font-size: 14pt; color: #613EB2; }
+
+/* Century Schoolbook font is very similar to Computer Modern Math: cmmi */
+.MATH    { font-family: "Century Schoolbook", serif; }
+.MATH I  { font-family: "Century Schoolbook", serif; font-weight: bold }
+.BOLDMATH { font-family: "Century Schoolbook", serif; font-weight: bold }
+
+/* implement both fixed-size and relative sizes */
+SMALL.XTINY		{ font-size : xx-small }
+SMALL.TINY		{ font-size : x-small  }
+SMALL.SCRIPTSIZE	{ font-size : smaller  }
+SMALL.FOOTNOTESIZE	{ font-size : small    }
+SMALL.SMALL		{  }
+BIG.LARGE		{  }
+BIG.XLARGE		{ font-size : large    }
+BIG.XXLARGE		{ font-size : x-large  }
+BIG.HUGE		{ font-size : larger   }
+BIG.XHUGE		{ font-size : xx-large }
+
+/* document-specific styles come next */

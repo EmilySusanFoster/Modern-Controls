@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 2</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="chapter2.html">Chapter
+        2</a> | Section 2.3.1</p>
+        <h2 align="center">Introduction to the Principles of Feedback Control</h2>
+        <!------------------------------------------------>
+
+        <h3 align="left">2.3.1 Performance specifications</h3>
+
+        <p>There are two fundamental specifications for the continuous caster:
+        safety and profitability.
+
+        <p>These ultimate requirements can be further broken down to derive a
+        control system specification that quantifies the target to be met by
+        controller-design (Figure 2.3):</p>
+
+        <p align="center"><a name="fig:fig2_3"><img src="fig2_3.gif" alt="requirements" width="525" height="519"></a><strong><br>
+        Figure 2.3:</strong> Deriving control system specifications from
+        fundamental performance requirements</p>
+        <ul>
+          <li><i>Safety</i>: In this example, the safety requirement translates
+            rather straight-forwardly into a constraint on the level of molten
+            steel in the mould (called the <i>mould level</i>). Clearly, the
+            mould level must never be in danger of overflowing or emptying as
+            either case would result in molten metal spilling with disastrous
+            consequences.<br>
+            &nbsp;</li>
+          <li><i>Profitability</i>: Obviously the system needs to be operated in
+            a cost effective fashion. Aspects which contribute to this
+            requirement include:<br>
+            &nbsp;</li>
+          <ul>
+            <li><i>Product quality</i>: It turns out that high frequency changes
+              in the mould level reduce bloom quality, as molten metal has a
+              viscosity similar to water and turbulence mixes impurities into
+              the steel. Furthermore, due to the cooling applied to the mould,
+              an oscillating mould level results in uneven cooling of the steel
+              which also reduces its quality. Thus, product quality demands
+              steady control of the mould level.<br>
+              &nbsp;</li>
+            <li><i>Maintenance</i>: Due to an oxidizing reaction, the nozzle
+              through which the metal flows into the mould is subject to intense
+              wear at the mould level. The nozzle's lifetime is therefore
+              maximized if the mould level is controlled so that it slowly ramps
+              across the wear band of the nozzle. Maintenance costs are further
+              reduced if the lifetime of the control valve is maximized by
+              having relatively non-aggressive control actions. Thus, keeping
+              the cost of maintenance low requires steady regulation around a
+              set-point that slowly ramps across the nozzle wear band while
+              avoiding aggressive valve movements.<br>
+              &nbsp;</li>
+            <li><i>Throughput</i>: Throughput is a direct function of casting
+              speed. The casting speed, however, is also a function of numerous
+              process up-stream factors (availability of the necessary grades of
+              raw material, furnace capacity, etc.) as well as down-stream
+              factors (product demand, shipping capacity, etc.). Thus, the mould
+              level control system should maintain performance at all casting
+              speeds to avoid being a limiting factor in the overall operation
+              of the process.</li>
+          </ul>
+        </ul>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="sec2_3.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section 2.3</a></td>
+              <td align="center" width="33%"><a href="chapter2.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Chapter 2</a></td>
+              <td align="center" width="33%"><a href="sec2_3_2.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section 2.3.2</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

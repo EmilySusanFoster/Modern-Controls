@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="STYLESHEET" href="Equations.css">
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | <a href="pend_sim.html">Inverted Pendulum</a> | Part 1</p>
+        <h2 align="center">Inverted Pendulum Tutorial - Part 1</h2>
+        <h3>System Model</h3>
+
+        <p>The modelling of the inverted pendulum system comes straight from
+        simple Newtonian physics. (Note: Modelling is covered in <a href="../chapters/chapter3.html">chapter
+        3</a> and <a href="../chapters/chapter4.html">chapter 4</a>.) This gives
+        us the following equations:</p>
+
+        <p align="CENTER"><img src="img1.gif" alt="equation" width="571" height="91">
+
+        <p>To make the model useful for us, we need to linearize it. Chapter 2
+        gives one possible procedure for this, but a more heuristic one will be
+        presented here (which incidentally gives the same result). We first
+        recognise that <img align="BOTTOM" border="0" src="img2.gif" alt="sin alpha = alpha" width="68" height="15">
+        and <img align="BOTTOM" border="0" src="img3.gif" alt="cos alpha = 1" width="68" height="14">
+        when <img align="BOTTOM" border="0" src="img4.gif" alt="alpha" width="15" height="14">
+        is small. This approximation yields:
+
+        <p align="CENTER"><img src="img5.gif" alt="equation" width="393" height="89">
+
+        <p>This model is for small variations of <img align="BOTTOM" border="0" src="img6.gif" alt="theta" width="12" height="15">
+        only (i.e. a small signal model) so we assume that <img align="BOTTOM" border="0" src="img6.gif" alt="theta" width="12" height="15">
+        is small enough such that <img align="BOTTOM" border="0" src="img7.gif" alt="theta^2 = 0" width="49" height="17">
+        and <img align="BOTTOM" border="0" src="img8.gif" alt="thetadot^2 = 0" width="49" height="19">.
+        Then,
+
+        <p align="CENTER"><img src="img9.gif" alt="equation" width="257" height="89">
+
+        <p>We next take the Laplace transform of these equations (as described
+        in section 3.3).
+
+        <p align="CENTER"><img src="img10.gif" alt="equation" width="245" height="89">
+
+        <p>Now, working with the second equation,
+
+        <p align="CENTER"><img src="img11.gif" alt="equation" width="226" height="45">
+
+        <p>Note that <img align="MIDDLE" border="0" src="img12.gif" alt="lambda_m = M/m" width="85" height="31">
+        and let <img align="MIDDLE" border="0" src="img13.gif" alt="a^2= (1+lambda_m)g / lambda_m" width="96" height="40">,
+        so
+
+        <p align="CENTER"><img src="img14.gif" alt="equation" width="157" height="43">
+
+        <p>Recalling the definition of <i>a</i>, we see that
+
+        <p align="CENTER"><img src="img15.gif" alt="equation" width="228" height="221">
+
+        <p>Where <i>b</i><sup>2</sup> = <i>g</i> / <i>l</i>. Using <i>M</i> = <i>m</i>
+        = 0.5, <i>l</i> = 1 and <i>g</i> = 10 we get the following transfer
+        function:
+
+        <p align="center"><img src="img16.gif" align="cetner" border="0" width="146" height="45">
+
+        <p>We can see immediately that there is one non-minimum phase zero and
+        an unstable pole. Because of this pole, the system is open-loop unstable
+        (i.e. if we nudge the cart a bit, the mass will fall over). Next, we try
+        to control the inverted pendulum system based on the linear model we
+        have just made.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%" valign="top"><a href="pend_sim.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Inverted Pendulum</a></td>
+              <td align="center" width="33%" valign="top"><a href="pend_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Inverted Pendulum</a></td>
+              <td align="center" width="33%" valign="top"><a href="pend_sim2.html"><img src="../images/nextbutton.gif" border="0" alt="&gt;" width="32" height="32"><br>
+                Next - Part 2</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

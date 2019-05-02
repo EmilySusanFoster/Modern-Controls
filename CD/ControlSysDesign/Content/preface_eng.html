@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<base target="main">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="index.html" target="_top">Control
+        System Design - Index</a> | <a href="book.html">Book Contents</a> |
+        Preface (English)</p>
+        <h2 align="center">Preface</h2>
+
+        <p>Control Engineering plays a fundamental role in modern technological
+        systems. The benefits of improved control in industry can be immense.
+        They include improved product quality, reduced energy consumption,
+        minimization of waste materials, increased safety levels and reduction
+        of pollution.</p>
+
+        <p>However, a difficulty with the subject is that some of the more
+        advanced aspects depend on sophisticated mathematical background.
+        Arguably, mathematical systems theory is one of the most significant
+        achievements of twentieth century science. However, its practical impact
+        is only as good as the benefits it can bring. Thus, in this book, we aim
+        to strike a balance which places strong emphasis on design.</p>
+
+        <p>It was the author's involvement in several industrial control system
+        design projects that provided part of the motivation to write this book.
+        In a typical industrial problem, we found ourselves investigating fluid
+        and thermal dynamics, experiencing the detrimental effects of
+        non-constant PLC scan rates, dealing with system integration and network
+        communication protocols, building trust with plant operators and
+        investigating safe bumpless transfer schemes for testing tentative
+        control designs on potentially dangerous plants. In short, we
+        experienced the day-to-day excitement, frustration, set-backs and
+        progress in getting advanced control to contribute to a commercial
+        company's bottom line. This is not an easy task. Moreover, success in
+        this type of venture typically depends on the application of a wide
+        range of multidisciplinary skills. However, it is rewarding and exciting
+        work for those who do it.</p>
+
+        <p>One of the main aims of this book is to share this excitement with
+        our readers. We hope to contribute to the development of skills and
+        attitudes within readers and students that will better equip them to
+        face the challenges of real-world design problems. The book is thus
+        intended to contribute to the ongoing reform of the Control Engineering
+        curriculum. This topic is receiving considerable international
+        attention. For example, a recent issue of IEEE Control Systems Magazine
+        features an entire special section devoted to this theme.</p>
+
+        <p>However, reforming the curriculum will not be done by books alone -
+        it will be done by people; by students, by teachers, by researchers, by
+        practitioners, by publication and grant reviewers; and by market
+        pressures. Moreover, for these efforts to be efficient and sustainable,
+        the control engineering community will need to communicate their
+        experiences via a host of new books, laboratories, simulations and
+        web-based resources. Thus, there will be a need for several different
+        and complementary approaches. In this context, the authors believe that
+        this book will have been successful if it contributes, in some way, to
+        the revitalization of interest by students in the exciting discipline of
+        control engineering.</p>
+
+        <p>We stress that this is not a &quot;how-to&quot; book. On the
+        contrary, we provide a comprehensive, yet condensed, presentation of
+        rigorous control engineering. We employ, and thus require, mathematics
+        as a means to <em>model</em> the process, <em>analyze</em> its
+        properties under feedback, synthesize a controller with particular
+        properties and arrive at a design addressing the inherent trade-offs and
+        constraints applicable to the problem.</p>
+
+        <p>In particular, we believe that success in control projects depends on
+        two key ingredients: (i) having a comprehensive understanding of the
+        process itself, gained by studying the relevant physics, chemistry,
+        etc.; and (ii) by having mastery of the fundamental concepts of signals,
+        systems and feedback. The first ingredient typically occupies more than
+        fifty per cent of the effort. It is an inescapable component of the
+        complete design cycle. However, it is impractical for us to give full
+        details the processes to which control might be applied since it covers
+        chemical plants, electromechanical systems, robots, power generators,
+        etc. We thus emphasize the fundamental control engineering aspects that
+        are common to all applications and leave readers to complement this with
+        process knowledge relevant to their particular problem. Thus, the book
+        is principally aimed at the second ingredient of control engineering. Of
+        course, we do give details of several real world examples so as to put
+        the methods into a proper context.</p>
+
+        <p>The central theme of this book is continuous-time control. However we
+        also treat digital control in detail, since most modern control systems
+        will usually be implemented on some form of computer hardware. This
+        approach inevitably led to a book of larger volume then originally
+        intended but with the advantage of providing a comprehensive treatment
+        within an integrated framework. Naturally, there remain specialized
+        topics that are not covered in the book. However, we trust that we
+        provide a sufficiently strong foundation so that the reader can
+        comfortably turn to the study of appropriate complementary literature.</p>
+
+        <p>Thus, in writing this book we chose our mission as:</p>
+        <ul>
+          <li>accessible treatment of rigorous material selected with
+            applicability in mind,
+          <li>early emphasis on design, that is, understanding, and dealing
+            with, inherent constraints,
+          <li>numerous industrial case studies, and
+          <li>motivation provided by substantial interactive web-based support.
+        </ul>
+
+        <p>Design is a complex process, which requires judgment and iteration.
+        The design problem is normally incompletely specified, sometimes
+        ill-defined, and many times without solution. A key element in design is
+        an understanding of those factors which limit the achievable
+        performance. This naturally leads to a viewpoint of control design which
+        takes account of these fundamental limitations. This viewpoint is a
+        recurring theme throughout the book.</p>
+
+        <p>Our objective is not to explore the full depth of mathematical
+        completeness but instead to give enough detail so that a reader can
+        begin applying the ideas as soon as possible. This approach is connected
+        to our assumption that readers will have ready access to modern
+        computational facilities including the software package MATLAB-SIMULINK.
+        This assumption allows us to put the emphasis on fundamental ideas
+        rather than on the tools. Every chapter includes worked examples and
+        problems for the reader.</p>
+
+        <p>The book is divided into eight parts. A brief summary of each of the
+        parts is given below:</p>
+
+        <p><b>Part 1: The Elements</b><br>
+        This part covers basic continuous time signals and systems and would be
+        suitable for an introductory course on this topic. Alternatively it
+        could be used to provide revision material before starting the study of
+        control in earnest.</p>
+
+        <p><b>Part II: SISO Control Essentials</b><br>
+        This part deals with basic SISO control including classical PID tuning.
+        This, together with part 1, covers the content of many of the existing
+        curricula for basic control courses.</p>
+
+        <p><b>Part III: SISO Control Design</b><br>
+        This part covers design issues in SISO Control. We consider many of
+        these ideas to be crucial to achieving success in practical control
+        problems. In particular, we believe the chapter dealing with constraints
+        should be mentioned, if at all possible, in all introductory courses.
+        Also feedforward and cascade structures, which are covered in this part,
+        are very frequently employed in practice.</p>
+
+        <p><b>Part IV: Digital Computer Control</b><br>
+        This part covers material essential to the understanding of digital
+        control. We go beyond traditional treatments of this topic by studying
+        inter-sample issues.</p>
+
+        <p><b>Part V: Advanced SISO Control</b><br>
+        This part could be the basis of a second course on control at an
+        undergraduate level. It is aimed at the introduction of ideas that flow
+        through to multi-input multi-output (MIMO) systems later in the book.</p>
+
+        <p><b>Part VI: MIMO Control Essentials</b><br>
+        This part gives the basics required for a junior level graduate course
+        on MIMO control. In particular, this part covers basic MIMO system's
+        theory. It also shows how one can exploit SISO methods in some MIMO
+        design problems.</p>
+
+        <p><b>Part VII: MIMO Control Design</b><br>
+        This part describes tools and ideas that can be used in industrial MIMO
+        design. In particular, it includes linear quadratic optimal control
+        theory and optimal filtering. These two topics have major significance
+        in applications. We also include a chapter on Model Predictive Control.
+        We believe this to be important material because of the widespread use
+        of this technique in industrial applications.</p>
+
+        <p><b>Part VIII: Advanced MIMO Control</b><br>
+        This final part of the book could be left for private study. It is
+        intended to test the readers understanding of the other material by
+        examining advanced issues. Alternatively instructors could use this part
+        to extend parts VI and VII in a more senior graduate course on MIMO
+        Control.</p>
+
+        <p>Two of the authors (Goodwin and Salgado) have taught undergraduate
+        and postgraduate courses of the type mentioned above using draft
+        versions of this book in both Australia and South America.</p>
+
+        <p>The material in the book is illustrated by several industrial case
+        studies with which the authors have had direct involvement. These case
+        studies have been carried out, in collaboration with industry, by the
+        Centre for Integrated Dynamics and Control (CIDAC) (a Commonwealth
+        Special Research Centre) at the University of Newcastle or at OMV ( a
+        petrochemical Company in Austria where the second author (Graebe) is
+        Control Engineer Manager.</p>
+
+        <p>The projects that we have chosen to describe include:</p>
+        <ul>
+          <li>Satellite tracking
+          <li>pH control
+          <li>Control of a continuous casting machine
+          <li>Sugar mill control
+          <li>Distillation column control
+          <li>Ammonia synthesis plant control
+          <li>Zinc coating mass estimation in continuous galvanizing line
+          <li>BISRA gauge for thickness control in rolling mills
+          <li>Roll eccentricity compensation in rolling mills
+          <li>Hold-up effect in reversing rolling mills
+          <li>Flatness control in steel rolling
+          <li>Vibration control
+        </ul>
+
+        <p>Many of the case studies have also been repeated, and further
+        embellished, on the book's web page where Java applets are provided so
+        that readers can experiment with the systems in the form of a
+        &quot;virtual laboratory&quot;. A secondary advantage of having the case
+        studies gathered in one place on the web page is that real control
+        problems usually bring together many aspects and thus it is difficult to
+        localize them in the book. The web page thus gives a more holistic view
+        of the issues involved in the case studies.</p>
+
+        <p>In addition, we refer to several laboratory scale control problems
+        including a ball and plate mechanism, coupled tanks apparatus, and
+        inverted pendulum. Each of these is the basis of a laboratory experiment
+        within our universities to illustrate control principles.</p>
+
+        <p>The book has substantial Internet support - this was designed and
+        built by Nathan Clement and can be accessed at:</p>
+
+        <p>http://csd.newcastle.edu.au/control/</p>
+
+        <p>Alternatively see the authors' home-pages for a link.</p>
+      </center>
+
+      <p align="right">Newcastle, Australia<br>
+      Valparaíso, Chile<br>
+      Vienna, Austria</p>
+      <center>
+
+      <p align="left">&nbsp;</p>
+      <center>
+
+        <!------------------------------------------------>
+
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><img src="images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous</td>
+            <td align="center" width="33%"><a href="book.html"><img src="images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Book Contents</a></td>
+            <td align="center" width="33%"><img border="0" src="images/nextbutton.gif" width="32" height="32"><br>
+              Next</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+      </center></center></td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

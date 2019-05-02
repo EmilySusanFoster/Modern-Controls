@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 2</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="chapter2.html">Chapter
+        2</a> | Section 2.5</p>
+        <h2 align="center">Introduction to the Principles of Feedback Control</h2>
+        <!------------------------------------------------>
+
+        <h3 align="left">2.5 Prototype solution to the control problem via
+        inversion</h3>
+
+        <p>One particularly simple, yet insightful way of thinking about control
+        problems is via inversion. To describe this idea we argue as follows:</p>
+        <ul>
+          <li>say that we know what effect an action at the input of a system
+            produces at the output, and<br>
+            &nbsp;</li>
+          <li>say that we have a desired behavior for the system output, then
+            one simply needs to invert the relationship between input and output
+            to determine what input action is necessary to achieve the desired
+            output behavior.</li>
+        </ul>
+
+        <p>In spite of the apparent naivity of this argument, its embellished
+        ramifications play a profound role in control system design. In
+        particular, most of the real world difficulties in control relate to the
+        search for a strategy that captures the intent of the above inversion
+        idea, whilst respecting a myriad of other considerations such as
+        insensitivity to model errors, disturbances, measurement noise, etc.</p>
+
+        <p>To be more specific, let us assume that the required behavior is
+        specified by a scalar target signal, or <b>reference</b> <i>r</i>(<i>t</i>),
+        for a particular process variable <i>y</i>(<i>t</i>). Say we also have
+        available a single manipulated variable, <i>u</i>(<i>t</i>). We denote <i>y</i>
+        by a function of time i.e. <img border="0" src="sec15img19.gif" align="bottom" width="122" height="19">.
+        We also use <img border="0" src="sec15img20.gif" align="bottom" width="35" height="17">
+        to denote the operation of a nonlinear map an <i>u</i> to produce <i>y</i>.</p>
+
+        <p>Let us also assume (for the sake of argument) that the output is
+        related to the input a known functional relationship of the form:</p>
+        <table width="100%" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="sec15img21.gif" alt="equation 2.5.1" width="66" height="18"></td>
+            <td width="10" align="RIGHT">(2.5.1)</td>
+          </tr>
+        </table>
+
+        <p>where <i>f</i> is a transformation or mapping (possibly dynamic)
+        which describes the input-output relations in the plant. (Note: We
+        introduce this term here loosely and the reader can just think of it as
+        describing some (input-output) relationship.) We recall a relationship
+        of the type given in (2.5.1), <i>a model</i>.</p>
+
+        <p>The control problem then requires us to find a way to generate <i>u</i>
+        in such a way that <i>y</i>&nbsp;=&nbsp;<i>r</i>. In the spirit of
+        inversion, a direct, although somewhat naive, approach to obtain a
+        solution would thus be to set</p>
+        <table width="100%" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="sec15img22.gif" alt="equation 1.5.2" width="96" height="18"></td>
+            <td width="10" align="RIGHT">(2.5.2)</td>
+          </tr>
+        </table>
+
+        <p>from which we could derive a <b>control law</b>, by solving for <i>u</i>(<i>t</i>).
+        This leads to</p>
+        <table width="100%" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap>&nbsp;<img src="sec15img23.gif" alt="equation 1.5.3" width="84" height="20"></td>
+            <td width="10" align="RIGHT">(2.5.3)</td>
+          </tr>
+        </table>
+
+        <p>This idea is shown in Figure 2.7.</p>
+
+        <p align="center"><img border="0" src="fig2_7.gif" width="518" height="160"></p>
+
+        <p align="center"><strong>Figure 2.7:</strong> Conceptual Controller</p>
+
+        <p>This is a conceptual solution to the problem. However a little
+        thought indicates that the answer given in (2.5.1) presupposes certain
+        stringent conditions. For example, inspection of equations (2.5.1) and
+        (2.5.3) suggest the following requirements:</p>
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+          <tr>
+            <td valign="top" width="20"></td>
+            <td valign="TOP"><em>R1</em></td>
+            <td>The transformation <i>f</i> needs to describe the plant exactly.</td>
+          </tr>
+          <tr>
+            <td valign="top" width="20"></td>
+            <td valign="TOP"><em>R2</em></td>
+            <td>The transformation <i>f</i> should be well formulated in the
+              sense that a bounded output is produced when <i>u</i> is bounded -
+              we then say that the transformation is <b>stable</b>.</td>
+          </tr>
+          <tr>
+            <td valign="top" width="20"></td>
+            <td valign="TOP"><em>R3</em></td>
+            <td>The inverse <i>f</i><sup>-1</sup> should also be well formulated
+              in the sense used in <em>R2</em>.</td>
+          </tr>
+          <tr>
+            <td valign="top" width="20"></td>
+            <td valign="TOP"><em>R4</em></td>
+            <td>No external disturbances are allowed in (2.5.1).</td>
+          </tr>
+          <tr>
+            <td valign="top" width="20"></td>
+            <td valign="TOP"><em>R5</em></td>
+            <td>The resulting action <i>u</i> should be realizable and not
+              violate any constraint.</td>
+          </tr>
+        </table>
+
+        <p>Of course, these are very demanding requirements. Thus, a significant
+        part of Automatic Control theory deals with the issue of how to change
+        the control architecture so that inversion is achieved but in a more
+        robust fashion and so that the stringent requirements set out above can
+        be relaxed.</p>
+
+        <p>To illustrate the meaning of these requirements in practice, we
+        briefly review a number of situations:</p>
+
+        <p><b>Example 2.1</b> (<b>Heat Exchanger</b>) <i>Consider the problem of
+        a heat exchanger in which water is to be heated by steam having a fixed
+        temperature. The plant output is the water temperature at the exchanger
+        output and the manipulated variable is the air pressure (3 to 15 [psig])
+        driving a pneumatic valve which regulates the amount of steam feeding
+        the exchanger.</i></p>
+
+        <p><i>In the solution of the associated control problem, the following
+        issues should be considered:</i></p>
+        <ul>
+          <li><i>Pure time delays might be a significant factor, since this
+            plant involves mass and energy transportation. However a pure time
+            delay does not have a realizable inverse and hence </i>R3<i> will
+            not be met.</i><br>
+            &nbsp;</li>
+          <li><i>It can easily happen that, for a given reference input, the
+            control law (2.5.3) leads to a manipulated variable outside the 3 to
+            15 [psig] range. This will lead to </i><b>saturation</b><i> in the
+            plant input. Condition </i>R5<i> will then not be met.</i></li>
+        </ul>
+
+        <p><b>Example 2.2</b> (<b>Flotation in Mineral Processing</b>) <i>In
+        copper processing one crucial stage is the flotation process. In this
+        process the mineral pulp (water and ground mineral) is continuously fed
+        to a set of agitated containers where chemicals are added to separate
+        (by flotation) the particles with high copper concentration. From a
+        control point of view, the goal is to determine the appropriate addition
+        of chemicals and the level of agitation to achieve maximal separation.
+        Characteristics of this problem are:</i></p>
+        <ul>
+          <li><i>The process is complex (physically distributed, time varying,
+            highly nonlinear, multivariable and so on) and hence it is difficult
+            to obtain an accurate model for it. Thus </i>R1<i> is hard to
+            satisfy.<br>
+            &nbsp;</i></li>
+          <li><i>One of the most significant disturbances in this process is the
+            size of the mineral particles in the pulp. This disturbance is
+            actually the output of a previous stage (grinding). To apply a
+            control law derived from (2.5.1) one would need to measure the sizes
+            of all of these particles, or at least to obtain some average
+            measure of this. Thus, condition </i>R4<i> is hard to satisfy.<br>
+            &nbsp;</i></li>
+          <li><i>Pure time delays are also present in this process and thus
+            condition </i>R3<i> cannot be satisfied.</i></li>
+        </ul>
+
+        <p>One could imagine various other practical cases where one or more of
+        the requirements listed above cannot be satisfied. Thus the only
+        sensible way to proceed is to accept that there will inevitably be
+        intrinsic limitations and to pursue the solution within those
+        limitations. With this in mind, we will impose constraints which will
+        allow us to solve the problem subject to the limitations which the
+        physical set-up imposes. The most commonly used constraints are:</p>
+        <div align="center">
+          <table border="0" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+              <td valign="top" width="20"></td>
+              <td valign="top"><em>L1</em></td>
+              <td valign="top">To <b>restrict</b> attention to those problems
+                where the prescribed behavior (reference signals) belong to
+                restricted classes and where the desired behavior is achieved
+                only asymptotically.</td>
+            </tr>
+            <tr>
+              <td valign="top" width="20"></td>
+              <td valign="top"><em>L2</em></td>
+              <td valign="top">To seek <b>approximate</b> inverses.</td>
+            </tr>
+          </table>
+        </div>
+
+        <p>In summary, we may conclude</p>
+        <div align="center">
+          <center>
+          <table border="1" width="100%" cellpadding="5" cellspacing="0">
+            <tr>
+              <td>All controllers implicitly generate an inverse of the process,
+                in so far that this is feasible. Controllers differ with respect
+                to the mechanism used to generate the required approximate
+                inverse.</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="sec2_4.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section 2.4</a></td>
+              <td align="center" width="33%"><a href="chapter2.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Chapter 2</a></td>
+              <td align="center" width="33%"><a href="sec2_6.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section 2.6</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

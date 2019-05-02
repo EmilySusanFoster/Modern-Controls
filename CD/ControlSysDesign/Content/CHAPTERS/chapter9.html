@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 9</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 9</p>
+        <h2 align="center">9. Frequency Domain Design Limitations</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview">
+        <h3 align="left">Preview</h3>
+        </a>
+
+        <p>Chapter 8 showed, via elementary time domain arguments based on the
+        Laplace transform, that fundamental limitations exist on the achievable
+        performance of linear control systems. For example, it was shown that
+        real right half plane open loop plant zeros always lead to undershoot in
+        the reference to output step response. Moreover, the extent of this
+        undershoot increases as the response time of the closed loop system
+        decreases. This implies that right half plane plant zeros place an
+        inescapable upper limit on the achievable closed loop bandwidth if
+        excessive undershoot is to be avoided. Similarly, it was shown that real
+        right half plane open loop plant poles always lead to overshoot in one
+        degree of freedom feedback systems. The purpose of the current chapter
+        is to develop equivalent frequency domain constraints and to explore
+        their interpretations.</p>
+
+        <p>The results to be presented here have a long and rich history
+        beginning with the seminal work of Bode published in his 1945 book on
+        network synthesis. Since that time the results have been embellished in
+        many ways. In this chapter we summarize the single input single output
+        results. In Chapter 24 we will extend the results to the multivariable
+        case.</p>
+
+        <p>All of the results follow from the assumption that the sensitivity
+        functions are analytic in the closed right half plane (i.e. that they
+        are required to be stable). Analytic function theory then implies that
+        the sensitivity functions cannot be arbitrarily specified but, indeed,
+        must satisfy certain precise integral constraints.</p>
+
+        <p>The necessary background to appreciate these results is elementary
+        analytic function theory. Since this theory may not have been met by all
+        readers previously we present a brief review in Appendix C. The current
+        chapter can be read in one of two ways. Either, the background
+        mathematics can be taken for granted, in which case the emphasis will be
+        on the interpretation of the results. Alternatively, and preferably, the
+        reader can gain a full appreciation by first reviewing the results given
+        in Appendix C. The key result is the Cauchy Integral Formula and its
+        immediate consequences - the Poisson Jensen Formula.</p>
+
+        <p>Most of the results to be discussed below are based on cumulative
+        (i.e. integral or summation) measures of 
+        <!-- MATH: $\ln \left| S_o(j\omega
+)\right|$ -->
+        <img align="MIDDLE" border="0" src="part3-img10.gif" alt="$\ln \left\vert S_o(j\omega
+)\right\vert $" width="75" height="31"> and 
+        <!-- MATH: $\ln \left| T_o(j\omega )\right|$ -->
+        <img align="MIDDLE" border="0" src="part3-img11.gif" alt="$\ln \left\vert T_o(j\omega )\right\vert $" width="75" height="31">
+        for continuous time systems, and of 
+        <!-- MATH: $\ln \left| S_o(e^{j\omega })\right|$ -->
+        <img align="MIDDLE" border="0" src="part3-img12.gif" alt="$\ln \left\vert S_o(e^{j\omega })\right\vert $" width="82" height="34">
+        and 
+        <!-- MATH: $\ln \left|
+T_o(e^{j\omega })\right|$ -->
+        <img align="MIDDLE" border="0" src="part3-img13.gif" alt="$\ln \left\vert
+T_o(e^{j\omega })\right\vert $" width="81" height="34"> for discrete time functions. Logarithmic
+        functions of sensitivity magnitudes have a sign change when these
+        magnitudes cross the value unity. We recall that 1 is a key value in
+        sensitivity analysis.</p>
+        <a name="Summary">
+        <h3 align="left">Summary</h3>
+        </a>
+        <ul>
+          <li>One class of design constraints are those which hold at a
+            particular frequency.<br>
+            &nbsp;</li>
+          <li>Thus we can view the law 
+            <!-- MATH: $S(j\omega)=1-T(j\omega)$ -->
+            <img align="MIDDLE" border="0" src="part3-img14.gif" alt="$S(j\omega)=1-T(j\omega)$" width="135" height="31">
+            on a frequency by frequency basis. It states that no single
+            frequency can be removed from both the sensitivity, 
+            <!-- MATH: $S(j\omega)$ -->
+            <img align="MIDDLE" border="0" src="part3-img15.gif" alt="$S(j\omega)$" width="44" height="31">,
+            and complementary sensitivity, 
+            <!-- MATH: $T(j\omega)$ -->
+            <img align="MIDDLE" border="0" src="part3-img16.gif" alt="$T(j\omega)$" width="45" height="31">.<br>
+            &nbsp;</li>
+          <li>There is, however, an additional class of design considerations,
+            which results from so called frequency domain integral constraints.<br>
+            &nbsp;</li>
+          <li>This chapter explores the origin and nature of these integral
+            constraints and derives their implications for control system
+            performance:
+            <ul>
+              <li>the constraints are a direct consequence of the requirement
+                that all sensitivity functions must be stable</li>
+              <li>mathematically, this means that the sensitivities are required
+                to be analytic in the right half complex plane</li>
+              <li>results from analytic function theory then show, that this
+                requirement necessarily implies weighted integrals of the
+                frequency response necessarily evaluate to a constant</li>
+              <li>hence, if one designs a controller to have low sensitivity in
+                a particular frequency range, then the sensitivity will
+                necessarily increase at other frequencies-a consequence of the
+                weighted integral always being a constant; this phenomenon has
+                also been called the <em>water bed effect</em> (pushing down on
+                the water bed in one area, raises it somewhere else).</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p align="center"><strong>Table 9.1 </strong>Integral constraints for
+        SISO systems</p>
+        <div align="CENTER">
+          <table cellpadding="4" border="1" cellspacing="0" width="100%">
+            <tr>
+              <td align="center"><em>Notation</em></td>
+              <td align="center"><em>Constraints</em></td>
+              <td align="center"><em>Interpretation</em></td>
+            </tr>
+            <tr>
+              <td align="LEFT"><i>p</i><sub><i>i</i></sub> RHP poles</td>
+              <td align="LEFT"><br>
+                <img align="BOTTOM" border="0" src="p3img23.gif" width="228" height="47"></td>
+              <td align="LEFT">Areas of sensitivity below 1(i.e. <i>ln</i>|<i>S</i><sub><i>o</i></sub>|&lt;0)
+                must be matched by areas of sensitivity above 1.</td>
+            </tr>
+            <tr>
+              <td align="LEFT"><i>c</i><sub><i>i</i></sub> RHP zeros</td>
+              <td align="LEFT"><br>
+                <img align="BOTTOM" border="0" src="p3img24.gif" width="186" height="47"></td>
+              <td align="LEFT">Areas of complementary sensitivity below 1 must
+                be matched by areas of complementary sensitivity above 1.</td>
+            </tr>
+            <tr>
+              <td align="LEFT"><img align="MIDDLE" border="0" src="p3img25.gif" width="66" height="31">
+                weighting function<br>
+                <br>
+                <i>B</i><sub><i>p</i></sub>(<i>c</i><sub><i>k</i></sub>)
+                Blaschke product</td>
+              <td align="LEFT"><br>
+                <img align="BOTTOM" border="0" src="p3img26.gif" width="306" height="39"></td>
+              <td align="LEFT">The above sensitivity trade-off is focused on
+                areas near RHP zeros.</td>
+            </tr>
+            <tr>
+              <td align="LEFT">
+
+                <p><img align="MIDDLE" border="0" src="p3img27.gif" width="65" height="31"> weighting
+                function<br>
+                <br>
+                <i>B</i><sub><i>z</i></sub>(<i>p</i><sub><i>i</i></sub>)
+                Blaschke product</td>
+              <td align="LEFT"><br>
+                <img align="BOTTOM" border="0" src="p3img28.gif" width="302" height="39"></td>
+              <td align="LEFT">The above complementary sensitivity trade-off is
+                focused on areas near RHP poles.</td>
+            </tr>
+          </table>
+        </center>
+      </div>
+      <ul>
+        <li>These trade-offs show that systems become increasingly difficult to
+          control as
+          <ul>
+            <li>Unstable zeros become slower</li>
+            <li>Unstable poles become faster</li>
+            <li>Time delays get bigger</li>
+          </ul>
+        </li>
+      </ul>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="chapter8.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Chapter 8</a></td>
+            <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Book Contents</a></td>
+            <td align="center" width="33%"><a href="chapter10.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next - Chapter 10</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

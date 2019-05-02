@@ -1,0 +1,219 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<base target="main">
+<script language="JavaScript">
+<!---
+
+function MakeArray(n) {
+    this.length = n;
+    for(var i=0;i<=n;i++)
+        this[i] = 0;
+    return this;
+}
+browserName = navigator.appName;
+browserVer = parseInt(navigator.appVersion);
+
+if (browserName == "Netscape" && browserVer >= 3) {
+        version = "n3";
+} else {
+        version = "n2";
+}
+if (browserName == "Microsoft Internet Explorer" && browserVer >= 4) {
+        version = "n3";
+}
+
+
+function stepHere() {
+	if ( browserVer < 4 )
+		alert("You don't seem to have a version 4.0 browser");
+	else {
+//       alert( urllist[document.selection.slideNo.selectedIndex+1] );
+       document.location = urllist[document.selection.slideNo.selectedIndex+1];
+   }
+}
+
+
+menulength = 85;
+var urllist = new MakeArray(menulength);
+urllist[1] = "lecture/sld001.html";
+urllist[2] = "lecture/sld002.html";
+urllist[3] = "lecture/sld003.html";
+urllist[4] = "lecture/sld004.html";
+urllist[5] = "lecture/sld005.html";
+urllist[6] = "lecture/sld006.html";
+urllist[7] = "lecture/sld007.html";
+urllist[8] = "lecture/sld008.html";
+urllist[9] = "lecture/sld009.html";
+urllist[10] = "lecture/sld010.html";
+urllist[11] = "lecture/sld011.html";
+urllist[12] = "lecture/sld012.html";
+urllist[13] = "lecture/sld013.html";
+urllist[14] = "lecture/sld014.html";
+urllist[15] = "lecture/sld015.html";
+urllist[16] = "lecture/sld016.html";
+urllist[17] = "lecture/sld017.html";
+urllist[18] = "lecture/sld018.html";
+urllist[19] = "lecture/sld019.html";
+urllist[20] = "lecture/sld020.html";
+urllist[21] = "lecture/sld021.html";
+urllist[22] = "lecture/sld022.html";
+urllist[23] = "lecture/sld023.html";
+urllist[24] = "lecture/sld024.html";
+urllist[25] = "lecture/sld025.html";
+urllist[26] = "lecture/sld026.html";
+urllist[27] = "lecture/sld027.html";
+urllist[28] = "lecture/sld028.html";
+urllist[29] = "lecture/sld029.html";
+urllist[30] = "lecture/sld030.html";
+urllist[31] = "lecture/sld031.html";
+urllist[32] = "lecture/sld032.html";
+urllist[33] = "lecture/sld033.html";
+urllist[34] = "lecture/sld034.html";
+urllist[35] = "lecture/sld035.html";
+urllist[36] = "lecture/sld036.html";
+urllist[37] = "lecture/sld037.html";
+urllist[38] = "lecture/sld038.html";
+urllist[39] = "lecture/sld039.html";
+urllist[40] = "lecture/sld030.html";
+urllist[41] = "lecture/sld041.html";
+urllist[42] = "lecture/sld042.html";
+urllist[43] = "lecture/sld043.html";
+urllist[44] = "lecture/sld044.html";
+urllist[45] = "lecture/sld045.html";
+urllist[46] = "lecture/sld046.html";
+urllist[47] = "lecture/sld047.html";
+urllist[48] = "lecture/sld048.html";
+urllist[49] = "lecture/sld049.html";
+urllist[50] = "lecture/sld050.html";
+urllist[51] = "lecture/sld051.html";
+urllist[52] = "lecture/sld052.html";
+urllist[53] = "lecture/sld053.html";
+urllist[54] = "lecture/sld054.html";
+urllist[55] = "lecture/sld055.html";
+urllist[56] = "lecture/sld056.html";
+urllist[57] = "lecture/sld057.html";
+urllist[58] = "lecture/sld058.html";
+urllist[59] = "lecture/sld059.html";
+urllist[60] = "lecture/sld060.html";
+urllist[61] = "lecture/sld061.html";
+urllist[62] = "lecture/sld062.html";
+urllist[63] = "lecture/sld063.html";
+urllist[64] = "lecture/sld064.html";
+urllist[65] = "lecture/sld065.html";
+urllist[66] = "lecture/sld066.html";
+urllist[67] = "lecture/sld067.html";
+urllist[68] = "lecture/sld068.html";
+urllist[69] = "lecture/sld069.html";
+urllist[70] = "lecture/sld070.html";
+urllist[71] = "lecture/sld071.html";
+urllist[72] = "lecture/sld072.html";
+urllist[73] = "lecture/sld073.html";
+urllist[74] = "lecture/sld074.html";
+urllist[75] = "lecture/sld075.html";
+urllist[76] = "lecture/sld076.html";
+urllist[77] = "lecture/sld077.html";
+urllist[78] = "lecture/sld078.html";
+urllist[79] = "lecture/sld079.html";
+urllist[80] = "lecture/sld080.html";
+urllist[81] = "lecture/sld081.html";
+urllist[82] = "lecture/sld082.html";
+urllist[83] = "lecture/sld083.html";
+urllist[84] = "lecture/sld084.html";
+urllist[85] = "lecture/sld085.html";
+
+// -->
+</script>
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="index.html" target="_top">Control
+        System Design - Index</a> | Bode Lecture Slides</p>
+        <h2 align="center">Bode Lecture Slides</h2>
+
+        <!------------------------------------------------>
+
+        <p>This page contains the slides for the presentation given by one of
+        the authors of this book,<br>
+        Graham Goodwin, at the the 38th Conference on Decision and Control. This
+        conference was held in Phoenix Arizona from the 8th to the 10th of
+        December 1999. The CDC is held by the IEEE Control Systems Society, and
+        Professor Goodwin was awarded the Hendrik Bode Lecture Prize for 1999.</p>
+
+        <p>The title of the presentation is:</p>
+
+        <p align="center"><font color="#009966"><b>Into the Next Millennium with
+        Bode: From Linear to Nonlinear</b></font></p>
+
+        <p>You may download a copy of the lecture slides in PowerPoint format <a href="bode99slides.zip">here</a>
+        (7.41MB).</p>
+
+        <p>Alternately, you can view the slides in HTML format, starting below.
+        Note that you must have a version 4 browser to view these - i.e. your
+        browser must support the cascading style sheets CSS 1.0 and JavaScript.
+        If the slide selection box does not appear below, you cannot view the
+        slides in HTML format, so you will have to download the PowerPoint
+        slides and use Microsoft's PowerPoint viewer.</p>
+
+        <p>The HTML version of the slides also come with a text explanation,
+        which can be accessed from the slide pages. The explanation is displayed
+        in a new, smaller window, and the idea is that you resize your browser
+        window so that you can see both the slide and the explanation together.</p>
+
+        <script language="JavaScript">
+			  
+          document.writeln('<p><a href="lecture/sld001.html">Goto first slide</a></p>');
+          document.writeln('<form name="selection">');
+          document.writeln('Goto slide number:&nbsp;');
+          document.writeln('<select name="slideNo" size="1">');
+
+          for(var i=1;i<=menulength;i++) {
+            document.writeln('<OPTION VALUE="',urllist[i],'">',i,'</OPTION>');
+          }
+
+          document.writeln('</select>');
+          document.writeln('&nbsp;<input type="button" value="Go" onclick="stepHere()">');
+          document.writeln('</form>');
+
+			  </script>
+			  <noscript>
+
+        <p><tt>Either your browser does not support JavaScript or you have
+        disabled JavaScript.</tt></p>
+			  </noscript>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><img src="images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous</td>
+              <td align="center" width="33%"><a href="index.html" target="_top"><img src="images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Index</a></td>
+              <td align="center" width="33%"><img border="0" src="images/nextbutton.gif" width="32" height="32"><br>
+                Next</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

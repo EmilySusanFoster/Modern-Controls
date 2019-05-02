@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixc-node1.html">Appendix
+        C</a> | Section C.8.2</p>
+        <h2 align="center">C. Results From Analytic Function Theory</h2>
+        <h3>C.8.2 Poisson-Jensen Formula for the half plane</h3>
+
+        <p><b>Lemma 1.1</b>&nbsp;&nbsp; <i>Consider a function g</i>(<i>z</i>)<i>
+        with the following properties</i></p>
+        <div align="left">
+          <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="20"></td>
+              <td><i>(i)</i></td>
+              <td width="20"></td>
+              <td><i>g</i>(<i>z</i>)<i> is analytic on the closed RHP.</i></td>
+            </tr>
+            <tr>
+              <td width="20"></td>
+              <td><i>(ii)</i></td>
+              <td width="20"></td>
+              <td><i>g</i>(<i>z</i>)<i> does not vanish on the imaginary axis.</i></td>
+            </tr>
+            <tr>
+              <td width="20"></td>
+              <td><i>(iii)</i></td>
+              <td width="20"></td>
+              <td><i>g</i>(<i>z</i>)<i> has zeros in the open RHP, located at  
+                <!-- MATH: $a_1, a_2,
+\ldots, a_n$ -->
+                <img align="MIDDLE" border="0" src="appendixc-img130.gif" alt="$a_1, a_2,
+\ldots, a_n$" width="97" height="28">.</i></td>
+            </tr>
+            <tr>
+              <td width="20"></td>
+              <td><i>(iv)</i></td>
+              <td width="20"></td>
+              <td><i>g</i>(<i>z</i>)<i> satisfies 
+                <!-- MATH: $\lim_{|z|\rightarrow \infty}\frac{|\ln g(z)|}{|z|}=0$ -->
+                <img align="MIDDLE" border="0" src="appendixc-img131.gif" alt="$\lim_{\vert z\vert\rightarrow \infty}\frac{\vert\ln g(z)\vert}{\vert z\vert}=0$" width="147" height="40"></i></td>
+            </tr>
+          </table>
+        </div>
+
+        <p><i>Consider also a point z</i><sub>0&nbsp;</sub>=&nbsp;<i>x</i><sub>0&nbsp;</sub>+&nbsp;<i>jy</i><sub>0</sub><i>
+        such that x</i><sub>0&nbsp;</sub>&gt; 0<i>, then</i></p>
+
+            <!-- MATH: \begin{equation}
+\ln |g(z_0)|=\sum_{i=1}^n\ln \left | \frac{z_0-a_i}{z_0+a_i^*}
+  \right
+  |+\frac{1}{\pi}\int_{-\infty}^{\infty}\frac{x_0}{x_0^2+(\omega-y_0)^2}
+\ln |g(j\omega)|)d\omega
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img132.gif" alt="\begin{displaymath}
+\ln \vert g(z_0)\vert=\sum_{i=1}^n\ln \left \vert \frac{z...
+...x_0}{x_0^2+(\omega-y_0)^2}
+\ln \vert g(j\omega)\vert)d\omega
+\end{displaymath}" width="420" height="55"></td>
+            <td width="10" align="RIGHT">(C.8.13)</td>
+          </tr>
+        </table>
+
+        <p><b>Proof</b></p>
+
+        <p>Let</p>
+
+          <!-- MATH: \begin{equation}
+\tilde{g}(z)\stackrel{\rm\triangle}{=}g(z)\prod_{i=1}^n \frac{z+a_i^*}{z-a_i}
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img133.gif" alt="\begin{displaymath}\tilde{g}(z)\stackrel{\rm\triangle}{=}g(z)\prod_{i=1}^n \frac{z+a_i^*}{z-a_i}
+\end{displaymath}" width="150" height="53"></td>
+            <td width="10" align="RIGHT">(C.8.14)</td>
+          </tr>
+        </table>
+
+        <p>Then,  
+        <!-- MATH: $\ln \tilde{g}(z)$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img134.gif" alt="$\ln \tilde{g}(z)$" width="48" height="31">
+        is analytic within the closed unit disk. If we now apply Theorem C.9 to 
+        <!-- MATH: $\ln \tilde{g}(z)$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img134.gif" alt="$\ln \tilde{g}(z)$" width="48" height="31">,
+        we obtain</p>
+
+          <!-- MATH: \begin{equation}
+\ln \tilde{g}(z_0)= \ln {g(z_0)}+
+\sum_{i=1}^n\ln \left ( \frac{z_0+a_i^*}{z_0-a_i}\right )=
+\frac{1}{\pi}\int_{-\infty}^{\infty}\frac{x_0}{x_0^2+(\omega-y_0)^2}\ln \tilde{g}(j\omega)d\omega
+
+\end{equation} -->
+
+        <table width="100%" align="CENTER">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img135.gif" alt="\begin{displaymath}\ln \tilde{g}(z_0)= \ln {g(z_0)}+
+\sum_{i=1}^n\ln \left ( \f...
+...\frac{x_0}{x_0^2+(\omega-y_0)^2}\ln \tilde{g}(j\omega)d\omega
+\end{displaymath}" width="512" height="53"></td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td align="right" nowrap>(C.8.15)</td>
+          </tr>
+        </table>
+
+        <p>We also recall that if <i>x</i> is any complex number, then 
+        <!-- MATH: $\Re\{\ln
+x\}=\Re\{\ln|x|+j\angle x\}=\ln |x|$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img136.gif" alt="$\Re\{\ln
+x\}=\Re\{\ln\vert x\vert+j\angle x\}=\ln \vert x\vert$" width="241" height="31">. Thus the result
+        follows on equating real parts in the equation above and on noting that</p>
+
+          <!-- MATH: \begin{equation}
+\ln \left |\tilde{g}(j\omega) \right|=\ln \left |g(j\omega) \right|
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img137.gif" alt="\begin{displaymath}\ln \left \vert\tilde{g}(j\omega) \right\vert=\ln \left \vert g(j\omega) \right\vert
+\end{displaymath}" width="146" height="28"></td>
+            <td width="10" align="RIGHT">(C.8.16)</td>
+          </tr>
+        </table>
+
+        <p align="right">
+
+
+        <!-- MATH: $\Box \Box \Box$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+        <div align="center">
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="appendixc-node17.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section C.8.1</a></td>
+              <td align="center" width="33%"><a href="appendixc-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Appendix C</a></td>
+              <td align="center" width="33%"><a href="appendixc-node21.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section C.8.3</a></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </div>
+
+  <p>&nbsp;</p>
+</center>
+
+</body>
+
+</html>

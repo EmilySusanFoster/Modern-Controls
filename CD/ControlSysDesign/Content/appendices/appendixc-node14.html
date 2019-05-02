@@ -1,0 +1,630 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixc-node1.html">Appendix
+        C</a> | Section C.7</p>
+        <h2 align="center">C. Results From Analytic Function Theory</h2>
+        <h3>C.7 Integrals revisited</h3>
+
+        <p><b>Theorem 1.7 (Cauchy Integral Theorem)</b>&nbsp;&nbsp; <i>If f</i>(<i>z</i>)<i>
+        is analytic in some simply connected domain D, then 
+          <!-- MATH: $\int
+f(z) dz$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img64.gif" alt="$ \int
+f(z) dz$" width="63" height="33"> is independent of path in D and</i></p>
+            <!-- MATH: \begin{equation}
+\oint_C f(z) dz =0
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img65.gif" alt="\begin{displaymath}\oint_C f(z) dz =0
+\end{displaymath}" width="96" height="43"></td>
+            <td width="10" align="RIGHT">(C.7.1)</td>
+          </tr>
+        </table>
+
+        <p><i>where C is a simple closed path in D.</i></p>
+
+        <p><b>Proof</b></p>
+
+        <p>Follows from the Cauchy-Riemann conditions and Theorem C.2.</p>
+
+        <p align="right"><img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+        <p>We are also interested in the value of integrals in various limiting
+        situations. The following examples cover relevant cases.</p>
+
+        <p>We note that if <i>L</i><sub><i>C</i></sub> is the length of a simple
+        curve <i>C</i>, then</p>
+
+
+          <!-- MATH: \begin{equation}
+\left|\int_C f(z)dz  \right|\leq \max_{z\in C}(|f(z)|)L_C
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img66.gif" alt="\begin{displaymath}\left\vert\int_C f(z)dz \right\vert\leq \max_{z\in C}(\vert f(z)\vert)L_C
+\end{displaymath}" width="200" height="45"></td>
+            <td width="10" align="RIGHT">(C.7.2)</td>
+          </tr>
+        </table>
+
+        <p><b>Example C.5&nbsp; <i></i></b><i>Assume C is a semi circle centered
+        at the origin and with radius R. The path length is then <img align="MIDDLE" border="0" src="appendixc-img67.gif" alt="$L_C=\pi R$" width="68" height="29">.
+        Hence</i></p>
+        <ul>
+          <li><i>If f</i>(<i>z</i>) <i>varies as z</i><sup>-2</sup><i>, then </i>|<i>f</i>(<i>z</i>)|<i>
+            on C must vary as</i> <i>R</i><sup>-2</sup><i>. Hence the integral
+            on C vanishes for 
+              <!-- MATH: $R\rightarrow \infty$ -->
+            <img align="BOTTOM" border="0" src="appendixc-img68.gif" alt="$R\rightarrow \infty$" width="56" height="15">.</i>
+          <li><i>If f</i>(<i>z</i>)<i> varies as z</i><sup>-1</sup><i>, then </i>|<i>f</i>(<i>z</i>)|<i>
+            on C must vary as R</i><sup>-1</sup><i>. Then, the integral on C
+            becomes a constant as 
+              <!-- MATH: $R\rightarrow \infty$ -->
+            <img align="BOTTOM" border="0" src="appendixc-img68.gif" alt="$R\rightarrow \infty$" width="56" height="15">.</i>
+        </ul>
+
+        <p><b>Example C.6&nbsp;&nbsp; </b><i>Consider the function
+          <!-- MATH: $f(z)=\ln(z)$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img70.gif" alt="$f(z)=\ln(z)$" width="88" height="31">
+        and an arc of a circle, C, described by
+          <!-- MATH: $z=\epsilon e^{j\gamma}$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img71.gif" alt="$z=\epsilon e^{j\gamma}$" width="61" height="17">
+        for
+          <!-- MATH: $\gamma\in[-\gamma_1,\gamma_1]$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img72.gif" alt="$\gamma\in[-\gamma_1,\gamma_1]$" width="91" height="31">.
+        Then</i></p>
+        <b>
+
+            <!-- MATH: \begin{equation}
+I_\epsilon\stackrel{\rm\triangle}{=}\lim_{\epsilon\rightarrow 0}\int_C f(z) dz=0
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img73.gif" alt="\begin{displaymath}I_\epsilon\stackrel{\rm\triangle}{=}\lim_{\epsilon\rightarrow 0}\int_C f(z) dz=0
+\end{displaymath}" width="159" height="43"></td>
+            <td width="10" align="RIGHT">(C.7.3)</td>
+          </tr>
+        </table>
+        </b>
+
+        <p><i>This is proved as follows. On C we have that 
+          <!-- MATH: $f(z)=\ln(\epsilon)$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img74.gif" alt="$f(z)=\ln(\epsilon)$" width="87" height="31">.
+        Then</i></p>
+        <b>
+
+            <!-- MATH: \begin{equation}
+I_\epsilon=\lim_{\epsilon\rightarrow 0}
+\left[(\gamma_2-\gamma_1)\epsilon\ln (\epsilon)\right ]
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img75.gif" alt="\begin{displaymath}I_\epsilon=\lim_{\epsilon\rightarrow 0}
+\left[(\gamma_2-\gamma_1)\epsilon\ln (\epsilon)\right ]
+\end{displaymath}" width="172" height="36"></td>
+            <td width="10" align="RIGHT">(C.7.4)</td>
+          </tr>
+        </table>
+        </b>
+
+        <p><i>We then use the fact that 
+          <!-- MATH: $\lim_{|x| \rightarrow 0}(x\ln x)=0$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img76.gif" alt="$\lim_{\vert x\vert \rightarrow 0}(x\ln x)=0$" width="138" height="31">.
+        And the result follows.</i></p>
+
+        <p><b>Example C.7</b>&nbsp;&nbsp; <i>Consider the function</i></p>
+
+            <!-- MATH: \begin{equation}
+f(z)=\ln \left(1+\frac{a}{z^n} \right )  \hspace{10mm}n\geq 1
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img77.gif" alt="\begin{displaymath}f(z)=\ln \left(1+\frac{a}{z^n} \right ) \hspace{10mm}n\geq 1
+\end{displaymath}" width="220" height="35"></td>
+            <td width="10" align="RIGHT">(C.7.5)</td>
+          </tr>
+        </table>
+
+        <p><i>and a semi circle, C, defined by 
+          <!-- MATH: $z=Re^{j\gamma}$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img78.gif" alt="$z=Re^{j\gamma}$" width="66" height="17">
+        for
+          <!-- MATH: $\gamma\in
+\left[- \frac{\pi}{2}, \frac{\pi}{2} \right]$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img79.gif" alt="$\gamma\in
+\left[- \frac{\pi}{2}, \frac{\pi}{2} \right]$" width="88" height="34">. Then if C is followed clockwise</i></p>
+        <b><b>
+
+            <!-- MATH: \begin{equation}
+I_R \stackrel{\rm\triangle}{=}\lim_{R\rightarrow \infty}\int_C f(z) dz=
+\begin{cases}
+0 &\mbox{ for  $n>1$ }\\-j\pi a &\mbox{ for $n=1$ }
+\end{cases}
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img80.gif" alt="\begin{displaymath}I_R \stackrel{\rm\triangle}{=}\lim_{R\rightarrow \infty}\int_...
+...\mbox{ for $n&gt;1$ }\\ -j\pi a &amp;\mbox{ for $n=1$ }
+\end{cases}
+\end{displaymath}" width="301" height="54"></td>
+            <td width="10" align="RIGHT">(C.7.6)</td>
+          </tr>
+        </table>
+        </b></b>
+
+        <p><i>This is proved as follows.</i></p>
+
+        <p><i>On C we have that 
+          <!-- MATH: $z=Re^{j\gamma}$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img78.gif" alt="$z=Re^{j\gamma}$" width="66" height="17">,
+        then</i></p>
+        <b><b>
+
+            <!-- MATH: \begin{equation}
+I_R= \lim_{R\rightarrow \infty}j\int_{\frac{\pi}{2}}^{-\frac{\pi}{2}}
+\ln\left(1+\frac{a}{R^n}e^{-jn\gamma} \right )Re^{j\gamma} d\gamma
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img81.gif" alt="\begin{displaymath}I_R= \lim_{R\rightarrow \infty}j\int_{\frac{\pi}{2}}^{-\frac{...
+...eft(1+\frac{a}{R^n}e^{-jn\gamma} \right )Re^{j\gamma} d\gamma
+\end{displaymath}" width="307" height="50"></td>
+            <td width="10" align="RIGHT">(C.7.7)</td>
+          </tr>
+        </table>
+
+        <p><i>We also know that</i></p>
+
+            <!-- MATH: \begin{equation}
+\lim_{|x|\rightarrow 0}\ln (1+x)=x
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img82.gif" alt="\begin{displaymath}\lim_{\vert x\vert\rightarrow 0}\ln (1+x)=x
+\end{displaymath}" width="128" height="39"></td>
+            <td width="10" align="RIGHT">(C.7.8)</td>
+          </tr>
+        </table>
+
+        <p><i>Then</i></p>
+
+            <!-- MATH: \begin{equation}
+I_R=\lim_{R\rightarrow
+\infty}\frac{a}{R^{n-1}}j\int_{\frac{\pi}{2}}^{-\frac{\pi}{2}}
+e^{-j(n-1)\gamma}d\gamma
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img83.gif" alt="\begin{displaymath}I_R=\lim_{R\rightarrow
+\infty}\frac{a}{R^{n-1}}j\int_{\frac{\pi}{2}}^{-\frac{\pi}{2}}
+e^{-j(n-1)\gamma}d\gamma
+\end{displaymath}" width="251" height="50"></td>
+            <td width="10" align="RIGHT">(C.7.9)</td>
+          </tr>
+        </table>
+
+        <p><i>From where, evaluating for </i><i>n&nbsp;</i>=&nbsp;1<i> and for
+        n&nbsp;</i>&gt;&nbsp;1<i>, the result follows.</i></p>
+
+        <!-- MATH: $\Box \Box \Box$ -->
+
+
+        <p align="right"><img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+        <b>
+
+        <p>Example C.8&nbsp;&nbsp; </b></b></b><i>Consider the function<br>
+        </i><b>
+
+            <!-- MATH: \begin{equation}
+f(z)=\ln \left(1+e^{-z\tau}\frac{a}{z^n} \right )  \hspace{10mm}n\geq 1,\hspace{3mm}\tau>0
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img84.gif" alt="\begin{displaymath}f(z)=\ln \left(1+e^{-z\tau}\frac{a}{z^n} \right ) \hspace{10mm}n\geq 1,\hspace{3mm}\tau&gt;0
+\end{displaymath}" width="311" height="35"></td>
+            <td width="10" align="RIGHT">(C.7.10)</td>
+          </tr>
+        </table>
+
+        <p><i>and a semi circle, C, defined by 
+          <!-- MATH: $z=Re^{j\gamma}$ -->
+        </i><img align="BOTTOM" border="0" src="appendixc-img78.gif" alt="$z=Re^{j\gamma}$" width="66" height="17"><i>
+        for </i><img align="MIDDLE" border="0" src="appendixc-img79.gif" alt="$\gamma\in
+\left[- \frac{\pi}{2}, \frac{\pi}{2} \right]$" width="88" height="34"><i>. Then, for clockwise C,</i></p>
+
+            <!-- MATH: \begin{equation}
+I_R \stackrel{\rm\triangle}{=}\lim_{R\rightarrow \infty}\int_C f(z) dz=0
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img85.gif" alt="\begin{displaymath}I_R \stackrel{\rm\triangle}{=}\lim_{R\rightarrow \infty}\int_C f(z) dz=0
+\end{displaymath}" width="174" height="43"></td>
+            <td width="10" align="RIGHT">(C.7.11)</td>
+          </tr>
+        </table>
+
+        <p><i>This is proved as follows.</i></p>
+
+        <p><i>On C we have that</i><!-- MATH: $z=Re^{j\gamma}$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img78.gif" alt="$z=Re^{j\gamma}$" width="66" height="17"><i>,
+        then
+
+            <!-- MATH: \begin{equation}
+I_R= \lim_{R\rightarrow \infty}j\int_{\frac{\pi}{2}}^{-\frac{\pi}{2}}\left[
+\ln\left(1+\frac{a}{z^(n+1)}\frac{z}{e^{z\tau}} \right )z
+\right]
+_{z=Re^{j\gamma}}d\gamma
+
+\end{equation} -->
+
+        </i></p>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img86.gif" alt="\begin{displaymath}I_R= \lim_{R\rightarrow \infty}j\int_{\frac{\pi}{2}}^{-\frac{...
+...ac{z}{e^{z\tau}} \right )z
+\right]
+_{z=Re^{j\gamma}}d\gamma
+\end{displaymath}" width="373" height="50"></td>
+            <td width="10" align="RIGHT">(C.7.12)</td>
+          </tr>
+        </table>
+
+        <p><i>We recall that, if <img align="BOTTOM" border="0" src="appendixc-img87.gif" alt="$\tau$" width="12" height="14">
+        is a positive real number, and 
+          <!-- MATH: $\Re
+\{z\}>0$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img88.gif" alt="$\Re
+\{z\}&gt;0$" width="68" height="31">, then</i></p>
+
+            <!-- MATH: \begin{equation}
+\lim_{|z|\rightarrow \infty}\frac{z}{e^{z\tau}}=0
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img89.gif" alt="\begin{displaymath}\lim_{\vert z\vert\rightarrow \infty}\frac{z}{e^{z\tau}}=0
+\end{displaymath}" width="96" height="39"></td>
+            <td width="10" align="RIGHT">(C.7.13)</td>
+          </tr>
+        </table>
+
+        <p><i>And, for very large R, we have that,</i></p>
+
+            <!-- MATH: \begin{equation}
+\left. \ln\left(1+\frac{a}{z^{n+1}}\frac{z}{e^{z\tau}} \right
+)z\right|
+_{z=Re^{j\gamma}}\approx
+\left. \frac{1}{z^n} \frac{z}{e^{z\tau}}\right|_{z=Re^{j\gamma}}
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img90.gif" alt="\begin{displaymath}\left. \ln\left(1+\frac{a}{z^{n+1}}\frac{z}{e^{z\tau}} \right...
+...frac{1}{z^n} \frac{z}{e^{z\tau}}\right\vert _{z=Re^{j\gamma}}
+\end{displaymath}" width="303" height="45"></td>
+            <td width="10" align="RIGHT">(C.7.14)</td>
+          </tr>
+        </table>
+
+        <p><i>Thus, in the limit, this quantity goes to zero </i><b>for all
+        positive 
+          <!-- MATH: $\mathbf{n}$ -->n</b><i>. The result then follows.</i></p>
+
+        <!-- MATH: $\Box \Box \Box$ -->
+
+        <p align="right"><img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+        <p><b>Example C.9</b>&nbsp;&nbsp; <i>Consider the function</i></p>
+
+            <!-- MATH: \begin{equation}
+f(z)=\ln \left(\frac{z-a}{z+a} \right )
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img91.gif" alt="\begin{displaymath}f(z)=\ln \left(\frac{z-a}{z+a} \right )
+\end{displaymath}" width="128" height="45"></td>
+            <td width="10" align="RIGHT">(C.7.15)</td>
+          </tr>
+        </table>
+
+        <p><i>and a semi circle, C, defined by 
+          <!-- MATH: $z=Re^{j\gamma}$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img78.gif" alt="$z=Re^{j\gamma}$" width="66" height="17">
+        for 
+          <!-- MATH: $\gamma\in
+\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img79.gif" alt="$\gamma\in
+\left[- \frac{\pi}{2}, \frac{\pi}{2} \right]$" width="88" height="34">. Then for clockwise C</i></p>
+
+            <!-- MATH: \begin{equation}
+I_R \stackrel{\rm\triangle}{=}\lim_{R\rightarrow \infty}\int_C f(z) dz=j2\pi a
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img92.gif" alt="\begin{displaymath}I_R \stackrel{\rm\triangle}{=}\lim_{R\rightarrow \infty}\int_C f(z) dz=j2\pi a
+\end{displaymath}" width="199" height="43"></td>
+            <td width="10" align="RIGHT">(C.7.16)</td>
+          </tr>
+        </table>
+
+        <p><i>This result is obtained on noting that</i></p>
+
+            <!-- MATH: \begin{equation}
+\ln \left(\frac{z-a}{z+a} \right )=\ln
+\left(\frac{1-\frac{a}{z}}{1+\frac{a}{z}} \right )=
+\ln \left( 1-\frac{a}{z} \right )-\ln \left( 1+\frac{a}{z} \right )
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img93.gif" alt="\begin{displaymath}\ln \left(\frac{z-a}{z+a} \right )=\ln
+\left(\frac{1-\frac{a...
+...eft( 1-\frac{a}{z} \right )-\ln \left( 1+\frac{a}{z} \right )
+\end{displaymath}" width="369" height="46"></td>
+            <td width="10" align="RIGHT">(C.7.17)</td>
+          </tr>
+        </table>
+
+        <p><i>and on applying the result in example C.7.</i></p>
+
+
+        <!-- MATH: $\Box \Box \Box$ -->
+
+        <p align="right"><img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+        <p><b>Example 1.10&nbsp;&nbsp; </b><i>Consider a function of the form</i></p>
+
+            <!-- MATH: \begin{equation}
+f(z)=\frac{a_{-1}}{z}+\frac{a_{-2}}{z^2}+\ldots
+\end{equation} -->
+
+        </b>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img94.gif" alt="\begin{displaymath}f(z)=\frac{a_{-1}}{z}+\frac{a_{-2}}{z^2}+\ldots
+\end{displaymath}" width="167" height="35"></td>
+            <td width="10" align="RIGHT">(C.7.18)</td>
+          </tr>
+        </table>
+
+        <p><i>and C being an arc of circle </i><b><!-- MATH: $z=Re^{j\theta}$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img95.gif" alt="$z=Re^{j\theta}$" width="65" height="18"></b><i>
+        for </i><b><img align="MIDDLE" border="0" src="appendixc-img96.gif" alt="$\theta\in [\theta_1, \theta_2]$" width="76" height="31"></b><i>.
+        Thus
+          <!-- MATH: $dz=jzd\theta$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img97.gif" alt="$dz=jzd\theta$" width="73" height="29">
+        and
+
+            <!-- MATH: \begin{equation}
+\int_C\frac{dz}{z}=\int
+_{\theta_1}^{\theta_2}jd\theta=-j(\theta_2-\theta_1)
+
+\end{equation} -->
+
+        </i></p>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img98.gif" alt="\begin{displaymath}\int_C\frac{dz}{z}=\int
+_{\theta_1}^{\theta_2}jd\theta=-j(\theta_2-\theta_1)
+\end{displaymath}" width="219" height="48"></td>
+            <td width="10" align="RIGHT">(C.7.19)</td>
+          </tr>
+        </table>
+
+        <p><i>Thus as 
+          <!-- MATH: $R\rightarrow \infty$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img68.gif" alt="$R\rightarrow \infty$" width="56" height="15">,
+        we have that</i></p>
+        <b>
+
+            <!-- MATH: \begin{equation}
+\int_C f(z) dz=-ja_{-1}(\theta_2-\theta_1)
+\end{equation} -->
+
+        </b>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img99.gif" alt="\begin{displaymath}\int_C f(z) dz=-ja_{-1}(\theta_2-\theta_1)
+\end{displaymath}" width="194" height="43"></td>
+            <td width="10" align="RIGHT">(C.7.20)</td>
+          </tr>
+        </table>
+        <b>
+
+
+        <!-- MATH: $\Box \Box \Box$ -->
+
+        </b>
+
+        <p align="right"><img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+        <b>
+
+        <p>Example 1.11&nbsp;&nbsp; </b><i>Consider now f</i>(<i>z</i>)&nbsp;=&nbsp;<i>z</i><sup><i>n</i></sup><i>.
+        If the path C is a full circle, centered at the origin and radius R,
+        then</i></p>
+        <b>
+            <!-- MATH: \begin{eqnarray}
+\oint_C z^n dz&=&\int_{-\pi}^\pi
+\left(R^ne^{jn\theta}\right)jRe^{j\theta} d\theta\\
+&=&\begin{cases}
+0 &\mbox{ for $n\neq -1$\space }\\
+-2\pi j&\mbox{ for $n=-1$\space (integration clockwise)}
+\end{cases}
+
+\end{eqnarray} -->
+
+        </b>
+        <table cellpadding="0" width="100%" border="0" cellspacing="0">
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT"><img align="MIDDLE" border="0" src="appendixc-img100.gif" alt="$\displaystyle \oint_C z^n dz$" width="59" height="51"></td>
+            <td align="CENTER" nowrap>=</td>
+            <td align="LEFT" nowrap><img align="MIDDLE" border="0" src="appendixc-img101.gif" alt="$\displaystyle \int_{-\pi}^\pi
+\left(R^ne^{jn\theta}\right)jRe^{j\theta} d\theta$" width="156" height="52"></td>
+            <td width="10" align="RIGHT">(C.7.21)</td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td nowrap align="RIGHT">&nbsp;</td>
+            <td align="CENTER" nowrap>=</td>
+            <td align="LEFT" nowrap><img align="MIDDLE" border="0" src="appendixc-img102.gif" alt="$\displaystyle \begin{cases}
+0 &amp;\mbox{ for $n\neq -1$\space }\\
+-2\pi j&amp;\mbox{ for $n=-1$\space (integration clockwise)}
+\end{cases}$" width="315" height="63"></td>
+            <td width="10" align="RIGHT">(C.7.22)</td>
+          </tr>
+        </table>
+        <b><b>
+
+
+        <!-- MATH: $\Box \Box \Box$ -->
+
+        </b></b>
+
+        <p><img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+        <p>We can now develop Cauchy's Integral Formula Say that <i>f</i>(<i>z</i>)
+        can be expanded as</p>
+        <b>
+
+          <!-- MATH: \begin{equation}
+f(z)=\frac{a_{-1}}{z-z_0}+a_0+a_1(z-z_0)+a_2(z-z_0)^2+\ldots
+\end{equation} -->
+
+        </b>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img103.gif" alt="\begin{displaymath}f(z)=\frac{a_{-1}}{z-z_0}+a_0+a_1(z-z_0)+a_2(z-z_0)^2+\ldots
+\end{displaymath}" width="355" height="37"></td>
+            <td width="10" align="RIGHT">(C.7.23)</td>
+          </tr>
+        </table>
+
+        <p>the, <i>a</i><sub>-1</sub> is called the <b>residue</b> of <i>f</i>(<i>z</i>)
+        at <i>z</i><sub>0</sub>.</p>
+
+        <p align="center"><img border="0" src="appendixc-fig3.gif" width="342" height="244"><br>
+        <b><strong>Figure C.3:</strong></b> Path for integration of a function
+        with a singularity.</p>
+
+        <p>Consider the path shown in Figure C.3. Since <i>f</i>(<i>z</i>) is
+        analytic in a region containing <i>C</i>, we have that the integral
+        around the complete path shown in Figure C.3 is zero. The integral along
+        <i>C</i><sub>1</sub> and <i>C</i><sub>2</sub> cancel. The anticlockwise
+        circular integral around <i>z</i><sub>0</sub> can be computed following
+        example C.11 to yield  
+        <!-- MATH: $2\pi ja_{-1}$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img104.gif" alt="$2\pi ja_{-1}$" width="54" height="28">.
+        Hence the integral around the outer curve <i>C</i> is minus the integral
+        around the circle of radius <img align="BOTTOM" border="0" src="appendixc-img50.gif" alt="$\epsilon$" width="10" height="14">.
+        Thus</p>
+
+
+          <!-- MATH: \begin{equation}
+\oint_Cf(z)dz= -2\pi ja_{-1}
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img105.gif" alt="\begin{displaymath}\oint_Cf(z)dz= -2\pi ja_{-1}
+\end{displaymath}" width="150" height="43"></td>
+            <td width="10" align="RIGHT">(C.7.24)</td>
+          </tr>
+        </table>
+
+        <p>This leads to the following result:
+
+        <p><b>Theorem 1.8 (Cauchy's Integral formula)</b>&nbsp;&nbsp; <i>Let g</i>(<i>z</i>)<i>
+        be analytic in a region. Let q be a point inside the region. Then 
+          <!-- MATH: $\frac{g(z)}{z-q}$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img106.gif" alt="$\frac{g(z)}{z-q}$" width="30" height="40">
+        has residue g</i>(<i>q</i>)<i> at z&nbsp;</i>=&nbsp;<i>q</i> <i>and the
+        integral around any closed contour C enclosing q in a clockwise
+        direction is given by</i></p>
+
+            <!-- MATH: \begin{equation}
+\oint_C \frac{g(z)}{z-q}dz=-2\pi jg(q)
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img107.gif" alt="\begin{displaymath}\oint_C \frac{g(z)}{z-q}dz=-2\pi jg(q)
+\end{displaymath}" width="163" height="44"></td>
+            <td width="10" align="RIGHT">(C.7.25)</td>
+          </tr>
+        </table>
+
+
+        <!-- MATH: $\Box \Box \Box$ -->
+
+        <p align="right"><img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+        <p>We note that of <i>g</i>(<i>z</i>) at an interior point <i>z&nbsp;= q
+        </i>of a region D, can be obtained by integrating  
+        <!-- MATH: $\frac{g(z)}{z-q}$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img106.gif" alt="$\frac{g(z)}{z-q}$" width="30" height="40">
+        on the boundary of D. Hence we can determine the value of an analytic
+        function inside a region by its behaviour on the boundary.</p>
+        <div align="center">
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="appendixc-node12.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section C.6</a></td>
+              <td align="center" width="33%"><a href="appendixc-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Appendix C</a></td>
+              <td align="center" width="33%"><a href="appendixc-node16.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section C.8</a></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </div>
+
+  <p>&nbsp;</p>
+</center>
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 13</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 13</p>
+        <h2 align="center">13. Digital Control</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>Models for discrete time systems have been described in Chapter 1.
+        There we saw that digital and continuous systems were actually quite
+        close. Hence it is often true that digital responses approach the
+        corresponding continuous response as the sampling period goes to zero.
+        For this reason, in the remainder of the book we will present continuous
+        and discrete ideas in parallel. The purpose of the current chapter is to
+        provide a smooth transition to this latter work by highlighting the
+        special issues associated with digital control. In particular, the
+        chapter covers:</p>
+        <ul>
+          <li>why one cannot simply treat digital control as if it were exactly
+            the same as continuous control, and
+          <li>how to carry out designs for digital control systems so that the <em>at-sample</em>
+            response is exactly treated.
+        </ul>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>There are a number of ways of designing digital control systems:
+            <ul>
+              <li>design in continuous time and discretize the controller prior
+                to implementation;</li>
+              <li>model the process by a digital model and carry out the design
+                in discrete time;<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Continuous time design which is discretized for implementation;
+            <ul>
+              <li>Continuous time signals and models are utilized for the
+                design.</li>
+              <li>Prior to implementation, the controller is replaced by an
+                equivalent discrete time version.</li>
+              <li><em>Equivalent</em> means that simply maps <i>s</i> to <img align="BOTTOM" border="0" src="part4-img7.gif" alt="$\delta $" width="11" height="15">
+                (where <img align="BOTTOM" border="0" src="part4-img7.gif" alt="$\delta $" width="11" height="15">
+                is the delta operator).</li>
+              <li>Caution must be exercised since the analysis was carried out
+                in continuous time and the expected results are therefore based
+                on the assumption that the sampling rate is high enough to mask
+                sampling effects.</li>
+              <li>If the sampling period is chosen carefully, in particular with
+                respect to the open and closed loop dynamics, then the results
+                should be acceptable.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Discrete design based on a discretized process model:
+            <ul>
+              <li>First the model of the continuous process is discretized.</li>
+              <li>Then, based on the discrete process, a discrete controller is
+                designed and implemented.</li>
+              <li>Caution must be exercised with so called intersample behavior:
+                the analysis is based entirely on the behavior as observed at
+                discrete points in time, but the process has a continuous
+                behavior also between sampling instances.</li>
+              <li>Problems can be avoided by refraining from designing solutions
+                which appear feasible in a discrete time analysis, but are known
+                to be unachievable in a continuous time analysis (such as
+                removing non-minimum phase zeros from the closed loop!).<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>The following rules of thumb will help avoid intersample problems
+            if a purely digital design is carried out:
+            <ul>
+              <li>Sample 10 times the desired closed loop bandwidth.</li>
+              <li>Use simple anti-aliasing filters to avoid excessive phase
+                shift.</li>
+              <li>Never try to cancel or otherwise compensate for discrete
+                sampling zeros.</li>
+              <li>Always check the intersample response.</li>
+            </ul>
+          </li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="chapter12.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Chapter 12</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><a href="chapter14.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Chapter 14</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>

@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixb-node1.html">Appendix
+        B</a> | Section B.4</p>
+        <h2 align="center">B. Smith-McMillan Forms</h2>
+        <h3>B.4 Smith-McMillan form for rational matrices</h3>
+
+        <p>A straightforward application of <a href="appendixb-node4.html#thm1.1">Theorem
+        B.1</a> leads to the following result, which gives a diagonal form for
+        rational transfer function matrix:</p>
+
+        <p><a name="theo:smithmac"><b>Theorem B.2</b></a> (Smith-McMillan
+        form)&nbsp;&nbsp; Let
+
+          <!-- MATH: $\mathbf{G}(s)=[G_{ik}(s)]$ --><b>G</b>(<i>s</i>) = [<i>G</i><sub><i>ik</i></sub>(<i>s</i>)]
+        be an <img align="MIDDLE" border="0" src="appendixb-img40.gif" alt="$m\times m$" width="51" height="28">
+        matrix transfer function where <i>G</i><sub><i>ik</i></sub>(<i>s</i>)
+        are rational scalar transfer functions, i.e.</p>
+            <!-- MATH: \begin{equation}
+\mathbf{G}(s)=\frac{\mathbf{\ensuremath{\boldsymbol{\Pi}} }(s)}{D_G(s)}
+\end{equation} -->
+
+        <table width="100%" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixb-img41.gif" alt="\begin{displaymath}
+\mathbf{G}(s)=\frac{\mathbf{\ensuremath{\boldsymbol{\Pi}} }(s)}{D_G(s)}
+\end{displaymath}" width="120" height="53"></td>
+            <td width="10" align="RIGHT">(B.4.1)</td>
+          </tr>
+        </table>
+
+        <p>where 
+          <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} }(s)$ --><img align="MIDDLE" border="0" src="appendixb-img20.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$" width="37" height="31">
+        is an <img align="MIDDLE" border="0" src="appendixb-img40.gif" alt="$m\times m$" width="51" height="28">
+        polynomial matrix of rank <i>r</i> and <i>D</i><sub><i>G</i></sub>(<i>s</i>)
+        is the least common multiple of the denominators of all elements <i>G</i><sub><i>ik</i></sub>(<i>s</i>).
+        Then, 
+          <!-- MATH: $\mathbf{G}(s)$ --><b>G</b>(<i>s</i>) is equivalent to a
+        matrix 
+          <!-- MATH: $\ensuremath{\mathbf{M}(s)}$ --><img align="MIDDLE" border="0" src="appendixb-img42.gif" alt="\ensuremath{\mathbf{M}(s)}" width="40" height="31">,
+        with</p>
+
+            <!-- MATH: \begin{equation}
+\mathbf{M}(s)=\diag \left(\frac{\epsilon_1(s)}{\delta_1(s)},\ldots,
+\frac{\epsilon_r(s)}{\delta_r(s)},0,\dots,0\right)
+
+\end{equation} -->
+
+        <table width="100%" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixb-img43.gif" alt="\begin{displaymath}
+\mathbf{M}(s)=\diag \left(\frac{\epsilon_1(s)}{\delta_1(s)},\ldots,
+\frac{\epsilon_r(s)}{\delta_r(s)},0,\dots,0\right)
+\end{displaymath}" width="254" height="55"></td>
+            <td width="10" align="RIGHT">(B.4.2)</td>
+          </tr>
+        </table>
+
+        <p>where&nbsp; <img align="MIDDLE" border="0" src="appendixb-img44.gif" alt="$\{\epsilon_i(s),\delta_i(s)\}$" width="90" height="31">
+        is a pair of monic and coprime polynomials for 
+          <!-- MATH: $i=1,2,\ldots,r$ --><img align="MIDDLE" border="0" src="appendixb-img28.gif" alt="$i=1,2,\ldots,r$" width="99" height="28">.
+        Furthermore, 
+          <!-- MATH: $\epsilon_i(s)$ --><img align="MIDDLE" border="0" src="appendixb-img45.gif" alt="$\epsilon_i(s)$" width="35" height="31">
+        is a factor of 
+          <!-- MATH: $\epsilon_{i+1}(s)$ --><img align="MIDDLE" border="0" src="appendixb-img46.gif" alt="$\epsilon_{i+1}(s)$" width="51" height="31">
+        and <img align="MIDDLE" border="0" src="appendixb-img47.gif" alt="$ \delta_i(s)$" width="35" height="31">
+        is a factor of 
+          <!-- MATH: $\delta_{i-1}(s)$ --><img align="MIDDLE" border="0" src="appendixb-img48.gif" alt="$\delta_{i-1}(s)$" width="52" height="31">.</p>
+
+        <p><b>Proof</b></p>
+        <i>We write the transfer function matrix as in (B.4.1). We then perform
+        the algorithm outlined in Theorem B.1 to convert 
+        <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$ --><img align="MIDDLE" border="0" src="appendixb-img20.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$" width="37" height="31">
+        to Smith normal form. Finally, canceling terms for the denominator D<sub>G</sub>(s)
+        leads to the form given in (B.4.2).</i>
+
+        <p>We use the symbol
+
+        <!-- MATH: $\mathbf{G}^{SM}(s)$ --><b>G</b><sup><i>SM</i></sup>(<i>s</i>)
+        to denote 
+        <!-- MATH: $\ensuremath{\mathbf{M}(s)}$ --><img align="MIDDLE" border="0" src="appendixb-img50.gif" alt="$\ensuremath{\mathbf{M}(s)} $" width="40" height="31">,
+        which is the <em>Smith-McMillan form</em> of the matrix transfer
+        function
+
+        <!-- MATH: $\mathbf{G}(s)$ -->
+        <b>G</b>(<i>s</i>).</p>
+
+        <p>We illustrate the formula of the Smith-McMillan form by a simple
+        example:</p>
+
+        <p><a name="exa:sm"><b>Example 1.1</b></a><b>&nbsp;&nbsp; </b><i>Consider
+        the following transfer function matrix</i></p>
+        <div align="CENTER">
+
+            <!-- MATH: \begin{equation}
+\mathbf{G}(s)=\begin{bmatrix}\displaystyle{\frac{4}{(s+1)(s+2)}}&\displaystyle{\frac{-1}{s+1}}\\[5mm]
+\displaystyle{\frac{2}{s+1}}&\displaystyle{\frac{-1}{2(s+1)(s+2)}}\end{bmatrix}
+  
+\end{equation} -->
+
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr valign="MIDDLE">
+              <td align="CENTER" nowrap><img src="appendixb-img51.gif" alt="\begin{displaymath}
+\mathbf{G}(s)=\begin{bmatrix}\displaystyle{\frac{4}{(s+1)...
+...{2}{s+1}}&amp;\displaystyle{\frac{-1}{2(s+1)(s+2)}}\end{bmatrix}
+\end{displaymath}" width="281" height="130"></td>
+              <td width="10" align="RIGHT">(B.4.3)</td>
+            </tr>
+          </table>
+        </div>
+
+        <p><i>We can then express </i>
+          <!-- MATH: $\mathbf{G}(s)$ --><b>G</b>(<i>s</i>)<b> </b><i>in the form
+        (B.4.1), i.e.</i></p>
+        <table width="100%" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixb-img52.gif" alt="\begin{displaymath}\mathbf{G}(s)=\frac{\mathbf{\ensuremath{\boldsymbol{\Pi}} }(s...
+...2)&amp;-\dfrac{1}{2}\end{bmatrix}; \hspace{5mm}D_G(s)=(s+1)(s+2)
+\end{displaymath}" width="527" height="58"></td>
+            <td width="10" align="RIGHT">(B.4.4)</td>
+          </tr>
+        </table>
+
+        <p><i>The polynomial matrix
+          <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} }(s)$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img20.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$" width="37" height="31">
+        can be reduced to the Smith form defined in Theorem B1. To do that we
+        first compute its greatest common divisors,</i></p>
+      </center>
+
+      <p align="right"><b><img align="BOTTOM" border="0" src="appendixb-img53.gif" alt="\begin{align}\chi_0&amp;=1\\
+\chi_1&amp;=gcd\left\{4;-(s+2);2(s+2);-\frac{1}{2} \right\}=1\\
+\chi_2&amp;=gcd\{2s^2+8s+6\}=s^2+4s+3=(s+1)(s+3)
+\end{align}" width="465" height="87"></b></p>
+
+      <p align="left"><i>This leads to</i></p>
+      <center>
+
+            <!-- MATH: \begin{equation}
+\overline{\epsilon}_1=\frac{\chi_1}{\chi_0}=1;\hspace{10mm}
+\overline{\epsilon}_2=\frac{\chi_2}{\chi_1}=(s+1)(s+3)
+
+\end{equation} -->
+
+      <table width="100%" cellspacing="0" cellpadding="0">
+        <tr valign="MIDDLE">
+          <td align="CENTER" nowrap><img src="appendixb-img54.gif" alt="\begin{displaymath}\overline{\epsilon}_1=\frac{\chi_1}{\chi_0}=1;\hspace{10mm}
+\overline{\epsilon}_2=\frac{\chi_2}{\chi_1}=(s+1)(s+3)
+\end{displaymath}" width="308" height="38"></td>
+          <td width="10" align="RIGHT">(B.4.8)</td>
+        </tr>
+      </table>
+      </center>
+
+      <p align="left"><i>From here the Smith-McMillan form can be computed to
+      yield</i></p>
+      <center>
+
+            <!-- MATH: \begin{equation}
+\mathbf{G^{SM}}(s)=
+\begin{bmatrix}\displaystyle{\frac{1}{(s+1)(s+2)}}&0\\
+0&\displaystyle{\frac{s+3}{s+2}}\end{bmatrix}
+
+\end{equation} -->
+
+      <table width="100%" align="CENTER">
+        <tr valign="MIDDLE">
+          <td align="CENTER" nowrap><img src="appendixb-img55.gif" alt="\begin{displaymath}
+\mathbf{G^{SM}}(s)=
+\begin{bmatrix}\displaystyle{\frac{1}{(s+1)(s+2)}}&amp;0\\
+0&amp;\displaystyle{\frac{s+3}{s+2}}\end{bmatrix}
+\end{displaymath}" width="246" height="76"></td>
+          <td width="10" align="RIGHT">(B.4.9)</td>
+        </tr>
+      </table>
+      </center>
+
+      <p align="left">&nbsp;</p>
+      <center>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="appendixb-node4.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Section B.3</a></td>
+            <td align="center" width="33%"><a href="appendixb-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Appendix B</a></td>
+            <td align="center" width="33%"><a href="appendixb-node8.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next - Section B.5</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+      </center></td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

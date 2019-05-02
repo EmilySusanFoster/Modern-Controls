@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 10</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 10</p>
+        <h2 align="center">10. Internal Model Principle, Feedforward and Cascade
+        Structures</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>The analysis in previous chapters has focused on feedback loop
+        properties and feedback controller synthesis. In this chapter we will
+        extend the scope of the analysis to focus on two further important
+        aspects, namely: exact compensation of certain types of deterministic
+        disturbances and exact tracking of particular reference signals. We will
+        show that, compared to relying solely on feedback, the use of
+        feedforward and or cascade structures offers advantages in many cases.
+        We also generalize the idea of integral action to more general classes
+        of disturbance compensators.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>This chapter focuses the discussion of the previous chapter on a
+            number of special topics with high application value:
+            <ul>
+              <li>internal disturbance models: compensation for classes of
+                references and disturbances.</li>
+              <li>feedforward</li>
+              <li>cascade control</li>
+              <li>two-degree of freedom architectures<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Signal models
+            <ul>
+              <li>Certain classes of reference or disturbance signals can be
+                modeled explicitly by their Laplace transform:<br>
+                <div align="CENTER">
+                  <table cellpadding="4" border="1" cellspacing="0">
+                    <tr>
+                      <th align="CENTER"><i>Signal Type</i></th>
+                      <th align="CENTER"><i>Transform</i></th>
+                    </tr>
+                    <tr>
+                      <td align="CENTER">Step</td>
+                      <td align="CENTER">
+                        <!-- MATH: $\dfrac {1}{s}$ --><img align="MIDDLE" border="0" src="part3-img19.gif" alt="$\dfrac {a_1s+1}{s^2}$" width="15" height="49"></td>
+                    </tr>
+                    <tr>
+                      <td align="CENTER">Ramp</td>
+                      <td align="CENTER">
+                        <!-- MATH: $\dfrac {a_1s+1}{s^2}$ --><img align="MIDDLE" border="0" src="part3-img20.gif" alt="$\dfrac {a_2s^2+a_1s+1}{s^3}$" width="58" height="49"></td>
+                    </tr>
+                    <tr>
+                      <td align="CENTER">Parabola</td>
+                      <td align="CENTER">
+                        <!-- MATH: $\dfrac {a_2s^2+a_1s+1}{s^3}$ --><img border="0" src="part3-img29.gif" width="108" height="41"></td>
+                    </tr>
+                    <tr>
+                      <td align="CENTER">Sinusoid</td>
+                      <td align="CENTER"><img border="0" src="part3-img30.gif" width="56" height="35"></td>
+                    </tr>
+                  </table>
+                </div>
+              </li>
+              <li>Such references (disturbances) can be asymptotically tracked
+                (rejected) if and only if the closed loop contains the
+                respective transform in the sensitivity <i>S</i><sub>0</sub>.<br>
+                &nbsp;</li>
+              <li>This is equivalent to having imagined the transforms being
+                (unstable) poles of the open-loop and stabilizing them with the
+                controller.<br>
+                &nbsp;</li>
+              <li>In summary, the internal model principle augments poles to the
+                open loop gain function 
+                <!-- MATH: $G_o(s)C(s)$ -->
+                <i>G</i><sub><i>o</i></sub>(<i>s</i>)<i>C</i>(<i>s</i>).
+                However, this implies that the same design trade-offs apply as
+                if these poles had been in the plant to begin with.<br>
+                &nbsp;</li>
+              <li>Thus internal model control is not cost free but must be
+                considered as part of the design trade-off considerations.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Reference feedforward
+            <ul>
+              <li>A simple but very effective technique for improving responses
+                to setpoint changes is prefiltering the setpoint (Figure 10.9).<br>
+                &nbsp;
+              <li>This is the so called the two-degree-of-freedom (two d.o.f.)
+                architecture since the prefilter <i>H</i> provides an additional
+                design freedom. If, for example, there is significant
+                measurement noise, then the loop must not be designed with too
+                high a bandwidth. In this situation, reference tracking can be
+                sped up with the prefilter.<br>
+                &nbsp;
+              <li>Also, if the reference contains high-frequency components
+                (such as step changes, for example), which are anyhow beyond the
+                bandwidth of the loop, then one might as well filter them so not
+                to excite uncertainties and actuators with them unnecessarily.<br>
+                &nbsp;
+              <li>It is important to note, however, that design inadequacies in
+                the loop (such as poor stability or performance) cannot be
+                compensated by the prefilter. This is due to the fact that the
+                prefilter does not affect the loop dynamics excited by
+                disturbances.<br>
+                &nbsp;
+                <div align="CENTER">
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <caption><strong>Figure 10.9:</strong> Two degree of freedom
+                      architecture for improved tracking</caption>
+                    <tr>
+                      <td><img src="part3-fig1.gif" alt="\begin{figure}
+\end{figure}" width="482" height="65"></td>
+                    </tr>
+                  </table>
+                </div>
+                &nbsp;</li>
+              <li>Disturbance feedforward The trade-offs regarding sensitivities
+                to reference, measurement noise, input-and output disturbances
+                as discussed in the previous chapters refer to the case when
+                these disturbances are technically or economically not
+                measurable. Measurable disturbances can be compensated for
+                explicitly (Figure 10.10), thus relaxing one of the trade-off
+                constraints and giving the design more flexibility.<br>
+                &nbsp;
+                <div align="CENTER">
+                  <table cellspacing="0" cellpadding="0">
+                    <caption><strong>Figure 10.10:</strong> Disturbance
+                      feedforward structure</caption>
+                    <tr>
+                      <td><img src="part3-fig2.gif" alt="\begin{figure}
+\end{figure}" width="457" height="118"></td>
+                    </tr>
+                  </table>
+                </div>
+                &nbsp;
+            </ul>
+          </li>
+          <li>Cascade Control
+            <ul>
+              <li>Cascade control is a well-proven technique applicable when two
+                or more systems feed sequentially into each other (Figure
+                10.11).<br>
+                &nbsp;</li>
+              <li>All previously discussed design trade-offs and insights apply.<br>
+                &nbsp;</li>
+              <li>If the inner loop (<i>C</i><sub>2</sub> in Fig. 10.11) were
+                not utilized, then the outer controller (<i>C</i><sub>1</sub> in
+                Fig. 10.12) would- implicitly or explicitly- estimate <i>y</i><sub>1</sub>
+                as an internal state of the overall system (
+                    <!-- MATH: $G_{o1}G_{o2}$ -->
+                <i>G</i><sub><i>o</i>1</sub><i>G</i><sub><i>o</i>2</sub>). This
+                estimate, however, would inherit the model-uncertainty
+                associated with <i>G</i><sub><i>o</i>2</sub>. Therefore,
+                utilizing the available measurement of <i>y</i><sub>1</sub>
+                reduces the overall uncertainty and one can achieve the
+                associated benefits.</li>
+            </ul>
+            &nbsp;
+            <div align="CENTER">
+              <table border="0" cellspacing="0" cellpadding="0">
+                <caption><strong>Figure 10.12:</strong> Cascade control
+                  structure</caption>
+                <tr>
+                  <td><img src="part3-fig3.gif" alt="\begin{figure}
+\end{figure}" width="504" height="91"></td>
+                </tr>
+              </table>
+            </div>
+          </li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="chapter9.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Chapter 9</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><a href="chapter11.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Chapter 11</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </div>
+
+  <p>&nbsp;</p>
+</center>
+
+</body>

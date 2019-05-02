@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 17</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 17</p>
+        <h2 align="center">17. Linear State Space Models</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>We have seen that there are many alternative model formats that can
+        be used for linear dynamic systems. In simple SISO problems, any
+        representation is probably as good as any other. However, as we move to
+        more complex problems (especially multivariable problems) it is
+        desirable to use special model formats. One of the most flexible and
+        useful structures is the state space model. As we saw in Chapter 3, this
+        model takes the form of a coupled set of<b> first order</b> differential
+        (or difference) equations. This model format is particularly useful with
+        regard to numerical computations.</p>
+
+        <p>State space models were briefly introduced in Chapter 3. Here we will
+        examine linear state space models in a little more depth for the SISO
+        case. Note, however, that many of the ideas will directly carry over to
+        the multivariable case presented later. In particular, we will study</p>
+        <ul>
+          <li>similarity transformations and equivalent state representations</li>
+          <li>state space model properties
+            <ul>
+              <li>controllability, reachability and stabililizability</li>
+              <li>observability, reconstructability and detectability</li>
+            </ul>
+          </li>
+          <li>special (canonical) model formats</li>
+        </ul>
+
+        <p>The key tools used in studying linear state space methods are linear
+        algebra and vector space methods. The reader is thus encouraged to
+        briefly review these concepts as a prelude to reading this chapter.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>State variables are system internal variables, upon which a full
+            model for the system behavior can be built. The state variables can
+            be ordered in a state vector.<br>
+            &nbsp;</li>
+          <li>Given a linear system, the choice of state variables is not
+            unique. However,
+            <ul>
+              <li>the minimal dimension of the state vector is a system
+                invariant,</li>
+              <li>there exists a nonsingular matrix which defines a similarity
+                transformation between any two state vectors, and</li>
+              <li>any designed system output can be expressed as a linear
+                combination of the states variables and the inputs.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>For linear, time invariant systems the state space model is
+            expressed in the following equations:<br>
+            &nbsp;
+            <div align="left">
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td><img align="bottom" border="0" src="part5-img8.gif" alt="\begin{align}\intertext{continuous time systems}
+\dot{x}(t)&amp;=\ensuremath{\math...
+...h{\mathbf{C}} _\delta x[k]+\ensuremath{\mathbf{D}} _\delta u[k]\\
+\end{align}" width="377" height="209"></td>
+                </tr>
+              </table>
+            </div>
+            &nbsp;</li>
+          <li>Stability and natural response characteristics of the system can
+            be studied from the eigenvalues of the matrix 
+            <!-- MATH: $\ensuremath{\mathbf{A}}$ -->
+            <img align="BOTTOM" border="0" src="part5-img9.gif" alt="$\ensuremath{\mathbf{A}} $" width="17" height="14">
+            (
+            <!-- MATH: $\ensuremath{\mathbf{A}} _q$ -->
+            <img align="MIDDLE" border="0" src="part5-img10.gif" alt="$\ensuremath{\mathbf{A}} _q$" width="24" height="29">,
+  
+            <!-- MATH: $\ensuremath{\mathbf{A}} _\delta$ -->
+            <img align="MIDDLE" border="0" src="part5-img11.gif" alt="$\ensuremath{\mathbf{A}} _\delta$" width="24" height="29">).<br>
+            &nbsp;</li>
+          <li>State space models facilitate the study of certain system
+            properties which are paramount in the solution control design
+            problem. These properties relate to the following questions
+            <ul>
+              <li>By proper choice of the input <i>u</i>, can we steer the
+                system state to a desired state (point value)? controllability</li>
+              <li>If some states are or uncontrollable, will these states
+                generate a time decaying component? (stabilizability)</li>
+              <li>If one knows the input, <i>u</i>(<i>t</i>) for <img align="MIDDLE" border="0" src="part5-img12.gif" alt="$t\geq t_0$" width="43" height="28">,
+                can we infer the state at time <i>t</i>=<i>t</i><sub>0</sub> by
+                measuring the system output, <i>y</i>(<i>t</i>) for <img align="MIDDLE" border="0" src="part5-img12.gif" alt="$t\geq t_0$" width="43" height="28">?
+                (observability)</li>
+              <li>If some of the states are unobservable, do these states
+                generate a time decaying signal? (detectability)<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Controllability tells us about the feasibility to control a plant.<br>
+            &nbsp;</li>
+          <li>Observability tells us about whether it is possible to know what
+            is happening in a given system by observing its outputs.<br>
+            &nbsp;</li>
+          <li>The above system properties are system invariants. However,
+            changes in the number of inputs, in their injection points, in the
+            number of measurements and in the choice of variables to be measured
+            may yield different properties.</li>
+          <li>A transfer function can always be derived from a state space
+            model.<br>
+            &nbsp;</li>
+          <li>A state space model can be built from a transfer function model.
+            However, only the completely controllable and observable part of the
+            system is described in that state space model. Thus <b>the transfer
+            function model might be only a partial description of the system.<br>
+            &nbsp;</b></li>
+          <li>The properties of individual systems do not necessarily translate
+            unmodified to composed systems. In particular, given two systems
+            completely reachable, observable, controllable and reconstructible,
+            their cascade connection:
+            <ul>
+              <li>is not completely observable if a pole of the first system
+                coincides with a zero of the second system (pole-zero
+                cancellation),</li>
+              <li>is not detectable if the pole-zero cancellation affects an
+                unstable pole,</li>
+              <li>is not completely controllable if a zero of the first system
+                coincides with a pole of the second system (zero-pole
+                cancellation), and</li>
+              <li>is not stabilizable if the zero-pole cancellation affects a
+                NMP zero<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>this chapter provides a foundation for the design criteria which
+            states that one should never attempt to cancel unstable poles and
+            zeros.</li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="chapter16.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Chapter 16</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><a href="chapter18.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Chapter 18</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>

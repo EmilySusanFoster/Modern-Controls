@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | Tank Level</p>
+        <h2 align="center">Tank Level Tutorial</h2>
+
+        <p>Before continuing, make sure you have read <a href="../chapters/chapter7.html">Chapter
+        7</a> and <a href="../chapters/chapter19.html">Chapter 19</a>.</p>
+        <h3>System Description</h3>
+
+        <p>At the University of Newcastle, the Centre for Integrated Dynamics
+        And Control (CIDAC) runs a short course on control systems. Part of the
+        lab work for this course consists of designing a controller for a pair
+        of coupled tanks, as shown in the diagram below.</p>
+
+        <p align="center"><img src="tank2.gif" border="0" alt width="424" height="220">
+
+        <p>Water flows into the first tank through pump 1 a rate of <i>f<sub>i</sub></i>
+        which obviously affects the height of the water in tank 1 (denoted by <i>h</i><sub>1</sub>).
+        Water flows out of tank 1 into tank 2 at a rate of <i>f</i><sub>12</sub>
+        , affecting both <i>h</i><sub>1</sub> and <i>h</i><sub>2</sub> . Water
+        then flows out of tank 2 at a rate of <i>f<sub>e</sub></i> controlled by
+        pump 2.</p>
+
+        <p>Given this information, the challenge was then issued to the students
+        of the course: control the heights of the tanks. However, a problem
+        arose when the sensor for the height of tank 1 failed. Graham then
+        suggested that it would be possible to build a virtual sensor (or
+        observer/soft sensor) to estimate the height of tank 1 based on
+        measurements of the height of tank 2 and the flows <i>f</i><sub>1</sub>
+        and <i>f</i><sub>2</sub>.</p>
+        <h3 align="left">Overview of the Example</h3>
+
+        <p align="left">It is recommended that you follow the example in order,
+        but you may skip ahead if you wish::</p>
+        <div align="center">
+          <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+              <td><a href="tank_sim1.html">Part 1</a></td>
+              <td>Basic tank set-up</td>
+            </tr>
+            <tr>
+              <td>
+
+                <p align="left"><a href="tank_sim2.html">Part 2</a></p>
+              </td>
+              <td>Non-linear observer</td>
+            </tr>
+          </table>
+        </div>
+        <h3>Photo of the System</h3>
+
+        <p>The actual tank apparatus at the University of Newcastle is shown in
+        the photo below.</p>
+
+        <p align="center"><img border="0" src="../images/tank.jpg" width="576" height="432"></p>
+      </center>
+      <h3 align="left">Acknowledgements</h3>
+
+      <p align="left">The original work on this system was done by Adrian
+      Wills at the Department of Electrical &amp; Computer Engineering,
+      University of Newcastle Australia.</p>
+      <center>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" cellspacing="0" width="500">
+          <tr>
+            <td align="center" width="33%"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous</td>
+            <td align="center" width="33%"><a href="../simulation.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Simulations</a></td>
+            <td align="center" width="33%"><a href="tank_sim1.html"><img src="../images/nextbutton.gif" border="0" alt="-&gt;" width="32" height="32"><br>
+              Next - Part 1</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+      </center></td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

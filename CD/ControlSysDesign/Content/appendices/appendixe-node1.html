@@ -1,0 +1,427 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>E. Matlab Support</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Appendix E</p>
+        <h2 align="center">E. Matlab Support</h2>
+
+        <p>The accompanying disc contains a set of MATLAB-SIMULINK files. These
+        files provide support for many problems posed in this book, and, at the
+        same time, facilitate the study and application of selected topics.</p>
+        <div align="CENTER">
+          <table cellpadding="4" border="1" cellspacing="0" width="100%">
+            <tr>
+              <th align="LEFT" colspan="1">File name</th>
+              <th align="LEFT" colspan="1">Chapter</th>
+              <th align="LEFT" colspan="1">Brief description</th>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>amenl.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 19</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                evaluate the performance of a linear design on a particular
+                nonlinear plant.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>apinv.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 2</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                evaluate approximate inverses for a nonlinear plant.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>awu.mat</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 26</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB data file. It
+                contains the data required to use SIMULINK schematics in file <b>mmawu.mdl</b>.
+                This file must be previously loaded to run the simulation.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>awup.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 11</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB program to
+                decompose a biproper controller in a form suitable to implement
+                an anti wind-up strategy. This routine requires the function <b>p_elcero.m.</b></td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>c2del.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 3</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB function to
+                transform a transfer function for a continuous time system with
+                zero order hold, into a discrete transfer function in delta
+                form.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>cint.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 22</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                evaluate the performance of a MIMO control loop where the
+                controller is based on state estimate feedback.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>css.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 7</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB function to
+                compute a one d.o.f. controller for an n-th order SISO, strictly
+                proper plant (continuous or discrete) described in state space
+                form. The user must supply the desired observer poles and the
+                desired control poles This program requires the function <b>p_elcero.m</b>.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>data_newss.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 11</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB program to
+                generate the data required for <b>newss.mdl</b>. This program
+                requires <b>lambor.m</b></td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>dcc4.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 10</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                evaluate the performance of a cascade architecture in the
+                control of a plant with time delay and generalised disturbance.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>dcpa.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 13</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                evaluate the performance of the digital control for a linear,
+                continuous time plant.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>dead1.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 19</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                study a compensation strategy for deadzones.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>del2z.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 13</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB function to
+                transform a discrete time transfer function in delta form to its
+                Z-transform equivalent.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>dff3.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 10</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                evaluate the performance of disturbance feedforward in the
+                control of a plant with time delay and generalised disturbance.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>distff.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 10</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                compare a one d.o.f. control and a two d.o.f. control in the
+                control of a plant with time delay.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>distffun.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 10</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                evaluate the performance of disturbance feedforward in the
+                control of an unstable plant and generalised disturbance.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>lambor.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 11</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB program to
+                synthesise an observer. This routine can be easily modified to
+                deal with different plants.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>lcodi.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 13</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                compare discrete time and continuous time PID controllers for
+                the control of an unstable plant.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>linnl.mat</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 19</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB data file, with
+                the linear design data used in solved problem.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>mimo1.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 21</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic with
+                a motivating example for the control of MIMO systems.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>mimo2.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 22</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                simulate a MIMO design based on an observer plus state estimate
+                feedback.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>mimo2.mat</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 22</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB data file for <b>mimo2.mdl.</b></td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>mimo3.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 25</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic for
+                the triangular control of a MIMO stable and non minimum phase
+                plant plant, using an IMC architecture.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>mimo4.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 26</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic for
+                the decoupled control of a MIMO stable and minimum phase plant
+                plant, using an IMC architecture.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>minv.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 25</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB function to
+                obtain the inverse (in state space form) of a <b>biproper</b>
+                MIMO system in state space form.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>mmawe.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 26</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic for
+                the (dynamically decoupled) control of a MIMO system with input
+                saturation. An anti wind-up mechanism is used and directionality
+                is (partially) recovered by scaling the control error.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>mmawu.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 26</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic for
+                the (dynamically decoupled) control of a MIMO system with input
+                saturation. An anti wind-up mechanism is used and directionality
+                is (partially) recovered by scaling the controller output.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>newss.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 11</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                study a (weighted) switching strategy to deal with state
+                saturation constraints.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>nmpq.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 15</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                evaluate disturbance compensation and robustness in the IMC
+                control of a NMP plant. .</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>oph2.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 16</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB function to
+                perform H2 minimization to solve the model matching problem.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>p_elcero.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 7</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB function to
+                eliminate leading zeros in a polynomial.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>paq.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 7</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB function to solve
+                the pole assignment equation. The problem can be set either for
+                Laplace transfer functions or using Delta transform. This
+                program requires the function <b>p_elcero.m.</b></td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>phloop.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 19</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                evaluate the IMC control of a pH neutralisation plant, using
+                approximate nonlinear inversion.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>phloop.mat</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 19</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB data file
+                associated <b>phloop.mdl</b></td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>piawup.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 11</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                evaluate an anti wind-up strategy in linear controllers, by
+                freezing the integral action when its output saturates.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>pid1.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 6</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                analyze the performance of a PID control using empirical tuning
+                methods.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>pidemp.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 6</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                use the Ziegler-Nichols tuning method based on closed loop
+                oscillation. The plant is linear, but of high order, with input
+                saturation and noisy measurements.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>pmimo3.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 25</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB program to
+                compute the Q controller for solved problem.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>qaff1.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 15</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                analize the loop performance of an IMC control loop of a NMP
+                plant.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>qaff22.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 15</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                analize the loop performance of the Smith controller in Q form.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>qawup.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 11</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                implement an anti wind-up mechanism in the IMC architecture. The
+                decomposition of <i>Q</i>(<i>s</i>) was done using MATLAB
+                function <b>awup.m.</b></td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>sat_uns.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 15</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                study saturation in unstable plants with disturbances of
+                variable duration.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>slew1.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 11</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                evaluate the performance of a PI controller with anti wind-up
+                mechanism to control a plant with slew rate limitation.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>smax.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 9</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB function to
+                compute a lower bound for the peak of the nominal sensitivity
+                So. The plant model has a number of unstable poles, and the
+                effect of one particular zero in the open RHP is examined.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>softloop1.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 19</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                compare the performances of linear and nonlinear controllers for
+                a particular nonlinear plant.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>softpl1.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 19</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic of a
+                nonlinear plant.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>sugdd.mat</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 24</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB data file. It
+                contains the controller required to do dynamically decoupled
+                control of the sugar mill.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>sugmill.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 24</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic for
+                the multivariable control of a sugar mill station.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>sugpid.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 24</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic for
+                the PID control of a sugar mill station. The design for the
+                multivariable plant is based on a SISO approach.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>sugtr.mat</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 24</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB data file. It
+                contains the controller required to do triangularly decoupled
+                control of the sugar mill.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>tank1.mdl</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 2</em></td>
+              <td align="LEFT" valign="TOP" width="60%">SIMULINK schematic to
+                illustrate the idea of inversion of a nonlinear plant.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>tmax.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 9</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB function to
+                compute a lower bound for the peak of the nominal complementary
+                sensitivity To. The plant model has a number of NMP zeros, and
+                the effect of one particular pole in the open RHP is examined.</td>
+            </tr>
+            <tr>
+              <th align="LEFT" valign="TOP" width="18%"><b>z2del.m</b></th>
+              <td align="LEFT" valign="TOP" width="12%"><em>Chap 13</em></td>
+              <td align="LEFT" valign="TOP" width="60%">MATLAB routine to
+                transform a discrete time transfer function in Z-transform form
+                to its delta transform equivalent.</td>
+            </tr>
+          </table>
+        </div>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous</td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

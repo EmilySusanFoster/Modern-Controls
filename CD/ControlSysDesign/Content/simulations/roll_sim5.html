@@ -1,0 +1,169 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center">
+  <tr>
+    <td align="left" width="600">
+
+      <p align="left">You are here : <a href="../index.html" target="_top">Control
+      System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+      | <a href="roll_sim.html">Rolling
+      Mill</a> | Part 5</p>
+      <h2 align="center">Rolling Mill Tutorial - Part 5</h2>
+
+      <p>Before continuing, make sure you have read Section 21.11: Linear
+      Optimal Filters.
+      <h3>Observers</h3>
+
+      <p>To estimate roll eccentricity, we view the output of the BISRA gauge
+      (which is <i>h</i> + <i>e</i>) as the eccentricity <i>e</i> plus some
+      noise. Before we can use an observer to estimate the roll eccentricity, we
+      need to model it. As before, this model is chosen to be a single sinewave
+      of period 200ms. A suitable &quot;system&quot; for this sinewave of
+      frequency <i>w</i> is
+
+      <p align="center"><img src="img37.gif" border="0" alt width="360" height="54">
+
+      <p>The output of this &quot;system&quot; is simply <i>x</i><sub>1</sub>
+      (so <i>C</i> = [ 1 0 ]). We can then design an observer
+
+      <p align="center"><img src="img40.gif" border="0" alt width="85" height="54">
+
+      <p>for this system to estimate the state variables of the system:
+
+      <p align="center"><img src="img38.gif" border="0" alt width="203" height="37">
+
+      <p>The closed loop characteristic polynomial of this observer is
+
+      <p align="center"><img src="img39.gif" border="0" alt width="134" height="33">
+
+      <p>and using this equation with the desired characteristic polynomial, we
+      can place the observer poles at the desired locations. Alternatively, we
+      can use the Kalman filter equation to find the optimal <i>J</i>. As a
+      starting point, choose <i>J</i><sub>1</sub> = 120 and <i>J</i><sub>2</sub>
+      = 0.
+
+      <p>Once we have this estimate of eccentricity (i.e. the estimated <i>x</i><sub>1</sub>),
+      we can subtract it from the output of the BISRA gauge to give the new
+      estimate of exit thickness:
+
+      <p align="center"><img src="img41.gif" border="0" alt width="98" height="38">
+
+      <p>To improve performance further, we then emulate disturbance feedforward
+      by subtracting the estimated eccentricity from the controller output <i>u</i>.
+
+      <p>This leads us to the following model for the closed loop system:
+
+      <p align="center"><img src="rolling6a.gif" border="0" alt width="596" height="321">
+      <h3>Java Applet Simulation</h3>
+
+      <p>The JAVA applet below is a simulation of the above system. The control
+      parameters have been chosen as <i>k<sub>p</sub></i> = 20 and <i>k<sub>i</sub></i>
+      = 200. The graph has a vertical scale of 0.1mm per division and as in the
+      previous simulation, the horizontal scale of the graph can be altered by
+      the user. It shows the set-point (the blue trace), the actual exit
+      thickness <i>h</i> (the green trace) and the estimated eccentricity signal
+      centred around 0.6mm (the red trace). Normally, the eccentricity is
+      centred around 0, but the plot of it was shifted because the vertical axis
+      of the graph is from 0 to 0.8.</p>
+
+      <p>Pressing the &quot;Change Parameters&quot; button allows you to change
+      the same parameters as in the previous simulation, plus the amplitude of
+      the eccentricity signal and the observer gain matrix <i>J</i>.
+
+      <p>&nbsp;</p>
+      <applet code="RollingMill.class" codebase="../applet/" width="600" height="300" align="CENTER">
+        <param name="version" value="4">You don't seem to have a Java enabled browser.
+      </applet>
+
+      <p>&nbsp;</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td align="center"><b>Things to try</b></td>
+          <td align="center"><b>Things to notice</b></td>
+        </tr>
+        <tr>
+          <td>Run the simulation</td>
+          <td>The system's response is as fast as in the previous case and the
+            sinusoidal variations are almost no-existent</td>
+        </tr>
+        <tr>
+          <td>Change the set point to 0.3 and the input thickness to 0.5</td>
+          <td>The delay has no effect on the set-point or disturbance responses
+            (but the sudden change causes the eccentricity estimate to be
+            incorrect</td>
+        </tr>
+        <tr>
+          <td>Change the time scale on the graph to 2 sec/div and compare the
+            magnitude of the sinusoidal variations to the previous examples</td>
+          <td>The eccentricity of the rolls has almost no effect on the output</td>
+        </tr>
+        <tr>
+          <td>Redesign the observer using the Kalman filter equation</td>
+          <td>Better observer performance can be achieved, but the effect of the
+            rapid output changes on the eccentricity estimate cannot be removed</td>
+        </tr>
+      </table>
+
+      <p>This simulation shows that with the observer, the effect of roll
+      ecentricity is vastly reduced. In fact, for an eccentricity of 0.03, the
+      effect on the output is 0.0024, which represents a 92% reduction, which is
+      quite respectable considering the uncontrolled system performs a 66%
+      reduction. The effect of the eccentricity signal could only be zero if (1)
+      we had an always perfect estimate of eccentricity and (2) we could
+      subtract the estimated eccentricity directly from <i>s</i> (which is not
+      possible since we can only control <i>u</i>). Thus, the filtering effect
+      of the time constant of the screw position means that the eccentricity
+      will always have some effect.</p>
+
+      <p>You may have observed the oscillation in both the set-point response
+      and the disturbance response. This is due to the inaccuracies of the
+      eccentricity estimation at these points (a fact easily observed from the
+      graph of estimated eccentricity). The observer will see a change in its
+      input signal, and will take some small amount of time to correct for this.</p>
+
+      <p>As we have seen with the progression of these simulations, as we delve
+      deeper into the control problem, we can achieve better performance using
+      more sophisticated methods from control science. However, with each
+      solution comes a new limit on performance (which is better than the
+      previous limit), and hence a new problem to be solved. As you may have
+      guessed, the Kalman filter solution (allowing increased system bandwidth)
+      is by no means the final solution - there exists a phenomenon known as the
+      &quot;hold-up effect&quot; which prevents the system from achieving the
+      promised 10ms response time. This is addressed (particularly in relation
+      to reversing mills - <a href="../images/rolling_mill2.jpg">photo</a>) in
+      Section 9.8 (page 242) of the book. Even after this problem is solved,
+      there are further, more complex ones awaiting.</p>
+
+      <p>This concludes the interactive demonstration of rolling mill control.</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="roll_sim4.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Part 4</a></td>
+            <td align="center" width="33%"><a href="roll_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Rolling Mill</a></td>
+            <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

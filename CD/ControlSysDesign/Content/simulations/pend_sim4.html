@@ -1,0 +1,98 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<!--  Table for the page heading                        -->
+
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center">
+  <tr>
+    <td align="left" width="600">
+
+      <p align="left">You are here : <a href="../index.html" target="_top">Control
+      System Design - Index</a> | <a href="../simulation.html">Simulations</a> |
+      <a href="pend_sim.html">Inverted Pendulum</a> | Part 4</p>
+      <h2 align="center">Inverted Pendulum Tutorial - Part 4</h2>
+
+      <p>Below is a JAVA simulation of the cascade inverted pendulum system. You
+      can adjust the simulation parameters by pressing the &quot;Change
+      Parameters&quot; button, which asks for the set point, the noise level and
+      the transfer functions of both controllers (C1 is the outer loop
+      controller and C2 is the inner loop controller). The transfer functions
+      are represented by their coefficients, with the top row being the
+      numerator coefficients and the bottom row the denominator coefficients.
+      This time, set point changes of -0.5m to +0.5m will ensure that the
+      pendulum stays visible on the screen.
+
+      <p>The scale of the graph is such that each vertical division represents
+      0.4m. If the simulation should become unstable, press the
+      &quot;Reset&quot; button. (As a technical note, the noise level is 10
+      times the peak amplitude of the cart position measurement noise, and 100
+      times the peak amplitude of the angle measurement noise. This is because
+      the angle measurement is on a smaller scale.)
+
+      <p>&nbsp;</p>
+      <applet code="InvertedPendulum.class" codebase="../applet/" width="600" height="300" align="CENTER">
+        <param name="version" value="2">You don't seem to have a Java enabled browser.
+      </applet>
+
+      <p>&nbsp;</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td align="center"><b>Things to try</b></td>
+          <td align="center"><b>Things to notice</b></td>
+        </tr>
+        <tr>
+          <td>Run the simulation</td>
+          <td>The overshoot in this system is only 20%. Compare this to the 600%
+            overshoot of the previous controller.</td>
+        </tr>
+        <tr>
+          <td>Change the noise level to 0, 0.1, 1 and 10</td>
+          <td>The cascaded system is better at attenuating measurement noise
+            (even though both the angle and position measurements are noisy)</td>
+        </tr>
+        <tr>
+          <td>Redesign the cascade controller to reduce the overshoot to 10%</td>
+          <td>N/A</td>
+        </tr>
+      </table>
+
+      <p>This cascaded system is much better at controlling the inverted
+      pendulum system. The overshoot/undershoot for this system is around 20%,
+      which is much better than the 600% overshoot/undershoot in previous
+      response. Also, note the much better noise rejection in this system due to
+      the lower bandwidth. This system performs better at a noise level of 1
+      than the previous system did at a noise level of 0.1 (see for yourself!).
+
+      <p>Next, we will examine the use of state feedback control with the use of
+      an observer.</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="pend_sim3.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Part 3</a></td>
+            <td align="center" width="33%"><a href="pend_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Inverted Pendulum</a></td>
+            <td align="center" width="33%"><a href="pend_sim5.html"><img src="../images/nextbutton.gif" border="0" alt="&gt;" width="32" height="32"><br>
+              Next - Part 5</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

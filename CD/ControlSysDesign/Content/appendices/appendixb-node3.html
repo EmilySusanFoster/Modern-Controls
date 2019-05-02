@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixb-node1.html">Appendix
+        B</a> | Section B.2</p>
+        <h2 align="center">B. Smith-McMillan Forms</h2>
+        <h3>B.2 Polynomial matrices</h3>
+
+        <p>Multivariable transfer functions depend on polynomial matrices. There
+        are a number of related terms that are used. Some of these are
+        introduced below:</p>
+
+        <p><b>Definition B.1</b>&nbsp;&nbsp; <i>A matrix 
+          <!-- MATH: $\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Pi}}}(s)} =[p_{ik}(s)]\in {\mathbb{R} }^{n_1\times n_2}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img1.gif" alt="$\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Pi}}}(s)} =[p_{ik}(s)]\in {\mathbb{R} }^{n_1\times n_2}$" width="177" height="33">
+        is a <b>polynomial matrix</b><a name="1172">&nbsp;</a> if p<sub>ik</sub>(s)
+        is a polynomial in s, for 
+          <!-- MATH: $i=1,2,\ldots,n_1$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img2.gif" alt="$i=1,2,\ldots,n_1$" width="108" height="28">
+        and 
+          <!-- MATH: $k=1,2,\ldots,n_2$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img3.gif" alt="$k=1,2,\ldots,n_2$" width="111" height="29"></i></p>
+
+        <p><b>Definition B.2</b>&nbsp;&nbsp; <i>A polynomial matrix 
+          <!-- MATH: $\ensuremath{\boldsymbol{\Pi}} (s)$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img4.gif" alt="$\ensuremath{\boldsymbol{\Pi}} (s)$" width="37" height="31">
+        is said to be a <b>unimodular matrix</b><a name="1177">&nbsp;</a> if its
+        determinant is a constant. Clearly, the inverse of a unimodular matrix
+        is also a unimodular matrix.</i></p>
+
+        <p><a name="def:elop"><b>Definition B.3</b></a>&nbsp;&nbsp; <i>An <b>elementary
+        operation</b> on a polynomial matrix is one of the following three
+        operations</i></p>
+        <div align="center">
+          <table border="0" cellpadding="4" cellspacing="0">
+            <tr>
+              <td><i>(eo1)</i></td>
+              <td><i>Interchange of two rows or two columns.</i></td>
+            </tr>
+            <tr>
+              <td><i>(eo2)</i></td>
+              <td><i>Multiplication of one row or one column by a constant.</i></td>
+            </tr>
+            <tr>
+              <td><i>(eo3)</i></td>
+              <td><i>Addition of one row (column) to another row (column) times
+                a polynomial.</i></td>
+            </tr>
+          </table>
+        </div>
+
+        <p><b>Definition B.4</b>&nbsp;&nbsp; <i>A left (right) <b>elementary
+        matrix</b> is a matrix such that when it multiplies from the left
+        (right) a polynomial matrix, then it performs a row (column) elementary
+        operation on the polynomial matrix. All elementary matrices are
+        unimodular.</i></p>
+
+        <p><b>Definition B.5</b>&nbsp;&nbsp; <i>Two polynomial matrices  
+          <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} }_1(s)$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img6.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} }_1(s)$" width="45" height="31">
+        and 
+          <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} }_2(s)$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img7.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} }_2(s)$" width="45" height="31">
+        are <b>equivalent matrices</b>,<a name="1192">&nbsp;</a> if there exist
+        sets of left and right elementary matrices,
+
+          <!-- MATH: $\{\mathbf{L}_1(s),\mathbf{L}_2(s),\ldots,\mathbf{L}_{k1}\}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img8.gif" alt="$\{\mathbf{L}_1(s),\mathbf{L}_2(s),\ldots,\mathbf{L}_{k1}\}$" width="165" height="31">
+        and
+  
+          <!-- MATH: $\{\mathbf{R}_1(s),  \mathbf{R}_2(s), \ldots, \mathbf{R}_{k2}\}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img9.gif" alt="$\{\mathbf{R}_1(s), \mathbf{R}_2(s), \ldots, \mathbf{R}_{k2}\}$" width="174" height="31">
+        respectively such that</i></p>
+
+            <!-- MATH: \begin{equation}
+\mathbf{\ensuremath{\boldsymbol{\Pi}} }_1(s)=\mathbf{L}_{k1}(s)\cdots
+\mathbf{L}_2(s)\mathbf{L}_ {1}\mathbf{\ensuremath{\boldsymbol{\Pi}} }_2(s)\mathbf{R}_1(s)\mathbf{R}_2(s)\cdots \mathbf{R}_{k2}
+  
+\end{equation} -->
+
+        <div align="center">
+          <center>
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr valign="MIDDLE">
+              <td align="CENTER" nowrap><img src="appendixb-img10.gif" alt="\begin{displaymath}\mathbf{\ensuremath{\boldsymbol{\Pi}} }_1(s)=\mathbf{L}_{k1}(...
+...} }_2(s)\mathbf{R}_1(s)\mathbf{R}_2(s)\cdots \mathbf{R}_{k2}
+\end{displaymath}" width="360" height="28"></td>
+              <td width="10" align="RIGHT">(B.2.1)</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+
+        <p><b>Definition B.6</b>&nbsp;&nbsp; <i>The <b>rank of a polynomial
+        matrix</b> is the rank of the matrix almost everywhere in s. The
+        definition implies that the rank of a polynomial matrix is independent
+        of the argument.</i></p>
+
+        <p><a name="def:cop"><b>Definition B.7</b></a>&nbsp;&nbsp; <i>Two
+        polynomial matrices 
+          <!-- MATH: $\ensuremath{\mathbf{V}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img11.gif" alt="$\ensuremath{\mathbf{V}(s)} $" width="37" height="31">
+        and 
+          <!-- MATH: $\ensuremath{\mathbf{W}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img12.gif" alt="$\ensuremath{\mathbf{W}(s)} $" width="42" height="31">,
+        having the same number of columns (rows), are <b>right (left) coprime</b>
+        if all common right (left) factors are unimodular matrices.</i></p>
+
+        <p><a name="def:coldeg"><b>Definition B.8</b></a>&nbsp;&nbsp; <i>The
+        degree 
+          <!-- MATH: $\partial_{ck}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img13.gif" alt="$\partial_{ck}$" width="25" height="29">
+        (
+          <!-- MATH: $\partial_{rk}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img14.gif" alt="$\partial_{rk}$" width="26" height="29">)
+        of the k<sup>th</sup> column (row) 
+          <!-- MATH: $[\ensuremath{\mathbf{V}(s)} ]_{*k}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img15.gif" alt="$[\ensuremath{\mathbf{V}(s)} ]_{*k}$" width="60" height="31">
+        ( 
+          <!-- MATH: $[\ensuremath{\mathbf{V}(s)} ]_{k*}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img16.gif" alt="$[\ensuremath{\mathbf{V}(s)} ]_{k*}$" width="60" height="31">)
+        of a polynomial matrix 
+          <!-- MATH: $\ensuremath{\mathbf{V}(s)}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img11.gif" alt="$\ensuremath{\mathbf{V}(s)} $" width="37" height="31">
+        is the degree of highest power of s in that column (row).</i></p>
+
+        <p><a name="def:colprop"><b>Definition B.9</b></a>&nbsp;&nbsp; A
+        polynomial matrix 
+          <!-- MATH: $\ensuremath{\mathbf{V}(s)}\in \mathbb{C} ^{m\times m}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img17.gif" alt="$\ensuremath{\mathbf{V}(s)}\in \mathbb{C} ^{m\times m} $" width="102" height="33">
+        is column proper if</p>
+
+            <!-- MATH: \begin{equation}
+\lim_{s\rightarrow \infty}\det(\ensuremath{\mathbf{V}(s)}\diag\left(s^{- \partial_{c1}},
+s^{- \partial_{c2}}, \ldots, s^{- \partial_{cm}} \right))
+
+\end{equation} -->
+
+        <div align="center">
+          <center>
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr valign="MIDDLE">
+              <td align="CENTER" nowrap><img src="appendixb-img18.gif" alt="\begin{displaymath}\lim_{s\rightarrow \infty}\det(\ensuremath{\mathbf{V}(s)}\dia...
+...,
+s^{- \partial_{c2}}, \ldots, s^{- \partial_{cm}} \right))
+\end{displaymath}" width="309" height="35"></td>
+              <td width="10" align="RIGHT">(B.2.2)</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+
+        <p>has a finite, nonzero value.</p>
+
+        <p><b>Definition B.10</b>&nbsp;&nbsp; A polynomial matrix 
+          <!-- MATH: $\ensuremath{\mathbf{V}(s)}\in \mathbb{C} ^{m\times m}$ -->
+        <img align="MIDDLE" border="0" src="appendixb-img17.gif" alt="$\ensuremath{\mathbf{V}(s)}\in \mathbb{C} ^{m\times m} $" width="102" height="33">
+        is row proper if</p>
+
+            <!-- MATH: \begin{equation}
+\lim_{s\rightarrow \infty}\det(\diag\left(s^{- \partial_{r1}},
+s^{- \partial_{r2}}, \ldots, s^{- \partial_{rm}} \right)\ensuremath{\mathbf{V}(s)} )
+
+\end{equation} -->
+
+        <div align="center">
+          <center>
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr valign="MIDDLE">
+              <td align="CENTER" nowrap><img src="appendixb-img19.gif" alt="\begin{displaymath}\lim_{s\rightarrow \infty}\det(\diag\left(s^{- \partial_{r1}}...
+...ots, s^{- \partial_{rm}} \right)\ensuremath{\mathbf{V}(s)} )
+\end{displaymath}" width="310" height="35"></td>
+              <td width="10" align="RIGHT">(B.2.3)</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+
+        <p>has a finite, nonzero value.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="appendixb-node1.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section B.1</a></td>
+              <td align="center" width="33%"><a href="appendixb-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Appendix B</a></td>
+              <td align="center" width="33%"><a href="appendixb-node4.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section B.3</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

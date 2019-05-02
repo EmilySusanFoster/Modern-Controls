@@ -1,0 +1,150 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center">
+  <tr>
+    <td align="left" width="600">You are here : <a href="../index.html" target="_top">Control
+      System Design - Index</a> | <a href="../simulation.html">Simulations</a> |
+      <a href="shape_sim.html">Shape Control</a> | Part 1
+      <h2 align="center">Rolling Mill Shape Control - Part 1</h2>
+
+      <p>Before continuing, make sure you have read <a href="../chapters/chapter21.html">Chapter
+      21</a> and <a href="../chapters/chapter24.html">Chapter 24</a>.
+      <h3>System Model</h3>
+
+      <p>The model for the system is shown in the block diagram below, where <b>U</b>
+      vector of spray valve positions and <b>Y</b> is the roll thickness vector.
+      (The bold lines indicate vectors rather than single signals).</p>
+
+      <p align="center"><img src="shape1.gif" border="0" align="center" width="379" height="142">
+
+      <p>The sprays affect the roll as described by the matrix <b>M</b> below.
+
+      <p align="center"><img src="shape2.gif" border="0" align="center" width="200" height="150">
+
+      <p>The parameter <img align="BOTTOM" border="0" src="img4.gif" alt="alpha" width="15" height="14">
+      represents the level of interactivity in the system, and is determined by
+      the number of sprays present, and how close together they are.
+
+      <p>This matrix has a simple inverse as shown below.
+
+      <p align="center"><img src="shape3.gif" border="0" align="center" width="296" height="171">
+
+      <p>Using this matrix to decouple the system amounts to turning off
+      surrounding sprays when a spray is turned on.
+
+      <p>So we can decouple the system simply by multiplying the control vector
+      by this inverse. This set up is shown in the block diagram below.
+
+      <p align="center"><img src="shape4.gif" border="0" align="center" width="379" height="142">
+
+      <p>The controller is then a set of simple PI controllers linking each
+      shape meter with the corresponding spray. (We assume that the shape meters
+      measure the shape of the rolls perfectly).
+
+      <p>It may at this stage seem that adding more sprays will give finer
+      control of the roll shape. However, as more sprays are added, <img align="BOTTOM" border="0" src="img4.gif" alt="alpha" width="15" height="14">
+      approaches 1. The system is then less robust, since the matrix <b>M</b> is
+      almost all 1s, and the inverse of <b>M</b> has very large numbers. The
+      system is then very sensitive to errors in the estimation of alpha, due to
+      the large gains present in <b>M</b><sup>-1</sup>.
+      <h3>Java Applet Simulation</h3>
+
+      <p>The JAVA applet below is a simulation of the shape control system.
+      There are 10 sprays, and the graph has a vertical scale of 1mm per
+      division and a horizontal scale of 2 seconds per division. It shows the
+      position set-point (the blue trace) and five of the rolling mill
+      thicknesses (the other colours).
+
+      <p>Pressing the &quot;Change Parameters&quot; button allows you to change
+      the set-point type. &quot;Uniform&quot; means that the set-point is
+      uniform across the roll, &quot;Square&quot; means that the set-point is a
+      step across the roll, and &quot;Point&quot; means that a single point on
+      the roll has the changing set-point. The parameter window also allows you
+      to change the PI controller parameters and the amount of measurement noise
+      in the shape meters. The decoupling compensation (the inverse of <b>M</b>)
+      can be enabled or disabled through the check box. Also, the parameter <img align="BOTTOM" border="0" src="img4.gif" alt="alpha" width="15" height="14">
+      can be altered to change the level of interactivity between the sprays. If
+      you check the &quot;Reset roll to default state&quot; box, the roll shape
+      will be reset to its (bumpy) initial shape. Try experimenting with these
+      parameters.
+
+      <p>&nbsp;</p>
+      <applet code="Shape.class" codebase="../applet/" width="600" height="300" align="CENTER">
+        <param name="version" value="1">You don't seem to have a Java enabled browser.
+      </applet>
+
+      <p>&nbsp;</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td align="center"><b>Things to try</b></td>
+          <td align="center"><b>Things to notice</b></td>
+        </tr>
+        <tr>
+          <td>Disable the decoupling and change the set point to
+            &quot;Point&quot;</td>
+          <td>Notice the interactivity between the sprays</td>
+        </tr>
+        <tr>
+          <td>Enable the decoupling (resetting the roll shape)</td>
+          <td>Notice the improved (i.e. both faster and completely decoupled)
+            response.
+        <tr>
+          <td>Disable the decoupling and change the set point to
+            &quot;Square&quot; and then &quot;Uniform&quot;</td>
+          <td>Notice the interactivity between the sprays</td>
+        </tr>
+        <tr>
+          <td>Enable the decoupling (resetting the roll shape)</td>
+          <td>Notice the improved (i.e. both faster and completely decoupled)
+            response, particularly in the square set point.</td>
+        </tr>
+        <tr>
+          <td>Change the value of alpha (the interactivity parameter) with
+            decoupling disabled (Ensure that alpha &lt; 1 or instability
+            results)</td>
+          <td>Notice that lower alpha values improve the response, and alpha = 0
+            is equivalent to enabling decoupling.</td>
+        </tr>
+      </table>
+
+      <p>Note that in this simulation, we were applying step set-point changes.
+      In practise, the set point is fixed, but output disturbances occur.
+      Applying step set-point changes is similar to applying step output
+      disturbances, as a very similar type of response would be seen.
+
+      <p>The decoupling method works extremely well. The highly interactive
+      system becomes completely decoupled, allowing control using simple PI
+      controllers. Next, we examine the effect of saturation levels on the
+      valves.</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="shape_sim.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Shape Control</a></td>
+            <td align="center" width="33%"><a href="shape_sim.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Shape Control</a></td>
+            <td align="center" width="33%"><a href="shape_sim2.html"><img src="../images/nextbutton.gif" border="0" alt="&gt;" width="32" height="32"><br>
+              Next - Part 2</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

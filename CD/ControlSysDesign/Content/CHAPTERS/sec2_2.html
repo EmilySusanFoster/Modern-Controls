@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 2</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="chapter2.html">Chapter
+        2</a> | Section 2.2</p>
+        <h2 align="center">Introduction to the Principles of Feedback Control</h2>
+        <!------------------------------------------------>
+
+        <h3 align="left">2.2 The Principle Goal of Control</h3>
+
+        <p>As we have seen in Chapter 1, examples of dynamic systems with
+        automatic controllers abound: advanced process controllers are operating
+        in virtually every industrial domain; micro-controllers pervade an
+        immense array of household and entertainment electronics; thermostats
+        regulate temperatures in domestic- to industrial-sized ovens and
+        autopilots control aircraft.</p>
+
+        <p>Designing any one of these systems requires the close cooperation of
+        experts from various disciplines.</p>
+
+        <p>To particularize the principal goal of control engineering within
+        this team effort, it is helpful to distinguish between a system's
+        tangible realization and its behavior. The aircraft's physical
+        realization, for example, includes fuselage, wings and ailerons. Its
+        behavior, on the other hand, refers to the aircraft's dynamic response
+        to a change in throttle-, aileron- or flap-position.</p>
+
+        <p>To control such a system automatically, one needs to interface the
+        system to a controller, which will also have a physical realization and
+        behavior. Depending on the application, the controller could be realized
+        in a chip, analogue electronics, a PLC or a computer. There also needs
+        to be a channel by which the controller and system can interact via
+        sensors and actuators: sensors to report the state of the system,
+        actuators as a means for the controller to act on the system.</p>
+
+        <p>With this process and control infrastructure in place, the key
+        remaining question pertains to the controller behavior. In the aircraft
+        application, for example, if the controller (here called an autopilot)
+        detects a deviation in speed, height or heading via the sensors, just
+        how should it command throttle and ailerons to get back on target?</p>
+
+        <p>This is the control engineer's key concern, or stated in general
+        terms, the fundamental goal of control engineering is to find
+        technically, environmentally and economically feasible ways of acting on
+        systems to control their outputs to desired values, thus ensuring a
+        desired level of performance. Of course, finding a good solution to this
+        question frequently requires an involvement in process design, actuator
+        and sensor selection, mathematical analysis and modeling.</p>
+
+        <p>The control engineer's perspective of the aircraft navigation example
+        described above includes a cyclical dependency: autopilot commands
+        affect the aircraft, whose changed speed, height and heading, in turn,
+        affect the further actions of the autopilot.</p>
+
+        <p>Such a cyclically dependent interaction between system behaviors is
+        called <b>feedback</b>.</p>
+
+        <p>Feedback phenomena exist both in nature and technology. The periodic
+        population growth and reduction in the famous predator and prey
+        interactions are an example of feedback occurring in nature. The
+        high-pitch whistling sound occurring as a result of interaction between
+        microphones and loudspeakers in a concert hall, is a technical example
+        of feedback.</p>
+
+        <p>In both of these cases, neither of the two interacting systems can be
+        clearly designated as controller or process - they are simply two
+        systems interacting in feedback. Nevertheless, the feedback interaction
+        is seen to have a profound impact on the behavior of the engaged
+        systems.</p>
+
+        <p>This behavior altering effect of feedback is a key mechanism that
+        control engineers exploit deliberately to achieve the objective of <b>acting
+        on a system to ensure that the desired performance specifications are
+        achieved</b>.</p>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="chapter2.html#Preview"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section 2.1</a></td>
+              <td align="center" width="33%"><a href="chapter2.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Chapter 2</a></td>
+              <td align="center" width="33%"><a href="sec2_3.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section 2.3</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<html>
+
+<head>
+<title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<!--  Table for the page heading                        -->
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+        | Frequency Response Tool</p>
+        <h2 align="center">Frequency Response Tool</h2>
+
+        <p>The JAVA applet below shows the relationship between frequency
+        response and step response. The selection box allows you to choose one
+        of:
+        <ul>
+          <li>Step Response (for a plot of the system's step response)
+          <li>Magnitude (for the Bode magnitude plot)
+          <li>Phase (for the Bode phase plot)
+        </ul>
+
+        <p>You can select between these by pressing the &quot;Change
+        Parameters&quot; button, which also allows you to change the transfer
+        function of the system being examined, and the scale of the graph. The
+        two sets of numbers represent the transfer function of the system. The
+        top row represents the coefficients in the numerator, with the first one
+        being the coefficient of <i>s</i><sup>4</sup>, the second one being the
+        coefficient of <i>s</i><sup>3</sup>, and so on. Similarly, the second
+        row represents the denominator of the transfer function. For example,
+        the array of numbers<tt>
+
+        <p align="center">&nbsp;
+        <table align="center" border="0" cellpadding="5">
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>20</td>
+          </tr>
+        </tt>
+        </table>
+
+        <p>represents the transfer function
+
+        <p align="center"><img src="img22.gif" border="0" align="center" width="50" height="40">
+
+        <p>The vertical scale of the step response graph can be changed (with <i>y</i><sub>min</sub>
+        being the lower axis limit and <i>y</i><sub>max</sub> the upper limit).
+        The horizontal scale of this graph always starts at 0 seconds (since
+        this is when the step occurs). The vertical scale of the magnitude plot
+        is measured in decibels (dB). The horizontal scales of the Bode plots
+        are logarithmic, and choosing a value of -1 (for either <i>w</i><sub>max</sub>
+        or <i>w</i><sub>min</sub>) means that the frequency limit is 10<sup>-1</sup>
+        = 0.1.
+
+        <p>Depending on the speed of your computer, it may take a few seconds to
+        calculate the data for the plot.
+
+        <p>I suggest that you experiment with the following transfer functions:
+        <h3>Low pass filters</h3>
+        Note the difference in bandwidth between the following 2 low pass
+        filters:
+        <table border="0" cellpadding="5" width="94%">
+          <tr>
+            <td width="50%" align="center"><img src="img17.gif" border="0" width="43" height="40"></td>
+            <td width="50%" align="center"><img src="img18.gif" border="0" width="48" height="40"></td>
+          </tr>
+        </table>
+        <h3>High pass filters</h3>
+        Note the difference in bandwidth between the following 2 high pass
+        filters:
+        <table border="0" cellpadding="5" width="94%">
+          <tr>
+            <td width="50%" align="center"><img src="img19.gif" border="0" width="43" height="40"></td>
+            <td width="50%" align="center"><img src="img20.gif" border="0" width="55" height="40"></td>
+          </tr>
+        </table>
+        <h3>Resonant system</h3>
+        Note the effect of changing the damping constant <i>a</i> in the
+        following transfer function:
+        <table border="0" cellpadding="5" width="94%">
+          <tr>
+            <td width="50%" align="center"><img src="img21.gif" border="0" width="98" height="40"></td>
+          </tr>
+        </table>
+
+        <p>Try <i>a</i> = 0, 0.5, 1 and note the height of the resonant peak in
+        the frequency response and the corresponding step response.
+
+        <p>Note that you should choose the time scale appropriately - a large
+        time scale for a fast response will produce an unstable result even if
+        the system is stable because the sampling interval in the step response
+        simulation is proportional to the time scale. A guide is to choose your
+        time scale to be no more than 100 times the response time.
+
+        <p>&nbsp;</p>
+        <applet code="Frequency.class" codebase="../applet/" width="600" height="300" align="CENTER">
+          You don't seem to have a Java enabled browser.
+        </applet>
+
+        <p>&nbsp;</p>
+
+        <p>Note that this sort of analysis is normally done in MATLAB. The point
+        of this tool is merely to give you some insight as to how the frequency
+        response of a system affects its step response.</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous</td>
+              <td align="center" width="33%"><a href="../simulation.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Simulations</a></td>
+              <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

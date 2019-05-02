@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 2</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="chapter2.html">Chapter
+        2</a> | Section 2.9</p>
+        <h2 align="center">Introduction to the Principles of Feedback Control</h2>
+        <!------------------------------------------------>
+
+        <h3 align="left">2.9 Measurements</h3>
+
+        <p>We have seen that one of the key issues in feedback control is that
+        there must exist suitable measurements to feed back. Indeed, if one can
+        measure a variable, then there is a good chance that one can design a
+        controller to bring it to a desired reference value.</p>
+
+        <p>A more accurate description of the feedback control loop including
+        sensors is shown in <a href="#fig:inv4">Figure 2.12</a>. From this
+        figure, it can be seen that what we actually control is the measured
+        value rather than the true output. These can be quite different.</p>
+
+        <p align="center"><a name="fig:inv4"><img src="fig2_12.gif" width="484" height="144"><br>
+        </a><strong>Figure 2.12:</strong> Closed loop control with sensors</p>
+
+        <p>Hence the measurement system should ideally satisfy requirements such
+        as:</p>
+        <ul>
+          <li><em>Reliability</em>. It should operate within the necessary
+            range.<br>
+            &nbsp;</li>
+          <li><em>Accuracy</em>. For a variable with a constant value, the
+            measurement should settle to the correct value.<br>
+            &nbsp;</li>
+          <li><em>Responsiveness</em>. If the variable changes, the measurement
+            should be able to follow the changes. Slow responding measurements
+            can, not only affect the quality of control but can actually make
+            the feedback loop unstable. Loop instability may arise even though
+            the loop has been designed to be stable assuming an exact
+            measurement of the process variable.<br>
+            &nbsp;</li>
+          <li><em>Noise<a name="339">&nbsp;</a> immunity</em>. The measurement
+            system, including the transmission path, should not be significantly
+            affected by exogenous signals such as measurement noise.<br>
+            &nbsp;</li>
+          <li><em>Linearity</em>. If the measurement system is not linear, then
+            at least the nonlinearity should be known so that it can be
+            compensated.<br>
+            &nbsp;</li>
+          <li><em>Non intrusive</em>. The measuring device should not
+            significantly affect the behavior of the plant.</li>
+        </ul>
+
+        <p>In most of the sequel we will assume that the measurement system is
+        sufficiently good, so that only measurement noise needs to be accounted
+        for. This ideal measurement loop will be known as a unity feedback loop.</p>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="sec2_8.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section 2.8</a></td>
+              <td align="center" width="33%"><a href="chapter2.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Chapter 2</a></td>
+              <td align="center" width="33%"><a href="sec2_10.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section 2.10</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

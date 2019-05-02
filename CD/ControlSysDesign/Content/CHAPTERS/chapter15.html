@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 15</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 15</p>
+        <h2 align="center">15. SISO Controller Parameterisations</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>Up to this point in the book we have seen many different methods for
+        designing controllers of different types. On reading all of this, one
+        might be tempted to ask if there wasn't some easy way that one could
+        specify <em>all</em> possible controllers that, at least, stabilized a
+        given system. This sounds, at first glance a formidable task. However,
+        we will show in this chapter that it is actually quite easy to give a
+        relatively straightforward description of all stabilizing controllers
+        for both open loop stable and unstable linear plants. This leads to an
+        affine parameterization of all possible nominal sensitivity functions.
+        This affine structure, in turn, gives valuable insights into the control
+        problem and opens the door to various optimization based strategies for
+        design. The main ideas presented in this chapter include</p>
+        <ul>
+          <li>motivation for the affine parameterization and the idea of open
+            loop inversion
+          <li>affine parameterization and Internal Model Control
+          <li>affine parameterization and performance specifications
+          <li>PID synthesis using the affine parameterization
+          <li>control of time delayed plants and affine parameterization.
+            Connections with the Smith controller.
+          <li>interpolation to remove undesirable open loop poles
+        </ul>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>The previous part of the book established that closed loop
+            properties are interlocked in a network of trade offs. Hence, tuning
+            for one property automatically impacts on other properties. This
+            necessitates an understanding of the interrelations and conscious
+            trade-off decisions.<br>
+            &nbsp;</li>
+          <li>The fundamental laws of trade-off presented in previous chapters
+            allow one to both identify unachievable specifications as well as to
+            establish where further effort is warranted or wasted.<br>
+            &nbsp;</li>
+          <li>However, when pushing a design maximally towards a subtle
+            trade-off, the earlier formulation of the fundamental laws falls
+            short because it is difficult to push the performance of a design by
+            tuning in terms of controller numerator and denominator: The impact
+            on the trade-off determining sensitivity-poles and zeros is very
+            nonlinear, complex and subtle.<br>
+            &nbsp;</li>
+          <li>This shortcoming raises the need for an alternative controller
+            representation that
+            <ul>
+              <li>allows one to design more explicitly in terms of the
+                quantities of interest (the sensitivities),</li>
+              <li>makes stability explicit, and</li>
+              <li>makes the impact of the controller on the trade-offs explicit.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>This need is met by the affine parameterization, also known as <i>Youla
+            parameterization<br>
+            &nbsp;</i></li>
+          <li>Summary of results for stable systems:
+            <ul>
+              <li>
+                <!-- MATH: $C=Q(1-QG_o)^{-1}$ -->
+                <i>C&nbsp;</i>=&nbsp;<i>Q</i>(1&nbsp;-&nbsp;<i>QG</i><sub><i>o</i></sub>)<sup>-1</sup>,
+                where the design is carried out by designing the transfer
+                function <i>Q</i></li>
+              <li><i>Nominal sensitivities</i>:</li>
+            </ul>
+        </ul>
+
+        <p align="center"><img align="BOTTOM" border="0" src="part5-img4.gif" alt="\begin{align}T_o&amp;=QG_o\\
+S_o&amp;=1-QG_o\\
+S_{io}&amp;=\left( 1-QG_o\right) G_o \\
+S_{uo}&amp;=Q
+\end{align}" width="140" height="88">
+        <ul>
+          <ul>
+            <li><i>Achieved sensitivities (See the definitions of modeling
+              errors in section 3.9)</i>:</li>
+          </ul>
+        </ul>
+
+        <p align="center"><img align="BOTTOM" border="0" src="part5-img5.gif" alt="\begin{align}S_\Delta &amp;=\frac 1{1+QG_oG_\Delta }=\frac 1{1+QG_\epsilon } \\
+T...
+... \\
+S&amp;=S_oS_\Delta \\
+S_i&amp;=GS_oS_\Delta \\
+S_u&amp;=QS_\Delta
+\end{align}" width="212" height="131">
+        <ul>
+          <li>Observe the following advantages of the affine parameterization:
+            <ul>
+              <li>nominal stability is explicit</li>
+              <li>the known quantity <i>G</i><sub><i>o</i></sub> and the
+                quantity sought by the control engineer (<i>Q</i>) occur in the
+                highly insightful relation <i>T</i><sub><i>o</i></sub>= <i>QG</i><sub><i>o</i></sub>
+                (multiplicative in the frequency domain); whether a designer
+                chooses to work in this quantity from the beginning or prefers
+                to start with a synthesis technique and then convert, the simple
+                multiplicative relation <i>QG</i><sub><i>o</i></sub> provides
+                deep insights into the trade-offs of a particular problem and
+                provides a very direct means of pushing the design by shaping <i>Q</i></li>
+              <li>the sensitivities are affine in <i>Q</i>, which is a great
+                advantage for synthesis techniques relying on numerical
+                minimization of a criterion (see Chapter 16 for a detailed
+                discussion of <em>optimization</em> methods which exploit this
+                parameterization)<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>The following points are important to avoid some common
+            misconceptions:
+            <ul>
+              <li>the associated trade-offs are not a consequence of the affine
+                parameterization: they are perfectly general and hold for any
+                linear time invariant controller including LQR, PID, pole
+                placement based, <img align="MIDDLE" border="0" src="part5-img6.gif" alt="$H_\infty $" width="30" height="29">,
+                etc.
+              <li>we have used the affine parameterization to make the general
+                trade-offs more visible and to provide a direct means for the
+                control engineer to make trade-off decisions; this should not be
+                confused with synthesis techniques that make particular choices
+                in the affine parameterization to synthesize a controller
+              <li>the fact that <i>Q</i> must approximate the inverse of the
+                model at frequencies where the sensitivity is meant to be small
+                is perfectly general and highlights the fundamental importance
+                of inversion in control. This does <i>not</i> necessarily mean
+                that the <i>controller</i>, <i>C</i>, must contain this
+                approximate inverse as a factor and should not be confused with
+                the pros and cons of that particular design choice<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>PI and PID design based on affine parameterization.
+            <ul>
+              <li>PI and PID controllers are traditionally tuned in terms of
+                their parameters.</li>
+              <li>However, systematic design, trade-off decisions and deciding
+                whether a PI(D) is sufficient or not, is significantly easier in
+                the model-based affine structure.</li>
+              <li>Inserting a first order model into the affine structure
+                automatically generates a PI controller.</li>
+              <li>Inserting a second order model into the <i>Q</i>-structure
+                automatically generates a PID controller.</li>
+              <li>All trade-offs and insights of the previous chapters also
+                apply to PID based control loops.</li>
+              <li>Whether a PI(D) is sufficient for a particular process is
+                directly related to whether or not a first (second) order model
+                can approximate the process well up to the frequencies where
+                performance is limited by other factors such as delays, actuator
+                saturations, sensor noise or fundamentally unknown dynamics.</li>
+              <li>The first and second order models are easily obtained from
+                step response models (Chapter 3).</li>
+              <li>The chapter provides explicit formulas for first-order,
+                time-delay, second order and integrating processes.</li>
+              <li>Using this method, the control engineer works directly in
+                terms of observable process properties (rise time, gain, etc)
+                and closed loop parameters providing an insightful basis for
+                making trade-off decisions. The PI(D) parameters follow
+                automatically.</li>
+              <li>Since the PI(D) parameter formulas are provided explicitly in
+                terms of physical process parameters, the PI(D) gains can be
+                scheduled to measurably changing parameters without extra effort
+                (it is possible, for example, to schedule for a speed-dependent
+                time-delay).</li>
+              <li>The approach does not preempt the design choice of canceling
+                or shifting the open-loop poles - both are possible and
+                associated with different trade-offs.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Summary of results for systems having time-delays:
+            <ul>
+              <li>The key issue is that delays cannot be inverted.</li>
+              <li>In that sense, delays are related to NMP plant zeros, which
+                cannot be stably inverted either.</li>
+              <li>A delay of magnitude <i>T</i>, causes similar trade-offs as an
+                unstable zero at <i>s</i>=<i>T</i>/2.</li>
+              <li>An early controller conceived to deal with the non-invertibility
+                of delays is the famous Smith-predictor.</li>
+              <li>The trade-offs made in the Smith-predictor can be nicely
+                analyzed in the affine structure. Indeed, the structures are
+                very similar. Caution should be exercised, however, not to
+                confuse the generic controller representation of the affine
+                parameterization with the particular synthesis technique of the
+                Smith-predictor.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Summary of results for unstable systems:
+            <ul>
+              <li>All stabilizing controllers for an unstable plant have the
+                form<br>
+                &nbsp;
+                <div align="center">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td><img src="part5-img7.gif" alt="\begin{displaymath}
+C(s)=\frac{\dfrac{P(s)}{E(s)}+Q_u(s)\dfrac{A_o(s)}{E(s)}}
+{\dfrac{L(s)}{E(s)}-Q_u(s)\dfrac{B_o(s)}{E(s)}}
+\end{displaymath}" width="311" height="85"></td>
+                    </tr>
+                  </table>
+                </div>
+                &nbsp;<br>
+                &amp; where <i>Q</i><sub><i>u</i></sub>(<i>s</i>) is any proper
+                rational stable transfer function.<br>
+                &nbsp;</li>
+              <li>Polynomials <i>A</i><sub><i>o</i></sub>(<i>s</i>), <i>B</i><sub><i>o</i></sub>(<i>s</i>),
+                <i>E</i>(<i>s</i>), <i>P</i>(<i>s</i>) and <i>L</i>(<i>s</i>)
+                satisfy<br>
+                &nbsp;
+                <div align="CENTER">
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="MIDDLE">
+                      <td align="CENTER" nowrap><i>A</i><sub><i>o</i></sub>(<i>s</i>)<i>L</i>(<i>s</i>)&nbsp;+&nbsp;<i>B</i><sub><i>o</i></sub>(<i>s</i>)<i>P</i>(<i>s</i>)&nbsp;=&nbsp;<i>E</i>(<i>s</i>)<i>F</i>(<i>s</i>)</td>
+                    </tr>
+                  </table>
+                </div>
+                &nbsp;<br>
+                where <i>E</i>(<i>s</i>) and <i>F</i>(<i>s</i>) are polynomials
+                of suitable degrees which are arbitrary, save that they must
+                have desirable zeros.<br>
+              </li>
+              <li>Any stabilizing controller can be used to obtain an initial
+                set of polynomials {<i>E</i>(<i>s</i>), <i>P</i>(<i>s</i>), <i>L</i>(<i>s</i>)}</li>
+            </ul>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="../part5.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Part V</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><a href="chapter16.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Chapter 16</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>

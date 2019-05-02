@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 16</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 16</p>
+        <h2 align="center">16. Control Design Based on Optimisation</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+        Thus far we have seen that design constraints arise from a number of
+        different sources
+        <ul>
+          <li>structural plant properties, such as NMP zeros or unstable poles
+          <li>disturbances, their frequency content, point of injection and
+            measurability
+          <li>architectural properties and the resulting algebraic laws of
+            trade-off
+          <li>integral constraints and the resulting integral laws of trade-off
+        </ul>
+
+        <p>The subtlety as well as complexity of the emergent trade-off web into
+        which the designer needs to ease a solution, motivates interest in what
+        is known as <em>criterion based</em> control design or <em>optimal</em>
+        control theory: the aim here is to capture the control objective in a
+        mathematical criterion and solve it for the controller that (depending
+        on the formulation) maximizes or minimizes it.</p>
+
+        <p>Three questions arise:</p>
+        <ol>
+          <li>Is optimization of the criterion mathematically feasible?</li>
+          <li>How good is the resulting controller?</li>
+          <li>Can the constraint of the trade-off web be circumvented by
+            optimization?</li>
+        </ol>
+
+        <p>Question (1) has an affirmative answer for a number of criterion. In
+        particular, quadratic formulations tend to favor tractability. Also, the
+        affine parameterization of Chapter 15 is a key enabler, since it renders
+        the sensitivity functions affine in the sought variable, <i>Q</i>.</p>
+
+        <p>The answer to question (2) has two facets: how good is the controller
+        as measured by the criterion? Answer: it is optimal by construction; but
+        how good is the resulting control loop performance as measured by the
+        original performance specifications? Answer: as good, or as poor, as the
+        criterion in use can capture the design intention and active trade-offs.
+        A poorly formulated criterion will simply yield a controller which <em>optimally</em>
+        implements the poor design. However when selected well, a design
+        criterion can synthesize a controller which would have been difficult to
+        conceive of by the techniques covered thus far; this is particularly
+        true for multivariable systems covered in the next part of the book.</p>
+
+        <p>Question (3) is simply answered by <em>no</em>: all linear time
+        invariant controllers, whether they were synthesized by trial and error,
+        pole assignment or optimization, are subject to the same fundamental
+        trade-off laws.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>Optimization can often be used to assist with certain aspects of
+            control system design.<br>
+            &nbsp;</li>
+          <li>The answer provided by an optimization strategy is only as good as
+            the question that has been asked.<br>
+            &nbsp;</li>
+          <li>Optimization needs to be carefully employed keeping in mind the
+            complex web of trade-offs involved in all control system design.<br>
+            &nbsp;</li>
+          <li>Quadratic optimization is a particularly simple strategy and leads
+            to a closed form solution.<br>
+            &nbsp;</li>
+          <li>Quadratic optimization can be used for optimal Q synthesis.<br>
+            &nbsp;</li>
+          <li>We have also shown that quadratic optimization can be effectively
+            used to formulate and solve robust control problems when the model
+            uncertainty is specified in the form of a frequency domain
+            probabilistic error.<br>
+            &nbsp;</li>
+          <li>Within this framework we have shown that the robust controller <i>biases</i>
+            the nominal solution arising from optimal nominal design so as to
+            create a gap for model uncertainty whilst attempting to minimize
+            affecting the achieved performance.<br>
+            &nbsp;</li>
+          <li>This can be viewed as a formal way of achieving the bandwidth
+            reduction which was discussed earlier as a mechanism for providing a
+            robustness <em>gap</em> in control system design.</li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="chapter15.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Chapter 15</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><a href="chapter17.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Chapter 17</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>

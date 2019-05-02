@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 24</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 24</p>
+        <h2 align="center">24. Fundamental Design Limitations in MIMO Control</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>The best way to learn about real design issues is to become involved
+        in practical applications. Hopefully, the reader may have gained some
+        feeling for the lateral thinking that is typically needed in all real
+        world problems from reading the various case studies that we have
+        presented. In particular, we point to the 5 MIMO case studies described
+        in Chapter 22.</p>
+
+        <p>In this chapter, we will adopt a more abstract stance and extend the
+        design insights of Chapters 8 and 9 to the MIMO case. As a prelude to
+        this, we recall that in Chapter 17 we saw that by a combination of an
+        observer and state estimate feedback, the closed loop poles of a MIMO
+        system can be exactly (or approximately) assigned depending on the
+        synthesis method used. However, as in the SISO case, this leaves open
+        two key questions; namely, where should the poles be placed and what are
+        the associated sensitivity trade-off issues. This raises fundamental
+        design issues which are the MIMO versions of the topics discussed in
+        Chapters 8 and 9.</p>
+
+        <p>It has been shown in Chapters 8 and 9 that the open loop properties
+        of a SISO plant impose fundamental and unavoidable constraints on the
+        closed loop characteristics that are achievable. For example, we have
+        seen that, for a one degree of freedom loop, a double integrator in the
+        open loop transfer function implies that the integral of the error due
+        to a step reference change must be zero. We have also seen that real RHP
+        zeros necessarily imply undershoot in the response to a step reference
+        change.</p>
+
+        <p>As might be expected, similar concepts apply to multivariable
+        systems. However, whereas in SISO systems, one has only the frequency
+        (or time) axis along which to deal with the constraints, in MIMO systems
+        there is also a spatial dimension, i.e. one can trade off limitations
+        between different outputs as well as on a frequency by frequency basis.
+        This means that it is necessary to also account for the interactions
+        between outputs rather than simply being able to focus on one output at
+        a time. These issues will be explored below.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>Analogous to the SISO case, MIMO performance specifications can
+            generally not be addressed independently from another, since they
+            are linked by a web of trade-offs.<br>
+            &nbsp;</li>
+          <li>A number of the SISO fundamental algebraic laws of trade-off
+            generalize rather directly to the MIMO case <a name="505">&nbsp;</a>
+            <ul>
+              <li>
+                <!-- MATH: $\ensuremath{\mathbf{S_o}(s)} =\ensuremath{\mathbf{I}} -\ensuremath{\mathbf{T_o}(s)}$ -->
+                <img align="MIDDLE" border="0" src="part7-img4.gif" alt="$\ensuremath{\mathbf{S_o}(s)} =\ensuremath{\mathbf{I}} -\ensuremath{\mathbf{T_o}(s)} $" width="130" height="31">
+                implying a trade-off between speed of response to a change in
+                reference or rejecting disturbances (
+                <!-- MATH: $\ensuremath{\mathbf{S_o}(s)}$ -->
+                <img align="MIDDLE" border="0" src="part7-img5.gif" alt="\ensuremath{\mathbf{S_o}(s)}" width="41" height="31">
+                small) versus necessary control effort, sensitivity to
+                measurement noise or modeling errors (
+                <!-- MATH: $\ensuremath{\mathbf{T_o}(s)}$ -->
+                <img align="MIDDLE" border="0" src="part7-img6.gif" alt="\ensuremath{\mathbf{T_o}(s)}" width="44" height="31">
+                small)</li>
+              <li>
+                <!-- MATH: $Y_{m}(s)=-\ensuremath{\mathbf{T_o}(s)} D_m(s)$ -->
+                <img align="MIDDLE" border="0" src="part7-img7.gif" alt="$Y_{m}(s)=-\ensuremath{\mathbf{T_o}(s)} D_m(s)$" width="164" height="31">
+                implying a trade-off between the bandwidth of the complementary
+                sensitivity and sensitivity to measurement noise.</li>
+              <li>
+                <!-- MATH: $\ensuremath{\mathbf{S_{uo}}(s)} =[\ensuremath{\mathbf{G_o}(s)} ]^{-1}\ensuremath{\mathbf{T_o}(s)}$ -->
+                <img align="MIDDLE" border="0" src="part7-img8.gif" alt="$\ensuremath{\mathbf{S_{uo}}(s)} =[\ensuremath{\mathbf{G_o}(s)} ]^{-1}\ensuremath{\mathbf{T_o}(s)} $" width="179" height="33">
+                implying that a complementary sensitivity with bandwidth
+                significantly higher than the open loop will generate large
+                control signals.</li>
+              <li>
+                <!-- MATH: $\ensuremath{\mathbf{S_{io}}(s)} =\ensuremath{\mathbf{S_o}(s)}\ensuremath{\mathbf{G_o}(s)}$ -->
+                <img align="MIDDLE" border="0" src="part7-img9.gif" alt="$\ensuremath{\mathbf{S_{io}}(s)} =\ensuremath{\mathbf{S_o}(s)}\ensuremath{\mathbf{G_o}(s)} $" width="147" height="31">
+                implying a trade-off between input and output disturbances.</li>
+              <li>
+                <!-- MATH: $\ensuremath{\mathbf{S}(s)} = \ensuremath{\mathbf{S_{o}}(s)}\ensuremath{\mathbf{S_{\Delta}}(s)}$ -->
+                <img align="MIDDLE" border="0" src="part7-img10.gif" alt="$\ensuremath{\mathbf{S}(s)} = \ensuremath{\mathbf{S_{o}}(s)}\ensuremath{\mathbf{S_{\Delta}}(s)} $" width="134" height="31">
+                where
+  
+                <!-- MATH: $\ensuremath{\mathbf{S_{\Delta}}(s)} =[\ensuremath{\mathbf{I}} +\ensuremath{\mathbf{G_{\Delta l}}(s)}\ensuremath{\mathbf{T_o}(s)} ]^{-1}$ -->
+                <img align="MIDDLE" border="0" src="part7-img11.gif" alt="$\ensuremath{\mathbf{S_{\Delta}}(s)} =[\ensuremath{\mathbf{I}} +\ensuremath{\mathbf{G_{\Delta l}}(s)}\ensuremath{\mathbf{T_o}(s)} ]^{-1}$" width="208" height="33">
+                implying a trade-off between the complementary sensitivity and
+                robustness to modeling errors.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>There also exist frequency- and time-domain trade-offs due to
+            unstable poles and zeros:
+            <ul>
+              <li><em>qualitatively</em> they parallel the SISO results in that
+                (in a MIMO measure) low bandwidth in conjunction with unstable
+                poles is associated with increasing overshoot, whereas high
+                bandwidth in conjunction with unstable zeros is associated with
+                increasing undershoot</li>
+              <li><em>quantitatively</em>, the measure in which the above is
+                true is more complex than in the SISO case: the effects of
+                under- and overshoot, as well as integral constraints, pertain
+                to linear combinations of the MIMO channels.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>MIMO systems are subject to the additional design specification of
+            desired decoupling.<br>
+            &nbsp;</li>
+          <li>Decoupling is related to the time- and frequency-domain
+            constraints via directionality:
+            <ul>
+              <li>The constraints due to open-loop NMP zeros with non-canonical
+                directions can be isolated in a subset of outputs, if triangular
+                decoupling is acceptable.</li>
+              <li>Alternatively, if dynamic decoupling is enforced, the
+                constraint is dispersed over several channels.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Advantages and disadvantages of completely decentralized control,
+            dynamical and triangular decoupling designs were illustrated with an
+            industrial case study:</li>
+        </ul>
+        <div align="CENTER">
+          <table cellpadding="4" border="1" cellspacing="0">
+            <tr>
+              <td align="CENTER" colspan="3">Sugar mill case study</td>
+            </tr>
+            <tr>
+              <td align="LEFT" valign="TOP" width="30%">
+
+                <p align="center"><em>Design</em></p>
+              </td>
+              <td align="LEFT" valign="TOP" width="30%">
+
+                <p align="center"><em>Advantage</em></p>
+              </td>
+              <td align="LEFT" valign="TOP" width="30%">
+
+                <p align="center"><em>Disadvantage</em></p>
+              </td>
+            </tr>
+            <tr>
+              <td align="LEFT" valign="TOP" width="30%">Decentralized</td>
+              <td align="LEFT" valign="TOP" width="30%">Simpler SISO theory can
+                be used</td>
+              <td align="LEFT" valign="TOP" width="30%">Interactions are
+                ignored; poor performance</td>
+            </tr>
+            <tr>
+              <td align="LEFT" valign="TOP" width="30%">Dynamic Decoupling</td>
+              <td align="LEFT" valign="TOP" width="30%">Outputs can be
+                controlled separately</td>
+              <td align="LEFT" valign="TOP" width="30%">Both output must obey
+                the lower bandwidth constraint due to one NMP zero</td>
+            </tr>
+            <tr>
+              <td align="LEFT" valign="TOP" width="30%">Triangular Decoupling</td>
+              <td align="LEFT" valign="TOP" width="30%">Most important output
+                decoupled and without NMP constraint</td>
+              <td align="LEFT" valign="TOP" width="30%">The second (albeit less
+                important) output is affected by the first output and NMP
+                constraint.</td>
+            </tr>
+          </table>
+        </div>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="chapter23.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Chapter 23</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><a href="../part8.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Part VIII</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>

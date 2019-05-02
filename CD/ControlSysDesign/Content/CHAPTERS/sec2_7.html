@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 2</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="chapter2.html">Chapter
+        2</a> | Section 2.7</p>
+        <h2 align="center">Introduction to the Principles of Feedback Control</h2>
+        <!------------------------------------------------>
+
+        <h3 align="left">2.7 From open to closed loop architectures</h3>
+
+        <p>A particular scheme was suggested in <a href="sec2_6.html#fig:inv1">Figure
+        2.8</a> for building an approximate inverse of the plant model. Although
+        the controller in this scheme is implemented as a feedback system, the
+        control is actually applied to the plant in <b>open loop</b>. In
+        particular, we see that the control signal <i>u</i>(<i>t</i>) is <b>independent
+        of what is actually happening in the plant</b>. This is a serious
+        drawback, since the methodology will not lead to a satisfactory solution
+        to the control problem unless:</p>
+        <ul>
+          <li>the model on which the design of the controller has been based is
+            a very good representation of the plant,<br>
+            &nbsp;</li>
+          <li>the model and its inverse are stable, and<br>
+            &nbsp;</li>
+          <li>disturbances and initial conditions are negligible.</li>
+        </ul>
+
+        <p>We are thus motivated to find an alternative solution to the problem
+        which retains the key features but which does not suffer from the above
+        drawback. This is indeed possible by changing the scheme slightly so
+        that feedback is placed around the <b>plant</b> itself rather than
+        around the <b>model</b>.</p>
+
+        <p>To develop this idea we begin with the basic feedback structure as
+        illustrated in <a href="#fig:inv2">Figure 2.10</a>. We proceed as
+        follows.</p>
+
+        <p align="center"><a name="fig:inv2"><img src="fig2_10.gif" width="480" height="193"></a><br>
+        <strong>Figure 2.10:</strong> Open loop control with built-in inverse</p>
+
+        <p>If we assume, for the moment, that the model in <a href="#fig:inv2">Figure
+        2.10</a> is perfect, then we can rearrange the diagram to yield the
+        alternative scheme shown in <a href="#fig:inv3">Figure 2.11</a></p>
+
+        <p align="center"><a name="fig:inv3"><img src="fig2_11.gif" width="497" height="105"></a><br>
+        <strong>Figure 2.11:</strong> Closed loop control</p>
+
+        <p>This scheme, which has been derived from an open loop architecture,
+        is the basis of feedback control. The key feature of this scheme is that
+        the controller output depends not only on the a-priori data provided by
+        the model, but also depends on what is actually happening at the plant
+        output at every instant. It has other interesting features which are
+        discussed in detail below. However at this point it will be worthwhile
+        to carry out an initial discussion of the similarities and differences
+        between open and closed loop architectures of the types shown in <a href="#fig:inv2">Figure
+        2.10</a> and <a href="#fig:inv3">Figure 2.11</a>.</p>
+        <ul>
+          <li>The first thing to note is that, provided the model represents the
+            plant exactly, and that all signals are bounded (i.e. the loop is
+            stable), then both schemes are equivalent, <b>regarding the relation
+            between </b><b>r(<i>t</i>)</b><b><i> </i>and <i>y</i>(<i>t</i>)</b><i>.</i>
+            The key differences are due to disturbances and different initial
+            conditions.<br>
+            &nbsp;</li>
+          <li>In the open loop control scheme the controller incorporates
+            feedback internally, i.e. a signal at point A is fed back. In closed
+            loop control the signal at A' is fed back. The fundamental
+            difference is that, in the first case everything happens <b>inside
+            the controller</b>, i.e. either in a computer or in some external
+            hardware connection. In the second case, the signal which is fed
+            back is a process variable, i.e. <b>measuring devices are used</b>
+            to determine what is actually happening. The heuristic advantages of
+            the latter alternative are undoubtedly clear to the reader. We will
+            develop the formal background to these advantages as we proceed.</li>
+        </ul>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="sec2_6.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section 2.6</a></td>
+              <td align="center" width="33%"><a href="chapter2.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Chapter 2</a></td>
+              <td align="center" width="33%"><a href="sec2_8.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section 2.8</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

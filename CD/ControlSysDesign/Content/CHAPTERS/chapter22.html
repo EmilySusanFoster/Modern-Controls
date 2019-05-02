@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 22</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 22</p>
+        <h2 align="center">22. Exploiting SISO Techniques in MIMO Control</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>The previous chapter gave an introduction to MIMO control system
+        synthesis by showing how SISO methods could sometimes be used in MIMO
+        problems. However, some MIMO problems require a fundamentally MIMO
+        approach. This is the topic of the current chapter. We will emphasize
+        methods based on optimal control theory. There are three reasons for
+        this choice:</p>
+        <dl compact>
+          <dt>1
+          <dd>It is relatively easy to understand.
+          <dt>2
+          <dd>It has been used in a myriad of applications (Indeed, the authors
+            have used these methods on approximately 20 industrial
+            applications).
+          <dt>3
+          <dd>It is a valuable precursor to other advanced methods - e.g. model
+            predictive control which is explained in the next chapter.
+        </dl>
+
+        <p>The analysis presented in this chapter builds on the results in
+        Chapter 18 where state space design methods were briefly described in
+        the SISO context. We recall from that chapter, that the two key elements
+        were</p>
+        <ul>
+          <li>state estimation by an observer
+          <li>state estimate feedback
+        </ul>
+
+        <p>We will mirror these elements here for the MIMO case.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>Full multivariable control incorporates the interaction dynamics
+            rigorously and explicitly.<br>
+            &nbsp;</li>
+          <li>The fundamental SISO synthesis result that, under mild conditions,
+            the nominal closed loop poles can be assigned arbitrarily carries
+            over to the MIMO case.<br>
+            &nbsp;</li>
+          <li>Equivalence of state feedback and frequency domain pole placement
+            by solving the (multivariable) Diophantine Equation carries over as
+            well.<br>
+            &nbsp;</li>
+          <li>Due to the complexities of multivariable systems, criterion based
+            synthesis (briefly alluded to in the SISO case) gains additional
+            motivation; it is also a powerful way to pre-compensate a system
+            which is subsequently trimmed with a MIMO Q-parametrization.<br>
+            &nbsp;</li>
+          <li>A popular family of criteria are functionals involving quadratic
+            forms of control error and control effort.<br>
+            &nbsp;</li>
+          <li>For a general nonlinear formulation, the optimal solution is
+            characterized by a two-point boundary value problem.<br>
+            &nbsp;</li>
+          <li>In the linear case (the so-called linear quadratic regulator, LQR),
+            the general problem reduces to the solution of the continuous time
+            dynamic Riccati equation which can be feasibly solved, leading to
+            time-variable state feedback.<br>
+            &nbsp;</li>
+          <li>After initial conditions decay, the optimal time-varying solution
+            converges to a constant state feedback, the so-called steady state
+            LQR solution.<br>
+            &nbsp;</li>
+          <li>It is frequently sufficient to neglect the initial transient of
+            the strict LQR and only implement the steady state LQR.<br>
+            &nbsp;</li>
+          <li>The steady state LQR is equivalent to either
+            <ul>
+              <li>a model matching approach, where a desired complementary
+                sensitivity is specified and a controller is computed that
+                matches it as closely as possible according to some selected
+                measure.</li>
+              <li>pole placement, where a closed loop polynomial is specified
+                and a controller is computed to achieve it.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Thus, LQR, model-matching and pole-placement are mathematically
+            equivalent, although they do offer different tuning parameters.<br>
+            &nbsp;
+            <div align="CENTER">
+              <table cellpadding="4" border="1" cellspacing="0">
+                <tr>
+                  <td align="LEFT" valign="TOP" 0.35>
+                    <div align="CENTER">
+                      <em>Equivalent synthesis techniques</em>
+                    </div>
+                  </td>
+                  <td align="LEFT" valign="TOP" width="1">
+                    <div align="CENTER">
+                      <em>Tuning parameters</em>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="LEFT" valign="TOP">LQR</td>
+                  <td align="LEFT" valign="TOP">Relative penalties on control
+                    error versus control effort.</td>
+                </tr>
+                <tr>
+                  <td align="LEFT" valign="TOP">Model matching</td>
+                  <td align="LEFT" valign="TOP">Closed loop complementary
+                    sensitivity reference model and weighted penalty on the
+                    difference to the control loop</td>
+                </tr>
+                <tr>
+                  <td align="LEFT" valign="TOP">Pole placement</td>
+                  <td align="LEFT" valign="TOP">Closed loop polynomial</td>
+                </tr>
+              </table>
+            </div>
+            &nbsp;</li>
+          <li>These techniques can be extended to discrete time systems.<br>
+            &nbsp;</li>
+          <li>There is a very close connection to the ‘dual’ problem of
+            filtering, i.e., the problem of inferring a state from a related
+            (but not exactly invertible) set of measurements.<br>
+            &nbsp;</li>
+          <li>Optimal filter design based on quadratic criteria leads again to a
+            Riccati equation.<br>
+            &nbsp;</li>
+          <li>The filters can be synthesized and interpreted equivalently in a
+            <ul>
+              <li>linear quadratic</li>
+              <li>model matching</li>
+              <li>pole-placement</li>
+            </ul>
+            framework.<br>
+            &nbsp;</li>
+          <li>The arguable most famous optimal filter formulation, the Kalman
+            filter, can be given a stochastic interpretation depending on taste.<br>
+            &nbsp;</li>
+          <li>The LQR does not automatically include integral action; thus,
+            rejection of constant or other polynomial disturbances must be
+            enforced via the internal model principle.</li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="../part7.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Part VII</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><a href="chapter23.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Chapter 23</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>

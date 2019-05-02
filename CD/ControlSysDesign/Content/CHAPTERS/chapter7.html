@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 7</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 7</p>
+        <h2 align="center">7. Classical PID Control</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p align="left">In Chapter 5 it was shown how feedback control loop
+        performance and stability can be characterized using a set of four
+        sensitivity functions. A key feature of these functions is that all of
+        them have poles belonging to the same set, the set of <b>closed loop
+        poles</b>. Hence, this set determines stability and the natural modes of
+        the closed loop. A key synthesis question is therefore: given a model, <em>can
+        one systematically synthesize a controller such that the closed loop
+        poles are in predefined locations?</em> This chapter will show that this
+        is indeed possible. We call this<b> pole assignment</b>, which is a
+        fundamental idea in control synthesis.</p>
+
+        <p align="left">In this chapter we will use a polynomial description.
+        This evolves naturally from the analysis in Chapter 5. In a later
+        chapter we will use a state space description. This will provide a
+        natural transition from SISO to MIMO control systems in later chapters.</p>
+
+        <p align="left">It is also shown how both approaches can accommodate
+        other design requirements such as zero steady state tracking errors and
+        disturbance rejection.</p>
+
+        <p align="left">Finally, PID controllers are placed into this general
+        framework and it is shown how they may be synthesized using pole
+        assignment methods.</p>
+
+        <p align="left">The question of how to choose a set of values for the
+        closed loop poles to meet the required performance specifications is, of
+        course, a crucial issue. This is actually a non-trivial question which
+        needs to be considered as part of the intricate web of design trade-offs
+        associated with all feedback loops. The latter will be taken up in the
+        next chapter, where the design problem will be analyzed.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>This chapter addresses the question of synthesis and asks:<br>
+            Given the model 
+            <!-- MATH: $G_0(s)=\frac{B_o(s)}{A_o(s)}$ -->
+            <img align="MIDDLE" border="0" src="part2-img21.gif" alt="$G_0(s)=\frac{B_o(s)}{A_o(s)}$" width="100" height="40">,
+            how can one synthesize a controller,
+  
+            <!-- MATH: $C(s)=\frac{P(s)}{L(s)}$ -->
+            <img align="MIDDLE" border="0" src="part2-img4.gif" alt="$C(s)=\frac{P(s)}{L(s)}$" width="86" height="40">
+            such that the closed loop has a particular property.<br>
+            &nbsp;</li>
+          <li>Recall:
+            <ul>
+              <li>the poles have a profound impact on the dynamics of a transfer
+                function;</li>
+              <li>The poles of the four sensitivities governing the closed loop
+                belong to the same set, namely the roots of the characteristic
+                equation 
+                <!-- MATH: $A_o(s)L(s)+B_o(s)P(s)=0$ -->
+                <i>A</i><sub><i>o</i></sub>(<i>s</i>)<i>L</i>(<i>s</i>)&nbsp;+&nbsp;<i>B</i><sub><i>o</i></sub>(<i>s</i>)<i>P</i>(<i>s</i>)&nbsp;=&nbsp;0.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Therefore, a key synthesis question is: Given a model, can one
+            synthesize a controller such that the closed loop poles (i.e.
+            sensitivity poles) are in pre-defined locations?<br>
+            &nbsp;</li>
+          <li>Stated mathematically:<br>
+            Given polynomials 
+            <!-- MATH: $A_o(s),B_o(s)$ -->
+            <i>A</i><sub><i>o</i></sub>(<i>s</i>),<i>B</i><sub><i>o</i></sub>(<i>s</i>)
+            (defining the model) and given a polynomial <i>A</i><sub><i>cl</i></sub>(<i>s</i>)
+            (defining the desired location of closed loop poles), is it possible
+            to find polynomials <i>P</i>(<i>s</i>) and <i>L</i>(<i>s</i>) such
+            that 
+            <!-- MATH: $A_o(s)L(s)+B_o(s)P(s)=A_{cl}(s)$ -->
+            <i>A</i><sub><i>o</i></sub>(<i>s</i>)<i>L</i>(<i>s</i>)&nbsp;+&nbsp;<i>B</i><sub><i>o</i></sub>(<i>s</i>)<i>P</i>(<i>s</i>)&nbsp;=&nbsp;<i>A</i><sub><i>cl</i></sub>(<i>s</i>)?
+            This chapter shows that this is indeed possible.<br>
+            &nbsp;</li>
+          <li>The equation 
+            <!-- MATH: $A_o(s)L(s)+B_o(s)P(s)=A_{cl}(s)$ -->
+            <i>A</i><sub><i>o</i></sub>(<i>s</i>)<i>L</i>(<i>s</i>)&nbsp;+&nbsp;<i>B</i><sub><i>o</i></sub>(<i>s</i>)<i>P</i>(<i>s</i>)&nbsp;=&nbsp;<i>A</i><sub><i>cl</i></sub>(<i>s</i>)
+            is known as a Diophantine equation.<a name="571"><br>
+            </a>&nbsp;</li>
+          <li>Controller synthesis by solving the Diophantine equation is known
+            as <i>pole placement</i>. There are several efficient algorithms as
+            well as commercial software to do so.<br>
+            &nbsp;</li>
+          <li>Synthesis ensures that the emergent closed loop has particular
+            constructed properties.
+            <ul>
+              <li>However, the overall system performance is determined by a
+                number of further properties which are <i>consequences</i> of
+                the constructed property.</li>
+              <li>The coupling of constructed and consequential properties
+                generates trade-offs.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Design is concerned with
+            <ul>
+              <li>efficiently detecting if there is no solution that meets the
+                design specifications adequately and what the inhibiting factors
+                are</li>
+              <li>choosing the constructed properties such that, whenever
+                possible, the overall behavior emerging from the interacting
+                constructed and the consequential properties meets the design
+                specifications adequately.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>This is the topic of the next chapter.</li>
+        </ul>
+      </center>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="chapter6.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Chapter 6</a></td>
+            <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Book Contents</a></td>
+            <td align="center" width="33%"><a href="../part3.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next - Part III</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

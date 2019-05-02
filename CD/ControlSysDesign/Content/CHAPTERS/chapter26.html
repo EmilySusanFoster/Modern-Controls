@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 26</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 26</p>
+        <h2 align="center">26. MIMO Controller Parameterisations</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>An idealized requirement in MIMO control system design is that of
+        decoupling. As discussed in section §20.4, decoupling can take various
+        forms ranging from static (where decoupling is only demanded for
+        constant reference signals) up to full dynamic decoupling (where
+        decoupling is demanded at all frequencies). Clearly full dynamic
+        decoupling is a stringent demand. Thus, in practice, it is more usual to
+        seek dynamic decoupling over some desired bandwidth. If a plant is
+        dynamically decoupled, then changes in the set-point of one process
+        variable leads to a response in that process variable but <i>all other</i>
+        process variables remain constant. The advantages of such a design are
+        intuitively clear; i.e. a temperature may be required to be changed but
+        it may be undesirable for other variables (e.g. pressure) to suffer any
+        associated transient.</p>
+
+        <p>This chapter describes the design procedures necessary to achieve
+        dynamic decoupling. In particular, we discuss</p>
+        <ul>
+          <li>dynamic decoupling for stable minimum phase systems</li>
+          <li>dynamic decoupling for stable non-minimum phase systems</li>
+          <li>dynamic decoupling for open loop unstable systems.</li>
+        </ul>
+
+        <p>As might be expected, full dynamic decoupling is a strong requirement
+        and is generally not <em>cost free</em>. We will thus also quantify the
+        costs of decoupling using frequency domain procedures. These allow a
+        designer to assess <i>a priori</i> whether the cost associated with
+        decoupling is acceptable in a given application.</p>
+
+        <p>Of course, some form of decoupling is a very common requirement. For
+        example, static decoupling is almost always called for. The question
+        then becomes, over what bandwidth will decoupling (approximately) hold.
+        All forms of decoupling come at a cost, and this can be evaluated using
+        the techniques presented here. It will turn out that the additional cost
+        of decoupling is a function of open loop poles and zeros in the right
+        half plane. Thus, if one is interested in restricting decoupling to some
+        bandwidth then by restricting attention to those open loop poles and
+        zeros that fall within this bandwidth one can get a feel for the cost of
+        decoupling over that bandwidth. In this sense, the results presented in
+        this chapter are applicable to almost all MIMO design problems since
+        some form of decoupling over a limited bandwidth (usually around dc) is
+        almost always required.</p>
+
+        <p>We will also examine the impact of actuator saturation on decoupling.
+        In the case of static decoupling, it is necessary to avoid integrator
+        wind-up. This can be achieved using methods that are analogous to the
+        SISO case treated in Chapter11. In the case of full dynamic decoupling,
+        special precautions are necessary to maintain decoupling in the face of
+        actuator limits. We show that this is indeed possible by appropriate use
+        of MIMO anti wind-up mechanisms.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>Recall that key closed loop specifications shared by SISO and MIMO
+            design include
+            <ul>
+              <li>continued compensation of disturbances</li>
+              <li>continued compensation of model uncertainty</li>
+              <li>stabilization of open-loop unstable systems</li>
+            </ul>
+            &nbsp;<br>
+            whilst not<br>
+            &nbsp;
+            <ul>
+              <li>becoming too sensitive to measurement noise</li>
+              <li>generating excessive control signals </li>
+            </ul>
+            &nbsp;<br>
+            and accepting inherent limitations due to<br>
+            &nbsp;
+            <ul>
+              <li>unstable zeros</li>
+              <li>unstable poles</li>
+              <li>modeling error</li>
+              <li>frequency and time domain integral constraints<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Generally, MIMO systems also exhibit additional complexities due
+            to
+            <ul>
+              <li>directionality (several inputs acting on one output)</li>
+              <li>dispersion (one input acting on several outputs)</li>
+              <li>and the resulting phenomenon of coupling<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Designing a controller for closed loop compensation of this MIMO
+            coupling phenomenon is called <em>decoupling</em>.<br>
+            &nbsp;</li>
+          <li>Recall (Chapter 20) that there are different degrees of decoupling,
+            including
+            <ul>
+              <li>static (i.e., 
+                <!-- MATH: $\ensuremath{\mathbf{T_o}} (0)$ -->
+                <img align="MIDDLE" border="0" src="part8-img22.gif" alt="$\ensuremath{\mathbf{T_o}} (0)$" width="44" height="31">
+                is diagonal)</li>
+              <li>triangular (i.e.,  
+                <!-- MATH: $\ensuremath{\mathbf{T_o}} (s)$ -->
+                <img align="MIDDLE" border="0" src="part8-img23.gif" alt="$\ensuremath{\mathbf{T_o}} (s)$" width="44" height="31">
+                is triangular)</li>
+              <li>dynamic (i.e.,   
+                <!-- MATH: $\ensuremath{\mathbf{T_o}} (s)$ -->
+                <img align="MIDDLE" border="0" src="part8-img23.gif" alt="$\ensuremath{\mathbf{T_o}} (s)$" width="44" height="31">
+                is diagonal)<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Due to the fundamental law of 
+            <!-- MATH: $\ensuremath{\mathbf{S_o}(s)} +\ensuremath{\mathbf{T_o}(s)} =\ensuremath{\mathbf{I}}$ -->
+            <img align="MIDDLE" border="0" src="part8-img24.gif" alt="$\ensuremath{\mathbf{S_o}(s)} +\ensuremath{\mathbf{T_o}(s)} =\ensuremath{\mathbf{I}} $" width="130" height="31">,
+            if
+  
+            <!-- MATH: $\ensuremath{\mathbf{T_o}}$ -->
+            <img align="MIDDLE" border="0" src="part8-img25.gif" alt="$\ensuremath{\mathbf{T_o}} $" width="24" height="29">
+            exhibits any of these decoupling properties, so does  
+            <!-- MATH: $\ensuremath{\mathbf{S_o}}$ -->
+            <img align="MIDDLE" border="0" src="part8-img26.gif" alt="$\ensuremath{\mathbf{S_o}} $" width="21" height="29">.<br>
+            &nbsp;</li>
+          <li>The severity and type of trade-offs associated with decoupling
+            depend on
+            <ul>
+              <li>whether the system is minimum phase</li>
+              <li>the directionality and cardinality of non-minimum phase zeros</li>
+              <li>unstable poles.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>If all of a systems unstable zeros are canonical (their
+            directionality affects one output only), then their adverse effect
+            is not spread to other channels by decoupling provided that the
+            direction of decoupling is congruent with the direction of the
+            unstable zeros.<br>
+            &nbsp;</li>
+          <li>The price for dynamically decoupling a system with non-canonical
+            non-minimum phase zeros of simple multiplicity is that
+            <ul>
+              <li>the effect of the non-minimum phase zeros is potentially
+                spread across several loops</li>
+              <li>therefore, although the loops are decoupled, each of the
+                affected loops needs to observe the bandwidth and sensitivity
+                limitations imposed by the unstable zero dynamics.<br>
+                &nbsp;</li>
+            </ul>
+          <li>If one accepts the less stringent triangular decoupling, the
+            effect of dispersing limitations due to non-minimum phase zeros can
+            be minimized.<br>
+            &nbsp;</li>
+          <li>Depending on the case, a higher cardinality of non-minimum phase
+            zeros can either enforce or mitigate the adverse effects.<br>
+            &nbsp;</li>
+          <li>If a system is also open-loop unstable, there may not be any way
+            at all for achieving full dynamic decoupling by a one d.o.f.
+            controller although it is always possible by a two d.o.f.
+            architecture for reference signal changes.<br>
+            &nbsp;</li>
+          <li>If a system is essentially linear but exhibits actuator
+            nonlinearities such as input or slew rate saturations, then the
+            controller design must reflect this appropriately.<br>
+            &nbsp;</li>
+          <li>Otherwise, the MIMO generalization of the SISO wind-up phenomenon
+            may occur.<br>
+            &nbsp;</li>
+          <li>MIMO wind-up manifests itself in two aspects of performance
+            degradation:
+            <ul>
+              <li>transients due to growing controller states</li>
+              <li>transients due to the nonlinearity impacting on directionality<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>The first of these two phenomenon <img align="BOTTOM" border="0" src="part8-img27.gif" alt="$\ldots$" width="25" height="13">
+            <ul>
+              <li>is in analogy to the SISO case</li>
+              <li>is due to the saturated control signal not being able to
+                annihilate the control errors sufficiently fast compared to the
+                controller dynamics; therefore the control states continue to
+                grow in response to the non-decreasing control. These <em>wound
+                up</em> states produce the transients when the loop emerges from
+                saturation.</li>
+              <li>can be compensated by a direct generalization of the SISO anti
+                wind-up implementation.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>The second phenomenon <img align="BOTTOM" border="0" src="part8-img27.gif" alt="$\ldots$" width="25" height="13">
+            <ul>
+              <li>is specific to MIMO systems</li>
+              <li>is due to uncompensated interactions arising from the input
+                vector loosing its original design direction.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>In analogy to the SISO case, there can be regions in state space,
+            from which an open loop unstable MIMO system with input saturation
+            cannot be stabilized by any control.<br>
+            &nbsp;</li>
+          <li>More severely than in the SISO case, MIMO systems are difficult to
+            control in the presence of input saturation, even if the linear loop
+            is stable and the controller is implemented with anti wind-up. This
+            is due to saturation changing the directionality of the input
+            vector.<br>
+            &nbsp;</li>
+          <li>This problem of preserving decoupling in the presence of input
+            saturation can be addressed by anti wind-up schemes that scale the
+            control error rather than the control signal.</li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="chapter25.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Chapter 25</a></td>
+              <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Book Contents</a></td>
+              <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next</td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </center></td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>

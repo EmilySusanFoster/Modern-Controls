@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 8</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> |
+        Chapter 8</p>
+        <h2 align="center">8. Fundamental Design Limitations in SISO Control</h2>
+        <!------------------------------------------------>
+
+        <a name="Preview"><h3 align="left">Preview</h3></a>
+
+        <p>The results in the previous chapters have allowed us to determine
+        relationships between the variables in a control loop. We have also
+        defined some key transfer functions (sensitivity functions) which can be
+        used to quantify the control loop performance and have shown that, under
+        reasonable conditions, the closed loop poles can be arbitrarily
+        assigned. However, these procedures should all be classified as
+        synthesis rather than design. The related design question is: <em>where
+        should I assign the closed loop poles?</em> These are the kinds of
+        issues we now proceed to study. It turns out that the question of where
+        to assign closed loop poles is part of the much larger question
+        regarding the fundamental laws of trade-off in feedback design. These
+        fundamental laws, or limitations, govern what is achievable, and
+        conversely, what is not achievable in feedback control systems. Clearly,
+        this lies at the very heart of control engineering. We thus strongly
+        encourage students to gain some feel for these issues. The fundamental
+        laws are related, on the one hand, to the nature of the feedback loop
+        (e.g. whether integration is included or not) and on the other hand, to
+        structural features of the plant itself.</p>
+
+        <p>The limitations that we examine here include</p>
+        <ul>
+          <li>sensors<br>
+            &nbsp;</li>
+          <li>actuators
+            <ul>
+              <li>maximal movements</li>
+              <li>minimal movements<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>model deficiencies<br>
+            &nbsp;</li>
+          <li>structural issues, including
+            <ul>
+              <li>poles in the ORHP</li>
+              <li>zeros in the ORHP</li>
+              <li>zeros that are stable but close to the origin</li>
+              <li>poles on the imaginary axis</li>
+              <li>zeros on the imaginary axis</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>We also briefly address possible remedies to these limitations.</p>
+        <a name="Summary"><h3 align="left">Summary</h3></a>
+        <ul>
+          <li>This chapter addresses design issues for SISO feedback loops.<br>
+            &nbsp;</li>
+          <li>It is shown that the following closed loop properties cannot be
+            addressed independently by a (linear time invariant) controller.
+            <ul>
+              <li>speed of disturbance rejection</li>
+              <li>sensitivity to measurement noise</li>
+              <li>accumulated control error</li>
+              <li>required control amplitude</li>
+              <li>required control rate changes</li>
+              <li>overshoot, if the system is open-loop unstable</li>
+              <li>undershoot, if the system is non-minimum phase</li>
+              <li>sensitivity to parametric modeling errors</li>
+              <li>sensitivity to structural modeling errors<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Rather, tuning for one of these properties automatically impacts
+            on the others.<br>
+            &nbsp;</li>
+          <li>For example, irrespectively of how a controller is synthesized and
+            tuned, if the effect of the <i>measurement noise</i> on the output
+            is <i>T</i><sub><i>o</i></sub>(<i>s</i>), then the impact of an <i>output
+            disturbance</i> is necessarily 
+            <!-- MATH: $%
+1-T_o(s)$ -->
+            &lt;<i>tex</i>2<i>html</i><sub><i>c</i></sub><i>omment</i><sub><i>m</i></sub><i>ark</i>&gt;
+            1-<i>T</i><sub><i>o</i></sub>(<i>s</i>). Thus, any particular
+            frequency cannot be removed from both an output disturbance and the
+            measurement noise as one would require <i>T</i><sub><i>o</i></sub>(<i>s</i>)
+            to be close to 0 at that frequency, whereas the other would require <i>T</i><sub><i>o</i></sub>(<i>s</i>)
+            to be close to 1. One can therefore only reject one at the expense
+            of the other, or compromise.<br>
+            &nbsp;</li>
+          <li>Thus, a faster rejection of disturbances, is generally associated
+            with
+            <ul>
+              <li>higher sensitivity to measurement noise</li>
+              <li>less control error</li>
+              <li>larger amplitudes and slew rates in the control action</li>
+              <li>higher sensitivity to structural modeling errors</li>
+              <li>more undershoot, if the system is non-minimum phase</li>
+              <li>less overshoot if the system is unstable.</li>
+            </ul>
+          </li>
+          <li>The trade-offs are made precise by the following fundamental laws
+            of trade-off:
+            <ol>
+              <li>
+                <!-- MATH: $S_o(s)=1-T_o(s)$ -->
+                <i>S</i><sub><i>o</i></sub>(<i>s</i>)=1-<i>T</i><sub><i>o</i></sub>(<i>s</i>)
+                that is, an output disturbance is rejected only at frequencies
+                where 
+                <!-- MATH: $\left| T_o(j\omega)\right| \approx 1$ -->
+                <img align="MIDDLE" border="0" src="part3-img4.gif" alt="$\left\vert T_o(j\omega)\right\vert \approx 1$" width="88" height="31">;<br>
+                &nbsp;</li>
+              <li>
+                <!-- MATH: $Y(s)=-T_o(s)D_m(s)$ -->
+                <i>Y</i>(<i>s</i>)=-<i>T</i><sub><i>o</i></sub>(<i>s</i>)<i>D</i><sub><i>m</i></sub>(<i>s</i>)
+                that is, measurement noise, <i>d</i><sub><i>m</i></sub>(<i>t</i>),
+                is rejected only at frequencies where
+    
+                <!-- MATH: $\left| T_o(j\omega)\right| \approx 0$ -->
+                <img align="MIDDLE" border="0" src="part3-img5.gif" alt="$\left\vert T_o(j\omega)\right\vert \approx 0$" width="88" height="31"><br>
+                &nbsp;</li>
+              <li>
+                <!-- MATH: $S_{uo}(s)=T_o(s)[G(s)]^{-1}$ -->
+                <i>S</i><sub><i>uo</i></sub>(<i>s</i>)=<i>T</i><sub><i>o</i></sub>(<i>s</i>)[<i>G</i>(<i>s</i>)]<sup>-1</sup>
+                that is, large control signals arise at frequencies where 
+                <!-- MATH: $\left|
+T_o(j\omega)\right| \approx 1$ -->
+                <img align="MIDDLE" border="0" src="part3-img4.gif" alt="$\left\vert T_o(j\omega)\right\vert \approx 1$" width="88" height="31">
+                but 
+                <!-- MATH: $\left| G_o(j\omega)\right| \ll 1$ -->
+                <img align="MIDDLE" border="0" src="part3-img6.gif" alt="$\left\vert G_o(j\omega)\right\vert \ll 1$" width="95" height="31">,
+                which occurs when the closed loop is forced to be much more
+                responsive than the open loop process.<br>
+                &nbsp;</li>
+              <li>
+                <!-- MATH: $S_{io}(s)=S_o(s)G_o(s)$ -->
+                <i>S</i><sub><i>io</i></sub>(<i>s</i>)=<i>S</i><sub><i>o</i></sub>(<i>s</i>)<i>G</i><sub><i>o</i></sub>(<i>s</i>)
+                that is, open-loop poles of the process must necessarily either
+                appear as zeros in <i>S</i><sub><i>o</i></sub>(<i>s</i>)
+                (resulting in overshoot when rejecting output step disturbances
+                and additional sensitivity) or, if they are stable, the designer
+                can choose to accept them as poles in <i>S</i><sub><i>io</i></sub>(<i>s</i>)
+                instead (where they impact on input-disturbance rejection).<br>
+                &nbsp;</li>
+              <li>
+                <!-- MATH: $S(s)=S_o(s)S_\Delta(s)$ -->
+                <img align="MIDDLE" border="0" src="part3-img7.gif" alt="$S(s)=S_o(s)S_\Delta(s)$" width="133" height="31">
+                where 
+                <!-- MATH: $S_\Delta(s)
+=\left(1+T_o(s)G_\Delta(s)\right)^{-1}$ -->
+                <img align="MIDDLE" border="0" src="part3-img8.gif" alt="$S_\Delta(s)
+=\left(1+T_o(s)G_\Delta(s)\right)^{-1}$" width="202" height="38"> that is, being responsive to reference
+                changes and against disturbances at frequencies with significant
+                modeling errors, jeopardizes stability; note that the relative (multiplicative)
+                modeling error <img align="MIDDLE" border="0" src="part3-img9.gif" alt="$G_\Delta$" width="27" height="29">
+                usually accumulates phase and magnitude towards higher
+                frequencies.<br>
+                &nbsp;</li>
+              <li>Forcing the closed loop faster than unstable zeros,
+                necessarily causes substantial undershoot.<br>
+                &nbsp;</li>
+            </ol>
+          <li>Observing the fundamental laws of trade-off ensures that
+            inadvertently specified, but unachievable, specifications can
+            quickly be identified without wasted tuning effort.<br>
+            &nbsp;</li>
+          <li>They also suggest where additional effort is profitable or wasted:
+            <ul>
+              <li>if a design does not fully utilize the actuators and
+                disturbance rejection is poor due to modeling errors (i.e., the
+                loop is constrained by fundamental trade-off law 6), then
+                additional modeling efforts are warranted</li>
+              <li>if, on the other hand, loop performance is constrained by
+                non-minimum phase zeros and a constraint on undershoot (i.e.,
+                the loop is constrained by fundamental trade-off law 4), then
+                larger actuators or better models would be wasted.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>It is important to note that the design trade-offs
+            <ul>
+              <li>are fundamental to linear time invariant control</li>
+              <li>are independent of any particular control synthesis methods
+                used.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>However, different synthesis methods
+            <ul>
+              <li>choose different closed loop properties as their constructed
+                property,</li>
+              <li>therefore rendering different properties as consequential.<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Some design constraints, such as the inverse response due to NMP
+            zeros, exist not only for linear control systems, but also for any
+            other control approach and architecture.<br>
+            &nbsp;</li>
+          <li>Remedies for the fundamental limits do exist but they inevitably
+            require radical changes, e.g.
+            <ul>
+              <li>seeking alternative senses</li>
+              <li>seeking alternative actuators</li>
+              <li>modifying the basic architecture of the plant or controller</li>
+            </ul>
+          </li>
+        </ul>
+      </center>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="../part3.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Part III</a></td>
+            <td align="center" width="33%"><a href="../book.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Book Contents</a></td>
+            <td align="center" width="33%"><a href="chapter9.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next - Chapter 9</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixd-node1.html">Appendix
+        D</a> | Section D.3</p>
+        <h2 align="center">D. Properties of Continuous Time Riccati Equation</h2>
+        <h3>D.3 The stabilizing solution of the CTARE</h3>
+        We see from Section D.2 that we have as many solutions to the CTARE as
+        there are ways of partitioning the eigenvalues of <b>H</b> into the
+        groups <img border="0" src="appendixd-img49.gif" align="middle" width="23" height="16">
+        and <img border="0" src="appendixd-img50.gif" align="middle" width="20" height="16">.
+        Provided (<b>A</b>, <b>B</b>) is stabilizable and provided <img border="0" src="appendixd-img51.gif" align="bottom" width="60" height="21">
+        has no unobservable modes in the imaginary axis, then <b>H</b> has no
+        eigenvalues in the imaginary axis. In this case, there exists a unique
+        way of partitioning the eigenvalues so that <img border="0" src="appendixd-img49.gif" align="middle" width="23" height="16">
+        contains only the stable eigenvalues of <b>H</b>. We call the
+        corresponding (unique) solution of the CTARE the stabilizing solution
+        and denote it <img border="0" src="appendixd-img52.gif" align="middle" width="26" height="18">.
+
+        <p>Properties of the stabilizing solution are given in the following:</p>
+
+        <p><b>Lemma 1.4</b></p>
+        <div align="center">
+          <table border="0" cellpadding="5" cellspacing="0" width="100%">
+            <tr>
+              <td valign="top"><i>(a)</i></td>
+              <td valign="top"><i>The stabilizing solution has the property that
+                the closed loop </i><b>A</b><i> matrix;</i>
+                <div align="center">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td>
+
+                        <p align="center"><img border="0" src="appendixd-img53.gif" width="124" height="21"></td>
+                      <td width="10" align="right">(D.3.1)</td>
+                    </tr>
+                  </table>
+                </div>
+
+                <p><i>where</i></p>
+                <div align="center">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td>
+
+                        <p align="center"><img border="0" src="appendixd-img54.gif" width="128" height="21"></td>
+                      <td width="10" align="right">(D.3.2)</td>
+                    </tr>
+                  </table>
+                </div>
+
+                <p><i>has eigenvalues in the open left half plane.</i></td>
+            </tr>
+            <tr>
+              <td valign="top"><i>(b)</i></td>
+              <td valign="top"><i>If <img border="0" src="appendixd-img51.gif" align="baseline" width="60" height="21">
+                is detectable then the stabilizing solution is the only
+                non-negative of the CTARE</i></td>
+            </tr>
+            <tr>
+              <td valign="top"><i>(c)</i></td>
+              <td valign="top"><i>If <img border="0" src="appendixd-img51.gif" align="baseline" width="60" height="21">
+                has no unobservable modes inside the stability boundary then the
+                stabilizing solution is positive definite and conversely.</i></td>
+            </tr>
+            <tr>
+              <td valign="top"><i>(d)</i></td>
+              <td valign="top"><i>If <img border="0" src="appendixd-img51.gif" align="baseline" width="60" height="21">
+                has an unobservable modes outside the stabilizing region, then
+                in addition to the stabilizing solution, there exists and least
+                one other non-negative solution of the CTARE. However, the
+                stabilizing solution, <tex2html_verbatim_mark><img border="0" src="appendixd-img52.gif" align="middle" width="26" height="18">
+                has the property that</i>
+                <div align="center">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td>
+
+                        <p align="center"><img border="0" src="appendixd-img55.gif" width="103" height="22"></td>
+                      <td width="10" align="right">(D.3.3)</td>
+                    </tr>
+                  </table>
+                </div>
+
+                <p><i>where <img border="0" src="appendixd-img56.gif" align="middle" width="26" height="21">
+                is any other solution of the CTARE.</i></td>
+            </tr>
+          </table>
+        </div>
+
+        <p><b>Proof</b></p>
+        For part (a), we argue as follows:
+
+        <p>Consider (D.1.11) and (D.1.14). Then</p>
+        <div align="center">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td>
+
+                <p align="center"><img border="0" src="appendixd-img57.gif" width="156" height="43"></td>
+              <td width="10" align="right">(D.3.4)</td>
+            </tr>
+          </table>
+        </div>
+
+        <p>which implies</p>
+        <div align="center">
+          <table border="0" cellpadding="0" cellspacing="0" width="600">
+            <tr>
+              <td>
+
+                <p align="center"><img border="0" src="appendixd-img58.gif" width="325" height="44"></td>
+              <td width="10" align="right">(D.3.5)</td>
+            </tr>
+          </table>
+        </div>
+
+        <p>If we only consider the first row in (D.3.5), then using (D.1.8) we
+        have</p>
+        <div align="center">
+          <table border="0" cellpadding="0" cellspacing="0" width="600">
+            <tr>
+              <td>
+
+                <p align="center"><img border="0" src="appendixd-img59.gif" width="328" height="20"></td>
+              <td width="10" align="right">(D.3.6)</td>
+            </tr>
+          </table>
+        </div>
+
+        <p>Hence, the closed loop poles are the eigenvalues of <tex2html_verbatim_mark><b>H<sub>s</sub></b>
+        and, by construction, these are stable.</p>
+
+        <p>We leave the reader to pursue parts (b), (c) and (d) by studying the
+        references given at the end of Chapter 24.</p>
+
+        <p align="right"><img border="0" src="appendixc-img7.gif" width="39" height="14"></p>
+        <div align="center">
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="appendixd-node5.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section D.2</a></td>
+              <td align="center" width="33%"><a href="appendixd-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Appendix D</a></td>
+              <td align="center" width="33%"><a href="appendixd-node9.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section D.4</a></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </div>
+
+  <p>&nbsp;</p>
+</center>
+
+</body>
+
+</html>

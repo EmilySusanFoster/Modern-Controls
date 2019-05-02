@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Chapter 2</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="../style.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="chapter1.html">Chapter
+        1</a> | Section 1.6</p>
+        <h2 align="center">The Excitement of Control Engineering</h2>
+        <!------------------------------------------------>
+
+        <h3 align="left">1.6 Summary</h3>
+        <ul>
+          <li>Control Engineering is present in virtually all modern engineering
+            systems<br>
+            &nbsp;</li>
+          <li>Control is often the &quot;hidden technology&quot; as its very
+            success often removes it from view<br>
+            &nbsp;</li>
+          <li>Control is a key enabling technology with respect to
+            <ul>
+              <li>enhanced product quality</li>
+              <li>waste and emission minimization</li>
+              <li>environmental protection</li>
+              <li>greater throughput for a given installed capacity</li>
+              <li>greater yield</li>
+              <li>deferring costly plant upgrades, and</li>
+              <li>higher safety margins<br>
+                &nbsp;</li>
+            </ul>
+          <li>Examples of controlled systems include</li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="1" cellpadding="5" cellspacing="0">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" width="15%">
+                  <div align="center">
+                    <em>S</em>ystem
+                  </div>
+                </td>
+                <td align="left" valign="top" width="20%">
+                  <div align="center">
+                    <em>Controlled outputs include</em>
+                  </div>
+                </td>
+                <td align="left" valign="top" width="20%">
+                  <div align="center">
+                    <em>Controller</em>
+                  </div>
+                </td>
+                <td align="left" valign="top" width="25%">
+                  <div align="center">
+                    <em>Desired performance includes</em>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="15%">Aircraft</td>
+                <td align="left" valign="top" width="20%">Course, pitch, roll,
+                  yaw</td>
+                <td align="left" valign="top" width="20%">Autopilot</td>
+                <td align="left" valign="top" width="25%">Maintain flight path
+                  on a safe and smooth trajectory</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="15%">Furnace</td>
+                <td align="left" valign="top" width="20%">Temperature</td>
+                <td align="left" valign="top" width="20%">Temperature controller</td>
+                <td align="left" valign="top" width="25%">Follow warm-up
+                  temperature profile, then maintain temperature</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="15%">Wastewater treatment</td>
+                <td align="left" valign="top" width="20%">pH value of effluent</td>
+                <td align="left" valign="top" width="20%">pH controller</td>
+                <td align="left" valign="top" width="25%">Neutralize effluent to
+                  specified accuracy</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="15%">Automobile</td>
+                <td align="left" valign="top" width="20%">Speed</td>
+                <td align="left" valign="top" width="20%">Cruise controller</td>
+                <td align="left" valign="top" width="25%">Attain, then maintain
+                  selected speed without undue fuel consumption</td>
+              </tr>
+            </tbody>
+          </table>
+          </center>
+        </div>
+        <ul>
+          <li>Control is a multidisciplinary subject that includes
+            <ul>
+              <li>sensors</li>
+              <li>actuators</li>
+              <li>communications</li>
+              <li>computing</li>
+              <li>architectures and interfacing</li>
+              <li>algorithms<br>
+                &nbsp;</li>
+            </ul>
+          </li>
+          <li>Control design aims to achieve a desired level of performance in
+            the face of disturbances and uncertainty<br>
+            &nbsp;</li>
+          <li>Examples of disturbances and uncertainty include</li>
+        </ul>
+        <div align="center">
+          <center>
+          <table border="1" cellpadding="4" cellspacing="0">
+            <tbody>
+              <tr>
+                <td align="left" valign="top" width="12%">
+                  <div align="center">
+                    <em>S</em>ystem
+                  </div>
+                </td>
+                <td align="left" valign="top" width="20%">
+                  <div align="center">
+                    <em>Actuators</em>
+                  </div>
+                </td>
+                <td align="left" valign="top" width="15%">
+                  <div align="center">
+                    <em>Sensors</em>
+                  </div>
+                </td>
+                <td align="left" valign="top" width="15%">
+                  <div align="center">
+                    <em>Disturbances</em>
+                  </div>
+                </td>
+                <td align="left" valign="top" width="15%">
+                  <div align="center">
+                    <em>Uncertainties</em>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="12%">Aircraft</td>
+                <td align="left" valign="top" width="20%">Throttle servo, rudder
+                  and flap actuators, etc.</td>
+                <td align="left" valign="top" width="15%">Navigation instruments</td>
+                <td align="left" valign="top" width="15%">Wind, air pockets,
+                  etc.</td>
+                <td align="left" valign="top" width="15%">Weight, exact
+                  aerodynamics, etc.</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="12%">Furnace</td>
+                <td align="left" valign="top" width="20%">Burner valve actuator</td>
+                <td align="left" valign="top" width="15%">Thermocouples, heat
+                  sensors</td>
+                <td align="left" valign="top" width="15%">Temperature of
+                  incoming objects, etc.</td>
+                <td align="left" valign="top" width="15%">Exact thermodynamics,
+                  temperature distribution</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="12%">Wastewater treatment</td>
+                <td align="left" valign="top" width="20%">Control acid valve
+                  servo</td>
+                <td align="left" valign="top" width="15%">pH sensor</td>
+                <td align="left" valign="top" width="15%">Inflow concentration</td>
+                <td align="left" valign="top" width="15%">pH gain curve,
+                  measurement errors</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" width="12%">Automobile</td>
+                <td align="left" valign="top" width="20%">Throttle positioning</td>
+                <td align="left" valign="top" width="15%">Tachometer</td>
+                <td align="left" valign="top" width="15%">Hills</td>
+                <td align="left" valign="top" width="15%">Weight, exact dynamics</td>
+              </tr>
+            </tbody>
+          </table>
+          </center>
+        </div>
+
+        <p>&nbsp;</p>
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="sec1_5.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section 1.5</a></td>
+              <td align="center" width="33%"><a href="chapter1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Chapter 1</a></td>
+              <td align="center" width="33%"><a href="sec1_7.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next - Section 1.7</a></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

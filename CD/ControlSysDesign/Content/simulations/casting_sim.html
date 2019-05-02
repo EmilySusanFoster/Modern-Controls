@@ -1,0 +1,111 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (X11; I; OSF1 V4.0 alpha) [Netscape]">
+   <meta name="ProgId" content="FrontPage.Editor.Document">
+   <title>Control System Design - Simulations</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#993300" vlink="#660000" alink="#FF0000" topmargin="3" leftmargin="3">
+<!--  Table for the page heading                        -->
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="600" >
+<tr>
+<td ALIGN=CENTER WIDTH="600">You are here : <a href="../index.html" target="_top">Control
+System Design - Index</a> | <a href="../simulation.html">Simulations</a>
+| Continuous Casting
+<center>
+<h2>
+Continuous Casting Tutorial</h2></center>
+<!------------------------------------------------><!--p><hr size=1 noshade="noshade"-->
+<h3>
+System Description</h3>
+The problem is that of continuous casting (described more fully in <a href="../chapters/sec2_3.html">Section
+2.3</a>), where molten steel flows into a mold (at a rate controlled by
+a valve) which is open from above and below. Through cooling, the steel
+in the mold is transformed into a semi-solid state and the steel comes
+out in continuous slab. This is illustrated in <a href="../chapters/sec2_3.html#fig:fig2_2">Figure
+2.2</a>. This <a href="casting.html">photo</a> shows the continuous caster
+at BHP in Newcastle, Australia.&nbsp;
+<p>It is desirable to be able to control the level of the molten steel
+in the mold to prevent it from overflowing or emptying. We can control
+this level by adjusting the control valve, based on measurements of the
+casting speed and the valve position. <a href="../chapters/sec2_3_2.html#fig:fig2_4">Figure
+2.4</a> and <a href="../chapters/sec2_3_3.html#fig:fig2_5">Figure 2.5</a>
+illustrate the model of the system and the controller implemented. For
+more details, see <a href="../chapters/sec2_3.html">Section 2.3</a>.&nbsp;
+<h3>
+Java Applet Simulation</h3>
+The JAVA applet below is a simulation of this model which allows you to
+alter the various system parameters and see the results. Edit the value
+for the controller gain <i>K</i> and the level of noise (set this to zero
+to remove noise completely). The set-point type can also be altered between
+square and sinusoidal. Note: you must press the "Update" button to see
+the results of your changes. The simulation can be stopped and restarted
+by pressing the start and stop buttons.&nbsp;
+<br>&nbsp;
+<p><applet code="ContinuousCast.class" codebase="../applet/" width="600" height="300" align="CENTER">You
+don't seem to have a JAVA enabled browser.&nbsp;</applet>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<table BORDER CELLSPACING=0 CELLPADDING=5 >
+<tr>
+<td ALIGN=CENTER><b>Things to try</b></td>
+
+<td ALIGN=CENTER><b>Things to notice</b></td>
+</tr>
+
+<tr>
+<td>Change the controller gain to <i>K</i> = 1</td>
+
+<td>The response is very slow.</td>
+</tr>
+
+<tr>
+<td>Change the controller gain to <i>K</i> = 5</td>
+
+<td>The response is faster, but jumps around a lot due to the influence
+of measurement noise</td>
+</tr>
+
+<tr>
+<td>Experiment with the controller gain to try and get a fast response
+with little noise influence</td>
+
+<td>There might be a trade-off between speed and noise attenuation</td>
+</tr>
+</table>
+
+<p>Now there are several things you should notice. For small controller
+gains (e.g. <i>K</i> = 1), the system does not respond very quickly, and
+is not very susceptible to noise. For larger controller gains (e.g. <i>K</i>
+= 5), the system responds more quickly, but is much more susceptible to
+noise. (Obviously, susceptibility to noise is not desirable, since in this
+case, the controller is working with an incorrect measurement (due to measurement
+noise).)&nbsp;
+<p>This immediately hints at a trade-off between response speed and noise
+sensitivity. At this point, you might ask whether or not this can be solved
+with a better controller (so that we can have both good noise rejection
+and fast response speed), or whether this is a fundamental constraint.
+The rest of the book is dedicated to answering this (and <b>many</b> other
+questions).&nbsp;
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="500" >
+<tr>
+<td ALIGN=CENTER WIDTH="33%"><img SRC="backbutton.gif" ALT="<-" BORDER=0 height=32 width=32>
+<br>Previous</td>
+
+<td ALIGN=CENTER WIDTH="33%"><a href="../simulations.html"><img SRC="upbutton.gif" ALT="^" BORDER=0 height=32 width=32></a>
+<br><a href="../simulation.html">Up - Simulations</a></td>
+
+<td ALIGN=CENTER WIDTH="33%"><img SRC="nextbutton.gif" BORDER=0 height=32 width=32>
+<br>Next</td>
+</tr>
+</table></center>
+</td>
+</tr>
+</table>
+
+<br>&nbsp;
+</body>
+</html>

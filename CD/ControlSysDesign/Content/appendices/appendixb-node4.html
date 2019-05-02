@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixb-node1.html">Appendix
+        B</a> | Section B.3</p>
+        <h2 align="center">B. Smith-McMillan Forms</h2>
+        <h3>B.3 Smith form for polynomial matrices</h3>
+
+        <p>Using the above notation, we can manipulate polynomial matrices in
+        ways which mirror the ways we manipulate matrices of reals. For example,
+        the following result describes a diagonal form for polynomial matrices.</p>
+      </center>
+
+      <p align="left"><b><a name="thm1.1">Theorem 1.1</a></b><a name="thm1.1"> <b>(Smith
+      form).</b></a>&nbsp;&nbsp; <i>Let <img align="MIDDLE" border="0" src="appendixb-img20.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$" width="37" height="31">
+      be a 
+          <!-- MATH: $m_1\times m_2$ --><img align="MIDDLE" border="0" src="appendixb-img21.gif" alt="$m_1\times m_2$" width="65" height="28">
+      polynomial matrix of rank r, then 
+          <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$ --><img align="MIDDLE" border="0" src="appendixb-img20.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$" width="37" height="31">
+      is equivalent to either a matrix
+  
+          <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} }_f (s)$ --><img align="MIDDLE" border="0" src="appendixb-img22.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} }_f (s)$" width="46" height="31">
+      (for m</i><sub>1 </sub>&lt; <i>m</i><sub>2</sub><i>) or to a matrix 
+          <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} }_c
+(s)$ --><img align="MIDDLE" border="0" src="appendixb-img23.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} }_c
+(s)$" width="44" height="31"> (for m</i><sub>2 </sub>&lt; <i>m</i><sub>1</sub><i>), with</i></p>
+
+      <p align="right"><img align="BOTTOM" border="0" src="appendixb-img24.gif" alt="\begin{align}\mathbf{\ensuremath{\boldsymbol{\Pi}} }_f (s)&amp;= \begin{bmatrix}\mat...
+...\overline{\epsilon}_1(s),\ldots,\overline{\epsilon}_r(s),0,\dots,0)
+\end{align}" width="433" height="63"></p>
+
+      <p align="left"><i>where <img align="MIDDLE" border="0" src="appendixb-img25.gif" alt="$\Theta_f$" width="24" height="29">
+      and <img align="MIDDLE" border="0" src="appendixb-img26.gif" alt="$\Theta_c$" width="22" height="29">
+      are matrices with all their elements equal to zero. Furthermore 
+          <!-- MATH: $\overline{\epsilon}_i(s)$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img27.gif" alt="$\overline{\epsilon}_i(s)$" width="35" height="31">
+      are monic polynomials for
+
+          <!-- MATH: $i=1,2,\ldots,r$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img28.gif" alt="$i=1,2,\ldots,r$" width="99" height="28">,
+      such that 
+          <!-- MATH: $\overline{\epsilon}_i(s)$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img27.gif" alt="$\overline{\epsilon}_i(s)$" width="35" height="31">
+      is a factor in
+
+          <!-- MATH: $\overline{\epsilon}_{i+1}(s)$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img29.gif" alt="$\overline{\epsilon}_{i+1}(s)$" width="51" height="31">,
+      i.e. 
+          <!-- MATH: $\overline{\epsilon}_i(s)$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img27.gif" alt="$\overline{\epsilon}_i(s)$" width="35" height="31">
+      divides
+
+          <!-- MATH: $\overline{\epsilon}_{i+1}(s)$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img29.gif" alt="$\overline{\epsilon}_{i+1}(s)$" width="51" height="31">.
+      If m</i><sub>1 </sub>= <i>m</i><sub>2</sub>, then 
+          <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} }(s)$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img20.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$" width="37" height="31">
+      is equivalent to the square matrix 
+          <!-- MATH: $\mathbf{E}(s)$ -->
+      <b>E</b>(s).</p>
+
+      <p><a name="SECTION00130100000000000000"><b>Proof (by construction)</b></a></p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="5" cellspacing="0" width="600">
+          <tr>
+            <td valign="top"><i>(i)</i></td>
+            <td width="20" valign="top"></td>
+            <td valign="top"><i>By performing row and column interchange
+              operations on
+
+              <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} }(s)$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img20.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$" width="37" height="31">,
+              bring to position (1,1) the least degree polynomial entry in 
+              <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} }(s)$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img20.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$" width="37" height="31">.
+              Say this minimum degree is <img align="MIDDLE" border="0" src="appendixb-img30.gif" alt="$\nu_1$" width="18" height="28"></i></td>
+          </tr>
+          <tr>
+            <td valign="top"><i>(ii)</i></td>
+            <td width="20" valign="top"></td>
+            <td valign="top"><i>Using elementary operation (e03) (see definition
+              B.3), reduce the term in the position (2,1) to degree
+  
+              <!-- MATH: $\nu_2<\nu_1$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img31.gif" alt="$\nu_2&lt;\nu_1$" width="54" height="28">.
+              If the term in position (2,1) becomes zero, then go to the next
+              step, otherwise, interchange rows 1 and 2 and repeat the procedure
+              until the term in position (2,1) becomes zero.</i></td>
+          </tr>
+          <tr>
+            <td valign="top"><i>(iii)</i></td>
+            <td width="20" valign="top"></td>
+            <td valign="top"><i>Repeat step (ii) with the other elements in the
+              first column.</i></td>
+          </tr>
+          <tr>
+            <td valign="top"><i>(iv)</i></td>
+            <td width="20" valign="top"></td>
+            <td valign="top"><i>Apply the same procedure to all the elements but
+              the first one in the first row.</i></td>
+          </tr>
+          <tr>
+            <td valign="top"><i>(v)</i></td>
+            <td width="20" valign="top"></td>
+            <td valign="top"><i>Go back to step (ii) if non zero entries appear,
+              due to step (iv), in the first column. Notice that the degree of
+              the entry (1,1) will fall in each cycle, until we finally end up
+              with a matrix which can be partitioned as</i>
+
+              <p align="center"><i><img src="appendixb-img32.gif" alt="\begin{displaymath}
+\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Pi}}}(s)} =
+...
+...}_j}(s)} &amp; &amp; \\ 0&amp; &amp; &amp; &amp;
+&amp; \\ 0&amp; &amp; &amp; &amp; &amp; \\
+\end{bmatrix}
+\end{displaymath}" width="271" height="156"></i></p>
+
+              <p><i>where 
+              <!-- MATH: $\overline{\pi}_{11}^{(j)}(s)$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img33.gif" alt="$\overline{\pi}_{11}^{(j)}(s)$" width="49" height="41">
+              is a monic polynomial.</i></td>
+          </tr>
+          <tr>
+            <td valign="top"><i>(vi)</i></td>
+            <td width="20" valign="top"></td>
+            <td valign="top"><i>If there is an element of 
+              <!-- MATH: $\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Pi}}_j}(s)}$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img34.gif" alt="$\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Pi}}_j}(s)} $" width="43" height="31">
+              which is of less degree than 
+              <!-- MATH: $\overline{\pi}_{11}^{(j)}(s)$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img33.gif" alt="$\overline{\pi}_{11}^{(j)}(s)$" width="49" height="41">,
+              then add the column where this element is, to the first column,
+              and repeat steps (ii) to (v). Do this until the form (1.6)
+              is achieved with
+  
+              <!-- MATH: $\overline{\pi}_{11}^{(j)}(s)$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img33.gif" alt="$\overline{\pi}_{11}^{(j)}(s)$" width="49" height="41">
+              of less or, at most, equal degree to that of every element in 
+              <!-- MATH: $\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Pi}}_j}(s)}$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img34.gif" alt="$\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Pi}}_j}(s)} $" width="43" height="31">.
+              This will yield further reduction in the degree of the entry in
+              position (1,1).</i></td>
+          </tr>
+          <tr>
+            <td valign="top"><i>(vii)</i></td>
+            <td width="20" valign="top"></td>
+            <td valign="top"><i>Make 
+                  <!-- MATH: $\overline{\epsilon}_1(s)=\overline{\pi}_{11}^{(j)}(s)$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img35.gif" alt="$\overline{\epsilon}_1(s)=\overline{\pi}_{11}^{(j)}(s)$" width="104" height="41">.</i></td>
+          </tr>
+          <tr>
+            <td valign="top"><i>(viii)</i></td>
+            <td width="20" valign="top"></td>
+            <td valign="top">Repeat the procedure from steps (i) through (viii)
+              to matrix  
+              <!-- MATH: $\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Pi}}_j}(s)}$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img34.gif" alt="$\ensuremath{\mathbf{\ensuremath{\boldsymbol{\Pi}}_j}(s)} $" width="43" height="31">.</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+
+      <p>Actually the polynomials 
+      <!-- MATH: $\overline{\epsilon}_i(s)$ -->
+      <img align="MIDDLE" border="0" src="appendixb-img27.gif" alt="$\overline{\epsilon}_i(s)$" width="35" height="31">
+      in the above result can be obtained in a direct fashion as follows:</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="5" cellspacing="0" width="600">
+          <tr>
+            <td valign="top">(i)</td>
+            <td width="20" valign="top"></td>
+            <td valign="top">Compute all minor determinants of 
+              <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img20.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$" width="37" height="31"></td>
+          </tr>
+          <tr>
+            <td valign="top">(ii)</td>
+            <td width="20" valign="top"></td>
+            <td valign="top">Define <img align="MIDDLE" border="0" src="appendixb-img36.gif" alt="$\chi_i(s)$" width="38" height="31">
+              as the (monic) greatest common divisor (g.c.d.) of all <img align="MIDDLE" border="0" src="appendixb-img37.gif" alt="$i\times i$" width="34" height="28">
+              minor determinants of 
+              <!-- MATH: $\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img20.gif" alt="$\mathbf{\ensuremath{\boldsymbol{\Pi}} } (s)$" width="37" height="31">.
+              Make 
+              <!-- MATH: $\chi_0(s)=1$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img38.gif" alt="$\chi_0(s)=1$" width="69" height="31"></td>
+          </tr>
+          <tr>
+            <td valign="top">(iii)</td>
+            <td width="20" valign="top"></td>
+            <td valign="top">Compute the polynomials 
+              <!-- MATH: $\overline{\epsilon}_i(s)$ -->
+              <img align="MIDDLE" border="0" src="appendixb-img27.gif" alt="$\overline{\epsilon}_i(s)$" width="35" height="31">
+              as
+
+              <p align="center"><img src="appendixb-img39.gif" alt="\begin{displaymath}\overline{\epsilon}_i(s)=\frac{\chi_i(s)}{\chi_{i-1}(s)}
+\end{displaymath}" width="106" height="44"></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+
+      <p>&nbsp;</p>
+      <div align="center">
+        <center>
+        <table border="0" cellpadding="0" width="500" cellspacing="0">
+          <tr>
+            <td align="center" width="33%"><a href="appendixb-node3.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+              Previous - Section B.2</a></td>
+            <td align="center" width="33%"><a href="appendixb-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+              Up - Appendix B</a></td>
+            <td align="center" width="33%"><a href="appendixb-node6.html"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+              Next - Section B.4</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

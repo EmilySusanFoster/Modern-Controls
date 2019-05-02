@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>A. Notation, symbols and acronyms</title>
+<meta name="description" content="A. Notation, symbols and acronyms">
+<meta name="keywords" content="appendixa">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" href="appendixa.css">
+</head>
+
+<body topmargin="3" leftmargin="3" bgcolor="#FFFFFF" text="#000000" link="#993300" vlink="#660000" alink="#FF0000">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td>
+
+        <p align="left">You are here : <a href="../index.html" target="_top">Control
+        System Design - Index</a> | <a href="../book.html">Book Contents</a> | <a href="appendixc-node1.html">Appendix
+        C</a> | Section C.10</p>
+        <h2 align="center">C. Results From Analytic Function Theory</h2>
+        <h3>C.10 Bode's Theorems</h3>
+
+        <p>We will next review some fundamental results due to Bode.</p>
+
+        <p><b>Theorem 1.12</b> <b>(Bode integral in the half plane)</b>&nbsp;&nbsp;
+        <i>Let l</i>(<i>z</i>) <i>be a proper real, rational function of
+        relative degree n</i><sub><i>r</i></sub><i>. Define</i></p>
+
+            <!-- MATH: \begin{equation}
+g(z)\stackrel{\rm\triangle}{=}(1+l(z))^{-1}
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img189.gif" alt="\begin{displaymath}g(z)\stackrel{\rm\triangle}{=}(1+l(z))^{-1}
+\end{displaymath}" width="131" height="30"></td>
+            <td width="10" align="RIGHT">(C.10.1)</td>
+          </tr>
+        </table>
+
+        <p><i>and assume that g</i>(<i>z</i>)<i> has neither poles nor zeros in
+        the closed RHP. Then</i></p>
+
+            <!-- MATH: \begin{equation}
+\int_0^\infty\ln |g(j\omega)|d\omega=\begin{cases}0&\mbox{ for $n_r>1$ }\\
+-\kappa \frac{\pi}{2}&\mbox{ for $n_r=1$\space \hspace{3mm}
+where \hspace{3mm}$\kappa\stackrel{\rm\triangle}{=}\lim_{z\rightarrow \infty}zl(z)$ }
+\end{cases}
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img190.gif" alt="\begin{displaymath}
+\int_0^\infty\ln \vert g(j\omega)\vert d\omega=\begin{case...
+...m\triangle}{=}\lim_{z\rightarrow \infty}zl(z)$ }
+\end{cases}
+\end{displaymath}" width="472" height="76"></td>
+            <td width="10" align="RIGHT">(C.10.2)</td>
+          </tr>
+        </table>
+
+        <p><b>Proof</b></p>
+
+        <p>Since <img align="MIDDLE" border="0" src="appendixc-img191.gif" alt="$\ln g(z)$" width="48" height="31">
+        is analytic in the closed RHP, then</p>
+
+          <!-- MATH: \begin{equation}
+\oint_C \ln g(z)dz=0
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img192.gif" alt="\begin{displaymath}\oint_C \ln g(z)dz=0
+\end{displaymath}" width="111" height="43"></td>
+            <td width="10" align="RIGHT">(C.10.3)</td>
+          </tr>
+        </table>
+
+        <p>where 
+        <!-- MATH: $C=C_i\cup C_\infty$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img118.gif" alt="$C=C_i\cup C_\infty$" width="96" height="29">
+        is the contour defined in Figure C.4. Then</p>
+
+          <!-- MATH: \begin{equation}
+\oint_C \ln g(z) dz=j\int_{-\infty}^\infty \ln g(j\omega)d\omega-
+\int_{C_\infty} \ln (1+l(z))dz
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img193.gif" alt="\begin{displaymath}
+\oint_C \ln g(z) dz=j\int_{-\infty}^\infty \ln g(j\omega)d\omega-
+\int_{C_\infty} \ln (1+l(z))dz
+\end{displaymath}" width="366" height="52"></td>
+            <td width="10" align="RIGHT">(C.10.4)</td>
+          </tr>
+        </table>
+
+        <p>For the first integral on the right hand side of equation (C.10.4),
+        we use the conjugate symmetry of <i>g</i>(<i>z</i>) to obtain</p>
+
+          <!-- MATH: \begin{equation}
+\int_{-\infty}^\infty \ln g(j\omega)d\omega=
+2\int_{0}^\infty \ln |g(j\omega)|d\omega
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img194.gif" alt="\begin{displaymath}\int_{-\infty}^\infty \ln g(j\omega)d\omega=
+2\int_{0}^\infty \ln \vert g(j\omega)\vert d\omega
+\end{displaymath}" width="252" height="45"></td>
+            <td width="10" align="RIGHT">(C.10.5)</td>
+          </tr>
+        </table>
+
+        <p>For the second integral we notice that on <img align="MIDDLE" border="0" src="appendixc-img114.gif" alt="$C_{\infty}$" width="28" height="29">,
+        <i>l</i>(<i>z</i>) can be approximated by</p>
+
+          <!-- MATH: \begin{equation}
+\frac{a}{z^{n_r}}
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img195.gif" alt="\begin{displaymath}\frac{a}{z^{n_r}}
+\end{displaymath}" width="23" height="35"></td>
+            <td width="10" align="RIGHT">(C.10.6)</td>
+          </tr>
+        </table>
+
+        <p>The result follows on using example C.7, and on noticing that <img align="BOTTOM" border="0" src="appendixc-img196.gif" alt="$a=\kappa$" width="42" height="14">
+        for <i>n</i><sub><i>r</i></sub>=1.</p>
+
+        <p align="right">
+        <!-- MATH: $\Box \Box \Box$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+        <p><b>Remark 1.4</b>&nbsp;&nbsp; <i>If 
+          <!-- MATH: $g(z)=\left(1+e^{-z\tau}l(z)\right)^{-1}$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img197.gif" alt="$g(z)=\left(1+e^{-z\tau}l(z)\right)^{-1}$" width="167" height="39">
+        for <img align="MIDDLE" border="0" src="appendixc-img198.gif" alt="$\tau&gt;0$" width="41" height="28">
+        then result (C.10.9) becomes</i></p>
+
+            <!-- MATH: \begin{equation}
+\int_0^\infty \ln |g(j\omega)|d\omega=0
+\hspace{10mm}\forall n_r>0
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><a name="eq:bositau">&nbsp;</a><img src="appendixc-img199.gif" alt="\begin{displaymath}
+\int_0^\infty \ln \vert g(j\omega)\vert d\omega=0
+\hspace{10mm}\forall n_r&gt;0
+\end{displaymath}" width="238" height="50"></td>
+            <td width="10" align="RIGHT">(C.10.7)</td>
+          </tr>
+        </table>
+
+        <p><i>The proof of (C.10.7) follows along the same lines as those of
+        Theorem C.12 and using the result in example C.8.</i></p>
+
+        <p><b>Theorem 1.13 (Modified Bode integral)</b>&nbsp;&nbsp; <i>Let l</i>(<i>z</i>)<i>
+        be a proper real, rational function of relative degree n</i><sub><i>r</i></sub><i>.
+        Define</i></p>
+
+            <!-- MATH: \begin{equation}
+g(z)\stackrel{\rm\triangle}{=}(1+l(z))^{-1}\hspace{10mm}
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img200.gif" alt="\begin{displaymath}g(z)\stackrel{\rm\triangle}{=}(1+l(z))^{-1}\hspace{10mm}
+\end{displaymath}" width="130" height="30"></td>
+            <td width="10" align="RIGHT">(C.10.8)</td>
+          </tr>
+        </table>
+
+        <p><i>Assume that g</i>(<i>z</i>)<i> is analytic in the closed RHP and
+        that it has q zeros in the open RHP, located at 
+          <!-- MATH: $\zeta_1,
+\zeta_2,\ldots, \zeta_q$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img201.gif" alt="$\zeta_1,
+\zeta_2,\ldots, \zeta_q$" width="91" height="29"> with 
+          <!-- MATH: $\Re (\zeta_i)>0$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img202.gif" alt="$\Re (\zeta_i)&gt;0$" width="69" height="31">.
+        Then</i></p>
+
+            <!-- MATH: \begin{equation}
+\int_0^\infty\ln |g(j\omega)|d\omega=\begin{cases}\pi
+ \sum_{i=1}^{q}\zeta_i&
+\mbox{ for $n_r>1$ }\\[2mm]
+-\kappa \frac{\pi}{2}+\pi \sum_{i=1}^{q}\zeta_i&\mbox{ for $n_r=1$\space \hspace{3mm}
+where \hspace{3mm}$\kappa\stackrel{\rm\triangle}{=}\lim_{z\rightarrow \infty}zl(z)$ }
+\end{cases}
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="2">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img203.gif" alt="\begin{displaymath}
+\int_0^\infty\ln \vert g(j\omega)\vert d\omega=\begin{case...
+...m\triangle}{=}\lim_{z\rightarrow \infty}zl(z)$ }
+\end{cases}
+\end{displaymath}" width="558" height="85"></td>
+          </tr>
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap>
+
+              <p align="right">(C.10.9)</p>
+            </td>
+          </tr>
+        </table>
+
+        <p><b>Proof</b></p>
+
+        <p>We first notice that <img align="MIDDLE" border="0" src="appendixc-img191.gif" alt="$\ln g(z)$" width="48" height="31">
+        is no longer analytic on the RHP. We then define</p>
+
+          <!-- MATH: \begin{equation}
+\tilde{g}(z)\stackrel{\rm\triangle}{=}g(z)\prod_{i=1}^{q}\frac{z+\zeta_i}{z-\zeta_i}
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img204.gif" alt="\begin{displaymath}\tilde{g}(z)\stackrel{\rm\triangle}{=}g(z)\prod_{i=1}^{q}\frac{z+\zeta_i}{z-\zeta_i}
+\end{displaymath}" width="146" height="54"></td>
+            <td width="10" align="RIGHT">(C.10.10)</td>
+          </tr>
+        </table>
+
+        <p>Thus, 
+        <!-- MATH: $\ln \tilde{g}(z)$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img134.gif" alt="$\ln \tilde{g}(z)$" width="48" height="31">
+        is analytic in the closed RHP. We can then apply Cauchy's integral in
+        the contour <i>C</i> described in Figure C.4 to obtain</p>
+
+          <!-- MATH: \begin{equation}
+\oint_C\ln \tilde{g}(z)dz=0=\oint_C\ln g(z)dz+
+\sum_{i=1}^{q}\oint_C\ln \frac{z+\zeta_i}{z-\zeta_i}dz
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><a name="eq:bodefli">&nbsp;</a><img src="appendixc-img205.gif" alt="\begin{displaymath}
+\oint_C\ln \tilde{g}(z)dz=0=\oint_C\ln g(z)dz+
+\sum_{i=1}^{q}\oint_C\ln \frac{z+\zeta_i}{z-\zeta_i}dz
+\end{displaymath}" width="358" height="52"></td>
+            <td width="10" align="RIGHT">(C.10.11)</td>
+          </tr>
+        </table>
+
+        <p>The first integral on the right hand side can be expressed as</p>
+
+          <!-- MATH: \begin{equation}
+\oint_C\ln g(z)dz=2j\int_0^\infty\ln |g(j\omega)|d\omega+\int_{C_\infty}\ln g(z)dz
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img206.gif" alt="\begin{displaymath}\oint_C\ln g(z)dz=2j\int_0^\infty\ln \vert g(j\omega)\vert d\omega+\int_{C_\infty}\ln g(z)dz
+\end{displaymath}" width="349" height="45"></td>
+            <td width="10" align="RIGHT">(C.10.12)</td>
+          </tr>
+        </table>
+
+        <p>where, using example ex:lcircle</p>
+
+          <!-- MATH: \begin{equation}
+\int_{C_\infty}\ln g(z)dz=\begin{cases}0&\mbox{ for $n_r>1$ }\\
+j\kappa \pi&\mbox{ for $n_r=1$\space \hspace{3mm}
+where \hspace{3mm}$\kappa\stackrel{\rm\triangle}{=}\lim_{z\rightarrow \infty}zl(z)$\space }
+\end{cases}
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img207.gif" alt="\begin{displaymath}\int_{C_\infty}\ln g(z)dz=\begin{cases}0&amp;\mbox{ for $n_r&gt;1$ }...
+...ngle}{=}\lim_{z\rightarrow \infty}zl(z)$\space }
+\end{cases}
+\end{displaymath}" width="449" height="55"></td>
+            <td width="10" align="RIGHT">(C.10.13)</td>
+          </tr>
+        </table>
+
+        <p>The second integral on the right hand side of equation (C.10.11) can
+        be computed as follows</p>
+
+          <!-- MATH: \begin{equation}
+\oint_C\ln \frac{z+\zeta_i}{z-\zeta_i}dz=
+j\int_{-\infty}^\infty\ln \frac{j\omega+\zeta_i}{j\omega-\zeta_i}d\omega+
+\int_{C_\infty}\ln \frac{z+\zeta_i}{z-\zeta_i}dz
+
+\end{equation} -->
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img208.gif" alt="\begin{displaymath}\oint_C\ln \frac{z+\zeta_i}{z-\zeta_i}dz=
+j\int_{-\infty}^\i...
+..._i}d\omega+
+\int_{C_\infty}\ln \frac{z+\zeta_i}{z-\zeta_i}dz
+\end{displaymath}" width="380" height="45"></td>
+            <td width="10" align="RIGHT">(C.10.14)</td>
+          </tr>
+        </table>
+
+        <p>We note that the first integral on the right hand side is zero, and
+        using example C.9, the second integral is equal to
+ 
+        <!-- MATH: $-2j\pi\zeta_i$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img209.gif" alt="$-2j\pi\zeta_i$" width="53" height="29">.
+        Thus the result follows.</p>
+
+        <p align="right">
+
+
+        <!-- MATH: $\Box \Box \Box$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+        <p><b>Remark 1.5</b>&nbsp;&nbsp; <i>Note that since g</i>(<i>z</i>)<i>
+        is a real function of z, then</i></p>
+
+            <!-- MATH: \begin{equation}
+\sum_{i=1}^{q}\zeta_i=\sum_{i=1}^{q}\Re\{\zeta_i\}
+\end{equation} -->
+
+        <table width="100%" align="CENTER">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><img src="appendixc-img210.gif" alt="\begin{displaymath}\sum_{i=1}^{q}\zeta_i=\sum_{i=1}^{q}\Re\{\zeta_i\}
+\end{displaymath}" width="123" height="54"></td>
+            <td width="10" align="RIGHT">(C.10.15)</td>
+          </tr>
+        </table>
+
+        <p align="right">
+
+
+        <!-- MATH: $\Box \Box \Box$ -->
+        <img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+
+        <p><b>Remark 1.6</b>&nbsp;&nbsp; <i>If 
+          <!-- MATH: $g(z)=\left(1+e^{-z\tau}l(z)\right)^{-1}$ -->
+        <img align="MIDDLE" border="0" src="appendixc-img197.gif" alt="$g(z)=\left(1+e^{-z\tau}l(z)\right)^{-1}$" width="167" height="39">
+        for <img align="MIDDLE" border="0" src="appendixc-img198.gif" alt="$\tau&gt;0$" width="41" height="28">
+        then the result (C.10.9) becomes</i></p>
+
+            <!-- MATH: \begin{equation}
+\int_0^\infty \ln |g(j\omega)|d\omega=\pi \sum_{i=1}^{q}\Re\{\zeta_i\}
+\hspace{10mm}\forall n_r>0
+
+\end{equation} -->
+
+        <table width="100%" align="CENTER">
+          <tr valign="MIDDLE">
+            <td align="CENTER" nowrap><a name="eq:bofrltau">&nbsp;</a><img src="appendixc-img211.gif" alt="\begin{displaymath}
+\int_0^\infty \ln \vert g(j\omega)\vert d\omega=\pi \sum_{i=1}^{q}\Re\{\zeta_i\}
+\hspace{10mm}\forall n_r&gt;0
+\end{displaymath}" width="323" height="50"></td>
+            <td width="10" align="RIGHT">(C.10.16)</td>
+          </tr>
+        </table>
+
+        <p><i>The proof of (C.10.16) follows along the same lines as those of
+        Theorem C.13 and using the result in example C.8.</i></p>
+
+        <p><b>Remark 1.7</b>&nbsp;&nbsp; <i>The Poisson, Jensen and Bode
+        formulae assume that a key function is analytic, not only inside a
+        domain D, but also on its border C. Sometimes there may exist
+        singularities on C. This can be dealt with by using an infinitesimal
+        circular indentation in C, constructed so as to leave the singularity
+        outside D. For the functions of interest to us, the integral along the
+        indentation vanishes. This is illustrated in example C.6 for a
+        logarithmic function, when D is the right half plane and there is a
+        singularity at the origin.</i></p>
+
+        <p align="right"><i>
+
+        <!-- MATH: $\Box \Box \Box$ -->
+        </i> <img align="BOTTOM" border="0" src="appendixc-img7.gif" alt="$\Box \Box \Box $" width="39" height="14"></p>
+        <div align="center">
+          <table border="0" cellpadding="0" width="500" cellspacing="0">
+            <tr>
+              <td align="center" width="33%"><a href="appendixc-node26.html"><img src="../images/backbutton.gif" border="0" alt="&lt;-" width="32" height="32"><br>
+                Previous - Section C.9</a></td>
+              <td align="center" width="33%"><a href="appendixc-node1.html"><img src="../images/upbutton.gif" border="0" alt="^" width="32" height="32"><br>
+                Up - Appendix C</a></td>
+              <td align="center" width="33%"><img border="0" src="../images/nextbutton.gif" width="32" height="32"><br>
+                Next</td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<STYLE>
+<!-- 
+A:link    { text-decoration: underline; font-weight: normal; font-family: Times New Roman, Times; font-size: 12pt; }
+A:active  { text-decoration: underline; font-weight: normal; font-family: Times New Roman, Times; font-size: 12pt; }
+A:visited { text-decoration: underline; font-weight: normal; font-family: Times New Roman, Times; font-size: 12pt; }
+
+A:hover   { text-decoration: underline; font-weight: normal; font-family: Times New Roman, Times; font-size: 12pt; color: #FF6600; }
+A:over    { text-decoration: underline; font-weight: normal; font-family: Times New Roman, Times; font-size: 12pt; color: #FF6600; }
+
+A.full:link    { text-decoration: underline; font-weight: normal; font-family: Times New Roman, Times; font-size: 12pt; color: #006633 }
+A.full:active  { text-decoration: underline; font-weight: normal; font-family: Times New Roman, Times; font-size: 12pt; color: #006633 }
+A.full:visited { text-decoration: underline; font-weight: normal; font-family: Times New Roman, Times; font-size: 12pt; color: #006633 }
+
+TR, TD,
+BLOCKQUOTE,
+P,
+BODY,
+LI       { font-family: Times New Roman, Times; font-size: 12pt; }
+
+H2       { text-decoration: none; font-weight: bold; font-family: Times New Roman, Times; font-size: 24pt; color: #009966; }
+
+H3       { text-decoration: none; font-weight: bold; font-family: Arial, Helvetica, Sans-Serif; font-size: 16pt; color: #613EB2; }
+
+H4       { text-decoration: none; font-weight: bold; font-family: Arial, Helvetica, Sans-Serif; font-size: 14pt; color: #613EB2; }
+
+H5       { text-decoration: none; font-weight: bold; font-family: Arial, Helvetica, Sans-Serif; font-size: 14pt; color: #000000; }
+-->
+</style>
